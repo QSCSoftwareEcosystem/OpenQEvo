@@ -2,7 +2,7 @@
 
 **openQEvo** is an open Python library for computing the quantum evolution
 operator $e^{-iHt}$. It collects and organizes multiple time-evolution
-strategies — Trotterization, QDRIFT, LCU, and others — into a single,
+strategies — Trotterization, ..., and others — into a single,
 well-documented, and reproducible package.
 
 Developed under the [QSC Software Thrust](https://github.com/QSCSoftwareThrust),
@@ -24,7 +24,6 @@ Hamiltonian. The library provides:
 | Method | Description | Status |
 |--------|-------------|--------|
 | Trotter-Suzuki | First and higher-order product formulas | Planned |
-| QDRIFT | Randomized product formula | Planned |
 | *Other* | *Contributed by Algorithms Thrust* | Planned |
 
 ## Installation
