@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/QSCSoftwareThrust/OpenQEvo/context/schema.json",
+  "title": "openQEvo Method Context",
+  "description": "Schema for structured metadata describing a quantum evolution method. Draft v0.1 — will be refined by DS (issue #2).",
+  "type": "object",
+  "required": ["method_name", "description", "source", "parameters"],
+  "properties": {
+    "method_name": {
+      "type": "string",
+      "description": "Registry name (e.g. 'trotter_s1')"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the method"
+    },
+    "source": {
+      "type": "string",
+      "description": "Origin of the implementation",
+      "enum": ["algorithms-thrust", "openqevo", "qiskit", "pennylane", "qrack", "mitiq"]
+    },
+    "applicable_hamiltonians": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Types of Hamiltonians this method works well for"
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Known limitations or conditions where the method performs poorly"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Method-specific parameters",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" },
+          "description": { "type": "string" },
+          "required": { "type": "boolean" },
+          "default": {},
+          "range": {
+            "type": "object",
+            "properties": {
+              "min": { "type": "number" },
+              "max": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "complexity": {
+      "type": "object",
+      "properties": {
+        "gate_count": {
+          "type": "string",
+          "description": "Asymptotic gate count as a function of terms, steps, etc."
+        },
+        "circuit_depth": {
+          "type": "string",
+          "description": "Asymptotic circuit depth"
+        },
+        "error_scaling": {
+          "type": "string",
+          "description": "How the approximation error scales (e.g. O(t^2/n) for first order)"
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "authors": { "type": "string" },
+          "year": { "type": "integer" },
+          "doi": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      }
+    },
+    "example_path": {
+      "type": "string",
+      "description": "Relative path to an example script demonstrating this method"
+    }
+  }
+}

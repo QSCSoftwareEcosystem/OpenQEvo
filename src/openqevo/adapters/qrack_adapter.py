@@ -16,8 +16,6 @@ from typing import Any
 import numpy as np
 from numpy.typing import NDArray
 
-from pyqrack import QrackSimulator
-
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
 

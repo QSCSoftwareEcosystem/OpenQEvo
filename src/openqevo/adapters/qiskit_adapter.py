@@ -12,9 +12,6 @@ from typing import Any
 import numpy as np
 from numpy.typing import NDArray
 
-from qiskit.quantum_info import Operator, SparsePauliOp
-from qiskit.synthesis import SuzukiTrotter
-
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
 

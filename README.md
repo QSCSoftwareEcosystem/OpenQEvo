@@ -19,9 +19,11 @@ structured context for AI-assisted tooling, and delivers a library that
 other thrusts and external users can depend on.
 
 This repository is a **prototype** for how the Software Thrust integrates
-scientific code from other thrusts into the
-[openQSE](https://github.com/QSCSoftwareThrust/Thrust-Structure) ecosystem.
+scientific code from other thrusts. openQSE defines the community
+specification; openQEvo is the first concrete software deliverable.
 If the model works here, it scales to other algorithm families.
+
+**Target release: v0.1.0 — June 2026.**
 
 ## How it works
 

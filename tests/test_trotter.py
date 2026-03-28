@@ -45,12 +45,8 @@ class TestFirstOrder:
         terms = [SIGMA_X, SIGMA_Z]
         exact = openqevo.get("exact").evolve(terms, t=1.0)
 
-        error_10 = np.linalg.norm(
-            self.method.evolve(terms, t=1.0, steps=10) - exact
-        )
-        error_100 = np.linalg.norm(
-            self.method.evolve(terms, t=1.0, steps=100) - exact
-        )
+        error_10 = np.linalg.norm(self.method.evolve(terms, t=1.0, steps=10) - exact)
+        error_100 = np.linalg.norm(self.method.evolve(terms, t=1.0, steps=100) - exact)
         assert error_100 < error_10
 
     def test_result_is_unitary(self):
@@ -89,9 +85,7 @@ class TestSecondOrder:
 
         s1 = openqevo.get("trotter_s1")
         error_s1 = np.linalg.norm(s1.evolve(terms, t=1.0, steps=steps) - exact)
-        error_s2 = np.linalg.norm(
-            self.method.evolve(terms, t=1.0, steps=steps) - exact
-        )
+        error_s2 = np.linalg.norm(self.method.evolve(terms, t=1.0, steps=steps) - exact)
         assert error_s2 < error_s1
 
     def test_result_is_unitary(self):
@@ -108,9 +102,7 @@ class TestExactEvolution:
     def test_known_result(self):
         t = np.pi / 4
         result = self.method.evolve([SIGMA_Z], t)
-        expected = np.array(
-            [[np.exp(-1j * t), 0], [0, np.exp(1j * t)]], dtype=complex
-        )
+        expected = np.array([[np.exp(-1j * t), 0], [0, np.exp(1j * t)]], dtype=complex)
         np.testing.assert_allclose(result, expected, atol=1e-12)
 
     def test_identity_at_zero_time(self):

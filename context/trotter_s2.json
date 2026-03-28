@@ -1,0 +1,46 @@
+{
+  "method_name": "trotter_s2",
+  "description": "Second-order (symmetric) Trotter-Suzuki product formula. Approximates exp(-iHt) using a symmetric splitting that cancels odd-order error terms, giving quadratically better convergence than first order.",
+  "source": "algorithms-thrust",
+  "applicable_hamiltonians": [
+    "Local Hamiltonians (nearest-neighbor interactions)",
+    "Sparse Hamiltonians",
+    "Hamiltonians decomposable into a small number of terms",
+    "Pauli sum Hamiltonians",
+    "Systems where first-order Trotter is too inaccurate"
+  ],
+  "limitations": [
+    "Error still grows with commutator norms, but with better scaling",
+    "Twice the gate count per step compared to first order",
+    "Not efficient for highly non-local Hamiltonians",
+    "For very high precision, even higher-order formulas may be needed"
+  ],
+  "parameters": {
+    "steps": {
+      "type": "int",
+      "description": "Number of Trotter steps. Higher values give better accuracy at the cost of more gate operations.",
+      "required": true,
+      "range": { "min": 1 }
+    }
+  },
+  "complexity": {
+    "gate_count": "O(2 * L * n) where L = number of Hamiltonian terms, n = Trotter steps",
+    "circuit_depth": "O(2 * L * n)",
+    "error_scaling": "O(L^3 * t^3 / n^2)"
+  },
+  "references": [
+    {
+      "title": "Generalized Trotter's formula and systematic approximants of exponential operators and inner derivations with applications to many-body problems",
+      "authors": "M. Suzuki",
+      "year": 1976,
+      "doi": "10.1007/BF01609348"
+    },
+    {
+      "title": "General theory of fractal path integrals with applications to many-body theories and statistical physics",
+      "authors": "M. Suzuki",
+      "year": 1991,
+      "doi": "10.1063/1.529425"
+    }
+  ],
+  "example_path": "examples/trotter_convergence.py"
+}

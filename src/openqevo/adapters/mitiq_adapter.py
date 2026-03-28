@@ -17,8 +17,6 @@ from typing import Any
 import numpy as np
 from numpy.typing import NDArray
 
-import mitiq
-
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
 

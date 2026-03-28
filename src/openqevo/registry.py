@@ -52,9 +52,7 @@ def get(name: str, **kwargs: Any) -> EvolutionMethod:
     """
     if name not in _METHODS:
         available = ", ".join(sorted(_METHODS)) or "(none)"
-        raise KeyError(
-            f"Unknown method {name!r}. Available methods: {available}"
-        )
+        raise KeyError(f"Unknown method {name!r}. Available methods: {available}")
     return _METHODS[name](**kwargs)
 
 

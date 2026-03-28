@@ -1,0 +1,45 @@
+{
+  "method_name": "trotter_s1",
+  "description": "First-order Trotter-Suzuki product formula. Approximates exp(-iHt) by splitting H into terms and applying each term's evolution sequentially for small time steps.",
+  "source": "algorithms-thrust",
+  "applicable_hamiltonians": [
+    "Local Hamiltonians (nearest-neighbor interactions)",
+    "Sparse Hamiltonians",
+    "Hamiltonians decomposable into a small number of terms",
+    "Pauli sum Hamiltonians"
+  ],
+  "limitations": [
+    "Error grows with commutator norms of Hamiltonian terms",
+    "Requires many steps for high accuracy on non-commuting terms",
+    "Not efficient for highly non-local Hamiltonians",
+    "First-order error scaling: O(t^2/n) — slower convergence than higher-order formulas"
+  ],
+  "parameters": {
+    "steps": {
+      "type": "int",
+      "description": "Number of Trotter steps. Higher values give better accuracy at the cost of more gate operations.",
+      "required": true,
+      "range": { "min": 1 }
+    }
+  },
+  "complexity": {
+    "gate_count": "O(L * n) where L = number of Hamiltonian terms, n = Trotter steps",
+    "circuit_depth": "O(L * n)",
+    "error_scaling": "O(L^2 * t^2 / n)"
+  },
+  "references": [
+    {
+      "title": "Generalized Trotter's formula and systematic approximants of exponential operators and inner derivations with applications to many-body problems",
+      "authors": "M. Suzuki",
+      "year": 1976,
+      "doi": "10.1007/BF01609348"
+    },
+    {
+      "title": "General theory of fractal path integrals with applications to many-body theories and statistical physics",
+      "authors": "M. Suzuki",
+      "year": 1991,
+      "doi": "10.1063/1.529425"
+    }
+  ],
+  "example_path": "examples/trotter_convergence.py"
+}

@@ -1,0 +1,29 @@
+{
+  "method_name": "exact",
+  "description": "Exact time evolution via direct matrix exponentiation of the full Hamiltonian. Not a practical quantum algorithm — used as a classical reference for benchmarking approximate methods.",
+  "source": "openqevo",
+  "applicable_hamiltonians": [
+    "Any Hamiltonian (limited by matrix size, not structure)"
+  ],
+  "limitations": [
+    "Exponential memory: requires storing the full 2^n x 2^n matrix",
+    "Not implementable on a quantum computer — classical simulation only",
+    "Impractical for more than ~20 qubits",
+    "Reference/benchmarking use only"
+  ],
+  "parameters": {},
+  "complexity": {
+    "gate_count": "N/A (classical computation)",
+    "circuit_depth": "N/A (classical computation)",
+    "error_scaling": "Exact (limited by floating-point precision)"
+  },
+  "references": [
+    {
+      "title": "Nineteen dubious ways to compute the exponential of a matrix, twenty-five years later",
+      "authors": "C. Moler, C. Van Loan",
+      "year": 2003,
+      "doi": "10.1137/S00361445024180"
+    }
+  ],
+  "example_path": "examples/trotter_convergence.py"
+}
