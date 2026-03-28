@@ -2,9 +2,10 @@
 
 Requires: pip install pyqrack
 
-Qrack is a Unitary Foundation project providing GPU-accelerated circuit
-simulation. This adapter maps Hamiltonian terms to Trotter circuits and
-executes them on Qrack's simulator to compute exp(-iHt).
+NOT YET IMPLEMENTED. Qrack operates at the gate level rather than the
+Hamiltonian level, so this adapter requires manual Pauli decomposition
+and Trotter circuit construction using QrackSimulator gate operations.
+This will be implemented in a future release.
 
 This adapter is not loaded if pyqrack is not installed.
 """
@@ -15,6 +16,7 @@ from typing import Any
 
 import numpy as np
 from numpy.typing import NDArray
+from pyqrack import QrackSimulator  # noqa: F401
 
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
@@ -33,10 +35,8 @@ class QrackTrotterAdapter(EvolutionMethod):
         t: float,
         **params: Any,
     ) -> NDArray[np.complexfloating]:
-        # TODO: Implement when Qrack integration is ready.
-        # This stub defines the interface; the actual implementation
-        # will map terms to Trotter gate sequences and execute on
-        # QrackSimulator with GPU acceleration.
         raise NotImplementedError(
-            "Qrack adapter is a stub. Contributions welcome — see issue #3."
+            "Qrack adapter requires gate-level circuit construction "
+            "(Pauli decomposition + Trotter gate sequence). "
+            "Planned for a future release."
         )

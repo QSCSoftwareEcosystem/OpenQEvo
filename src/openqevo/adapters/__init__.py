@@ -18,8 +18,3 @@ try:
     from openqevo.adapters import qrack_adapter  # noqa: F401
 except ImportError:
     pass
-
-try:
-    from openqevo.adapters import mitiq_adapter  # noqa: F401
-except ImportError:
-    pass

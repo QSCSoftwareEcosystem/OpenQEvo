@@ -24,6 +24,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+qiskit = ["qiskit>=1.0"]
+pennylane = ["pennylane>=0.35"]
+qrack = ["pyqrack>=1.0"]
+adapters = [
+    "openqevo[qiskit]",
+    "openqevo[pennylane]",
+]
 dev = [
     "pytest>=7",
     "pytest-cov",

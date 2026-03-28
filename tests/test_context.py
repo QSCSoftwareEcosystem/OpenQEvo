@@ -44,11 +44,15 @@ class TestContextLoading:
             with open(json_file) as f:
                 ctx = json.load(f)
             for field in required_fields:
-                assert field in ctx, f"{json_file.name} missing required field '{field}'"
+                assert field in ctx, (
+                    f"{json_file.name} missing required field '{field}'"
+                )
 
     def test_all_registered_methods_have_context(self):
         """Every registered native method should have a context JSON file."""
         for name in openqevo.list_methods():
             method = openqevo.get(name)
             if method.source in ("algorithms-thrust", "openqevo"):
-                assert method.context is not None, f"Method '{name}' has no context file"
+                assert method.context is not None, (
+                    f"Method '{name}' has no context file"
+                )

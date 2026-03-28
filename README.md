@@ -69,7 +69,6 @@ flowchart LR
 | Qiskit Trotter | Qiskit | Adapter for `qiskit.synthesis.SuzukiTrotter` | Stub |
 | PennyLane Trotter | PennyLane | Adapter for `qml.TrotterProduct` | Stub |
 | Qrack Trotter | Qrack (Unitary Foundation) | GPU-accelerated Trotter circuit execution | Stub |
-| Mitiq ZNE | Mitiq (Unitary Foundation) | Error-mitigated evolution via zero-noise extrapolation | Stub |
 
 ## Installation
 
