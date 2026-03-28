@@ -31,7 +31,6 @@ flowchart TB
             AD1["qiskit_adapter.py"]
             AD2["pennylane_adapter.py"]
             AD3["qrack_adapter.py"]
-            AD4["mitiq_adapter.py"]
         end
 
         subgraph CONTEXT ["context/"]
@@ -62,7 +61,6 @@ flowchart TB
     B2 --- AD1
     B2 --- AD2
     B2 --- AD3
-    B2 --- AD4
     M1 --- C1
     C1 --- C2
     OPENQEVO --> U1
@@ -131,11 +129,6 @@ classDiagram
         +evolve(terms, t, **params)
     }
 
-    class MitiqZNEAdapter {
-        +source = "mitiq"
-        +evolve(terms, t, **params)
-    }
-
     class FutureMethod {
         <<planned>>
         +source = "algorithms-thrust"
@@ -148,7 +141,6 @@ classDiagram
     EvolutionMethod <|-- QiskitTrotterAdapter
     EvolutionMethod <|-- PennyLaneTrotterAdapter
     EvolutionMethod <|-- QrackTrotterAdapter
-    EvolutionMethod <|-- MitiqZNEAdapter
     EvolutionMethod <|-- FutureMethod
     Registry --> EvolutionMethod : manages
 ```
@@ -165,10 +157,9 @@ src/openqevo/
 │   └── trotter.py           # Trotter-Suzuki 1st/2nd order + exact (placeholder)
 └── adapters/
     ├── __init__.py          # Optional imports (skip if lib not installed)
-    ├── qiskit_adapter.py    # Qiskit wrapper (stub)
-    ├── pennylane_adapter.py # PennyLane wrapper (stub)
-    ├── qrack_adapter.py     # Qrack GPU-accelerated (Unitary Foundation, stub)
-    └── mitiq_adapter.py     # Mitiq ZNE error mitigation (Unitary Foundation, stub)
+    ├── qiskit_adapter.py    # Qiskit wrapper (working)
+    ├── pennylane_adapter.py # PennyLane wrapper (working)
+    └── qrack_adapter.py     # Qrack GPU-accelerated (Unitary Foundation, stub)
 ```
 
 ## How to add a new method

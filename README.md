@@ -36,7 +36,7 @@ flowchart LR
     subgraph OPENQEVO ["openQEvo"]
         REG["Registry\nget() / list_methods()"]
         MTH["Native methods\n(from Algorithms Thrust)"]
-        ADP["Adapters\n(Qiskit, PennyLane,\nQrack, Mitiq)"]
+        ADP["Adapters\n(Qiskit, PennyLane,\nQrack)"]
         CTX["Context JSON\n(method metadata)"]
     end
 
@@ -66,8 +66,8 @@ flowchart LR
 | Trotter-Suzuki (1st order) | Algorithms Thrust | First-order product formula for $e^{-iHt}$ | Placeholder |
 | Trotter-Suzuki (2nd order) | Algorithms Thrust | Symmetric product formula | Placeholder |
 | Exact | openQEvo | Direct matrix exponentiation (reference) | Done |
-| Qiskit Trotter | Qiskit | Adapter for `qiskit.synthesis.SuzukiTrotter` | Stub |
-| PennyLane Trotter | PennyLane | Adapter for `qml.TrotterProduct` | Stub |
+| Qiskit Trotter | Qiskit | `PauliEvolutionGate` + `SuzukiTrotter` synthesis | **Working** |
+| PennyLane Trotter | PennyLane | `TrotterProduct` decomposition | **Working** |
 | Qrack Trotter | Qrack (Unitary Foundation) | GPU-accelerated Trotter circuit execution | Stub |
 
 ## Installation
@@ -82,6 +82,11 @@ pip install openqevo
 git clone https://github.com/QSCSoftwareThrust/OpenQEvo.git
 cd OpenQEvo
 pip install -e ".[dev]"
+
+# With adapters:
+pip install -e ".[qiskit]"      # Qiskit adapter
+pip install -e ".[pennylane]"   # PennyLane adapter
+pip install -e ".[adapters]"    # All adapters
 ```
 
 ## Usage
@@ -91,15 +96,20 @@ import openqevo
 
 # List available methods
 openqevo.list_methods()
-# → ['exact', 'trotter_s1', 'trotter_s2']
+# → ['exact', 'pennylane_trotter', 'qiskit_trotter', 'trotter_s1', 'trotter_s2']
 
 # Get a method by name
 method = openqevo.get("trotter_s2")
 result = method.evolve(terms, t=1.0, steps=10)
 
-# Swap to a different strategy — same interface
-other = openqevo.get("trotter_s1")
-result = other.evolve(terms, t=1.0, steps=50)
+# Swap to a different backend — same interface
+qiskit = openqevo.get("qiskit_trotter")
+result = qiskit.evolve(terms, t=1.0, steps=10, order=2)
+
+# Compare across frameworks
+for name in ['trotter_s2', 'qiskit_trotter', 'pennylane_trotter']:
+    method = openqevo.get(name)
+    result = method.evolve(terms, t=1.0, steps=10)
 ```
 
 ## Cross-project responsibilities
