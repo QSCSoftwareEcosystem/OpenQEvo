@@ -21,6 +21,7 @@ classifiers = [
 dependencies = [
     "numpy>=1.24",
     "scipy>=1.10",
+    "jsonschema>=4.18",
 ]
 
 [project.optional-dependencies]
@@ -35,6 +36,7 @@ dev = [
     "pytest>=7",
     "pytest-cov",
     "ruff",
+    "jsonschema>=4.18",
 ]
 docs = [
     "sphinx",
