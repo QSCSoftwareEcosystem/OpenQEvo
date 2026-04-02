@@ -15,7 +15,8 @@ If you have a time-evolution script you'd like to integrate:
    - Implementation in `src/openqevo/`
    - Tests in `tests/`
    - An example script in `examples/`
-   - A context JSON file in `context/` (schema defined by the Data Schema project)
+   - A context JSON file in `context/` validated against `context/schema.json`
+     (use `pytest --no-context-validation` while the file is still in progress)
 
 ## Development setup
 
@@ -29,6 +30,13 @@ pip install -e ".[dev]"
 
 ```bash
 pytest
+```
+
+Context files are validated against `context/schema.json` by default. Pass
+`--no-context-validation` when working on an incomplete context file:
+
+```bash
+pytest --no-context-validation
 ```
 
 ## Code style
