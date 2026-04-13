@@ -3,7 +3,11 @@
 import json
 from pathlib import Path
 
+import jsonschema
+import pytest
+
 import openqevo
+import openqevo.registry as _registry
 
 CONTEXT_DIR = Path(__file__).resolve().parent.parent / "context"
 
@@ -31,22 +35,24 @@ class TestContextLoading:
         assert ctx is not None
         assert ctx["source"] == "openqevo"
 
-    def test_context_has_required_fields(self):
-        """All context files must have the fields required by schema.json."""
+    def test_context_validates_against_schema(self):
+        """All context files must fully validate against schema.json.
+
+        Pass --no-context-validation to pytest to skip (for in-progress development).
+        """
+        if not _registry._settings["context_validation"]:
+            pytest.skip("context validation disabled via --no-context-validation")
+
         schema_path = CONTEXT_DIR / "schema.json"
         with open(schema_path) as f:
             schema = json.load(f)
-        required_fields = schema["required"]
 
         for json_file in CONTEXT_DIR.glob("*.json"):
             if json_file.name == "schema.json":
                 continue
             with open(json_file) as f:
                 ctx = json.load(f)
-            for field in required_fields:
-                assert field in ctx, (
-                    f"{json_file.name} missing required field '{field}'"
-                )
+            jsonschema.validate(instance=ctx, schema=schema)
 
     def test_all_registered_methods_have_context(self):
         """Every registered native method should have a context JSON file."""

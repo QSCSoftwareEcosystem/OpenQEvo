@@ -195,9 +195,22 @@ appears in `openqevo.list_methods()`.
 
 ### 3. (Optional) Add context metadata
 
-Create `context/qdrift.json` following the schema defined by the
-[Data Schema project](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/2).
-The method's `.context` property will automatically load it.
+Create `context/qdrift.json` following the schema in `context/schema.json`.
+The method's `.context` property will automatically load and validate it.
+
+```json
+{
+  "method_name": "qdrift",
+  "description": "...",
+  "source": "algorithms-thrust",
+  "parameters": {
+    "steps": { "type": "int", "description": "...", "required": true }
+  }
+}
+```
+
+Use `pytest --no-context-validation` while the file is still incomplete (see
+[Context validation](#context-validation) below).
 
 ## How to add an adapter
 
@@ -234,3 +247,53 @@ except ImportError:
 ```
 
 The `try/except` ensures openQEvo works without `new_lib` installed.
+
+## Context validation
+
+Every `context/*.json` file is validated against `context/schema.json` (JSON
+Schema draft 2020-12) both at **runtime** (when `.context` is accessed) and in
+**tests** (`test_context_validates_against_schema`).
+
+### Runtime behaviour
+
+`registry.get_context()` validates by default. Pass `validate=False` to skip
+for a specific call:
+
+```python
+ctx = openqevo.registry.get_context("qdrift", validate=False)
+```
+
+The global default is controlled by `registry._settings["context_validation"]`
+(always `True` in normal use). This will become `openqevo.configure()` in a
+future release.
+
+### Disabling validation during development
+
+When writing a new context file that is not yet complete, pass
+`--no-context-validation` to pytest to skip the schema test for the whole
+session:
+
+```bash
+pytest --no-context-validation
+```
+
+Remove the flag once the file satisfies the schema; CI always runs without it.
+
+### Currently required fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `method_name` | string | Registry key matching `@register("name")` |
+| `description` | string | Human-readable summary of the method |
+| `source` | string (enum) | Origin: `algorithms-thrust`, `openqevo`, `qiskit`, `pennylane`, `qrack` |
+| `parameters` | object | Per-parameter metadata (type, description, required, range) |
+
+All other fields (`applicable_hamiltonians`, `limitations`, `complexity`,
+`references`, `example_path`) are optional but encouraged — see
+`context/trotter_s1.json` for a complete example.
+
+### Promoting a field to required
+
+1. Add the field name to `"required"` in `context/schema.json`
+2. Add the field to every existing `context/*.json` file
+3. Run `pytest` — the schema test enforces it automatically with no test code changes
