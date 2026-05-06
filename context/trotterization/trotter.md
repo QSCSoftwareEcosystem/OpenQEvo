@@ -69,3 +69,8 @@ To achieve a target precision $\epsilon$ over a total time $T$, we must increase
 - Grimsley, H., et al. (2020). *Journal of Chemical Theory and Computation*. 
 - Sugisaki, K., et al. (2024). *Journal of Computational Chemistry*.
 - Sugisaki, K., (2024). *AIP Advances*.
+* **Suzuki, M. (1976).** *Generalized Trotter's formula and systematic approximants of exponential operators and inner derivations with applications to many-body problems.* [DOI: 10.1007/BF01609348](https://doi.org/10.1007/BF01609348)
+* **Suzuki, M. (1991).** *General theory of fractal path integrals with applications to many-body theories and statistical physics.* [DOI: 10.1063/1.529425](https://doi.org/10.1063/1.529425)
+
+---
+
