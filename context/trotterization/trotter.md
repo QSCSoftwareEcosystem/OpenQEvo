@@ -15,13 +15,15 @@
 
 ## 3. Advantages of Trotterization
 * **Space Efficiency:** Trotter-Suzuki algorithms are highly space-efficient, requiring no or minimal ancilla qubits compared to LCU or Qubitization methods (Mehendale et al., 2025; Rajput et al., 2022).
-* **Numerical Exactness:** The Trotter error can be made arbitrarily small by increasing the Trotter number (the number of time steps), allowing for results that are numerically exact within the chosen basis set (Tranter et al., 2019).
+* **Numerical Exactness:** The Trotter error can, in principle, be made arbitrarily small by increasing the Trotter number (the number of time steps), allowing for results that are numerically exact within the chosen basis set (Tranter et al., 2019).
 * **Versatility:** It is a basic tool for both **Quantum Phase Estimation (QPE)** and preparing Ansätze for the **Variational Quantum Eigensolver (VQE)**.
 
 ## 4. Disadvantages of Trotterization
 * **Trotter Error:** The primary disadvantage is the introduction of discretization error. This error is dependent on the order in which individual Hamiltonian terms are applied, and finding the optimal ordering is a factorially difficult problem (Tranter et al., 2019).
 * **Circuit Depth:** To achieve high precision, a large number of Trotter steps are required, leading to deep circuits that are highly susceptible to decoherence on **NISQ** (noisy intermediate-scale quantum) devices.
 * **Worst-Case Metrics:** Standard error bounds (like operator norm bounds) often provide "worst-case" scenarios that may significantly overestimate the actual error in the ground-state energy (Mehendale et al., 2025).
+* **Numerical Errors:** Low-order trotter steps can incur significant error, with evidence revealing differences between trotterized wavefunctions exceeding roughly 100 kcal/mol for pathological quantum chemistry examples, which can also inadvertently introduce reproducability issues.(Grimsley et al., 2020)
+* **Potential Theoretical Inexactness and Inconsistencies:** Particular low-order trotter steps have been shown to yield wavefunctions that are sensitive to molecular orbital localization effects in quantum chemistry,(Sugisaki et al., 2024) and even cause size-consistency - a property satisfied by the exact solution - violations in the Quantum Phase Estimation algorithm.(Sugisaki, 2024) 
 
 ## 5. Embedded Symmetries and Algorithmic Acceleration
 * **Symmetry-Based Decomposition:** Exploiting the intrinsic symmetries of a model (e.g., $SU(2)$ symmetry in the Heisenberg model) allows for the construction of "effective Hamiltonians." This can reduce the number of CNOT gates required per Trotter step and significantly accelerate convergence (Yang & Negishi, 2025).
@@ -34,4 +36,6 @@
 - Rajput, A., et al. (2022). *Quantum*.
 - Yang, B., & Negishi, N. (2025). *arXiv*.
 - González-García, G., et al. (2025). *arXiv*.
-
+- Grimsley, H., et al. (2020). *Journal of Chemical Theory and Computation*. 
+- Sugisaki, K., et al. (2024). *Journal of Computational Chemistry*.
+- Sugisaki, K., (2024). *AIP Advances*.
