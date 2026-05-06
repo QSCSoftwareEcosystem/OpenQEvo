@@ -12,7 +12,6 @@
 ### Overview
 The complexity of Trotterization is defined by a rigorous trade-off between precision (error) and cost (gate count and circuit depth). Because many-body Hamiltonians consist of non-commuting terms, "chopping" the evolution into discrete steps introduces a systematic error that dictates the resource requirements for any meaningful simulation. The error in Trotterization is not a single value but depends on the order $p$ of the product formula used, defining particular "Trotter slices."
 
----
 
 ### Complexity Analysis
 
@@ -37,7 +36,6 @@ To achieve a target precision $\epsilon$ over a total time $T$, we must increase
 | **Ancilla Qubits** | 0 | 0 | 0 |
 | **Hardware Suitability** | High (Shallow) | Medium | Low (Very Deep) |
 
----
 
 ### Comparative Benchmarks
 
