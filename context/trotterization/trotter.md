@@ -61,14 +61,14 @@ To achieve a target precision $\epsilon$ over a total time $T$, we must increase
 * **Perturbative Estimates:** Using perturbation theory to estimate Trotter errors allows for the selection of better Hamiltonian partitioning schemes, leading to lower eigenvalue errors without increasing the Trotter number (Mehendale et al., 2025).
 ---
 ## References
-- Tranter, A., et al. (2019). *Entropy*.
-- Mehendale, S. G., et al. (2025). *arXiv*.
-- Rajput, A., et al. (2022). *Quantum*.
-- Yang, B., & Negishi, N. (2025). *arXiv*.
-- González-García, G., et al. (2025). *arXiv*.
-- Grimsley, H., et al. (2020). *Journal of Chemical Theory and Computation*. 
-- Sugisaki, K., et al. (2024). *Journal of Computational Chemistry*.
-- Sugisaki, K., (2024). *AIP Advances*.
+* **Tranter, A., Love, P. J., Mintert, F., Wiebe, N., & Coveney, P. V. (2019).** *Ordering of Trotterization: Impact on Errors in Quantum Simulation of Electronic Structure.* [DOI: 10.3390/e21121218](https://doi.org/10.3390/e21121218)
+* **Mehendale, S. G., Martínez-Martínez, L. A., Kamath, P. D., & Izmaylov, A. F. (2025).** *Estimating Trotter Approximation Errors to Optimize Hamiltonian Partitioning for Lower Eigenvalue Errors.* [DOI: 10.48550/arXiv.2312.13282](https://doi.org/10.48550/arXiv.2312.13282)
+* **Rajput, A., Roggero, A., & Wiebe, N. (2022).** *Hybridized Methods for Quantum Simulation in the Interaction Picture.* [DOI: 10.22331/q-2022-08-17-780](https://doi.org/10.22331/q-2022-08-17-780)
+* **Yang, B., & Negishi, N. (2025).** *Quantum simulation of many-body dynamics with noise-robust Trotter decomposition based on symmetric structures.* [DOI: 10.48550/arXiv.2505.04552](https://doi.org/10.48550/arXiv.2505.04552)
+* **González-García, G., Gorshkov, A. V., Cirac, J. I., & Trivedi, R. (2025).** *Dynamical complexity of non-Gaussian many-body systems with dissipation.* [DOI: 10.48550/arXiv.2502.05658](https://doi.org/10.48550/arXiv.2502.05658)
+* **Grimsley, H. R., Claudino, D., Economou, S. E., Barnes, E., & Mayhall, N. J. (2020).** *Is the Trotterized ADRPT-VQE Hamiltonian Size Consistent?.* [DOI: 10.1021/acs.jctc.0c00547](https://doi.org/10.1021/acs.jctc.0c00547)
+* **Sugisaki, K., Toyota, K., Sato, K., Daisuke, S., & Takui, T. (2024).** *Size Consistency of the Trotterized Unitary Coupled Cluster Ansatz in the Variational Quantum Eigensolver.* [DOI: 10.1002/jcc.27434](https://doi.org/10.1002/jcc.27434)
+* **Sugisaki, K. (2024).** *Does the full configuration interaction method based on quantum phase estimation with Trotter decomposition satisfy the size consistency condition?.* [DOI: 10.1063/5.0223661](https://doi.org/10.1063/5.0223661)
 * **Suzuki, M. (1976).** *Generalized Trotter's formula and systematic approximants of exponential operators and inner derivations with applications to many-body problems.* [DOI: 10.1007/BF01609348](https://doi.org/10.1007/BF01609348)
 * **Suzuki, M. (1991).** *General theory of fractal path integrals with applications to many-body theories and statistical physics.* [DOI: 10.1063/1.529425](https://doi.org/10.1063/1.529425)
 
