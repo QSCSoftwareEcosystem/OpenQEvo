@@ -28,8 +28,11 @@ Key extracted concepts live under domain-specific `key_points/` directories, for
 - `randomized_methods/key_points/`
 - `interaction_picture/key_points/`
 - `annealing/key_points/`
+- `software/key_points/`
 
 This layer turns raw papers into compact, structured claims: concepts, applicability conditions, limitations, implications, related methods, and evidence links back to Layer 0.
+Software key points turn raw API documentation into compact adapter and
+execution-contract claims.
 
 ## Wiki surface
 

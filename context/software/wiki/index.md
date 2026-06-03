@@ -7,14 +7,16 @@ APIs that OpenQEvo uses to execute or plan recommendations.
 ## Adapter Evidence
 
 - Qiskit evidence covers `PauliEvolutionGate` and `SparsePauliOp`, which support
-  the `qiskit_trotter` context metadata and execution contract.
+  the `qiskit_trotter` context metadata and execution contract
+  (`qiskit-pauli-evolution-gate-contract`).
 - PennyLane evidence covers `TrotterProduct` and `ApproxTimeEvolution`, which
-  support the `pennylane_trotter` adapter context.
+  support the `pennylane_trotter` adapter context
+  (`pennylane-trotter-product-contract`).
 - Qrack and PyQrack evidence cover the simulator package used by the
-  experimental `qrack_trotter` adapter.
+  experimental `qrack_trotter` adapter (`qrack-runtime-requirements`).
 - Mitiq evidence covers ZNE concepts and APIs. OpenQEvo currently keeps
   `mitiq_zne` as planned, non-executable metadata because no registered adapter
-  wraps Mitiq yet.
+  wraps Mitiq yet (`mitiq-zne-wrapper-scope`).
 
 ## Execution Bridge
 
@@ -23,6 +25,7 @@ recommendation to the OpenQEvo registry. The external AS/RAG layer should own
 retrieval, ranking, and recommendation construction. OpenQEvo owns the schema,
 method metadata, and execution bridge that validates and calls registered
 methods.
+This contract is captured by `openqevo-execute-recommendation-contract`.
 
 ## Inventory
 

@@ -1,0 +1,37 @@
+{
+  "id": "mitiq-zne-wrapper-scope",
+  "concept": "Mitiq ZNE is a mitigation wrapper, not a state-evolution method",
+  "summary": "Mitiq zero-noise extrapolation acts around a circuit executor and observable workflow, requiring repeated executions at scaled noise levels; in OpenQEvo it should remain a non-executable planned wrapper until an adapter defines how to connect base evolution circuits, executors, and observables.",
+  "applies_to": [
+    "mitiq_zne",
+    "noisy hardware",
+    "noisy simulators",
+    "observable estimation"
+  ],
+  "limitations": [
+    "ZNE mitigates noise in measured observables but does not remove algorithmic product-formula error.",
+    "It requires additional executions and shot budget across noise scale factors.",
+    "It requires a compatible executor and observable interface, which OpenQEvo does not yet register as an executable method."
+  ],
+  "implications": [
+    "Do not recommend mitiq_zne as an executable OpenQEvo evolution method yet.",
+    "Recommend Mitiq only as a planned mitigation layer around a base circuit-based evolution strategy.",
+    "If implemented later, the method contract must include base method, executor, observable, scale factors, and extrapolation factory."
+  ],
+  "related_methods": [
+    "mitiq_zne",
+    "qiskit_trotter",
+    "pennylane_trotter",
+    "qrack_trotter"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/mitiq-zne-guide.md",
+      "note": "Documents the ZNE workflow concepts and use cases."
+    },
+    {
+      "source": "../raw_data/mitiq-api-reference.md",
+      "note": "Documents execute_with_zne, extrapolation factories, and noise-scaling helpers."
+    }
+  ]
+}

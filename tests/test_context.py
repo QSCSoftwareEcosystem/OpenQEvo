@@ -24,6 +24,7 @@ KEY_POINT_DIRS = (
     CONTEXT_DIR / "randomized_methods" / "key_points",
     CONTEXT_DIR / "interaction_picture" / "key_points",
     CONTEXT_DIR / "annealing" / "key_points",
+    CONTEXT_DIR / "software" / "key_points",
 )
 WIKI_DIRS = (
     CONTEXT_DIR / "trotterization" / "wiki",

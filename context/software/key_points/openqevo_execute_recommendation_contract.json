@@ -1,0 +1,37 @@
+{
+  "id": "openqevo-execute-recommendation-contract",
+  "concept": "OpenQEvo executes only registered and implemented recommendations",
+  "summary": "openqevo.execute_recommendation resolves a selected method through the OpenQEvo registry, validates the execution contract, rejects non-executable planned methods, merges parameters with caller overrides, and then calls the registered method's evolve function.",
+  "applies_to": [
+    "openqevo.execute_recommendation",
+    "executable recommendations",
+    "external AS orchestration",
+    "method registry integration"
+  ],
+  "limitations": [
+    "The helper does not perform retrieval, ranking, or method selection.",
+    "It requires terms, time, and method-specific required parameters to be supplied either in the recommendation or by the caller.",
+    "It rejects planned metadata such as mitiq_zne until a method is registered and marked executable."
+  ],
+  "implications": [
+    "External AS/RAG should produce recommendation payloads that match registered OpenQEvo method names.",
+    "Executable recommendation payloads must include or arrange required inputs before calling OpenQEvo.",
+    "The recommendation schema and method metadata should keep execution.method_name aligned with openqevo.get(name)."
+  ],
+  "related_methods": [
+    "exact",
+    "trotter_s1",
+    "trotter_s2",
+    "qdrift",
+    "qiskit_trotter",
+    "pennylane_trotter",
+    "qrack_trotter",
+    "mitiq_zne"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-execute-recommendation.md",
+      "note": "Documents local execute_recommendation behavior from OpenQEvo source inspection."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "pennylane-trotter-product-contract",
+  "concept": "PennyLane TrotterProduct exposes time, repetitions, and order controls",
+  "summary": "PennyLane's TrotterProduct API directly represents product-formula time evolution with Hamiltonian, time, repetition count, and order parameters, matching the OpenQEvo pennylane_trotter execution controls.",
+  "applies_to": [
+    "pennylane_trotter",
+    "PennyLane workflows",
+    "Hamiltonian simulation templates",
+    "product-formula decomposition"
+  ],
+  "limitations": [
+    "OpenQEvo still requires matrix terms to be decomposed into PennyLane-compatible Pauli operators.",
+    "Large dense Hamiltonians can make the Pauli decomposition path expensive before PennyLane receives the operator.",
+    "The current adapter returns a unitary matrix rather than preserving a reusable PennyLane circuit object."
+  ],
+  "implications": [
+    "Use pennylane_trotter when the user wants a PennyLane-compatible evolution path.",
+    "Recommendations should include steps and may include order because those correspond to PennyLane repetition and product-formula order controls.",
+    "For single-term Hamiltonians, OpenQEvo's adapter behavior can differ from the multi-term TrotterProduct path."
+  ],
+  "related_methods": [
+    "pennylane_trotter",
+    "trotter_s1",
+    "trotter_s2"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/pennylane-trotter-product.md",
+      "note": "Documents the TrotterProduct signature and decomposition behavior."
+    },
+    {
+      "source": "../raw_data/pennylane-approx-time-evolution.md",
+      "note": "Documents PennyLane approximate time-evolution behavior and its relationship to product-formula execution."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "qiskit-pauli-evolution-gate-contract",
+  "concept": "Qiskit PauliEvolutionGate represents Pauli Hamiltonian time evolution",
+  "summary": "Qiskit's PauliEvolutionGate represents exp(-i t H) for Hermitian Pauli operators and delegates practical implementation to synthesis strategies such as product formulas, which makes it suitable evidence for the OpenQEvo qiskit_trotter adapter contract.",
+  "applies_to": [
+    "qiskit_trotter",
+    "Pauli-sum Hamiltonians",
+    "Qiskit circuit workflows",
+    "product-formula synthesis"
+  ],
+  "limitations": [
+    "The documented gate represents exact evolution semantically, but compiled implementations generally approximate it through synthesis.",
+    "OpenQEvo currently converts matrix terms to Pauli representations before using the Qiskit adapter, so dense matrix conversion cost remains an OpenQEvo-side limitation.",
+    "Changing synthesis, control, or power ordering can alter the resulting unitary."
+  ],
+  "implications": [
+    "Use qiskit_trotter when the user wants a Qiskit-backed circuit/synthesis path for Pauli Hamiltonian evolution.",
+    "Recommendations should expose product-formula step count and order because those control the approximation in OpenQEvo's adapter.",
+    "For many commutation checks, prefer Qiskit-native sparse Pauli representations rather than repeated dense conversions."
+  ],
+  "related_methods": [
+    "qiskit_trotter",
+    "trotter_s1",
+    "trotter_s2"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/qiskit-pauli-evolution-gate.md",
+      "note": "Documents PauliEvolutionGate as Pauli time evolution with synthesis-based practical implementation."
+    },
+    {
+      "source": "../raw_data/qiskit-sparse-pauli-op.md",
+      "note": "Documents SparsePauliOp as the sparse Pauli operator representation relevant to Qiskit-backed Hamiltonian terms."
+    }
+  ]
+}
