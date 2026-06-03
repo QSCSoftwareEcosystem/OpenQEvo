@@ -15,6 +15,8 @@ METHOD_SCHEMA_PATH = CONTEXT_DIR / "schema" / "method.schema.json"
 KEY_POINT_SCHEMA_PATH = CONTEXT_DIR / "schema" / "key_point.schema.json"
 SELECTION_RULE_SCHEMA_PATH = CONTEXT_DIR / "schema" / "selection_rule.schema.json"
 WIKI_MANIFEST_SCHEMA_PATH = CONTEXT_DIR / "schema" / "wiki_manifest.schema.json"
+RECOMMENDATION_SCHEMA_PATH = CONTEXT_DIR / "schema" / "recommendation.schema.json"
+RECOMMENDATION_EXAMPLES_DIR = CONTEXT_DIR / "selection" / "recommendation_examples"
 KEY_POINT_DIRS = (
     CONTEXT_DIR / "trotterization" / "key_points",
     CONTEXT_DIR / "randomized_methods" / "key_points",
@@ -167,6 +169,67 @@ class TestContextLoading:
                     f"Manifest collection {collection['id']} has missing "
                     f"{field}: {collection[field]}"
                 )
+
+    def test_recommendation_schema_validates_executable_payload(self):
+        """LLM recommendations should validate against the output schema."""
+        with open(RECOMMENDATION_SCHEMA_PATH) as f:
+            schema = json.load(f)
+
+        recommendation = {
+            "recommendation_id": "example-qdrift",
+            "method_name": "qdrift",
+            "method_family": "randomized_methods",
+            "executable": True,
+            "confidence": "medium",
+            "parameters": {"samples": 100, "seed": 7},
+            "required_inputs": [],
+            "execution": {
+                "implemented": True,
+                "method_name": "qdrift",
+                "entrypoint": "openqevo.get(\"qdrift\").evolve(terms, t, **parameters)",
+                "input_representation": ["matrix_terms"],
+                "required_arguments": ["terms", "t", "samples"],
+            },
+            "rationale": [
+                "qDRIFT is the registered randomized baseline for many-term "
+                "Hamiltonians."
+            ],
+            "warnings": ["Sweep sample count before final accuracy claims."],
+            "evidence": [
+                {
+                    "key_point_id": "qdrift-randomized-scaling",
+                    "source": (
+                        "randomized_methods/raw_data/"
+                        "openqevo-randomized-qdrift-campbell-2019-1811.08017.md"
+                    ),
+                    "note": "Supports qDRIFT term-weighted randomized simulation.",
+                }
+            ],
+            "alternatives": [
+                {
+                    "method_name": "trotter_s2",
+                    "reason": (
+                        "Deterministic baseline with different depth/error tradeoff."
+                    ),
+                    "executable": True,
+                }
+            ],
+        }
+
+        jsonschema.validate(instance=recommendation, schema=schema)
+
+    def test_recommendation_examples_validate_against_schema(self):
+        """Checked-in recommendation examples must match the schema."""
+        with open(RECOMMENDATION_SCHEMA_PATH) as f:
+            schema = json.load(f)
+
+        examples = sorted(RECOMMENDATION_EXAMPLES_DIR.glob("*.json"))
+        assert examples, "Expected at least one recommendation example"
+
+        for example_path in examples:
+            with open(example_path) as f:
+                recommendation = json.load(f)
+            jsonschema.validate(instance=recommendation, schema=schema)
 
     def test_wiki_pages_reference_known_key_points(self):
         """Wiki pages should cite known key-point IDs when making claims."""
