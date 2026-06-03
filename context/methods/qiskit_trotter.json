@@ -59,6 +59,18 @@
       "authors": "Qiskit contributors",
       "year": 2026,
       "url": "https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.PauliEvolutionGate"
+    },
+    {
+      "title": "Local raw software docs for Qiskit PauliEvolutionGate",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/qiskit-pauli-evolution-gate.md"
+    },
+    {
+      "title": "Local raw software docs for Qiskit SparsePauliOp",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/qiskit-sparse-pauli-op.md"
     }
   ]
 }

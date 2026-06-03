@@ -11,9 +11,14 @@ Raw source material lives under domain-specific `raw_data/` directories, for exa
 - `randomized_methods/raw_data/`
 - `interaction_picture/raw_data/`
 - `annealing/raw_data/`
+- `software/raw_data/`
 
 This layer contains converted paper markdown and provenance notes. It should preserve source content with minimal interpretation.
 Converted paper markdown may retain PDF extraction artifacts such as two-column ordering, broken equations, and spacing noise. That is acceptable for Layer 0 when the core claims, terminology, tables, and provenance remain searchable. Human-readable synthesis belongs in Layer 1 key points and the wiki surface, not in `raw_data/`.
+
+Software raw data stores converted or source-derived documentation for adapter
+APIs and the OpenQEvo execution bridge. This lets AS/RAG tooling cite software
+contracts directly instead of relying only on papers.
 
 ## Layer 1: Extracted knowledge
 
@@ -35,6 +40,7 @@ directories, for example:
 - `randomized_methods/wiki/`
 - `interaction_picture/wiki/`
 - `annealing/wiki/`
+- `software/wiki/`
 
 Wiki pages should cite Layer 1 key-point IDs as their evidence hooks. They
 should not be treated as primary evidence.

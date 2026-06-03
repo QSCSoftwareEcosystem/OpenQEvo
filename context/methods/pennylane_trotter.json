@@ -58,6 +58,18 @@
       "authors": "PennyLane contributors",
       "year": 2026,
       "url": "https://docs.pennylane.ai/en/stable/code/api/pennylane.TrotterProduct.html"
+    },
+    {
+      "title": "Local raw software docs for PennyLane TrotterProduct",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/pennylane-trotter-product.md"
+    },
+    {
+      "title": "Local raw software docs for PennyLane ApproxTimeEvolution",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/pennylane-approx-time-evolution.md"
     }
   ]
 }

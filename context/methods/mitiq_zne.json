@@ -73,6 +73,18 @@
       "year": 2022,
       "doi": "10.22331/q-2022-08-11-774",
       "url": "https://doi.org/10.22331/q-2022-08-11-774"
+    },
+    {
+      "title": "Local raw software docs for Mitiq ZNE guide",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/mitiq-zne-guide.md"
+    },
+    {
+      "title": "Local raw software docs for Mitiq API reference",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/mitiq-api-reference.md"
     }
   ]
 }

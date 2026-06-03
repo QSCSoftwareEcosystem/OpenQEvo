@@ -1,6 +1,7 @@
 """Tests for context JSON loading and schema validation."""
 
 import json
+import re
 from pathlib import Path
 
 import jsonschema
@@ -17,6 +18,7 @@ SELECTION_RULE_SCHEMA_PATH = CONTEXT_DIR / "schema" / "selection_rule.schema.jso
 WIKI_MANIFEST_SCHEMA_PATH = CONTEXT_DIR / "schema" / "wiki_manifest.schema.json"
 RECOMMENDATION_SCHEMA_PATH = CONTEXT_DIR / "schema" / "recommendation.schema.json"
 RECOMMENDATION_EXAMPLES_DIR = CONTEXT_DIR / "selection" / "recommendation_examples"
+SOFTWARE_SOURCE_INVENTORY_PATH = CONTEXT_DIR / "software" / "source_inventory.md"
 KEY_POINT_DIRS = (
     CONTEXT_DIR / "trotterization" / "key_points",
     CONTEXT_DIR / "randomized_methods" / "key_points",
@@ -115,6 +117,20 @@ class TestContextLoading:
             else:
                 assert method_name not in registered_methods
                 assert execution.get("non_executable_reason")
+
+    def test_method_local_references_exist(self):
+        """Method metadata can cite local context files, which must exist."""
+        for json_file in METHOD_CONTEXT_DIR.glob("*.json"):
+            with open(json_file) as f:
+                ctx = json.load(f)
+
+            for reference in ctx.get("references", []):
+                url = reference.get("url", "")
+                if url.startswith(".."):
+                    target = json_file.parent / url
+                    assert target.exists(), (
+                        f"{json_file} cites missing local reference {url}"
+                    )
 
     def test_key_points_validate_and_link_to_raw_data(self):
         """Extracted key points must validate and cite existing raw data."""
@@ -230,6 +246,17 @@ class TestContextLoading:
             with open(example_path) as f:
                 recommendation = json.load(f)
             jsonschema.validate(instance=recommendation, schema=schema)
+
+    def test_software_source_inventory_links_to_existing_raw_docs(self):
+        """Software source inventory must cite existing local raw docs."""
+        text = SOFTWARE_SOURCE_INVENTORY_PATH.read_text()
+        links = re.findall(r"\]\((raw_data/[^)]+\.md)\)", text)
+        assert links, "Expected software source inventory to link raw docs"
+
+        for link in links:
+            raw_doc = SOFTWARE_SOURCE_INVENTORY_PATH.parent / link
+            assert raw_doc.exists(), f"Missing software raw doc: {link}"
+            assert raw_doc.stat().st_size > 0, f"Empty software raw doc: {link}"
 
     def test_wiki_pages_reference_known_key_points(self):
         """Wiki pages should cite known key-point IDs when making claims."""
