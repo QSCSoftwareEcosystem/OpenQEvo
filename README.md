@@ -5,8 +5,10 @@ Algorithms Thrust and packages them into a well-engineered, documented,
 tested, and reproducible Python library.
 
 The first target is **Trotterization** — computing the quantum evolution
-operator $e^{-iHt}$ via product formulas. Future methods from the Algorithms
-Thrust will follow the same pattern established here.
+operator $e^{-iHt}$ via product formulas. The broader scope is quantum
+state/time-evolution strategies: product formulas, randomized evolution such
+as qDRIFT, interaction-picture or QIT-style evolution, annealing/adiabatic
+evolution, and exact reference evolution.
 
 ## Why this exists
 
@@ -21,7 +23,13 @@ other thrusts and external users can depend on.
 This repository is a **prototype** for how the Software Thrust integrates
 scientific code from other thrusts. openQSE defines the community
 specification; openQEvo is the first concrete software deliverable.
-If the model works here, it scales to other algorithm families.
+If the model works here, it scales to other quantum evolution strategy
+families.
+
+openQEvo does not own full variational workflows such as VQE or ADAPT-VQE.
+Those workflows may consume openQEvo evolution primitives, but optimizer
+orchestration, ansatz growth loops, and measurement/gradient workflows are
+outside this project's core scope.
 
 **Target release: v0.1.0 — June 2026.**
 
@@ -66,9 +74,12 @@ flowchart LR
 | Trotter-Suzuki (1st order) | Algorithms Thrust | First-order product formula for $e^{-iHt}$ | Placeholder |
 | Trotter-Suzuki (2nd order) | Algorithms Thrust | Symmetric product formula | Placeholder |
 | Exact | openQEvo | Direct matrix exponentiation (reference) | Done |
+| qDRIFT / randomized evolution | Algorithms Thrust | Randomized Hamiltonian evolution strategies | Planned |
+| QIT / interaction-picture evolution | Algorithms Thrust | Evolution using interaction-frame decompositions | Planned |
+| Annealing / adiabatic evolution | Algorithms Thrust | Schedule-based Hamiltonian evolution primitives | Planned |
 | Qiskit Trotter | Qiskit | `PauliEvolutionGate` + `SuzukiTrotter` synthesis | **Working** |
 | PennyLane Trotter | PennyLane | `TrotterProduct` decomposition | **Working** |
-| Qrack Trotter | Qrack (Unitary Foundation) | GPU-accelerated Trotter circuit execution | Stub |
+| Qrack Trotter | Qrack (Unitary Foundation) | Qrack-backed Trotter circuit execution | **Experimental** |
 
 ## Installation
 
@@ -86,7 +97,8 @@ pip install -e ".[dev]"
 # With adapters:
 pip install -e ".[qiskit]"      # Qiskit adapter
 pip install -e ".[pennylane]"   # PennyLane adapter
-pip install -e ".[adapters]"    # All adapters
+pip install -e ".[qrack]"       # Qrack adapter
+pip install -e ".[adapters]"    # Qiskit + PennyLane adapters
 ```
 
 ## Usage

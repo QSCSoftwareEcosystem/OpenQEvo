@@ -1,0 +1,34 @@
+{
+  "id": "adiabatic-schedule-gap-constraints",
+  "concept": "Adiabatic evolution depends on Hamiltonian interpolation, schedule, and minimum spectral gap",
+  "summary": "Adiabatic quantum evolution interpolates from an easy initial Hamiltonian to a problem Hamiltonian. The runtime needed to remain near the ground state depends on the schedule, Hamiltonian smoothness, and especially the minimum spectral gap along the path.",
+  "applies_to": [
+    "adiabatic quantum computation",
+    "annealing schedule design",
+    "ground-state preparation",
+    "optimization encoded as Hamiltonian ground states"
+  ],
+  "limitations": [
+    "The minimum gap is often difficult to estimate in general.",
+    "Schedule-based evolution requires an input contract different from the current terms/t execution bridge.",
+    "Annealing or adiabatic primitives should not be treated as implemented OpenQEvo methods until schedule and Hamiltonian-path APIs are defined."
+  ],
+  "implications": [
+    "Require initial Hamiltonian, final Hamiltonian, schedule, and total evolution time before making executable annealing recommendations.",
+    "Keep annealing as a planned family until OpenQEvo defines schedule-based execution metadata.",
+    "Use exact or small-system simulation to inspect gaps when possible."
+  ],
+  "related_methods": [
+    "exact"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-annealing-farhi-2000-quant-ph-0001106.md",
+      "note": "Introduces adiabatic computation by interpolating between initial and problem Hamiltonians and emphasizes dependence on the spectral gap."
+    },
+    {
+      "source": "../raw_data/openqevo-annealing-albash-lidar-2016-1611.04471.md",
+      "note": "Reviews adiabatic quantum computing, runtime, schedules, gaps, and variants of the adiabatic theorem."
+    }
+  ]
+}

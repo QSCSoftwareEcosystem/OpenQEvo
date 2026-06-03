@@ -1,0 +1,32 @@
+{
+  "id": "randomized-trotter-permutation-bounds",
+  "concept": "Randomly permuting product-formula term order can improve provable simulation bounds",
+  "summary": "Randomized product formulas simulate Hamiltonian evolution by varying the ordering of Hamiltonian summands across product-formula segments. This can improve provable error and gate-complexity bounds compared with deterministic product formulas of the same order, while keeping the circuit model close to ordinary Trotter-Suzuki evolution.",
+  "applies_to": [
+    "Hamiltonians decomposable into ordered summands",
+    "product-formula simulations where term ordering is flexible",
+    "large-term-count Hamiltonians",
+    "benchmarking deterministic versus randomized Trotter variants"
+  ],
+  "limitations": [
+    "Randomized product formulas still require convergence checks over segment count and random choices.",
+    "The improvement can depend on system size, order, Hamiltonian structure, and whether empirical or rigorous error bounds are used.",
+    "This family is not yet implemented as a distinct OpenQEvo method."
+  ],
+  "implications": [
+    "Use this evidence to justify future randomized Trotter or permuted product-formula method metadata.",
+    "Keep current executable recommendations focused on qDRIFT until randomized Trotter variants are registered.",
+    "If implemented, expose random seed, product-formula order, segment count, and term-ordering policy in recommendations."
+  ],
+  "related_methods": [
+    "trotter_s1",
+    "trotter_s2",
+    "qdrift"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-randomized-random-trotter-childs-2019-1805.08385.md",
+      "note": "Analyzes randomized product formulas obtained by randomly permuting Hamiltonian summands and compares their bounds and empirical performance against deterministic product formulas."
+    }
+  ]
+}

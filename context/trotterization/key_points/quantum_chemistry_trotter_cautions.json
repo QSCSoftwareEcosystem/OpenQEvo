@@ -1,0 +1,39 @@
+{
+  "id": "quantum-chemistry-trotter-cautions",
+  "concept": "Trotterized quantum chemistry ansatzes can violate expected chemical properties",
+  "summary": "Low-order or poorly controlled Trotterization can introduce large numerical differences and property violations in quantum chemistry workflows, including orbital-sensitivity and size-consistency issues.",
+  "applies_to": [
+    "VQE-UCCSD",
+    "QPE-based full-CI",
+    "electronic-structure Hamiltonians",
+    "size-consistency sensitive applications"
+  ],
+  "limitations": [
+    "The concern is application-sensitive; it does not imply all Trotterized quantum chemistry workflows fail.",
+    "Mitigations can include localized orbitals, controlled decomposition choices, additional Trotter steps, or exact small-system benchmarking."
+  ],
+  "implications": [
+    "Do not recommend low-order Trotterization blindly for size-consistency-sensitive chemistry tasks.",
+    "Ask for molecular orbital convention, accuracy target, and whether size consistency matters.",
+    "Use exact evolution on small fragments or benchmark systems when feasible."
+  ],
+  "related_methods": [
+    "trotter_s1",
+    "trotter_s2",
+    "exact"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-trotter-grimsley-2020-1910.10329.md",
+      "note": "Reports large differences between Trotterized UCCSD wavefunctions and questions chemical well-definedness."
+    },
+    {
+      "source": "../raw_data/openqevo-trotter-sugisaki-fmo-2024-2402.17993.md",
+      "note": "Discusses size-consistency and orbital-invariance issues in VQE-UCCSD calculations."
+    },
+    {
+      "source": "../raw_data/openqevo-trotter-sugisaki-qpe-2024-2406.09830.md",
+      "note": "Studies size consistency in QPE full-CI with Trotter decomposition."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "trotter-alternatives-and-hybrid-methods",
+  "concept": "Interaction-picture and hybrid simulation methods can outperform direct Trotterization for some Hamiltonians",
+  "summary": "When a Hamiltonian has a natural dominant component, time dependence, or unfavorable direct product-formula scaling, interaction-picture and hybrid approaches can reduce resource requirements compared with direct Trotterization.",
+  "applies_to": [
+    "Hamiltonians with dominant exactly simulable terms",
+    "time-dependent or interaction-picture-friendly systems",
+    "applications where direct Trotter depth is too high"
+  ],
+  "limitations": [
+    "These alternatives may require additional implementation support beyond the current OpenQEvo native methods.",
+    "Some alternatives trade circuit depth for oracle, ancilla, or decomposition complexity."
+  ],
+  "implications": [
+    "If direct Trotterization is impractical, mark the recommendation as conditional and identify missing method support.",
+    "Use the method-selection layer to distinguish current implementation availability from literature-supported suitability."
+  ],
+  "related_methods": [
+    "trotter_s1",
+    "trotter_s2"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-trotter-rajput-2022-q-2022-08-17-780.md",
+      "note": "Compares hybrid interaction-picture simulation strategies against standard Trotterization."
+    },
+    {
+      "source": "../raw_data/openqevo-trotter-mehendale-2025-2312.13282.md",
+      "note": "Discusses resource efficiency and comparison points for Hamiltonian simulation methods."
+    }
+  ]
+}

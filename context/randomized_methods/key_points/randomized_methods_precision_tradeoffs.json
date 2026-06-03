@@ -1,0 +1,34 @@
+{
+  "id": "randomized-methods-precision-tradeoffs",
+  "concept": "Randomized Hamiltonian simulation variants trade sample cost, precision scaling, and circuit structure",
+  "summary": "qDRIFT provides a simple randomized product formula, while related methods such as stochastic Hamiltonian sparsification and qSWIFT modify the randomized compilation strategy to improve performance in intermediate gate-budget or high-precision regimes.",
+  "applies_to": [
+    "large Hamiltonian term sets",
+    "high-precision Hamiltonian simulation",
+    "sampling-based observable estimation",
+    "randomized compiler comparisons"
+  ],
+  "limitations": [
+    "qSWIFT introduces additional structure, including an ancilla-based construction in the cited source.",
+    "Stochastic sparsification changes the simulated Hamiltonian distribution and requires probability choices for retained terms.",
+    "These variants are not yet implemented as OpenQEvo methods."
+  ],
+  "implications": [
+    "Treat qDRIFT as the currently executable randomized baseline.",
+    "Use qSWIFT and sparsification sources to guide future randomized-method metadata and implementation decisions.",
+    "Do not recommend qSWIFT or sparsification as executable until registered methods exist."
+  ],
+  "related_methods": [
+    "qdrift"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-randomized-qswift-2023-2302.14811.md",
+      "note": "Describes qSWIFT as a higher-order randomized compiler with improved precision scaling relative to qDRIFT."
+    },
+    {
+      "source": "../raw_data/openqevo-randomized-sparsification-campbell-2019-1910.06255.md",
+      "note": "Describes stochastic Hamiltonian sparsification as interpolating between qDRIFT and randomized first-order Trotterization."
+    }
+  ]
+}

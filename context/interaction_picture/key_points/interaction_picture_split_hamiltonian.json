@@ -1,0 +1,37 @@
+{
+  "id": "interaction-picture-split-hamiltonian",
+  "concept": "Interaction-picture simulation separates dominant and interaction Hamiltonian components",
+  "summary": "For Hamiltonians that can be written as a dominant component plus an interaction component, the interaction picture can transform the problem into time-dependent evolution where complexity depends more favorably on the interaction component when the dominant part is cheaply evolvable.",
+  "applies_to": [
+    "Hamiltonians with a dominant exactly or cheaply simulable component",
+    "diagonally dominant Hamiltonians",
+    "Hubbard-model simulations",
+    "plane-wave quantum chemistry simulations",
+    "time-dependent Hamiltonian simulation"
+  ],
+  "limitations": [
+    "Requires a meaningful split of the Hamiltonian into dominant and interaction components.",
+    "Requires an implementation contract beyond the current simple terms/t interface.",
+    "Uses time-dependent simulation machinery, so implementation complexity is higher than direct product formulas."
+  ],
+  "implications": [
+    "Do not implement interaction-picture evolution until OpenQEvo defines a split-Hamiltonian input contract.",
+    "Consider this family when direct Trotterization is too expensive because of a large but cheaply evolvable dominant component.",
+    "Treat interaction-picture recommendations as non-executable until method metadata and software registration exist."
+  ],
+  "related_methods": [
+    "trotter_s1",
+    "trotter_s2",
+    "qdrift"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-interaction-low-wiebe-2018-1805.00675.md",
+      "note": "Develops Hamiltonian simulation in the interaction picture and analyzes favorable complexity tradeoffs for split Hamiltonians."
+    },
+    {
+      "source": "../../trotterization/raw_data/openqevo-trotter-rajput-2022-q-2022-08-17-780.md",
+      "note": "Existing trotterization source covering hybridized interaction-picture simulation methods."
+    }
+  ]
+}

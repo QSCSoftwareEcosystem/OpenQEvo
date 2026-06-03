@@ -1,0 +1,32 @@
+{
+  "id": "noisy-hardware-error-mitigation",
+  "concept": "Error mitigation can improve noisy hardware evolution results",
+  "summary": "For circuit-based quantum evolution on noisy hardware or noisy simulators, quantum error mitigation such as readout mitigation and zero-noise extrapolation can improve measured observables or fidelities, but it is a wrapper around a base evolution strategy rather than a replacement for one.",
+  "applies_to": [
+    "noisy quantum hardware",
+    "noisy simulators",
+    "Trotterized evolution circuits",
+    "observable estimation workflows"
+  ],
+  "limitations": [
+    "Does not remove product-formula or Hamiltonian-discretization error.",
+    "Requires additional circuit executions and shot budget.",
+    "Performance depends on backend noise, observable, extrapolation model, and scaling method."
+  ],
+  "implications": [
+    "Recommend error mitigation when the backend is noisy hardware or a noisy simulator and the user cares about measured observables.",
+    "Keep the base evolution method recommendation separate from the mitigation wrapper.",
+    "Use Mitiq-style zero-noise extrapolation as planned support until implementation and tests exist."
+  ],
+  "related_methods": [
+    "mitiq_zne",
+    "trotter_s1",
+    "trotter_s2"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-trotter-yang-2025-2505.04552.md",
+      "note": "Reports use of readout mitigation and Mitiq-provided zero-noise extrapolation for hardware validation of Trotterized many-body dynamics."
+    }
+  ]
+}

@@ -31,7 +31,7 @@ gantt
         AI orchestration design (AS)           :as1, 2026-05-01, 2026-05-22
 
     section Release (May–Jun)
-        Qrack adapter (Unitary Foundation)     :qr1, 2026-05-01, 2026-05-22
+        Qrack adapter (Unitary Foundation)     :done, qr1, 2026-05-01, 2026-05-22
         Spack recipe                           :se2, 2026-05-15, 2026-05-29
         Documentation & examples               :doc1, 2026-05-22, 2026-06-12
 
@@ -60,7 +60,7 @@ gantt
 |---------|---------|--------|-------|
 | `qiskit_trotter` | Qiskit | **Working** | 9 passing |
 | `pennylane_trotter` | PennyLane | **Working** | 9 passing |
-| `qrack_trotter` | Qrack (Unitary Foundation) | Stub | — |
+| `qrack_trotter` | Qrack (Unitary Foundation) | **Experimental** | 7 passing + real PyQrack CPU validation |
 
 ### Core — April/May 2026
 
@@ -75,7 +75,7 @@ gantt
 
 | Task | Owner | Status |
 |------|-------|--------|
-| Qrack adapter implementation | Unitary Foundation collab | Pending |
+| Qrack adapter implementation | Unitary Foundation collab | Implemented; GPU/OpenCL validation pending host runtime |
 | Spack recipe | SE | Pending |
 | Documentation & examples | All | Ongoing |
 
@@ -85,7 +85,7 @@ gantt
 |-------------|-------------|
 | `openqevo` v0.1.0 on PyPI | Pip-installable package |
 | Spack recipe in `spack-packages/` | HPC-installable |
-| 2 working adapters (Qiskit, PennyLane) | External library integration |
+| 2 working adapters (Qiskit, PennyLane) + experimental Qrack | External library integration |
 | Context JSON for all methods | AI-ready metadata |
 | CI/CD green | Lint + test + docs build |
 

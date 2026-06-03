@@ -17,6 +17,8 @@ from openqevo.base import EvolutionMethod
 _METHODS: dict[str, type[EvolutionMethod]] = {}
 
 CONTEXT_DIR = Path(__file__).resolve().parent.parent.parent / "context"
+METHOD_CONTEXT_DIR = CONTEXT_DIR / "methods"
+METHOD_SCHEMA_PATH = CONTEXT_DIR / "schema" / "method.schema.json"
 
 _settings: dict = {
     "context_validation": True,
@@ -80,9 +82,8 @@ def list_methods_detail() -> list[dict[str, str]]:
 
 
 def _validate_context(ctx: dict) -> None:
-    """Validate a context dict against context/schema.json."""
-    schema_path = CONTEXT_DIR / "schema.json"
-    with open(schema_path) as f:
+    """Validate a method context dict against context/schema/method.schema.json."""
+    with open(METHOD_SCHEMA_PATH) as f:
         schema = json.load(f)
     jsonschema.validate(instance=ctx, schema=schema)
 
@@ -90,22 +91,24 @@ def _validate_context(ctx: dict) -> None:
 def get_context(name: str, validate: bool | None = None) -> dict[str, Any] | None:
     """Load context JSON for a method, if it exists.
 
-    Looks for ``context/{name}.json``.
+    Looks for ``context/methods/{name}.json``.
 
     Parameters
     ----------
     name : str
         Registered method name.
     validate : bool or None
-        Whether to validate against schema.json. If None, uses the global
-        ``_settings["context_validation"]`` value (default True).
+        Whether to validate against the method schema. If None, uses the
+        global ``_settings["context_validation"]`` value (default True).
     """
-    path = CONTEXT_DIR / f"{name}.json"
+    path = METHOD_CONTEXT_DIR / f"{name}.json"
     if not path.exists():
         return None
     with open(path) as f:
         ctx = json.load(f)
-    should_validate = validate if validate is not None else _settings["context_validation"]
+    should_validate = (
+        validate if validate is not None else _settings["context_validation"]
+    )
     if should_validate:
         _validate_context(ctx)
     return ctx

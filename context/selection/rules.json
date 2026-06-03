@@ -1,0 +1,205 @@
+{
+  "id": "openqevo-quantum-evolution-selection-v0",
+  "input_profile": {
+    "application": "quantum evolution method recommendation",
+    "hamiltonian_features": [
+      "representation",
+      "num_qubits",
+      "num_terms",
+      "locality",
+      "commutation_structure",
+      "time_dependence",
+      "domain"
+    ],
+    "task_constraints": [
+      "goal",
+      "accuracy_target",
+      "backend",
+      "depth_budget",
+      "property_constraints"
+    ]
+  },
+  "rules": [
+    {
+      "id": "small-reference-use-exact",
+      "when": [
+        "goal is benchmark or convergence study",
+        "full matrix exponentiation is tractable",
+        "user needs reference accuracy"
+      ],
+      "recommendation": {
+        "method": "exact",
+        "confidence": "high",
+        "parameters": {}
+      },
+      "avoid": [
+        "Presenting exact evolution as a scalable quantum algorithm"
+      ],
+      "rationale": [
+        "Exact evolution is appropriate as a classical reference and avoids product-formula error."
+      ],
+      "key_points": [
+        "trotter-error-commutator-scaling"
+      ]
+    },
+    {
+      "id": "shallow-baseline-use-first-order",
+      "when": [
+        "Hamiltonian is local or sparse",
+        "depth budget is strict",
+        "task is exploratory or baseline simulation",
+        "accuracy target is low or moderate"
+      ],
+      "recommendation": {
+        "method": "trotter_s1",
+        "confidence": "medium",
+        "parameters": {
+          "steps": "start with a convergence sweep"
+        }
+      },
+      "avoid": [
+        "Using a single unvalidated step count for final accuracy claims"
+      ],
+      "rationale": [
+        "First-order Trotterization has the lowest per-step circuit cost but slower convergence."
+      ],
+      "key_points": [
+        "trotter-order-depth-tradeoff",
+        "trotter-error-commutator-scaling"
+      ]
+    },
+    {
+      "id": "accuracy-with-moderate-depth-use-second-order",
+      "when": [
+        "Hamiltonian is decomposable into terms",
+        "first-order error is unacceptable",
+        "depth budget is moderate or relaxed",
+        "accuracy target is moderate or high"
+      ],
+      "recommendation": {
+        "method": "trotter_s2",
+        "confidence": "medium",
+        "parameters": {
+          "steps": "sweep until observable or state error converges"
+        }
+      },
+      "avoid": [
+        "Assuming second order is enough for strongly non-commuting dense Hamiltonians"
+      ],
+      "rationale": [
+        "Second-order symmetric product formulas reduce leading error terms at higher per-step cost."
+      ],
+      "key_points": [
+        "trotter-order-depth-tradeoff",
+        "trotter-error-commutator-scaling"
+      ]
+    },
+    {
+      "id": "many-term-hamiltonian-use-qdrift-baseline",
+      "when": [
+        "Hamiltonian is decomposable into weighted terms",
+        "Hamiltonian has many terms or deterministic term traversal is expensive",
+        "randomized product-formula sampling is acceptable",
+        "task can tolerate convergence sweeps over sample count or repeated seeds"
+      ],
+      "recommendation": {
+        "method": "qdrift",
+        "confidence": "medium",
+        "parameters": {
+          "samples": "sweep sample count until observable or state error converges",
+          "seed": "set for reproducibility during benchmarking"
+        }
+      },
+      "avoid": [
+        "Treating one sampled unitary as a deterministic final answer",
+        "Ignoring stochastic variance in observable estimates",
+        "Assuming term-count independence removes dependence on total Hamiltonian weight"
+      ],
+      "rationale": [
+        "qDRIFT samples terms according to weights and can avoid deterministic traversal over every Hamiltonian term, making it a useful executable randomized baseline for large-term Hamiltonians."
+      ],
+      "key_points": [
+        "qdrift-randomized-scaling",
+        "randomized-methods-precision-tradeoffs"
+      ]
+    },
+    {
+      "id": "chemistry-size-consistency-warning",
+      "when": [
+        "domain is quantum chemistry",
+        "task involves VQE-UCCSD or QPE full-CI",
+        "property constraints include size consistency or orbital invariance"
+      ],
+      "recommendation": {
+        "method": "trotter_s2",
+        "confidence": "low",
+        "parameters": {
+          "steps": "benchmark against exact where tractable and test decomposition choices"
+        }
+      },
+      "avoid": [
+        "Blind low-order Trotter recommendations",
+        "Ignoring orbital localization and decomposition order"
+      ],
+      "rationale": [
+        "Quantum chemistry applications can expose size-consistency and orbital-invariance issues under Trotterization."
+      ],
+      "key_points": [
+        "quantum-chemistry-trotter-cautions",
+        "trotter-error-commutator-scaling"
+      ]
+    },
+    {
+      "id": "direct-trotter-impractical-flag-alternatives",
+      "when": [
+        "Hamiltonian is time dependent or has a dominant exactly simulable component",
+        "direct Trotter depth is impractical",
+        "oracle or hybrid method support is acceptable"
+      ],
+      "recommendation": {
+        "method": "trotter_s2",
+        "confidence": "low",
+        "parameters": {
+          "steps": "use only as a baseline while evaluating alternatives"
+        }
+      },
+      "avoid": [
+        "Overstating current native support for non-native hybrid methods"
+      ],
+      "rationale": [
+        "Interaction-picture and hybrid methods may be better suited, but current executable OpenQEvo coverage is limited to exact, Trotter-style methods, qDRIFT, and registered third-party Trotter adapters."
+      ],
+      "key_points": [
+        "trotter-alternatives-and-hybrid-methods",
+        "interaction-picture-split-hamiltonian"
+      ]
+    },
+    {
+      "id": "noisy-backend-recommend-error-mitigation-wrapper",
+      "when": [
+        "backend is noisy simulator or quantum hardware",
+        "task reports measured observables or state fidelity",
+        "base evolution circuit is available"
+      ],
+      "recommendation": {
+        "method": "mitiq_zne",
+        "confidence": "low",
+        "parameters": {
+          "base_method": "select separately from evolution-method rules",
+          "scale_factors": [1.0, 2.0, 3.0],
+          "factory": "linear"
+        }
+      },
+      "avoid": [
+        "Treating error mitigation as a standalone evolution strategy",
+        "Using mitigation to compensate for unvalidated algorithmic Trotter error"
+      ],
+      "rationale": [
+        "Noisy backend execution can benefit from mitigation wrappers, but the base evolution strategy and its algorithmic error must still be selected and validated separately."
+      ],
+      "key_points": [
+        "noisy-hardware-error-mitigation"
+      ]
+    }
+  ]
+}

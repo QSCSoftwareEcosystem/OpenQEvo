@@ -1,0 +1,78 @@
+{
+  "method_name": "mitiq_zne",
+  "description": "Planned Mitiq-backed zero-noise extrapolation wrapper for noisy quantum evolution circuits. This is not a standalone evolution method; it post-processes results from an evolution circuit executed on a noisy simulator or hardware backend.",
+  "source": "mitiq",
+  "applicable_hamiltonians": [
+    "Any Hamiltonian whose evolution circuit can be executed on a Mitiq-compatible backend",
+    "Near-term quantum hardware experiments",
+    "Noisy simulator experiments",
+    "Trotterized or other circuit-based evolution methods"
+  ],
+  "limitations": [
+    "Not a state evolution strategy by itself; requires a base evolution method and executor",
+    "Requires repeated circuit executions at multiple noise scale factors",
+    "Improves noise-affected observables statistically but does not remove algorithmic approximation error",
+    "Effectiveness depends on the backend noise model, observable, shot budget, and extrapolation fit"
+  ],
+  "parameters": {
+    "base_method": {
+      "type": "string",
+      "description": "Evolution method used to generate the base circuit or observable workflow.",
+      "required": true
+    },
+    "scale_factors": {
+      "type": "list[float]",
+      "description": "Noise scale factors used for zero-noise extrapolation.",
+      "required": false,
+      "default": [1.0, 2.0, 3.0]
+    },
+    "factory": {
+      "type": "string",
+      "description": "Extrapolation model, such as linear, polynomial, or exponential.",
+      "required": false,
+      "default": "linear"
+    },
+    "shots": {
+      "type": "int",
+      "description": "Number of shots per scaled circuit execution.",
+      "required": false,
+      "range": { "min": 1 }
+    }
+  },
+  "execution": {
+    "implemented": false,
+    "method_name": "mitiq_zne",
+    "adapter_name": "mitiq",
+    "entrypoint": "planned: openqevo.get(\"mitiq_zne\").evolve(terms, t, **parameters)",
+    "input_representation": [
+      "base_evolution_recommendation",
+      "mitiq_compatible_circuit_executor"
+    ],
+    "required_arguments": [
+      "base_method",
+      "executor",
+      "observable"
+    ],
+    "backend_requirements": [
+      "Mitiq",
+      "noisy simulator or quantum hardware executor",
+      "compatible base evolution circuit"
+    ],
+    "returns": "Planned mitigated observable estimate.",
+    "non_executable_reason": "No registered OpenQEvo method or adapter currently implements mitiq_zne."
+  },
+  "complexity": {
+    "gate_count": "N/A as a post-processing wrapper; circuit executions are multiplied by the number of noise scale factors",
+    "circuit_depth": "Depends on the base evolution circuit and noise-scaling strategy",
+    "error_scaling": "Mitigates stochastic hardware or simulator noise in measured observables; does not change base method algorithmic error scaling"
+  },
+  "references": [
+    {
+      "title": "Mitiq: A software package for error mitigation on noisy quantum computers",
+      "authors": "R. LaRose, A. Mari, S. Kaiser, P. J. Karalekas, A. A. Alves, P. Czarnik, M. E. Mandouh, M. H. Gordon, Y. Hindy, A. Robertson, P. Thakre, M. Wahl, D. Samuel, R. Mistri, M. Tremblay, N. Gardner, N. T. Stemen, N. Shammah, W. J. Zeng",
+      "year": 2022,
+      "doi": "10.22331/q-2022-08-11-774",
+      "url": "https://doi.org/10.22331/q-2022-08-11-774"
+    }
+  ]
+}

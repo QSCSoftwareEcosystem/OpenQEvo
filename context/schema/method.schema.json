@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/QSCSoftwareThrust/OpenQEvo/context/schema.json",
+  "$id": "https://github.com/QSCSoftwareThrust/OpenQEvo/context/schema/method.schema.json",
   "title": "openQEvo Method Context",
   "description": "Schema for structured metadata describing a quantum evolution method. Draft v0.1 — will be refined by DS (issue #2).",
   "type": "object",
@@ -46,6 +46,57 @@
               "max": { "type": "number" }
             }
           }
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "description": "Contract for mapping a recommendation to an executable OpenQEvo call.",
+      "required": [
+        "implemented",
+        "method_name",
+        "input_representation",
+        "entrypoint"
+      ],
+      "properties": {
+        "implemented": {
+          "type": "boolean",
+          "description": "Whether this method is currently registered and executable in OpenQEvo."
+        },
+        "method_name": {
+          "type": "string",
+          "description": "Executable registry key accepted by openqevo.get(name)."
+        },
+        "adapter_name": {
+          "type": "string",
+          "description": "Optional adapter or backend grouping label."
+        },
+        "entrypoint": {
+          "type": "string",
+          "description": "Execution entrypoint for implemented methods."
+        },
+        "input_representation": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Supported input representations for the terms argument."
+        },
+        "required_arguments": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Arguments required by the execution entrypoint."
+        },
+        "backend_requirements": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Backend, dependency, or runtime requirements."
+        },
+        "returns": {
+          "type": "string",
+          "description": "Expected return type or high-level return description."
+        },
+        "non_executable_reason": {
+          "type": "string",
+          "description": "Reason this metadata is not executable yet, if implemented is false."
         }
       }
     },

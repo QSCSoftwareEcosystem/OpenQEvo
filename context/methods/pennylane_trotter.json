@@ -1,0 +1,63 @@
+{
+  "method_name": "pennylane_trotter",
+  "description": "PennyLane-backed Trotter product evolution using qml.TrotterProduct after decomposing matrix terms into Pauli operators.",
+  "source": "pennylane",
+  "applicable_hamiltonians": [
+    "Dense matrix Hamiltonian terms convertible to PennyLane Pauli operators",
+    "Pauli sum Hamiltonians",
+    "Local or sparse Hamiltonians suitable for PennyLane workflows"
+  ],
+  "limitations": [
+    "Requires PennyLane to be installed",
+    "Input terms must be square Hermitian matrices with power-of-two dimension",
+    "Large dense matrices can make Pauli decomposition expensive",
+    "Single-term Hamiltonians are handled with exact qml.exp rather than TrotterProduct"
+  ],
+  "parameters": {
+    "steps": {
+      "type": "int",
+      "description": "Number of Trotter repetitions.",
+      "required": true,
+      "range": { "min": 1 }
+    },
+    "order": {
+      "type": "int",
+      "description": "Trotter product order passed to PennyLane.",
+      "required": false,
+      "default": 2,
+      "range": { "min": 1 }
+    }
+  },
+  "execution": {
+    "implemented": true,
+    "method_name": "pennylane_trotter",
+    "adapter_name": "pennylane",
+    "entrypoint": "openqevo.get(\"pennylane_trotter\").evolve(terms, t, **parameters)",
+    "input_representation": [
+      "matrix_terms"
+    ],
+    "required_arguments": [
+      "terms",
+      "t",
+      "steps"
+    ],
+    "backend_requirements": [
+      "pennylane optional dependency",
+      "classical Python runtime"
+    ],
+    "returns": "Approximate time-evolution unitary matrix synthesized through PennyLane."
+  },
+  "complexity": {
+    "gate_count": "Depends on number of Pauli terms after decomposition, product formula order, and steps",
+    "circuit_depth": "Depends on PennyLane TrotterProduct expansion, product formula order, and steps",
+    "error_scaling": "Product-formula error depends on order, step count, simulation time, and commutator structure"
+  },
+  "references": [
+    {
+      "title": "PennyLane TrotterProduct documentation",
+      "authors": "PennyLane contributors",
+      "year": 2026,
+      "url": "https://docs.pennylane.ai/en/stable/code/api/pennylane.TrotterProduct.html"
+    }
+  ]
+}

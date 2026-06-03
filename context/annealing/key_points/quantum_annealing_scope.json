@@ -1,0 +1,34 @@
+{
+  "id": "quantum-annealing-scope",
+  "concept": "Quantum annealing is schedule-based analog evolution for optimization-like Hamiltonians",
+  "summary": "Quantum annealing uses quantum fluctuations, commonly through transverse-field-style terms, to explore optimization landscapes while annealing toward a classical cost Hamiltonian. It is related to but not identical with gate-model time-evolution product formulas.",
+  "applies_to": [
+    "optimization Hamiltonians",
+    "Ising or spin-glass cost functions",
+    "analog quantum computation",
+    "annealing schedule studies"
+  ],
+  "limitations": [
+    "Annealing targets optimization or ground-state preparation rather than generic unitary time evolution.",
+    "Hardware and schedule constraints matter strongly.",
+    "OpenQEvo needs a project-scope decision before implementing annealing as a native method."
+  ],
+  "implications": [
+    "Do not force annealing into the current terms/t execution helper.",
+    "Represent annealing recommendations as planned or non-executable until a schedule API exists.",
+    "Separate annealing primitives from full optimization workflow ownership."
+  ],
+  "related_methods": [
+    "exact"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-annealing-das-chakrabarti-2008-0801.2193.md",
+      "note": "Reviews quantum annealing as an optimization and analog quantum computation framework using quantum fluctuations."
+    },
+    {
+      "source": "../raw_data/openqevo-annealing-albash-lidar-2016-1611.04471.md",
+      "note": "Distinguishes AQC, stoquastic AQC, and quantum annealing settings in a broader adiabatic computing review."
+    }
+  ]
+}

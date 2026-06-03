@@ -1,0 +1,75 @@
+{
+  "method_name": "qdrift",
+  "description": "qDRIFT-style randomized product formula for Hamiltonian time evolution. Samples Hamiltonian terms according to term weights and applies a randomized sequence of single-term exponentials.",
+  "source": "algorithms-thrust",
+  "applicable_hamiltonians": [
+    "Hamiltonians decomposable into a list of Hermitian matrix terms",
+    "Pauli sum Hamiltonians after conversion to matrix terms",
+    "Hamiltonians where randomized product formulas are useful as a depth or sampling tradeoff",
+    "Exploratory simulations comparing deterministic and randomized evolution"
+  ],
+  "limitations": [
+    "Returns one sampled dense unitary, so results are stochastic unless seed is fixed",
+    "Requires enough samples for convergence of observables or state evolution",
+    "Current implementation exponentiates dense matrix terms classically",
+    "Does not directly expose circuit-level randomized sampling yet",
+    "Accuracy depends on sample count, total evolution time, term norms, and observable"
+  ],
+  "parameters": {
+    "samples": {
+      "type": "int",
+      "description": "Number of qDRIFT samples in the randomized product formula.",
+      "required": true,
+      "range": { "min": 1 }
+    },
+    "steps": {
+      "type": "int",
+      "description": "Alias for samples, accepted for compatibility with other product-formula methods.",
+      "required": false,
+      "range": { "min": 1 }
+    },
+    "seed": {
+      "type": "int",
+      "description": "Random seed for reproducible term sampling.",
+      "required": false
+    },
+    "term_weights": {
+      "type": "list[float]",
+      "description": "Optional non-negative sampling weights for Hamiltonian terms. Defaults to spectral norms of the terms.",
+      "required": false
+    }
+  },
+  "execution": {
+    "implemented": true,
+    "method_name": "qdrift",
+    "entrypoint": "openqevo.get(\"qdrift\").evolve(terms, t, **parameters)",
+    "input_representation": [
+      "matrix_terms"
+    ],
+    "required_arguments": [
+      "terms",
+      "t",
+      "samples"
+    ],
+    "backend_requirements": [
+      "classical Python runtime",
+      "NumPy/SciPy-compatible dense matrix operations"
+    ],
+    "returns": "Sampled dense unitary time-evolution matrix from randomized qDRIFT evolution."
+  },
+  "complexity": {
+    "gate_count": "O(N) sampled exponentials where N = samples, for an eventual circuit implementation",
+    "circuit_depth": "O(N) sampled term evolutions where N = samples",
+    "error_scaling": "Randomized product-formula error depends on total term weight, simulation time, sample count, and target observable"
+  },
+  "references": [
+    {
+      "title": "A random compiler for fast Hamiltonian simulation",
+      "authors": "E. Campbell",
+      "year": 2019,
+      "doi": "10.1103/PhysRevLett.123.070503",
+      "url": "https://doi.org/10.1103/PhysRevLett.123.070503"
+    }
+  ],
+  "example_path": "examples/recommendation_execution.py"
+}
