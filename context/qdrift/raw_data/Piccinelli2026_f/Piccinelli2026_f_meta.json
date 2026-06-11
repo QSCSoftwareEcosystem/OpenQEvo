@@ -1,0 +1,1424 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Quantum chemistry with provable convergence via\nrandomized sample-based Krylov quantum diagonalization",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          133.5,
+          51.8203125
+        ],
+        [
+          480.75,
+          51.8203125
+        ],
+        [
+          480.75,
+          76.5703125
+        ],
+        [
+          133.5,
+          76.5703125
+        ]
+      ]
+    },
+    {
+      "title": "I. INTRODUCTION",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          122.51953125,
+          408.75
+        ],
+        [
+          228.75,
+          408.75
+        ],
+        [
+          228.75,
+          418.81640625
+        ],
+        [
+          122.51953125,
+          418.81640625
+        ]
+      ]
+    },
+    {
+      "title": "II. THEORY",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          404.25,
+          407.21484375
+        ],
+        [
+          473.34375,
+          407.21484375
+        ],
+        [
+          473.34375,
+          416.25
+        ],
+        [
+          404.25,
+          416.25
+        ]
+      ]
+    },
+    {
+      "title": "A. Sample-based Krylov Quantum Diagonalization",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          316.16015625,
+          431.96484375
+        ],
+        [
+          561.0,
+          431.96484375
+        ],
+        [
+          561.0,
+          441.75
+        ],
+        [
+          316.16015625,
+          441.75
+        ]
+      ]
+    },
+    {
+      "title": "B. The qDRIFT compilation protocol",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          346.04296875,
+          467.25
+        ],
+        [
+          530.25,
+          467.25
+        ],
+        [
+          530.25,
+          477.59765625
+        ],
+        [
+          346.04296875,
+          477.59765625
+        ]
+      ]
+    },
+    {
+      "title": "C. The SqDRIFT algorithm",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          370.845703125,
+          189.87890625
+        ],
+        [
+          508.904296875,
+          189.87890625
+        ],
+        [
+          508.904296875,
+          198.75
+        ],
+        [
+          370.845703125,
+          198.75
+        ]
+      ]
+    },
+    {
+      "title": "III. COMPUTATIONAL PIPELINE",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          348.43359375,
+          490.74609375
+        ],
+        [
+          528.75,
+          490.74609375
+        ],
+        [
+          528.75,
+          500.25
+        ],
+        [
+          348.43359375,
+          500.25
+        ]
+      ]
+    },
+    {
+      "title": "A. The sampling protocol",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          374.1328125,
+          595.93359375
+        ],
+        [
+          503.25,
+          595.93359375
+        ],
+        [
+          503.25,
+          605.25
+        ],
+        [
+          374.1328125,
+          605.25
+        ]
+      ]
+    },
+    {
+      "title": "B. The fermion-to-qubit mapping",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          358.59375,
+          396.0
+        ],
+        [
+          521.25,
+          396.0
+        ],
+        [
+          521.25,
+          406.44140625
+        ],
+        [
+          358.59375,
+          406.44140625
+        ]
+      ]
+    },
+    {
+      "title": "C. Circuit Synthesis",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          124.611328125,
+          577.37109375
+        ],
+        [
+          226.810546875,
+          577.37109375
+        ],
+        [
+          226.810546875,
+          587.25
+        ],
+        [
+          124.611328125,
+          588.0
+        ]
+      ]
+    },
+    {
+      "title": "D. Extending the quantum subspace",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          350.25,
+          54.140625
+        ],
+        [
+          528.0,
+          54.140625
+        ],
+        [
+          528.0,
+          63.75
+        ],
+        [
+          350.25,
+          63.75
+        ]
+      ]
+    },
+    {
+      "title": "IV. RESULTS",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          400.4296875,
+          446.25
+        ],
+        [
+          476.25,
+          446.25
+        ],
+        [
+          476.25,
+          455.94140625
+        ],
+        [
+          400.4296875,
+          455.94140625
+        ]
+      ]
+    },
+    {
+      "title": "A. Classical simulations",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          118.037109375,
+          298.16015625
+        ],
+        [
+          235.775390625,
+          298.16015625
+        ],
+        [
+          235.775390625,
+          306.75
+        ],
+        [
+          118.037109375,
+          306.75
+        ]
+      ]
+    },
+    {
+      "title": "B. Hardware experiments",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          376.5234375,
+          611.40234375
+        ],
+        [
+          503.25,
+          611.40234375
+        ],
+        [
+          503.25,
+          621.0
+        ],
+        [
+          376.5234375,
+          621.0
+        ]
+      ]
+    },
+    {
+      "title": "1. Naphthalene",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          143.138671875,
+          473.25
+        ],
+        [
+          210.0,
+          473.25
+        ],
+        [
+          210.0,
+          483.78515625
+        ],
+        [
+          143.138671875,
+          483.78515625
+        ]
+      ]
+    },
+    {
+      "title": "2. Coronene",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          411.486328125,
+          651.62109375
+        ],
+        [
+          468.263671875,
+          651.62109375
+        ],
+        [
+          468.263671875,
+          660.75
+        ],
+        [
+          411.486328125,
+          660.75
+        ]
+      ]
+    },
+    {
+      "title": "V. CONCLUSIONS AND OUTLOOK",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          344.25,
+          537.0
+        ],
+        [
+          532.5,
+          537.0
+        ],
+        [
+          532.5,
+          546.0
+        ],
+        [
+          344.25,
+          546.0
+        ]
+      ]
+    },
+    {
+      "title": "ACKNOWLEDGMENTS",
+      "heading_level": null,
+      "page_id": 13,
+      "polygon": [
+        [
+          378.75,
+          350.75390625
+        ],
+        [
+          499.5,
+          350.75390625
+        ],
+        [
+          499.5,
+          359.25
+        ],
+        [
+          378.75,
+          359.25
+        ]
+      ]
+    },
+    {
+      "title": "Appendix A: Technical proofs",
+      "heading_level": null,
+      "page_id": 16,
+      "polygon": [
+        [
+          235.4765625,
+          53.3671875
+        ],
+        [
+          377.25,
+          53.3671875
+        ],
+        [
+          377.25,
+          63.75
+        ],
+        [
+          235.4765625,
+          63.75
+        ]
+      ]
+    },
+    {
+      "title": "1. Krylov quantum diagonalization with qDRIFT compilation",
+      "heading_level": null,
+      "page_id": 16,
+      "polygon": [
+        [
+          157.78125,
+          214.5
+        ],
+        [
+          455.25,
+          214.5
+        ],
+        [
+          455.25,
+          224.296875
+        ],
+        [
+          157.78125,
+          224.296875
+        ]
+      ]
+    },
+    {
+      "title": "2. Proof of Theorem 1",
+      "heading_level": null,
+      "page_id": 17,
+      "polygon": [
+        [
+          250.41796875,
+          633.05859375
+        ],
+        [
+          362.25,
+          633.05859375
+        ],
+        [
+          362.25,
+          642.75
+        ],
+        [
+          250.41796875,
+          642.75
+        ]
+      ]
+    },
+    {
+      "title": "Appendix B: Full Configuration Interaction Monte Carlo calculations",
+      "heading_level": null,
+      "page_id": 20,
+      "polygon": [
+        [
+          145.828125,
+          204.0
+        ],
+        [
+          469.5,
+          204.0
+        ],
+        [
+          469.5,
+          213.75
+        ],
+        [
+          145.828125,
+          213.75
+        ]
+      ]
+    },
+    {
+      "title": "Appendix C: Computational details",
+      "heading_level": null,
+      "page_id": 20,
+      "polygon": [
+        [
+          224.25,
+          470.25
+        ],
+        [
+          391.5,
+          470.25
+        ],
+        [
+          391.5,
+          480.69140625
+        ],
+        [
+          224.25,
+          480.69140625
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          89
+        ],
+        [
+          "Span",
+          66
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Footnote",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          118
+        ],
+        [
+          "Span",
+          81
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Equation",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          116
+        ],
+        [
+          "Span",
+          116
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          120
+        ],
+        [
+          "Line",
+          112
+        ],
+        [
+          "Text",
+          15
+        ],
+        [
+          "Equation",
+          10
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          97
+        ],
+        [
+          "Span",
+          49
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          113
+        ],
+        [
+          "Span",
+          85
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Equation",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          119
+        ],
+        [
+          "Span",
+          83
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          115
+        ],
+        [
+          "Span",
+          93
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          119
+        ],
+        [
+          "Span",
+          106
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          108
+        ],
+        [
+          "Span",
+          63
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          118
+        ],
+        [
+          "Span",
+          43
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          109
+        ],
+        [
+          "Span",
+          58
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          102
+        ],
+        [
+          "Span",
+          29
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 13,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          141
+        ],
+        [
+          "Span",
+          89
+        ],
+        [
+          "Footnote",
+          13
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 14,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          240
+        ],
+        [
+          "Span",
+          106
+        ],
+        [
+          "ListItem",
+          54
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 15,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          86
+        ],
+        [
+          "Span",
+          34
+        ],
+        [
+          "ListItem",
+          15
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 16,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          76
+        ],
+        [
+          "Line",
+          63
+        ],
+        [
+          "Text",
+          16
+        ],
+        [
+          "Equation",
+          11
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 17,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          58
+        ],
+        [
+          "Span",
+          54
+        ],
+        [
+          "Equation",
+          12
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 18,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          71
+        ],
+        [
+          "Line",
+          57
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Equation",
+          11
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 19,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          78
+        ],
+        [
+          "Span",
+          39
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "Equation",
+          4
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 20,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "TableCell",
+          64
+        ],
+        [
+          "Line",
+          57
+        ],
+        [
+          "Span",
+          24
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 21,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "TableCell",
+          96
+        ],
+        [
+          "Line",
+          40
+        ],
+        [
+          "Span",
+          9
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/Piccinelli2026_f"
+}
