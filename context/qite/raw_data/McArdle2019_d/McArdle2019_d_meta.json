@@ -1,0 +1,586 @@
+{
+  "table_of_contents": [
+    {
+      "title": "ARTICLE",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          34.48702272660186,
+          82.45995862337085
+        ],
+        [
+          138.3551642894745,
+          82.45995862337085
+        ],
+        [
+          138.3551642894745,
+          92.67960548400879
+        ],
+        [
+          34.48702272660186,
+          92.67960548400879
+        ]
+      ]
+    },
+    {
+      "title": "Variational ansatz-based quantum simulation of imaginary\ntime evolution",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          34.48702272660186,
+          99.70158633553021
+        ],
+        [
+          527.8013912940806,
+          99.70158633553021
+        ],
+        [
+          527.8013912940806,
+          138.63324320316315
+        ],
+        [
+          34.48702272660186,
+          138.63324320316315
+        ]
+      ]
+    },
+    {
+      "title": "INTRODUCTION",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          34.48702272660186,
+          311.09893480635367
+        ],
+        [
+          99.71247875300104,
+          311.09893480635367
+        ],
+        [
+          99.71247875300104,
+          319.3449306686908
+        ],
+        [
+          34.48702272660186,
+          319.3449306686908
+        ]
+      ]
+    },
+    {
+      "title": "RESULTS",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          44.23335523629369,
+          95.76892566680908
+        ],
+        [
+          80.96953161897828,
+          95.76892566680908
+        ],
+        [
+          80.96953161897828,
+          103.44976627295615
+        ],
+        [
+          44.23335523629369,
+          103.44976627295615
+        ]
+      ]
+    },
+    {
+      "title": "Toy example",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          34.48702272660186,
+          470.77140014069903
+        ],
+        [
+          85.46783893114375,
+          470.77140014069903
+        ],
+        [
+          85.46783893114375,
+          480.0031234025955
+        ],
+        [
+          34.48702272660186,
+          480.0031234025955
+        ]
+      ]
+    },
+    {
+      "title": "Simulation of H<sub>2</sub> and LiH",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          300.6368720297249,
+          250.62109982967377
+        ],
+        [
+          398.1001971266432,
+          250.62109982967377
+        ],
+        [
+          398.1001971266432,
+          260.1236876573608
+        ],
+        [
+          300.6368720297249,
+          260.1236876573608
+        ]
+      ]
+    },
+    {
+      "title": "DISCUSSION",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          34.48702272660186,
+          490.0434139966965
+        ],
+        [
+          86.21755681650465,
+          490.0434139966965
+        ],
+        [
+          86.21755681650465,
+          499.25756766513626
+        ],
+        [
+          34.48702272660186,
+          499.25756766513626
+        ]
+      ]
+    },
+    {
+      "title": "DATA AVAILABILITY",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          300.6368720297249,
+          134.9344777473341
+        ],
+        [
+          383.105839419425,
+          134.9344777473341
+        ],
+        [
+          383.105839419425,
+          143.2672234773636
+        ],
+        [
+          300.6368720297249,
+          143.2672234773636
+        ]
+      ]
+    },
+    {
+      "title": "CODE AVAILABILITY",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          300.6368720297249,
+          182.65605580806732
+        ],
+        [
+          383.105839419425,
+          182.65605580806732
+        ],
+        [
+          383.105839419425,
+          190.40754082123814
+        ],
+        [
+          300.6368720297249,
+          190.40754082123814
+        ]
+      ]
+    },
+    {
+      "title": "ACKNOWLEDGEMENTS",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          300.6368720297249,
+          230.8878841454384
+        ],
+        [
+          393.6018898144778,
+          230.8878841454384
+        ],
+        [
+          393.6018898144778,
+          238.2638190984726
+        ],
+        [
+          300.6368720297249,
+          238.2638190984726
+        ]
+      ]
+    },
+    {
+      "title": "AUTHOR CONTRIBUTIONS",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          300.6368720297249,
+          323.8427465936019
+        ],
+        [
+          407.09681175097415,
+          323.8427465936019
+        ],
+        [
+          407.09681175097415,
+          332.088742455939
+        ],
+        [
+          300.6368720297249,
+          332.088742455939
+        ]
+      ]
+    },
+    {
+      "title": "ADDITIONAL INFORMATION",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          299.6726352572441,
+          389.64050805568695
+        ],
+        [
+          413.8442727192223,
+          389.64050805568695
+        ],
+        [
+          413.8442727192223,
+          398.13613855838776
+        ],
+        [
+          299.6726352572441,
+          398.13613855838776
+        ]
+      ]
+    },
+    {
+      "title": "REFERENCES",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          299.96329736709595,
+          483.8647736310959
+        ],
+        [
+          353.1171240049886,
+          483.8647736310959
+        ],
+        [
+          353.1171240049886,
+          493.26047976525473
+        ],
+        [
+          299.96329736709595,
+          493.26047976525473
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          94
+        ],
+        [
+          "Line",
+          88
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Footnote",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          155
+        ],
+        [
+          "Line",
+          142
+        ],
+        [
+          "Text",
+          20
+        ],
+        [
+          "Equation",
+          7
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          141
+        ],
+        [
+          "Span",
+          98
+        ],
+        [
+          "Text",
+          14
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          113
+        ],
+        [
+          "Span",
+          45
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "Figure",
+          3
+        ],
+        [
+          "Caption",
+          3
+        ],
+        [
+          "FigureGroup",
+          3
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          172
+        ],
+        [
+          "Span",
+          102
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "ListItem",
+          11
+        ],
+        [
+          "SectionHeader",
+          7
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          181
+        ],
+        [
+          "Span",
+          133
+        ],
+        [
+          "ListItem",
+          40
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/McArdle2019_d"
+}

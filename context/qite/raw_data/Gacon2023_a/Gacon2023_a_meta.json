@@ -1,0 +1,1077 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Stochastic Approximation of Variational Quantum \nImaginary Time Evolution",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          58.5,
+          53.75390625
+        ],
+        [
+          553.5,
+          52.5
+        ],
+        [
+          553.5,
+          104.02734375
+        ],
+        [
+          58.5,
+          104.02734375
+        ]
+      ]
+    },
+    {
+      "title": "I. Introduction",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          133.5,
+          394.83984375
+        ],
+        [
+          214.5,
+          394.83984375
+        ],
+        [
+          214.5,
+          403.5
+        ],
+        [
+          133.5,
+          403.5
+        ]
+      ]
+    },
+    {
+      "title": "II. STOCHASTIC VARIATIONAL IMAGINARY TIME EVOLUTION",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          68.1328125,
+          227.25
+        ],
+        [
+          279.75,
+          227.25
+        ],
+        [
+          279.75,
+          247.88671875
+        ],
+        [
+          68.1328125,
+          247.88671875
+        ]
+      ]
+    },
+    {
+      "title": "A. Sampling the QGT and evolution gradient",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          309.5859375,
+          50.66015625
+        ],
+        [
+          498.4453125,
+          50.66015625
+        ],
+        [
+          498.4453125,
+          60.0
+        ],
+        [
+          309.5859375,
+          60.0
+        ]
+      ]
+    },
+    {
+      "title": "B. Improving estimator accuracy",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          309.5859375,
+          519.75
+        ],
+        [
+          448.5,
+          520.5
+        ],
+        [
+          448.5,
+          530.19140625
+        ],
+        [
+          309.5859375,
+          530.19140625
+        ]
+      ]
+    },
+    {
+      "title": "C. Solving for the parameter update",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          47.21484375,
+          404.12109375
+        ],
+        [
+          199.5,
+          404.12109375
+        ],
+        [
+          199.5,
+          413.25
+        ],
+        [
+          47.21484375,
+          413.25
+        ]
+      ]
+    },
+    {
+      "title": "D. Relation to Quantum Natural Gradients",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          310.18359375,
+          295.453125
+        ],
+        [
+          489.75,
+          295.453125
+        ],
+        [
+          489.75,
+          304.734375
+        ],
+        [
+          310.18359375,
+          304.734375
+        ]
+      ]
+    },
+    {
+      "title": "III. NUMERICAL RESULTS",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          378.75,
+          645.43359375
+        ],
+        [
+          495.158203125,
+          645.43359375
+        ],
+        [
+          495.158203125,
+          654.75
+        ],
+        [
+          378.75,
+          654.75
+        ]
+      ]
+    },
+    {
+      "title": "A. Quantum Imaginary Time Evolution",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          46.5,
+          232.5
+        ],
+        [
+          210.375,
+          232.5
+        ],
+        [
+          210.375,
+          242.859375
+        ],
+        [
+          46.5,
+          242.859375
+        ]
+      ]
+    },
+    {
+      "title": "B. Ground state approximation",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          311.25,
+          379.37109375
+        ],
+        [
+          440.25,
+          379.37109375
+        ],
+        [
+          440.25,
+          389.25
+        ],
+        [
+          311.25,
+          389.25
+        ]
+      ]
+    },
+    {
+      "title": "IV. HARDWARE EXPERIMENTS",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          107.25,
+          267.75
+        ],
+        [
+          240.75,
+          267.75
+        ],
+        [
+          240.75,
+          276.75
+        ],
+        [
+          107.25,
+          276.75
+        ]
+      ]
+    },
+    {
+      "title": "V. CONCLUSION",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          137.4609375,
+          280.5
+        ],
+        [
+          210.75,
+          281.25
+        ],
+        [
+          210.75,
+          291.0
+        ],
+        [
+          137.4609375,
+          290.0390625
+        ]
+      ]
+    },
+    {
+      "title": "ACKNOWLEDGMENTS",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          390.75,
+          211.5
+        ],
+        [
+          483.75,
+          211.5
+        ],
+        [
+          483.75,
+          219.75
+        ],
+        [
+          390.75,
+          219.75
+        ]
+      ]
+    },
+    {
+      "title": "REFERENCES",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          408.0,
+          431.96484375
+        ],
+        [
+          465.75,
+          431.96484375
+        ],
+        [
+          465.75,
+          442.5
+        ],
+        [
+          408.0,
+          442.5
+        ]
+      ]
+    },
+    {
+      "title": "APPENDIX A",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          409.5,
+          279.75
+        ],
+        [
+          465.0,
+          279.75
+        ],
+        [
+          465.0,
+          288.4921875
+        ],
+        [
+          409.5,
+          288.4921875
+        ]
+      ]
+    },
+    {
+      "title": "SAMPLING ERROR FOR THE QGT AND EVOLUTION GRADIENT",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          329.25,
+          291.0
+        ],
+        [
+          544.5,
+          291.0
+        ],
+        [
+          544.5,
+          312.0
+        ],
+        [
+          329.25,
+          312.0
+        ]
+      ]
+    },
+    {
+      "title": "APPENDIX B",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          409.5,
+          558.80859375
+        ],
+        [
+          465.0,
+          558.80859375
+        ],
+        [
+          465.0,
+          568.5
+        ],
+        [
+          409.5,
+          568.5
+        ]
+      ]
+    },
+    {
+      "title": "CLIFFORD SIMULATION OF GRADIENT CIRCUITS",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          333.4921875,
+          571.18359375
+        ],
+        [
+          540.0,
+          571.18359375
+        ],
+        [
+          540.0,
+          581.25
+        ],
+        [
+          333.4921875,
+          581.25
+        ]
+      ]
+    },
+    {
+      "title": "APPENDIX C\nREGULARIZATION COMPARISON",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          368.25,
+          51.0
+        ],
+        [
+          505.6171875,
+          51.0
+        ],
+        [
+          505.6171875,
+          71.25
+        ],
+        [
+          368.25,
+          71.25
+        ]
+      ]
+    },
+    {
+      "title": "APPENDIX D\nBENCHMARK SETTINGS",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          386.25,
+          667.86328125
+        ],
+        [
+          489.48046875,
+          667.86328125
+        ],
+        [
+          489.48046875,
+          690.0
+        ],
+        [
+          386.25,
+          690.0
+        ]
+      ]
+    },
+    {
+      "title": "APPENDIX E\n27-QUBIT EXPERIMENT",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          123.75,
+          462.0
+        ],
+        [
+          224.25,
+          462.0
+        ],
+        [
+          224.25,
+          483.75
+        ],
+        [
+          123.75,
+          483.75
+        ]
+      ]
+    },
+    {
+      "title": "A. Classical reference solution",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          46.01953125,
+          495.0
+        ],
+        [
+          175.5,
+          495.0
+        ],
+        [
+          175.5,
+          505.44140625
+        ],
+        [
+          46.01953125,
+          505.44140625
+        ]
+      ]
+    },
+    {
+      "title": "B. Readout error mitigation",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          309.884765625,
+          50.66015625
+        ],
+        [
+          428.25,
+          50.66015625
+        ],
+        [
+          428.25,
+          60.0
+        ],
+        [
+          309.884765625,
+          60.0
+        ]
+      ]
+    },
+    {
+      "title": "C. Zero-noise extrapolation",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          310.5,
+          516.0
+        ],
+        [
+          426.0,
+          516.0
+        ],
+        [
+          426.0,
+          527.09765625
+        ],
+        [
+          310.5,
+          527.09765625
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          111
+        ],
+        [
+          "Span",
+          44
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          122
+        ],
+        [
+          "Span",
+          101
+        ],
+        [
+          "Text",
+          18
+        ],
+        [
+          "Equation",
+          8
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          127
+        ],
+        [
+          "Span",
+          98
+        ],
+        [
+          "Text",
+          20
+        ],
+        [
+          "Equation",
+          9
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          98
+        ],
+        [
+          "Span",
+          81
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "Equation",
+          4
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          98
+        ],
+        [
+          "Span",
+          73
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "Figure",
+          3
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ],
+        [
+          "Equation",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          111
+        ],
+        [
+          "Span",
+          43
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          154
+        ],
+        [
+          "Span",
+          53
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "ListItem",
+          8
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          200
+        ],
+        [
+          "Span",
+          117
+        ],
+        [
+          "ListItem",
+          26
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "Equation",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          108
+        ],
+        [
+          "Span",
+          69
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "Equation",
+          4
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          114
+        ],
+        [
+          "Span",
+          98
+        ],
+        [
+          "TableCell",
+          45
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          70
+        ],
+        [
+          "Span",
+          30
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "Equation",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/Gacon2023_a"
+}
