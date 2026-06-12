@@ -1,0 +1,1189 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Krylov Subspace Methods for Quantum Dynamics with Time-Dependent Generators",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          56.1796875,
+          52.20703125
+        ],
+        [
+          558.75,
+          52.20703125
+        ],
+        [
+          558.75,
+          63.80859375
+        ],
+        [
+          56.1796875,
+          63.80859375
+        ]
+      ]
+    },
+    {
+      "title": "Supplemental Material",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          237.8671875,
+          52.59375
+        ],
+        [
+          375.75,
+          52.59375
+        ],
+        [
+          375.75,
+          63.75
+        ],
+        [
+          237.8671875,
+          63.75
+        ]
+      ]
+    },
+    {
+      "title": "t-t' FORMALISM AND KRYLOV METHOD",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          199.6171875,
+          86.25
+        ],
+        [
+          414.0,
+          86.25
+        ],
+        [
+          414.0,
+          94.5
+        ],
+        [
+          199.6171875,
+          94.5
+        ]
+      ]
+    },
+    {
+      "title": "KRYLOV METHOD FOR THE DENSITY OPERATOR",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          173.3203125,
+          54.0
+        ],
+        [
+          441.0,
+          54.0
+        ],
+        [
+          441.0,
+          63.0
+        ],
+        [
+          173.3203125,
+          63.0
+        ]
+      ]
+    },
+    {
+      "title": "KRYLOV SPEED LIMIT INEQUALITY",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          210.375,
+          477.75
+        ],
+        [
+          404.25,
+          477.75
+        ],
+        [
+          404.25,
+          486.87890625
+        ],
+        [
+          210.375,
+          486.87890625
+        ]
+      ]
+    },
+    {
+      "title": "SOLVABLE EXAMPLES",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          246.234375,
+          54.0
+        ],
+        [
+          366.0,
+          54.0
+        ],
+        [
+          366.0,
+          63.0
+        ],
+        [
+          246.234375,
+          63.0
+        ]
+      ]
+    },
+    {
+      "title": "Single spin",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          280.30078125,
+          78.50390625
+        ],
+        [
+          333.75,
+          78.50390625
+        ],
+        [
+          333.75,
+          87.75
+        ],
+        [
+          280.30078125,
+          87.75
+        ]
+      ]
+    },
+    {
+      "title": "Harmonic oscillator with translation",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          221.1328125,
+          481.46484375
+        ],
+        [
+          391.5,
+          481.46484375
+        ],
+        [
+          391.5,
+          491.25
+        ],
+        [
+          221.1328125,
+          491.25
+        ]
+      ]
+    },
+    {
+      "title": "Harmonic oscillator with expansion",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          224.25,
+          622.5
+        ],
+        [
+          390.26953125,
+          622.5
+        ],
+        [
+          390.26953125,
+          632.28515625
+        ],
+        [
+          224.25,
+          632.28515625
+        ]
+      ]
+    },
+    {
+      "title": "COMPLEXITY ALGEBRA",
+      "heading_level": null,
+      "page_id": 11,
+      "polygon": [
+        [
+          241.154296875,
+          586.5
+        ],
+        [
+          372.75,
+          586.5
+        ],
+        [
+          372.75,
+          595.16015625
+        ],
+        [
+          241.154296875,
+          595.16015625
+        ]
+      ]
+    },
+    {
+      "title": "Closed algebra",
+      "heading_level": null,
+      "page_id": 11,
+      "polygon": [
+        [
+          272.25,
+          611.25
+        ],
+        [
+          342.45703125,
+          611.25
+        ],
+        [
+          342.45703125,
+          620.25
+        ],
+        [
+          272.25,
+          620.25
+        ]
+      ]
+    },
+    {
+      "title": "Time evolution of Heisenberg operators",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          213.9609375,
+          580.46484375
+        ],
+        [
+          399.75,
+          580.46484375
+        ],
+        [
+          399.75,
+          589.5
+        ],
+        [
+          213.9609375,
+          589.5
+        ]
+      ]
+    },
+    {
+      "title": "Operator quantum speed limit",
+      "heading_level": null,
+      "page_id": 13,
+      "polygon": [
+        [
+          235.5,
+          586.65234375
+        ],
+        [
+          378.9140625,
+          586.65234375
+        ],
+        [
+          378.9140625,
+          597.75
+        ],
+        [
+          235.5,
+          597.75
+        ]
+      ]
+    },
+    {
+      "title": "KRYLOV METHOD FOR DISCRETE-TIME SYSTEMS",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          172.5,
+          201.75
+        ],
+        [
+          442.86328125,
+          201.75
+        ],
+        [
+          442.86328125,
+          210.0
+        ],
+        [
+          172.5,
+          210.0
+        ]
+      ]
+    },
+    {
+      "title": "Time evolution operator",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          249.521484375,
+          227.25
+        ],
+        [
+          364.5,
+          227.25
+        ],
+        [
+          364.5,
+          236.28515625
+        ],
+        [
+          249.521484375,
+          236.28515625
+        ]
+      ]
+    },
+    {
+      "title": "One-dimensional quantum Ising model",
+      "heading_level": null,
+      "page_id": 15,
+      "polygon": [
+        [
+          216.3515625,
+          53.75390625
+        ],
+        [
+          398.25,
+          53.75390625
+        ],
+        [
+          398.25,
+          63.75
+        ],
+        [
+          216.3515625,
+          63.75
+        ]
+      ]
+    },
+    {
+      "title": "Full orthogonalization procedure",
+      "heading_level": null,
+      "page_id": 15,
+      "polygon": [
+        [
+          231.0,
+          409.5
+        ],
+        [
+          384.0,
+          409.5
+        ],
+        [
+          384.0,
+          418.81640625
+        ],
+        [
+          231.0,
+          418.81640625
+        ]
+      ]
+    },
+    {
+      "title": "KRYLOV METHOD FOR PERIODIC SYSTEMS",
+      "heading_level": null,
+      "page_id": 15,
+      "polygon": [
+        [
+          189.0,
+          560.25
+        ],
+        [
+          425.53125,
+          560.25
+        ],
+        [
+          425.53125,
+          570.41015625
+        ],
+        [
+          189.0,
+          570.41015625
+        ]
+      ]
+    },
+    {
+      "title": "Time evolution in extended space",
+      "heading_level": null,
+      "page_id": 15,
+      "polygon": [
+        [
+          227.70703125,
+          586.5
+        ],
+        [
+          386.25,
+          586.5
+        ],
+        [
+          386.25,
+          595.16015625
+        ],
+        [
+          227.70703125,
+          595.16015625
+        ]
+      ]
+    },
+    {
+      "title": "Lipkin-Meshkov-Glick model",
+      "heading_level": null,
+      "page_id": 18,
+      "polygon": [
+        [
+          237.75,
+          54.140625
+        ],
+        [
+          376.5234375,
+          54.140625
+        ],
+        [
+          376.5234375,
+          63.75
+        ],
+        [
+          237.75,
+          63.75
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          111
+        ],
+        [
+          "Line",
+          103
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "Equation",
+          4
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          123
+        ],
+        [
+          "Line",
+          111
+        ],
+        [
+          "Text",
+          14
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          144
+        ],
+        [
+          "Line",
+          112
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "Equation",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          144
+        ],
+        [
+          "Line",
+          126
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "Equation",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          213
+        ],
+        [
+          "Span",
+          95
+        ],
+        [
+          "ListItem",
+          37
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          132
+        ],
+        [
+          "Span",
+          66
+        ],
+        [
+          "ListItem",
+          21
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          78
+        ],
+        [
+          "Line",
+          61
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Equation",
+          10
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          62
+        ],
+        [
+          "Line",
+          56
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "Equation",
+          7
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          55
+        ],
+        [
+          "Span",
+          39
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "Equation",
+          11
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          57
+        ],
+        [
+          "Span",
+          32
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Equation",
+          12
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          50
+        ],
+        [
+          "Span",
+          36
+        ],
+        [
+          "Equation",
+          12
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          47
+        ],
+        [
+          "Span",
+          22
+        ],
+        [
+          "Equation",
+          11
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          58
+        ],
+        [
+          "Span",
+          22
+        ],
+        [
+          "Equation",
+          16
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 13,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          50
+        ],
+        [
+          "Span",
+          24
+        ],
+        [
+          "Equation",
+          11
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 14,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          52
+        ],
+        [
+          "Span",
+          32
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "Equation",
+          10
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 15,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          68
+        ],
+        [
+          "Line",
+          52
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "Equation",
+          8
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 16,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          44
+        ],
+        [
+          "Span",
+          27
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "Equation",
+          9
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 17,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          51
+        ],
+        [
+          "Span",
+          34
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Equation",
+          11
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 18,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          43
+        ],
+        [
+          "Span",
+          19
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "Equation",
+          9
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/Takahashi2024_f"
+}
