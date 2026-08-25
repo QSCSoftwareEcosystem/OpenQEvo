@@ -203,7 +203,7 @@ class TestContextLoading:
             "execution": {
                 "implemented": True,
                 "method_name": "qdrift",
-                "entrypoint": "openqevo.get(\"qdrift\").evolve(terms, t, **parameters)",
+                "entrypoint": 'openqevo.get("qdrift").evolve(terms, t, **parameters)',
                 "input_representation": ["matrix_terms"],
                 "required_arguments": ["terms", "t", "samples"],
             },
