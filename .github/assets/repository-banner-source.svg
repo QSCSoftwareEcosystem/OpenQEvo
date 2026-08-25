@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400" role="img" aria-labelledby="title desc">
+  <title id="title">openQEvo repository banner</title>
+  <desc id="desc">QSC Software Ecosystem banner for openQEvo, a library for reusable quantum evolution methods.</desc>
+
+  <rect width="1600" height="400" fill="#f4f1e9"/>
+  <path d="M0 0H1080L1010 400H0Z" fill="#101d2d"/>
+  <rect width="14" height="400" fill="#ae1935"/>
+
+  <g opacity="0.12" fill="none" stroke="#fffdf8">
+    <circle cx="930" cy="72" r="160"/>
+    <circle cx="930" cy="72" r="115"/>
+    <path d="M770 72H1078M930 -88V232"/>
+  </g>
+
+  <text x="82" y="68" fill="#a9c8dc" font-family="Aptos, Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3.2">QSC SOFTWARE ECOSYSTEM  ·  APPLICATIONS</text>
+  <text x="78" y="190" fill="#fffdf8" font-family="Aptos, Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="750" letter-spacing="-2">openQEvo</text>
+  <rect x="82" y="216" width="82" height="6" rx="3" fill="#ae1935"/>
+  <text x="82" y="274" fill="#fffdf8" font-family="Aptos, Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="450">Reusable quantum evolution methods</text>
+  <text x="82" y="338" fill="#a9c8dc" font-family="Aptos, Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2.4">REGISTRY  ·  ADAPTERS  ·  STRUCTURED CONTEXT</text>
+
+  <image href="qsc-logo.png" x="1192" y="46" width="320" height="107" preserveAspectRatio="xMidYMid meet"/>
+
+  <g font-family="Aptos, Avenir Next, Helvetica Neue, Arial, sans-serif" text-anchor="middle">
+    <path d="M1160 272H1267M1373 272H1478" stroke="#306a91" stroke-width="3"/>
+    <path d="M1255 264L1269 272L1255 280M1466 264L1480 272L1466 280" fill="none" stroke="#306a91" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="1110" cy="272" r="50" fill="#fffdf8" stroke="#101d2d" stroke-width="3"/>
+    <circle cx="1320" cy="272" r="53" fill="#ae1935"/>
+    <circle cx="1530" cy="272" r="50" fill="#fffdf8" stroke="#101d2d" stroke-width="3"/>
+    <text x="1110" y="266" fill="#101d2d" font-size="23" font-weight="750">H = ΣH<tspan baseline-shift="sub" font-size="15">k</tspan></text>
+    <text x="1110" y="294" fill="#306a91" font-size="14" font-weight="700" letter-spacing="1.3">INPUT</text>
+    <text x="1320" y="266" fill="#fffdf8" font-size="19" font-weight="750">METHOD</text>
+    <text x="1320" y="294" fill="#fffdf8" font-size="14" font-weight="700" letter-spacing="1.3">REGISTRY</text>
+    <text x="1530" y="266" fill="#101d2d" font-size="24" font-weight="750">U(t)</text>
+    <text x="1530" y="294" fill="#306a91" font-size="14" font-weight="700" letter-spacing="1.3">RESULT</text>
+  </g>
+
+  <text x="1320" y="366" fill="#5c6978" font-family="Aptos, Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="650" text-anchor="middle" letter-spacing="1.5">SCIENTIFIC METHODS  →  REUSABLE SOFTWARE</text>
+</svg>
