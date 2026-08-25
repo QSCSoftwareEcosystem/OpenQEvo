@@ -105,7 +105,9 @@ def get_context(name: str, validate: bool | None = None) -> dict[str, Any] | Non
         return None
     with open(path) as f:
         ctx = json.load(f)
-    should_validate = validate if validate is not None else _settings["context_validation"]
+    should_validate = (
+        validate if validate is not None else _settings["context_validation"]
+    )
     if should_validate:
         _validate_context(ctx)
     return ctx

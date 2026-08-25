@@ -1,118 +1,114 @@
-# Roadmap
+# OpenQEvo roadmap
 
-**Deadline: June 2026**
+_Last reviewed: 2026-08-25_
 
-All phases run in parallel. openQSE is a community specification; openQEvo
-is the first concrete software deliverable from the Software Thrust.
+> [!IMPORTANT]
+> The original June 2026 release target was not completed. The package contains
+> `0.1.0` version metadata, but OpenQEvo is still a source-installable,
+> pre-alpha prototype. This roadmap uses verified release gates instead of
+> presenting the historical target as a current commitment.
 
-## Timeline
+## Current baseline
 
-```mermaid
-gantt
-    title openQEvo — compressed roadmap (deadline: June 2026)
-    dateFormat YYYY-MM-DD
-    axisFormat %b %Y
+| Area | Verified repository state |
+| --- | --- |
+| Package foundation | `src/` layout, `pyproject.toml`, registry, method contract, tests, and CI are present. |
+| Native methods | Exact evolution and first-/second-order Trotter reference implementations are available; the Trotter code is explicitly a placeholder pending Algorithms Thrust review. |
+| Context | Schema-validated JSON exists for `exact`, `trotter_s1`, and `trotter_s2`. Additional research notes are not registered package methods. |
+| Qiskit | Adapter and 9 dependency-conditional tests are implemented. |
+| PennyLane | Adapter and 9 dependency-conditional tests are implemented. |
+| Qrack | Adapter stub exists and raises `NotImplementedError`. |
+| Distribution | Editable source installation works; no PyPI release or Spack recipe is claimed. |
+| Release stewardship | License, citation metadata, approved acknowledgment, and stable-support policy remain open. |
 
-    section Foundation (done)
-        Package structure & pyproject.toml     :done, se1, 2026-03-17, 2026-03-28
-        Strategy + Registry + Adapter arch     :done, ar1, 2026-03-28, 2026-03-28
-        Trotter placeholder + tests (14)       :done, hw0, 2026-03-28, 2026-03-28
-        GitHub Actions CI (lint + test)        :done, ci1, 2026-03-28, 2026-03-28
-        Draft JSON schema + context files      :done, ds0, 2026-03-28, 2026-03-28
+## First release objective
 
-    section Adapters (done)
-        Qiskit adapter                         :done, qk1, 2026-03-28, 2026-03-28
-        PennyLane adapter                      :done, pl1, 2026-03-28, 2026-03-28
+Deliver a licensed, source-traceable OpenQEvo release whose scientific methods,
+software behavior, and limitations have been reviewed and can be reproduced
+from a clean environment.
 
-    section Core (Apr–May)
-        Refine JSON schema with DS             :active, ds1, 2026-04-01, 2026-04-18
-        Context files & how-to guides (HW)     :ctx1, 2026-04-07, 2026-05-02
-        Algorithms Thrust code integration     :alg1, 2026-04-07, 2026-05-16
-        AI orchestration design (AS)           :as1, 2026-05-01, 2026-05-22
+### Scientific gates
 
-    section Release (May–Jun)
-        Qrack adapter (Unitary Foundation)     :qr1, 2026-05-01, 2026-05-22
-        Spack recipe                           :se2, 2026-05-15, 2026-05-29
-        Documentation & examples               :doc1, 2026-05-22, 2026-06-12
+- Replace or formally approve the reference Trotter implementations with
+  Algorithms Thrust-reviewed code.
+- Define Hamiltonian term ordering, sign, time, qubit-order, and coefficient
+  conventions explicitly.
+- Audit registered context claims and references against primary sources.
+- Validate native, Qiskit, and PennyLane results with one shared conformance
+  suite.
+- Archive one representative benchmark configuration, raw result, environment,
+  and generated figure.
 
-    section Release
-        v0.1.0 release                         :milestone, rel1, 2026-06-15, 0d
-```
+### Software and release gates
 
-## Task tracker
+- Select a license and add `LICENSE` plus matching `pyproject.toml` metadata.
+- Add `CITATION.cff` and approved QSC funding acknowledgment language.
+- Decide which public API elements receive compatibility guarantees.
+- Exercise every supported optional adapter explicitly in continuous
+  integration rather than relying on dependency skips.
+- Test the documented source installation and quick start in a clean
+  environment.
+- Publish versioned documentation and a tagged release.
+- Decide whether the first release is published to PyPI and whether a Spack
+  recipe is ready or deferred.
 
-### Foundation — done
+## Planned phases
 
-| Task | Status |
-|------|--------|
-| Package structure (`src/` layout, `pyproject.toml`) | Done |
-| Strategy + Registry + Adapter architecture | Done |
-| Trotter placeholder (1st, 2nd order, exact) | Done |
-| GitHub Actions CI (lint + test, Python 3.10-3.12) | Done |
-| Draft JSON schema for context files | Done |
-| Context JSON for trotter_s1, trotter_s2, exact | Done |
-| 19 core tests passing | Done |
-| README, CONTRIBUTING.md, docs/ | Done |
+### Phase 1 — establish the release boundary
 
-### Adapters — done
+The immediate phase is about trust, not method count:
 
-| Adapter | Library | Status | Tests |
-|---------|---------|--------|-------|
-| `qiskit_trotter` | Qiskit | **Working** | 9 passing |
-| `pennylane_trotter` | PennyLane | **Working** | 9 passing |
-| `qrack_trotter` | Qrack (Unitary Foundation) | Stub | — |
+1. close the scientific-review and license blockers;
+2. normalize method and adapter semantics;
+3. publish one reproducible validation artifact;
+4. make supported adapters visible in CI;
+5. issue the first tagged, documented release.
 
-### Core — April/May 2026
+### Phase 2 — expand the scientific method set
 
-| Task | Owner | Status | Issue |
-|------|-------|--------|-------|
-| Refine JSON schema with DS feedback | DS (Thomas) | In progress | [#2](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/2) |
-| Context JSON refinement + how-to guides | HW (Zack) | Open | [#4](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/4) |
-| Replace placeholder with Algorithms Thrust code | HW + Algorithms | Pending | — |
-| AI orchestration design (MCP/RAG) | AS (Tirthankar) | Open | [#3](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/3) |
+Candidate work includes qDRIFT, Krylov-subspace approaches, and additional
+product formulas. A method becomes a package capability only after it has:
 
-### Release — May/June 2026
+- a reviewed implementation;
+- a registered context record;
+- unit, analytic-control, and regression tests;
+- a reproducible example;
+- documented applicability and limitations.
 
-| Task | Owner | Status |
-|------|-------|--------|
-| Qrack adapter implementation | Unitary Foundation collab | Pending |
-| Spack recipe | SE | Pending |
-| Documentation & examples | All | Ongoing |
+Research notes under `context/` do not by themselves indicate an implemented
+or supported method.
 
-### Release — June 15, 2026
+### Phase 3 — scale the execution and integration model
 
-| Deliverable | Description |
-|-------------|-------------|
-| `openqevo` v0.1.0 on PyPI | Pip-installable package |
-| Spack recipe in `spack-packages/` | HPC-installable |
-| 2 working adapters (Qiskit, PennyLane) | External library integration |
-| Context JSON for all methods | AI-ready metadata |
-| CI/CD green | Lint + test + docs build |
+Longer-term work may include:
 
-## Long-term vision
+- structured result objects that carry method parameters, provenance, costs,
+  seeds, warnings, and environment metadata;
+- circuit or state outputs in addition to dense unitaries;
+- Qrack or other accelerated execution adapters;
+- Spack and quantum-HPC deployment support;
+- QSC workflow, catalog, and agent integrations;
+- controlled benchmark datasets and archival releases.
 
-openQEvo is the first library built using this model. If the pattern works,
-future algorithm families from the Algorithms Thrust follow the same
-architecture:
+These are directional goals, not current package capabilities.
 
-```mermaid
-flowchart TB
-    ALG["Algorithms Thrust\n(scientific code)"]
+## Cross-project contributions
 
-    subgraph SW ["Software Thrust Libraries"]
-        OQEVO["openQEvo\n(evolution operators)"]
-        FUTURE1["next library\n(next algorithm family)"]
-        FUTURE2["another library\n(another family)"]
-    end
+| Group | Release contribution |
+| --- | --- |
+| Algorithms Thrust | Review scientific definitions, implementations, and validation cases |
+| HW — Hybrid Workflows | Provide representative examples, context guidance, and integration use cases |
+| DS — Data Schema | Refine context and future result/provenance contracts |
+| AS — Agentic Software | Define future machine-readable discovery and orchestration needs |
+| SE — Software Engineering | Own packaging, tests, CI, documentation, release, and sustainability practices |
 
-    ALG --> OQEVO
-    ALG -.-> FUTURE1
-    ALG -.-> FUTURE2
+## Historical planning context
 
-    style ALG fill:#4a90d9,color:#fff
-    style SW fill:#f5f5f5,color:#333
-```
+The initial roadmap targeted a `0.1.0` release on 2026-06-15 with Qiskit and
+PennyLane adapters, context JSON, documentation, PyPI distribution, and Spack
+packaging. The foundation and adapter implementations remain useful outputs of
+that plan, but PyPI/Spack publication, Algorithms Thrust code integration,
+Qrack execution, licensing, and release stewardship were not completed.
 
-Each library follows the same architecture: Strategy + Registry + Adapters +
-Context JSON. The Software Thrust provides the engineering; the Algorithms
-Thrust provides the science.
+Future dates should be added only after owners accept the release gates and
+dependencies above.

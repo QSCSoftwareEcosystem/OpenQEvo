@@ -6,7 +6,10 @@ def pytest_addoption(parser):
         "--no-context-validation",
         action="store_true",
         default=False,
-        help="Disable JSON schema validation of context files (for in-progress development)",
+        help=(
+            "Disable JSON schema validation of context files "
+            "(for in-progress development)"
+        ),
     )
 
 
