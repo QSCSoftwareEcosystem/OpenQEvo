@@ -1,0 +1,32 @@
+{
+  "id": "qdrift-randomized-scaling",
+  "concept": "qDRIFT trades deterministic term traversal for norm-weighted random sampling",
+  "summary": "qDRIFT samples Hamiltonian terms with probabilities proportional to term strengths, producing a randomized product formula whose gate/sample count depends on the total term weight, evolution time, and target precision rather than explicitly on the number of Hamiltonian terms.",
+  "applies_to": [
+    "Hamiltonians decomposable into weighted terms",
+    "large-term-count Hamiltonians",
+    "quantum chemistry Hamiltonians",
+    "randomized evolution baselines"
+  ],
+  "limitations": [
+    "The apparent independence from term count is mediated by the total weight of the Hamiltonian terms.",
+    "The method is stochastic and requires enough samples or repeated trials for stable observable estimates.",
+    "For long simulation times or high precision, sample counts can still become large."
+  ],
+  "implications": [
+    "Use qDRIFT when Hamiltonians have many terms and deterministic traversal is expensive.",
+    "Expose sample count and random seed in executable recommendations.",
+    "Benchmark stochastic variance and convergence before using a single sampled unitary for final claims."
+  ],
+  "related_methods": [
+    "qdrift",
+    "trotter_s1",
+    "trotter_s2"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-randomized-qdrift-campbell-2019-1811.08017.md",
+      "note": "Introduces qDRIFT and analyzes term-strength-proportional random Hamiltonian simulation."
+    }
+  ]
+}

@@ -13,11 +13,11 @@ _Last reviewed: 2026-08-25_
 | Area | Verified repository state |
 | --- | --- |
 | Package foundation | `src/` layout, `pyproject.toml`, registry, method contract, tests, and CI are present. |
-| Native methods | Exact evolution and first-/second-order Trotter reference implementations are available; the Trotter code is explicitly a placeholder pending Algorithms Thrust review. |
-| Context | Schema-validated JSON exists for `exact`, `trotter_s1`, and `trotter_s2`. Additional research notes are not registered package methods. |
+| Native methods | Exact evolution, first-/second-order Trotter references, and a qDRIFT randomized baseline are available; the approximation methods still need Algorithms Thrust review. |
+| Context | Schema-validated metadata exists for native and adapter methods, with selection rules and executable recommendation examples. Research notes alone are not registered package methods. |
 | Qiskit | Adapter and 9 dependency-conditional tests are implemented. |
 | PennyLane | Adapter and 9 dependency-conditional tests are implemented. |
-| Qrack | Adapter stub exists and raises `NotImplementedError`. |
+| Qrack | Experimental optional adapter and 7 fake-runtime tests are implemented; GPU/OpenCL validation remains host-dependent. |
 | Distribution | Editable source installation works; no PyPI release or Spack recipe is claimed. |
 | Release stewardship | License, citation metadata, approved acknowledgment, and stable-support policy remain open. |
 
@@ -29,13 +29,13 @@ from a clean environment.
 
 ### Scientific gates
 
-- Replace or formally approve the reference Trotter implementations with
-  Algorithms Thrust-reviewed code.
+- Replace or formally approve the reference Trotter and qDRIFT implementations
+  with Algorithms Thrust-reviewed code.
 - Define Hamiltonian term ordering, sign, time, qubit-order, and coefficient
   conventions explicitly.
 - Audit registered context claims and references against primary sources.
-- Validate native, Qiskit, and PennyLane results with one shared conformance
-  suite.
+- Validate native, Qiskit, PennyLane, and Qrack results with one shared
+  conformance suite.
 - Archive one representative benchmark configuration, raw result, environment,
   and generated figure.
 
@@ -66,8 +66,11 @@ The immediate phase is about trust, not method count:
 
 ### Phase 2 — expand the scientific method set
 
-Candidate work includes qDRIFT, Krylov-subspace approaches, and additional
-product formulas. A method becomes a package capability only after it has:
+qDRIFT now provides an executable randomized baseline but still needs the same
+scientific review and conformance evidence as the product formulas. Candidate
+expansion includes Krylov-subspace approaches, interaction-picture methods,
+annealing, and additional product formulas. A method becomes a supported
+package capability only after it has:
 
 - a reviewed implementation;
 - a registered context record;
@@ -85,7 +88,7 @@ Longer-term work may include:
 - structured result objects that carry method parameters, provenance, costs,
   seeds, warnings, and environment metadata;
 - circuit or state outputs in addition to dense unitaries;
-- Qrack or other accelerated execution adapters;
+- validated GPU/OpenCL execution through Qrack and other accelerated adapters;
 - Spack and quantum-HPC deployment support;
 - QSC workflow, catalog, and agent integrations;
 - controlled benchmark datasets and archival releases.
@@ -107,8 +110,9 @@ These are directional goals, not current package capabilities.
 The initial roadmap targeted a `0.1.0` release on 2026-06-15 with Qiskit and
 PennyLane adapters, context JSON, documentation, PyPI distribution, and Spack
 packaging. The foundation and adapter implementations remain useful outputs of
-that plan, but PyPI/Spack publication, Algorithms Thrust code integration,
-Qrack execution, licensing, and release stewardship were not completed.
+that plan, but PyPI/Spack publication, Algorithms Thrust scientific review,
+Qrack GPU/OpenCL validation, licensing, and release stewardship were not
+completed.
 
 Future dates should be added only after owners accept the release gates and
 dependencies above.

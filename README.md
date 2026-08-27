@@ -18,6 +18,11 @@ method interface, registry, framework adapters, and structured context.**
 [![Python](https://img.shields.io/badge/Python-3.10--3.12-306A91)](pyproject.toml)
 [![Maturity](https://img.shields.io/badge/Maturity-Prototype-AE1935)](#project-status)
 
+The current prototype covers exact evolution, first- and second-order product
+formulas, a qDRIFT randomized baseline, and optional Qiskit, PennyLane, and
+Qrack adapters. Interaction-picture, annealing, and other evolution families
+remain research directions.
+
 [See the example](#see-it-in-action) ·
 [Quick start](#quick-start) ·
 [Architecture](docs/architecture.md) ·
@@ -72,7 +77,7 @@ validated here.
 ```mermaid
 flowchart LR
     A[Scientific method] -. reviewed implementation .-> N[Native methods]
-    F[Qiskit / PennyLane] --> D[Optional adapters]
+    F[Qiskit / PennyLane / Qrack] --> D[Optional adapters]
 
     subgraph O[openQEvo]
         N --> R[Common registry]
@@ -124,10 +129,11 @@ Status below reflects the repository on 2026-08-25.
 | Exact matrix evolution | Available | Classical small-system reference with context metadata and tests |
 | First-order Trotter | Prototype | Implemented and tested; explicitly a placeholder pending Algorithms Thrust review |
 | Second-order Trotter | Prototype | Implemented and tested; explicitly a placeholder pending Algorithms Thrust review |
+| qDRIFT randomized evolution | Prototype | Registered dense-unitary baseline with reproducible sampling, context metadata, and tests |
 | Qiskit adapter | Implemented | Optional adapter with 9 tests; exercised locally when Qiskit is installed |
 | PennyLane adapter | Implemented | Optional adapter and tests are present; dependency-conditional |
-| Structured method context | Available | Schema-validated JSON for the three native/reference methods |
-| Qrack adapter | Planned | Dependency-conditional stub raises `NotImplementedError` |
+| Qrack adapter | Experimental | Optional implementation with 7 fake-runtime integration tests; GPU/OpenCL validation remains pending |
+| Structured context and recommendations | Available | Schema-validated method metadata, selection rules, and executable recommendation payloads |
 | PyPI / Spack distribution | Planned | Source install works; no public package or Spack recipe is claimed |
 | License and citation metadata | Blocked | License decision, `LICENSE`, and `CITATION.cff` are required before release |
 
@@ -147,6 +153,7 @@ Install development tools or optional adapters as needed:
 python -m pip install -e ".[dev]"
 python -m pip install -e ".[qiskit]"
 python -m pip install -e ".[pennylane]"
+python -m pip install -e ".[qrack]"
 python -m pip install -e ".[adapters]"
 ```
 
@@ -167,17 +174,20 @@ print(openqevo.list_methods())
 print("approximation error:", np.linalg.norm(approx - exact))
 ```
 
-The registry always lists the three native/reference methods. Optional adapter
-names appear when their dependencies are installed.
+The registry always lists the native/reference methods (`exact`, `trotter_s1`,
+`trotter_s2`, and `qdrift`). Optional adapter names appear when their
+dependencies are installed.
 
 ## Validation and evidence
 
-- **Core and context:** 19 tests cover registry behavior, first- and
-  second-order convergence, unitarity, exact reference cases, error handling,
+- **Core and context:** tests cover registry behavior, Trotter and qDRIFT
+  behavior, exact reference cases, recommendation execution, error handling,
   and JSON-schema validation.
 - **Qiskit adapter:** 9 additional tests pass when Qiskit is installed.
 - **PennyLane adapter:** 9 dependency-conditional tests cover the equivalent
   integration surface.
+- **Qrack adapter:** 7 fake-runtime tests exercise decomposition and adapter
+  behavior without requiring a host Qrack installation.
 - **Continuous integration:** linting and the default test suite run on Python
   3.10, 3.11, and 3.12.
 - **Reproducible example:** `examples/trotter_convergence.py` generates the
@@ -201,8 +211,12 @@ supported adapters explicitly in CI.
   Algorithms Thrust production implementation.
 - The public interface currently returns dense unitaries, which limits useful
   validation to small systems and is not a scalable execution boundary.
-- qDRIFT, Krylov, Qrack execution, AI method selection, and controlled benchmark
-  datasets are research or roadmap items, not current package capabilities.
+- qDRIFT is a dense-unitary randomized baseline that still needs shared
+  scientific and adapter-conformance review.
+- Qrack support is experimental; the included tests use a fake runtime, and
+  GPU/OpenCL validation depends on the host environment.
+- Krylov, interaction-picture, annealing, automated method selection, and
+  controlled benchmark datasets remain research or roadmap items.
 - The package is not on PyPI, no Spack recipe is claimed, and no stable API
   compatibility promise has been made.
 - Licensing, citation, and approved QSC acknowledgment language remain open.
@@ -237,12 +251,13 @@ supported adapters explicitly in CI.
 
 ## Roadmap
 
-- **Now:** review the scientific implementations, update the context claims,
-  decide the license, and rebaseline the first release.
+- **Now:** review the Trotter and qDRIFT implementations, update the context
+  claims, decide the license, and rebaseline the first release.
 - **Next:** publish a tested package with explicit adapter CI, documentation,
   citation metadata, and one reproducible benchmark artifact.
-- **Later:** add reviewed methods such as qDRIFT and Krylov approaches, scalable
-  result contracts, Qrack/Spack support, and workflow or agent integrations.
+- **Later:** add reviewed methods such as Krylov and interaction-picture
+  approaches, scalable result contracts, validated Qrack acceleration, Spack
+  support, and workflow or agent integrations.
 
 See the [project roadmap](docs/roadmap.md) for the release gates and historical
 planning context.

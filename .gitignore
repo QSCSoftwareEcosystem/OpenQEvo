@@ -4,11 +4,18 @@ __pycache__/
 dist/
 build/
 .venv/
+.conda/
 .ruff_cache/
 .pytest_cache/
 *.coverage
 htmlcov/
+docs/_build/
 *.db
 *.log
 .env
 .claude/
+PENDING_TASKS.local.md
+
+# Development-only planning and generated knowledge graph
+paper-plan.md
+graphify-out/

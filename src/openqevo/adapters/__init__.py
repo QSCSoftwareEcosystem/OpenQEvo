@@ -6,15 +6,15 @@ openQEvo works without the external library installed.
 
 try:
     from openqevo.adapters import qiskit_adapter  # noqa: F401
-except ImportError:
+except (ImportError, OSError):
     pass
 
 try:
     from openqevo.adapters import pennylane_adapter  # noqa: F401
-except ImportError:
+except (ImportError, OSError):
     pass
 
 try:
     from openqevo.adapters import qrack_adapter  # noqa: F401
-except ImportError:
+except (ImportError, OSError):
     pass

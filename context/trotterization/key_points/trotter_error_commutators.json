@@ -1,0 +1,35 @@
+{
+  "id": "trotter-error-commutator-scaling",
+  "concept": "Trotter error depends on commutator structure",
+  "summary": "Product-formula error is controlled by non-commutation among Hamiltonian terms, so empirical error can be much smaller than worst-case norm bounds when terms commute or nearly commute.",
+  "applies_to": [
+    "local Hamiltonians",
+    "sparse Hamiltonians",
+    "Pauli sum Hamiltonians",
+    "Hamiltonians with identifiable commuting groups"
+  ],
+  "limitations": [
+    "Highly non-local Hamiltonians or dense non-commuting term sets can require many Trotter steps.",
+    "Worst-case bounds may overestimate or underinform practical step choices."
+  ],
+  "implications": [
+    "Profile commutators or commuting groups before choosing the number of steps.",
+    "Term ordering and partitioning can materially change the error.",
+    "Use exact evolution on small systems to calibrate Trotter error when possible."
+  ],
+  "related_methods": [
+    "trotter_s1",
+    "trotter_s2",
+    "exact"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-trotter-tranter-2019-1912.07555.md",
+      "note": "Discusses ordering strategies and commutator-based Trotter error behavior in electronic structure simulations."
+    },
+    {
+      "source": "../raw_data/openqevo-trotter-mehendale-2025-2312.13282.md",
+      "note": "Uses perturbative error estimates to guide Hamiltonian partitioning for lower eigenvalue error."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "maintenance_rules": [
+    "Do not add wiki claims without key-point evidence.",
+    "Do not add key points without raw-data evidence.",
+    "Prefer updating existing key points over duplicating concepts.",
+    "When evidence conflicts, preserve both claims and mark the conflict.",
+    "Selection rules should cite key-point IDs rather than raw papers directly.",
+    "Generated wiki prose is not primary evidence; raw_data and key_points are the evidence chain."
+  ],
+  "collections": [
+    {
+      "id": "trotterization",
+      "description": "Product-formula and Trotter-Suzuki evolution context for OpenQEvo.",
+      "raw_data": "trotterization/raw_data",
+      "key_points": "trotterization/key_points",
+      "wiki": "trotterization/wiki",
+      "selection_rules": "selection/rules.json"
+    },
+    {
+      "id": "randomized_methods",
+      "description": "Randomized quantum evolution context, including qDRIFT and randomized product formulas.",
+      "raw_data": "randomized_methods/raw_data",
+      "key_points": "randomized_methods/key_points",
+      "wiki": "randomized_methods/wiki",
+      "selection_rules": "selection/rules.json"
+    },
+    {
+      "id": "interaction_picture",
+      "description": "Interaction-picture and QIT-style quantum evolution context.",
+      "raw_data": "interaction_picture/raw_data",
+      "key_points": "interaction_picture/key_points",
+      "wiki": "interaction_picture/wiki",
+      "selection_rules": "selection/rules.json"
+    },
+    {
+      "id": "annealing",
+      "description": "Annealing and adiabatic quantum evolution context.",
+      "raw_data": "annealing/raw_data",
+      "key_points": "annealing/key_points",
+      "wiki": "annealing/wiki",
+      "selection_rules": "selection/rules.json"
+    }
+  ]
+}

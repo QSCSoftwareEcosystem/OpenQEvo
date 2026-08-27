@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/QSCSoftwareThrust/OpenQEvo/context/schema/selection_rule.schema.json",
+  "title": "OpenQEvo Method Selection Rule Set",
+  "description": "Rules used to recommend quantum evolution methods from task and Hamiltonian context.",
+  "type": "object",
+  "required": ["id", "input_profile", "rules"],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "input_profile": {
+      "type": "object",
+      "properties": {
+        "application": { "type": "string" },
+        "hamiltonian_features": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "task_constraints": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "recommendation", "rationale"],
+        "properties": {
+          "id": { "type": "string" },
+          "when": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "recommendation": {
+            "type": "object",
+            "required": ["method"],
+            "properties": {
+              "method": { "type": "string" },
+              "confidence": {
+                "type": "string",
+                "enum": ["low", "medium", "high"]
+              },
+              "parameters": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          },
+          "avoid": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "rationale": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "key_points": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/QSCSoftwareThrust/OpenQEvo/context/schema/recommendation.schema.json",
+  "title": "OpenQEvo LLM Recommendation",
+  "description": "Schema for an LLM-generated quantum evolution method recommendation backed by OpenQEvo context and optionally executable through openqevo.execute_recommendation(...).",
+  "type": "object",
+  "required": [
+    "recommendation_id",
+    "method_name",
+    "executable",
+    "confidence",
+    "rationale",
+    "evidence",
+    "warnings"
+  ],
+  "properties": {
+    "recommendation_id": {
+      "type": "string",
+      "description": "Stable identifier for this recommendation response."
+    },
+    "method_name": {
+      "type": "string",
+      "description": "Recommended OpenQEvo method or planned method name."
+    },
+    "method_family": {
+      "type": "string",
+      "description": "Context family or method grouping, such as trotterization, randomized_methods, interaction_picture, annealing, or exact."
+    },
+    "executable": {
+      "type": "boolean",
+      "description": "Whether the recommendation can be passed to openqevo.execute_recommendation(...) with the supplied inputs."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "Confidence in the recommendation given available context and user inputs."
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Method parameters to pass to execution or to request from the user.",
+      "additionalProperties": true
+    },
+    "required_inputs": {
+      "type": "array",
+      "description": "Inputs still required before execution is possible.",
+      "items": { "type": "string" }
+    },
+    "execution": {
+      "type": "object",
+      "description": "Execution payload compatible with openqevo.execute_recommendation(...) when executable is true.",
+      "properties": {
+        "implemented": {
+          "type": "boolean",
+          "description": "Whether the selected method is implemented and registered."
+        },
+        "method_name": {
+          "type": "string",
+          "description": "Registry key accepted by openqevo.get(name)."
+        },
+        "entrypoint": {
+          "type": "string",
+          "description": "Expected execution entrypoint."
+        },
+        "input_representation": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "required_arguments": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "non_executable_reason": {
+      "type": "string",
+      "description": "Required in practice when executable is false; explains the missing method, contract, backend, or inputs."
+    },
+    "rationale": {
+      "type": "array",
+      "description": "Concise reasoning steps for the recommendation.",
+      "items": { "type": "string" }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Limitations, validation requirements, or caveats the user should see.",
+      "items": { "type": "string" }
+    },
+    "evidence": {
+      "type": "array",
+      "description": "Evidence links into the context stack.",
+      "items": {
+        "type": "object",
+        "required": ["key_point_id"],
+        "properties": {
+          "key_point_id": {
+            "type": "string",
+            "description": "Stable key-point ID supporting the recommendation."
+          },
+          "source": {
+            "type": "string",
+            "description": "Optional relative raw-data source path."
+          },
+          "note": {
+            "type": "string",
+            "description": "What this evidence supports."
+          }
+        }
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "description": "Other methods considered but not selected.",
+      "items": {
+        "type": "object",
+        "required": ["method_name", "reason"],
+        "properties": {
+          "method_name": { "type": "string" },
+          "reason": { "type": "string" },
+          "executable": { "type": "boolean" }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "executable": { "const": true } },
+        "required": ["executable"]
+      },
+      "then": {
+        "required": ["execution"],
+        "properties": {
+          "execution": {
+            "required": ["implemented", "method_name", "entrypoint"],
+            "properties": {
+              "implemented": { "const": true }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "executable": { "const": false } },
+        "required": ["executable"]
+      },
+      "then": {
+        "required": ["non_executable_reason"]
+      }
+    }
+  ]
+}

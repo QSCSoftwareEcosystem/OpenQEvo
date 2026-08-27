@@ -1,0 +1,76 @@
+{
+  "method_name": "qiskit_trotter",
+  "description": "Qiskit-backed Trotter-Suzuki evolution using PauliEvolutionGate with LieTrotter or SuzukiTrotter synthesis.",
+  "source": "qiskit",
+  "applicable_hamiltonians": [
+    "Dense matrix Hamiltonian terms convertible to SparsePauliOp",
+    "Pauli sum Hamiltonians",
+    "Local or sparse Hamiltonians suitable for circuit synthesis",
+    "Hamiltonians intended for Qiskit circuit workflows"
+  ],
+  "limitations": [
+    "Requires Qiskit to be installed",
+    "Input terms must be square Hermitian matrices with power-of-two dimension",
+    "Large dense matrices can make conversion to Pauli operators expensive",
+    "Returns a decomposed unitary matrix in the current adapter rather than a reusable circuit object"
+  ],
+  "parameters": {
+    "steps": {
+      "type": "int",
+      "description": "Number of Trotter repetitions.",
+      "required": true,
+      "range": { "min": 1 }
+    },
+    "order": {
+      "type": "int",
+      "description": "Product formula order. Order 1 uses LieTrotter; higher orders use Qiskit SuzukiTrotter.",
+      "required": false,
+      "default": 2,
+      "range": { "min": 1 }
+    }
+  },
+  "execution": {
+    "implemented": true,
+    "method_name": "qiskit_trotter",
+    "adapter_name": "qiskit",
+    "entrypoint": "openqevo.get(\"qiskit_trotter\").evolve(terms, t, **parameters)",
+    "input_representation": [
+      "matrix_terms"
+    ],
+    "required_arguments": [
+      "terms",
+      "t",
+      "steps"
+    ],
+    "backend_requirements": [
+      "qiskit optional dependency",
+      "classical Python runtime"
+    ],
+    "returns": "Approximate time-evolution unitary matrix synthesized through Qiskit."
+  },
+  "complexity": {
+    "gate_count": "Depends on number of Pauli terms after SparsePauliOp conversion, product formula order, and steps",
+    "circuit_depth": "Depends on Qiskit synthesis output, product formula order, and steps",
+    "error_scaling": "Product-formula error depends on order, step count, simulation time, and commutator structure"
+  },
+  "references": [
+    {
+      "title": "Qiskit PauliEvolutionGate documentation",
+      "authors": "Qiskit contributors",
+      "year": 2026,
+      "url": "https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.PauliEvolutionGate"
+    },
+    {
+      "title": "Local raw software docs for Qiskit PauliEvolutionGate",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/qiskit-pauli-evolution-gate.md"
+    },
+    {
+      "title": "Local raw software docs for Qiskit SparsePauliOp",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/qiskit-sparse-pauli-op.md"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "recommendation_id": "example-qdrift-many-term-baseline",
+  "method_name": "qdrift",
+  "method_family": "randomized_methods",
+  "executable": true,
+  "confidence": "medium",
+  "parameters": {
+    "samples": 100,
+    "seed": 7
+  },
+  "required_inputs": [],
+  "execution": {
+    "implemented": true,
+    "method_name": "qdrift",
+    "entrypoint": "openqevo.get(\"qdrift\").evolve(terms, t, **parameters)",
+    "input_representation": [
+      "matrix_terms"
+    ],
+    "required_arguments": [
+      "terms",
+      "t",
+      "samples"
+    ]
+  },
+  "rationale": [
+    "qDRIFT is registered in OpenQEvo and is the current executable randomized baseline.",
+    "The method is appropriate when deterministic traversal over many Hamiltonian terms is expensive and randomized sampling is acceptable."
+  ],
+  "warnings": [
+    "Sweep sample count before final accuracy claims.",
+    "Use a fixed seed for reproducible benchmarking, but do not treat one sampled unitary as a deterministic final answer."
+  ],
+  "evidence": [
+    {
+      "key_point_id": "qdrift-randomized-scaling",
+      "source": "randomized_methods/raw_data/openqevo-randomized-qdrift-campbell-2019-1811.08017.md",
+      "note": "Supports qDRIFT term-weighted randomized Hamiltonian simulation."
+    },
+    {
+      "key_point_id": "randomized-methods-precision-tradeoffs",
+      "source": "randomized_methods/raw_data/openqevo-randomized-qswift-2023-2302.14811.md",
+      "note": "Supports treating qDRIFT as the executable randomized baseline while broader randomized variants remain non-executable."
+    }
+  ],
+  "alternatives": [
+    {
+      "method_name": "trotter_s2",
+      "reason": "Deterministic product-formula baseline with different depth and error tradeoffs.",
+      "executable": true
+    },
+    {
+      "method_name": "qswift",
+      "reason": "Seed evidence exists, but OpenQEvo has no registered qSWIFT method or execution contract.",
+      "executable": false
+    }
+  ]
+}

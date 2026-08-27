@@ -18,7 +18,7 @@ class EvolutionMethod(ABC):
     """Abstract base class for a time-evolution strategy.
 
     Subclasses must implement :meth:`evolve`. They may optionally provide
-    a ``context`` dict loaded from a JSON file in ``context/``.
+    a ``context`` dict loaded from a JSON file in ``context/methods/``.
     """
 
     name: str = ""
@@ -52,7 +52,7 @@ class EvolutionMethod(ABC):
 
     @property
     def context(self) -> dict[str, Any] | None:
-        """Structured metadata for this method, loaded from context/ JSON.
+        """Structured metadata for this method, loaded from context/methods/ JSON.
 
         Returns None if no context file has been registered.
         """

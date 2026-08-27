@@ -34,8 +34,8 @@ flowchart TB
         end
 
         subgraph CONTEXT ["context/"]
-            C1["trotter_s1.json\ntrotter_s2.json"]
-            C2["(metadata, limitations,\napplicable Hamiltonians,\ncomplexity, references)"]
+            C1["methods/\ntrotter_s1.json\ntrotter_s2.json"]
+            C2["trotterization/key_points/\nselection/rules.json"]
         end
 
         subgraph QUALITY ["SE Layer"]
@@ -159,8 +159,12 @@ src/openqevo/
     ├── __init__.py          # Optional imports (skip if lib not installed)
     ├── qiskit_adapter.py    # Qiskit wrapper (working)
     ├── pennylane_adapter.py # PennyLane wrapper (working)
-    └── qrack_adapter.py     # Qrack GPU-accelerated (Unitary Foundation, stub)
+    └── qrack_adapter.py     # Qrack-backed Trotter adapter (experimental)
 ```
+
+The Qrack adapter is implemented and validated in CPU mode with real
+`pyqrack`. GPU acceleration depends on a working host OpenCL/NVIDIA runtime;
+the adapter remains marked experimental until GPU validation is complete.
 
 ## How to add a new method
 
@@ -195,7 +199,8 @@ appears in `openqevo.list_methods()`.
 
 ### 3. (Optional) Add context metadata
 
-Create `context/qdrift.json` following the schema in `context/schema.json`.
+Create `context/methods/qdrift.json` following the schema in
+`context/schema/method.schema.json`.
 The method's `.context` property will automatically load and validate it.
 
 ```json
@@ -209,8 +214,7 @@ The method's `.context` property will automatically load and validate it.
 }
 ```
 
-Use `pytest --no-context-validation` while the file is still incomplete (see
-[Context validation](#context-validation) below).
+Use `pytest --no-context-validation` while the file is still incomplete.
 
 ## How to add an adapter
 
@@ -250,9 +254,10 @@ The `try/except` ensures openQEvo works without `new_lib` installed.
 
 ## Context validation
 
-Every `context/*.json` file is validated against `context/schema.json` (JSON
-Schema draft 2020-12) both at **runtime** (when `.context` is accessed) and in
-**tests** (`test_context_validates_against_schema`).
+Every `context/methods/*.json` file is validated against
+`context/schema/method.schema.json` (JSON Schema draft 2020-12) both at
+**runtime** (when `.context` is accessed) and in **tests**
+(`test_context_validates_against_schema`).
 
 ### Runtime behaviour
 
@@ -290,10 +295,10 @@ Remove the flag once the file satisfies the schema; CI always runs without it.
 
 All other fields (`applicable_hamiltonians`, `limitations`, `complexity`,
 `references`, `example_path`) are optional but encouraged — see
-`context/trotter_s1.json` for a complete example.
+`context/methods/trotter_s1.json` for a complete example.
 
 ### Promoting a field to required
 
-1. Add the field name to `"required"` in `context/schema.json`
-2. Add the field to every existing `context/*.json` file
+1. Add the field name to `"required"` in `context/schema/method.schema.json`
+2. Add the field to every existing `context/methods/*.json` file
 3. Run `pytest` — the schema test enforces it automatically with no test code changes

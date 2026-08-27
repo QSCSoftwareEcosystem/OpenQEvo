@@ -1,0 +1,92 @@
+{
+  "method_name": "qrack_trotter",
+  "description": "Experimental Qrack-backed Trotter-Suzuki evolution using Pauli exponentials on QrackSimulator.",
+  "source": "qrack",
+  "applicable_hamiltonians": [
+    "Dense matrix Hamiltonian terms decomposable into real Pauli coefficients",
+    "Pauli sum Hamiltonians",
+    "Small to moderate systems where Qrack simulation is available",
+    "CPU or GPU-backed Qrack simulator workflows"
+  ],
+  "limitations": [
+    "Requires PyQrack to be installed",
+    "Experimental adapter; CPU validation exists, GPU/OpenCL validation depends on host runtime availability",
+    "Input terms must be square Hermitian matrices with power-of-two dimension",
+    "Currently supports product formula order 1 or 2",
+    "Extracts a full unitary matrix by evolving computational basis vectors, which can be expensive"
+  ],
+  "parameters": {
+    "steps": {
+      "type": "int",
+      "description": "Number of Trotter repetitions.",
+      "required": true,
+      "range": { "min": 1 }
+    },
+    "order": {
+      "type": "int",
+      "description": "Product formula order. Qrack adapter currently supports 1 or 2.",
+      "required": false,
+      "default": 2,
+      "range": { "min": 1, "max": 2 }
+    },
+    "is_gpu": {
+      "type": "bool",
+      "description": "Whether to request GPU execution from QrackSimulator.",
+      "required": false,
+      "default": false
+    },
+    "atol": {
+      "type": "float",
+      "description": "Absolute tolerance for Pauli coefficient decomposition.",
+      "required": false,
+      "default": 1e-12,
+      "range": { "min": 0 }
+    }
+  },
+  "execution": {
+    "implemented": true,
+    "method_name": "qrack_trotter",
+    "adapter_name": "qrack",
+    "entrypoint": "openqevo.get(\"qrack_trotter\").evolve(terms, t, **parameters)",
+    "input_representation": [
+      "matrix_terms"
+    ],
+    "required_arguments": [
+      "terms",
+      "t",
+      "steps"
+    ],
+    "backend_requirements": [
+      "pyqrack optional dependency",
+      "Qrack runtime",
+      "GPU/OpenCL runtime only if is_gpu is true"
+    ],
+    "returns": "Approximate time-evolution unitary matrix synthesized through Qrack simulation."
+  },
+  "complexity": {
+    "gate_count": "Depends on Pauli decomposition, product formula order, and steps",
+    "circuit_depth": "Depends on Pauli exponentials, product formula order, and steps",
+    "error_scaling": "Product-formula error depends on order, step count, simulation time, and commutator structure"
+  },
+  "references": [
+    {
+      "title": "Qrack quantum computing simulator",
+      "authors": "Unitary Foundation contributors",
+      "year": 2026,
+      "url": "https://github.com/unitaryfund/qrack"
+    },
+    {
+      "title": "Local raw software docs for Qrack",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/qrack-readme.md"
+    },
+    {
+      "title": "Local raw software docs for PyQrack",
+      "authors": "codexA",
+      "year": 2026,
+      "url": "../software/raw_data/pyqrack-readme.md"
+    }
+  ],
+  "example_path": "tests/test_qrack_adapter.py"
+}

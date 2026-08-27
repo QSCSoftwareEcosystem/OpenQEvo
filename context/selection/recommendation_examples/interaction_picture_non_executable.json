@@ -1,0 +1,41 @@
+{
+  "recommendation_id": "example-interaction-picture-planned",
+  "method_name": "interaction_picture",
+  "method_family": "interaction_picture",
+  "executable": false,
+  "confidence": "medium",
+  "parameters": {},
+  "required_inputs": [
+    "split_hamiltonian_contract",
+    "dominant_component_evolution_contract",
+    "interaction_component_representation"
+  ],
+  "non_executable_reason": "OpenQEvo has interaction-picture context evidence but no registered method, method metadata, or split-Hamiltonian execution contract.",
+  "rationale": [
+    "Interaction-picture evolution can be appropriate when a Hamiltonian has a dominant exactly or cheaply evolvable component.",
+    "The current OpenQEvo execution bridge expects terms and t, which is not sufficient for this method family."
+  ],
+  "warnings": [
+    "Do not pass this recommendation to openqevo.execute_recommendation(...).",
+    "Define the split-Hamiltonian API before implementing or recommending this as executable."
+  ],
+  "evidence": [
+    {
+      "key_point_id": "interaction-picture-split-hamiltonian",
+      "source": "interaction_picture/raw_data/openqevo-interaction-low-wiebe-2018-1805.00675.md",
+      "note": "Supports the split-Hamiltonian applicability condition and implementation-contract warning."
+    }
+  ],
+  "alternatives": [
+    {
+      "method_name": "trotter_s2",
+      "reason": "Executable baseline while interaction-picture contracts are unresolved.",
+      "executable": true
+    },
+    {
+      "method_name": "qdrift",
+      "reason": "Executable randomized baseline when the Hamiltonian can be represented as weighted matrix terms.",
+      "executable": true
+    }
+  ]
+}

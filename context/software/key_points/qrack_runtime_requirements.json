@@ -1,0 +1,36 @@
+{
+  "id": "qrack-runtime-requirements",
+  "concept": "Qrack execution depends on PyQrack and host accelerator runtime availability",
+  "summary": "OpenQEvo's Qrack adapter is executable through the registered qrack_trotter method, but accelerator behavior depends on PyQrack, Qrack, and the host OpenCL/GPU runtime; this is why the adapter remains experimental until GPU validation passes.",
+  "applies_to": [
+    "qrack_trotter",
+    "Qrack simulator workflows",
+    "PyQrack Python workflows",
+    "GPU-backed simulation"
+  ],
+  "limitations": [
+    "GPU execution requires a working host accelerator runtime, not only a GPU device.",
+    "OpenQEvo CPU-mode validation does not prove GPU/OpenCL validation.",
+    "The current adapter extracts a full unitary by evolving basis states, which can be expensive as system size grows."
+  ],
+  "implications": [
+    "Keep qrack_trotter labeled experimental until host GPU/OpenCL validation succeeds.",
+    "Recommendations using qrack_trotter should include backend requirements and avoid implying GPU availability unless runtime checks pass.",
+    "Use is_gpu only when the caller has confirmed a compatible Qrack accelerator runtime."
+  ],
+  "related_methods": [
+    "qrack_trotter",
+    "trotter_s1",
+    "trotter_s2"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/qrack-readme.md",
+      "note": "Documents the Qrack simulator project and accelerator-oriented runtime context."
+    },
+    {
+      "source": "../raw_data/pyqrack-readme.md",
+      "note": "Documents the Python package path used by OpenQEvo's Qrack adapter."
+    }
+  ]
+}

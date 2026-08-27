@@ -18,7 +18,7 @@ from numpy.typing import NDArray
 from qiskit.circuit import QuantumCircuit
 from qiskit.circuit.library import PauliEvolutionGate
 from qiskit.quantum_info import Operator, SparsePauliOp
-from qiskit.synthesis import SuzukiTrotter
+from qiskit.synthesis import LieTrotter, SuzukiTrotter
 
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
@@ -65,8 +65,12 @@ class QiskitTrotterAdapter(EvolutionMethod):
         pauli_ops = [SparsePauliOp.from_operator(Operator(term)) for term in terms]
         hamiltonian = sum(pauli_ops[1:], pauli_ops[0])
 
-        # Create evolution gate with Suzuki-Trotter synthesis
-        synthesis = SuzukiTrotter(order=order, reps=steps)
+        # Qiskit's SuzukiTrotter only accepts even orders; first-order
+        # product formulas are represented by LieTrotter.
+        if order == 1:
+            synthesis = LieTrotter(reps=steps)
+        else:
+            synthesis = SuzukiTrotter(order=order, reps=steps)
         gate = PauliEvolutionGate(hamiltonian, time=t, synthesis=synthesis)
 
         # Build circuit, decompose to apply Trotter splitting, extract unitary

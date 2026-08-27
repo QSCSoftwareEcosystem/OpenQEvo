@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/QSCSoftwareThrust/OpenQEvo/context/schema/key_point.schema.json",
+  "title": "OpenQEvo Extracted Key Point",
+  "description": "Structured knowledge extracted from raw source markdown.",
+  "type": "object",
+  "required": ["id", "concept", "summary", "evidence"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier for this extracted concept."
+    },
+    "concept": {
+      "type": "string",
+      "description": "Short concept name."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Concise extracted claim or principle."
+    },
+    "applies_to": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "implications": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "related_methods": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source"],
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "Relative path to raw source markdown."
+          },
+          "note": {
+            "type": "string",
+            "description": "What this source supports."
+          }
+        }
+      }
+    }
+  }
+}

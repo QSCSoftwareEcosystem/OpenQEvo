@@ -22,6 +22,24 @@
       "range": { "min": 1 }
     }
   },
+  "execution": {
+    "implemented": true,
+    "method_name": "trotter_s1",
+    "entrypoint": "openqevo.get(\"trotter_s1\").evolve(terms, t, **parameters)",
+    "input_representation": [
+      "matrix_terms"
+    ],
+    "required_arguments": [
+      "terms",
+      "t",
+      "steps"
+    ],
+    "backend_requirements": [
+      "classical Python runtime",
+      "NumPy/SciPy-compatible matrix operations"
+    ],
+    "returns": "Approximate time-evolution operator from first-order product formula."
+  },
   "complexity": {
     "gate_count": "O(L * n) where L = number of Hamiltonian terms, n = Trotter steps",
     "circuit_depth": "O(L * n)",

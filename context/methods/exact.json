@@ -12,6 +12,23 @@
     "Reference/benchmarking use only"
   ],
   "parameters": {},
+  "execution": {
+    "implemented": true,
+    "method_name": "exact",
+    "entrypoint": "openqevo.get(\"exact\").evolve(terms, t, **parameters)",
+    "input_representation": [
+      "matrix_terms"
+    ],
+    "required_arguments": [
+      "terms",
+      "t"
+    ],
+    "backend_requirements": [
+      "classical Python runtime",
+      "NumPy/SciPy-compatible dense matrix operations"
+    ],
+    "returns": "Dense unitary time-evolution matrix or state evolution result, depending on implementation input."
+  },
   "complexity": {
     "gate_count": "N/A (classical computation)",
     "circuit_depth": "N/A (classical computation)",

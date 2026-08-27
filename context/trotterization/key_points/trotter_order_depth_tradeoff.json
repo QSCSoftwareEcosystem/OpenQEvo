@@ -1,0 +1,33 @@
+{
+  "id": "trotter-order-depth-tradeoff",
+  "concept": "Higher-order product formulas trade depth for accuracy",
+  "summary": "First-order Trotterization is shallow and simple but converges slowly; second-order symmetric formulas reduce leading error terms while increasing per-step circuit cost.",
+  "applies_to": [
+    "benchmarking approximate evolution",
+    "near-term circuit-depth constrained simulations",
+    "accuracy-sensitive simulations with moderate backend depth"
+  ],
+  "limitations": [
+    "Second-order formulas can still be too deep for noisy hardware at high precision.",
+    "Higher order does not remove the need to reason about Hamiltonian decomposition."
+  ],
+  "implications": [
+    "Prefer first-order formulas for baseline or shallow-depth checks.",
+    "Prefer second-order formulas when first-order error is unacceptable and depth budget allows.",
+    "Escalate to more advanced algorithms when required precision makes Trotter depth impractical."
+  ],
+  "related_methods": [
+    "trotter_s1",
+    "trotter_s2"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/openqevo-trotter-suzuki-1976-10.1007-BF01609348.md",
+      "note": "Foundational source for systematic product-formula approximants."
+    },
+    {
+      "source": "../raw_data/openqevo-trotter-yang-2025-2505.04552.md",
+      "note": "Studies symmetry-based decompositions that reduce error and improve robustness under noise."
+    }
+  ]
+}
