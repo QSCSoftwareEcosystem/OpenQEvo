@@ -192,6 +192,10 @@ dependencies are installed.
   3.10, 3.11, and 3.12.
 - **Reproducible example:** `examples/trotter_convergence.py` generates the
   tabular result and README figure from the same calculation.
+- **Paper pilot:** `experiments/xz_pilot/` compares exact, first- and
+  second-order Trotter, and 30 seeded qDRIFT trajectories under equal
+  formula-level operation budgets. It archives raw JSONL records, an aggregated
+  summary, an uncertainty-aware figure, and SHA-256 checksums.
 
 Run the locally available suite with:
 
@@ -216,7 +220,8 @@ supported adapters explicitly in CI.
 - Qrack support is experimental; the included tests use a fake runtime, and
   GPU/OpenCL validation depends on the host environment.
 - Krylov, interaction-picture, annealing, automated method selection, and
-  controlled benchmark datasets remain research or roadmap items.
+  production-scale controlled benchmark datasets remain research or roadmap
+  items; the repository contains only the exploratory `H = X + Z` pilot.
 - The package is not on PyPI, no Spack recipe is claimed, and no stable API
   compatibility promise has been made.
 - Licensing, citation, and approved QSC acknowledgment language remain open.

@@ -1,7 +1,7 @@
 # OpenQEvo Publication Plan
 
 Status: working draft
-Last updated: 2026-07-14
+Last updated: 2026-08-27
 
 ## 1. Objective
 
@@ -32,18 +32,25 @@ OpenQEvo already provides:
 - an `EvolutionMethod` interface;
 - a registry for method discovery;
 - exact, first-order Trotter, and second-order Trotter reference code;
+- a registered qDRIFT dense-unitary baseline with deterministic sampling;
 - Qiskit and PennyLane adapters;
 - schema-validated method context and references;
-- convergence, adapter, registry, and context tests;
-- an initial qDRIFT literature and method summary.
+- convergence, adapter, registry, qDRIFT, execution-contract, and context tests;
+- structured method-selection context for use by Agentic Software without
+  embedding agent orchestration in OpenQEvo;
+- a versioned `H = X + Z` pilot with equal logical-operation budgets, 30 fixed
+  qDRIFT seeds, append-only raw records, bootstrap uncertainty, checksums, and a
+  generated convergence figure under `experiments/xz_pilot/`.
 
 The following gaps prevent a strong publication:
 
-- the native Trotter implementations are explicitly labeled placeholders;
-- qDRIFT is documented but not implemented as a registered method;
+- the native Trotter and qDRIFT implementations still require Algorithms
+  Thrust scientific review;
 - the API returns dense unitary matrices and therefore does not define a
   scalable execution boundary;
-- no controlled benchmark study or archival result dataset exists;
+- the `H = X + Z` pilot is exploratory; the production benchmark grid,
+  cross-framework conformance study, and broader archival dataset do not yet
+  exist;
 - the package is not publicly released and the license is still undecided;
 - the current scientific context must be audited against primary sources.
 
@@ -424,6 +431,8 @@ method regimes.
 
 ### WP0: Scientific alignment
 
+Status: pending scientific ownership and review.
+
 - Confirm paper claim and authorship.
 - Assign Algorithms Thrust reviewers for Trotter-Suzuki and qDRIFT.
 - Audit primary references and remove unsupported claims.
@@ -431,6 +440,9 @@ method regimes.
 Exit: signed-off method specifications and benchmark questions.
 
 ### WP1: Core scientific data model
+
+Status: partial. Method metadata and recommendation execution contracts exist;
+the canonical Pauli Hamiltonian and scalable evolution-result contracts remain.
 
 - Implement canonical Pauli Hamiltonian representation.
 - Implement structured evolution results and provenance.
@@ -440,6 +452,9 @@ Exit: conformance tests pass for native and adapter methods.
 
 ### WP2: Production methods
 
+Status: partial. Trotter and seeded qDRIFT baselines and tests exist, but method
+review, scalable outputs, and full analytic validation remain open.
+
 - Replace placeholder Trotter implementations.
 - Implement seeded standard qDRIFT and trajectory ensembles.
 - Add context JSON, documentation, examples, and tests.
@@ -448,6 +463,11 @@ Exit: analytic validation gates pass.
 
 ### WP3: Benchmark infrastructure
 
+Status: pilot implementation complete. The `experiments/xz_pilot/` workflow is
+configuration-driven, writes immutable JSON Lines records, derives summaries
+and plots from those records, and emits checksums. General benchmark families
+and compiled-cost capture remain open.
+
 - Implement configuration-driven benchmark execution.
 - Implement metric, cost, environment, and raw-result capture.
 - Add deterministic dataset and plotting workflows.
@@ -455,6 +475,9 @@ Exit: analytic validation gates pass.
 Exit: one command reproduces a pilot result bundle and figure.
 
 ### WP4: Pilot study
+
+Status: in progress. The controlled `H = X + Z` case is complete with 30 seeded
+qDRIFT trajectories; spin-model, chemistry, and variance-sizing work remain.
 
 - Run small synthetic, spin-model, and chemistry cases.
 - Estimate qDRIFT variance and computational requirements.
@@ -511,13 +534,15 @@ The work is ready for submission only when:
 
 ## 15. Immediate Next Actions
 
-1. Review this plan with the Algorithms Thrust and identify the scientific
-   owners of the Trotter-Suzuki and qDRIFT implementations.
-2. Write the canonical Pauli Hamiltonian and evolution-result contracts before
-   implementing qDRIFT.
-3. Convert the research questions and validation gates into repository issues.
-4. Implement qDRIFT with deterministic seeds and sampled-sequence provenance.
-5. Build the smallest controlled benchmark: `H = X + Z`, exact evolution,
-   Trotter orders 1 and 2, and a qDRIFT trajectory ensemble.
-6. Use that pilot to validate metrics and cost accounting before adding larger
-   benchmark families.
+1. Review this plan, the Trotter/qDRIFT baselines, and the `H = X + Z` pilot
+   with the Algorithms Thrust; identify scientific owners and reviewers.
+2. Validate the pilot's equal-budget accounting, trajectory versus empirical
+   ensemble metrics, bootstrap procedure, and fixed 30-seed schedule.
+3. Write the canonical Pauli Hamiltonian and scalable evolution-result
+   contracts while preserving compatibility with the pilot records.
+4. Convert the research questions and remaining validation gates into
+   repository issues with explicit owners and exit criteria.
+5. Extend the controlled synthetic pilot to vary term count, `lambda`, Pauli
+   weight, and commutator structure independently.
+6. Add native/Qiskit/PennyLane conformance cases before freezing the production
+   benchmark grid.

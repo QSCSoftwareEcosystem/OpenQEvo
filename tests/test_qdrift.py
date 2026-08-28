@@ -30,6 +30,60 @@ class TestQDrift:
 
         np.testing.assert_allclose(first, second, atol=1e-12)
 
+    def test_sample_sequence_can_be_archived_and_replayed(self):
+        terms = [SIGMA_X, SIGMA_Z]
+        sequence = self.method.sample_sequence(terms, samples=8, seed=7)
+
+        sampled = self.method.evolve(terms, t=0.5, samples=8, seed=7)
+        replayed = self.method.evolve(
+            terms,
+            t=0.5,
+            samples=8,
+            sampled_sequence=sequence,
+        )
+
+        assert len(sequence) == 8
+        assert set(sequence) <= {0, 1}
+        np.testing.assert_allclose(sampled, replayed, atol=1e-12)
+
+    def test_external_rng_advances_an_ensemble_stream(self):
+        terms = [SIGMA_X, SIGMA_Z]
+        first_rng = np.random.default_rng(12)
+        second_rng = np.random.default_rng(12)
+
+        first = self.method.sample_sequence(terms, samples=8, rng=first_rng)
+        second = self.method.sample_sequence(terms, samples=8, rng=first_rng)
+
+        assert first == self.method.sample_sequence(terms, samples=8, rng=second_rng)
+        assert second == self.method.sample_sequence(terms, samples=8, rng=second_rng)
+
+    def test_sample_sequence_validation(self):
+        terms = [SIGMA_X, SIGMA_Z]
+
+        with pytest.raises(ValueError, match="mutually exclusive"):
+            self.method.sample_sequence(
+                terms,
+                samples=2,
+                seed=1,
+                rng=np.random.default_rng(1),
+            )
+
+        with pytest.raises(ValueError, match="length"):
+            self.method.evolve(
+                terms,
+                t=0.5,
+                samples=2,
+                sampled_sequence=[0],
+            )
+
+        with pytest.raises(ValueError, match="out-of-range"):
+            self.method.evolve(
+                terms,
+                t=0.5,
+                samples=2,
+                sampled_sequence=[0, 2],
+            )
+
     def test_result_is_unitary(self):
         result = self.method.evolve([SIGMA_X, SIGMA_Z], t=0.5, samples=8, seed=3)
         identity = result @ result.conj().T

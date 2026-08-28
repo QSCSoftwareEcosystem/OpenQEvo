@@ -1,592 +1,827 @@
 {
-  "context/exact.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "2613df7fadddc1924d7ce509285246ac",
-    "semantic_hash": ""
-  },
-  "context/schema.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "d50efe6dfde04f272fe98f8cc6635980",
-    "semantic_hash": ""
-  },
-  "context/trotter_s1.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "8e23d7ac333c32fde93471c911dbd44c",
-    "semantic_hash": ""
-  },
-  "context/trotter_s2.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "eda82cd91dc4190cdb571ee724a1dfc4",
-    "semantic_hash": ""
-  },
   "context/trotterization/raw_data/tmp/gonzalez2025_meta.json": {
-    "mtime": 1781112032.258248,
+    "mtime": 1787836067.9002755,
     "ast_hash": "5f9209c1ce5004163fc102e70d96a257",
-    "semantic_hash": ""
+    "semantic_hash": "5f9209c1ce5004163fc102e70d96a257"
   },
   "examples/trotter_convergence.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "71eedb8a9e8e9c0e43b752681ee4ad67",
+    "mtime": 1787678952.1351516,
+    "ast_hash": "e1030efd580325753ea0d9029145c6db",
     "semantic_hash": ""
   },
   "src/openqevo/__init__.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "b597c037d0e7e485d00d9382258d1bcf",
+    "mtime": 1787854085.0255005,
+    "ast_hash": "2fb66f9de4dbb01025b3c8185cd23cd4",
     "semantic_hash": ""
   },
   "src/openqevo/adapters/__init__.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "2374f2d6f8d649366cc6eb975a39dff0",
+    "mtime": 1787854085.0273414,
+    "ast_hash": "39e5bef1ea15c401a9884d7c89a75fc0",
     "semantic_hash": ""
   },
   "src/openqevo/adapters/pennylane_adapter.py": {
     "mtime": 1774710563.0,
     "ast_hash": "9db4432b0bb2debf1106bfb012635832",
-    "semantic_hash": ""
+    "semantic_hash": "9db4432b0bb2debf1106bfb012635832"
   },
   "src/openqevo/adapters/qiskit_adapter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "ee8c7e875a0c64a7d240442e60dd0e5f",
+    "mtime": 1787854085.0276048,
+    "ast_hash": "2d491cf7bdb2dab1b90317a3905aa96b",
     "semantic_hash": ""
   },
   "src/openqevo/adapters/qrack_adapter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "75f12ebeaa302724164635f27e5d85dc",
+    "mtime": 1787854085.0278997,
+    "ast_hash": "ee5aa7b98f26fe0e34295c7de6f45657",
     "semantic_hash": ""
   },
   "src/openqevo/base.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "3f2d55436c308f1c43e206245ffb3fbf",
+    "mtime": 1787854085.0281336,
+    "ast_hash": "1dab657c6ce3549faeabaec7b1171f71",
     "semantic_hash": ""
   },
   "src/openqevo/methods/__init__.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "9ddd254262abc36877a7b81544fdc062",
+    "mtime": 1787854085.0290916,
+    "ast_hash": "c15802bf2a3eb5b3772191d5f0da0ec6",
     "semantic_hash": ""
   },
   "src/openqevo/methods/trotter.py": {
     "mtime": 1774710563.0,
     "ast_hash": "7f8ce0b6c6d046ca9072000e6d275db8",
-    "semantic_hash": ""
+    "semantic_hash": "7f8ce0b6c6d046ca9072000e6d275db8"
   },
   "src/openqevo/registry.py": {
-    "mtime": 1779897585.784116,
-    "ast_hash": "6e0fad51806d18e64826b46fbb8517bf",
+    "mtime": 1787854085.0299723,
+    "ast_hash": "23cbb6bc75923f6c4edbfabe9d73af5b",
     "semantic_hash": ""
   },
   "tests/__init__.py": {
     "mtime": 1774710563.0,
     "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
-    "semantic_hash": ""
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "tests/conftest.py": {
-    "mtime": 1779897585.7844563,
-    "ast_hash": "e7e42894a426815bb579d03e8fee8a92",
+    "mtime": 1787678659.3195057,
+    "ast_hash": "60d1afa3b69206df084906c97cfd753e",
     "semantic_hash": ""
   },
   "tests/test_context.py": {
-    "mtime": 1779897585.7854295,
-    "ast_hash": "197187aa1b68413db9c499864e2045fc",
+    "mtime": 1787854085.0306232,
+    "ast_hash": "a4d65caf796e8679565978c01dd88f4c",
     "semantic_hash": ""
   },
   "tests/test_pennylane_adapter.py": {
     "mtime": 1774710563.0,
     "ast_hash": "e2b2474aedd76062987b79fa830ed2ba",
-    "semantic_hash": ""
+    "semantic_hash": "e2b2474aedd76062987b79fa830ed2ba"
   },
   "tests/test_qiskit_adapter.py": {
     "mtime": 1774710563.0,
     "ast_hash": "cf04d7fda3be06d2d837e62755034f5a",
-    "semantic_hash": ""
+    "semantic_hash": "cf04d7fda3be06d2d837e62755034f5a"
   },
   "tests/test_trotter.py": {
     "mtime": 1774710563.0,
     "ast_hash": "77b9fdeb1aede8dc581bf4011b58a0a4",
-    "semantic_hash": ""
+    "semantic_hash": "77b9fdeb1aede8dc581bf4011b58a0a4"
   },
   ".github/workflows/ci.yml": {
-    "mtime": 1774710563.0,
-    "ast_hash": "9b77e575a36fad406788781f94907f54",
+    "mtime": 1787854084.9905071,
+    "ast_hash": "aa34949a844c7397cb123ac168bfff7d",
     "semantic_hash": ""
   },
   "CONTRIBUTING.md": {
-    "mtime": 1779897585.7756007,
-    "ast_hash": "746d26cfaaa6b08ce2a5b42764753ed8",
+    "mtime": 1787854084.992565,
+    "ast_hash": "01b2742d29254bf789920d0bef410c8d",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1774710789.0,
-    "ast_hash": "c82d84c44c75ea275b9e03bcfdb40a80",
+    "mtime": 1787854571.9372883,
+    "ast_hash": "14c19d2696c51c252e40f380d4c88ca5",
     "semantic_hash": ""
   },
   "context/krylov_subspace/krylov_subspace.md": {
-    "mtime": 1779897682.5440283,
+    "mtime": 1787836067.8877099,
     "ast_hash": "8f2ef1bfb281bb7d380f45418380334f",
-    "semantic_hash": ""
+    "semantic_hash": "8f2ef1bfb281bb7d380f45418380334f"
   },
   "context/qdrift/qdrift.md": {
-    "mtime": 1779897682.54439,
+    "mtime": 1787836067.8880146,
     "ast_hash": "54101387327d3ca4cf34b43c79227d6b",
-    "semantic_hash": ""
+    "semantic_hash": "54101387327d3ca4cf34b43c79227d6b"
   },
   "context/qdrift/raw_data/childs_2019.md": {
-    "mtime": 1779897682.545402,
+    "mtime": 1787836067.8892226,
     "ast_hash": "a3578a847556465283bf322ef335de92",
-    "semantic_hash": ""
+    "semantic_hash": "a3578a847556465283bf322ef335de92"
   },
   "context/qdrift/raw_data/citing_faster_quantum_simulation_by_randomization_openalex.md": {
-    "mtime": 1779898703.6914375,
+    "mtime": 1787836067.890565,
     "ast_hash": "ff49f1902a7f5b76c5c76b443d5b40e6",
-    "semantic_hash": ""
+    "semantic_hash": "ff49f1902a7f5b76c5c76b443d5b40e6"
   },
   "context/qdrift/raw_data/filtered_citing_papers_gt50_recent.md": {
-    "mtime": 1779899050.9577544,
+    "mtime": 1787836067.8916206,
     "ast_hash": "bad2336df8062a30db2944080d34680c",
-    "semantic_hash": ""
+    "semantic_hash": "bad2336df8062a30db2944080d34680c"
   },
   "context/qdrift/raw_data/kiss_2023.md": {
-    "mtime": 1779897682.546363,
+    "mtime": 1787836067.891917,
     "ast_hash": "698d6f584b4cd2c288c98ae87cd0b966",
-    "semantic_hash": ""
+    "semantic_hash": "698d6f584b4cd2c288c98ae87cd0b966"
   },
   "context/qdrift/raw_data/ouyang_2020.md": {
-    "mtime": 1779897682.5471354,
+    "mtime": 1787836067.8924942,
     "ast_hash": "eef493983b6d1ba48d6f0507f8d4ee79",
-    "semantic_hash": ""
+    "semantic_hash": "eef493983b6d1ba48d6f0507f8d4ee79"
   },
   "context/qdrift/raw_data/piccinelli_2026.md": {
-    "mtime": 1779897682.5479693,
+    "mtime": 1787836067.8931594,
     "ast_hash": "470078a407b8c389f596abbf9c8f53c3",
-    "semantic_hash": ""
+    "semantic_hash": "470078a407b8c389f596abbf9c8f53c3"
   },
   "context/trotterization/raw_data/DOI_10.1002_jcc.27438.md": {
     "mtime": 1779897585.776527,
     "ast_hash": "db38fe2a76eba7c69b01487e9c4e753b",
-    "semantic_hash": ""
+    "semantic_hash": "db38fe2a76eba7c69b01487e9c4e753b"
   },
   "context/trotterization/raw_data/DOI_10.1021_acs.jctc.9b01083.md": {
     "mtime": 1779897585.7769902,
     "ast_hash": "a746e170acb77bb679f46c7ad6a563d2",
-    "semantic_hash": ""
+    "semantic_hash": "a746e170acb77bb679f46c7ad6a563d2"
   },
   "context/trotterization/raw_data/DOI_10.1063_5.0223661.md": {
     "mtime": 1779897585.7773826,
     "ast_hash": "d1bd0466d608c518722f73d4ce359242",
-    "semantic_hash": ""
+    "semantic_hash": "d1bd0466d608c518722f73d4ce359242"
   },
   "context/trotterization/raw_data/DOI_10.1103_rd56-b8tc.md": {
     "mtime": 1779897585.7779515,
     "ast_hash": "a128f9f93f77be76ed126b2fe30d01b7",
-    "semantic_hash": ""
+    "semantic_hash": "a128f9f93f77be76ed126b2fe30d01b7"
   },
   "context/trotterization/raw_data/DOI_10.22331.md": {
     "mtime": 1779897585.7786305,
     "ast_hash": "06460f0e0eaa9df4a48adcd5f64588d4",
-    "semantic_hash": ""
+    "semantic_hash": "06460f0e0eaa9df4a48adcd5f64588d4"
   },
   "context/trotterization/raw_data/DOI_10.3390.md": {
     "mtime": 1779897585.7792573,
     "ast_hash": "a2fd83c5436a735e9cf7163fb3893c93",
-    "semantic_hash": ""
+    "semantic_hash": "a2fd83c5436a735e9cf7163fb3893c93"
   },
   "context/trotterization/raw_data/DOI_10.48550.md": {
     "mtime": 1779897585.7798152,
     "ast_hash": "a128f9f93f77be76ed126b2fe30d01b7",
-    "semantic_hash": ""
+    "semantic_hash": "a128f9f93f77be76ed126b2fe30d01b7"
   },
   "context/trotterization/raw_data/DOI_2505.04552.md": {
     "mtime": 1779897585.7801907,
     "ast_hash": "3d91df76b2b874fa6ae299307de7af21",
-    "semantic_hash": ""
+    "semantic_hash": "3d91df76b2b874fa6ae299307de7af21"
   },
   "context/trotterization/raw_data/gonzalez2025.md": {
-    "mtime": 1781112032.254706,
+    "mtime": 1787836067.8957882,
     "ast_hash": "368543fd56774aa8b806c50692929a03",
-    "semantic_hash": ""
+    "semantic_hash": "368543fd56774aa8b806c50692929a03"
   },
   "context/trotterization/raw_data/tmp/gonzalez2025.md": {
-    "mtime": 1781112032.258035,
+    "mtime": 1787836067.899626,
     "ast_hash": "d55d4a19745c9998cb6ccca79e99c108",
-    "semantic_hash": ""
+    "semantic_hash": "d55d4a19745c9998cb6ccca79e99c108"
   },
   "context/trotterization/trotter.md": {
-    "mtime": 1779897585.7810013,
-    "ast_hash": "5a43da6cadb11973ff438866a64d0a35",
+    "mtime": 1787854085.0216177,
+    "ast_hash": "225174061f2b81d6b632d910f71ee744",
     "semantic_hash": ""
   },
   "docs/architecture.md": {
-    "mtime": 1779897585.7823281,
-    "ast_hash": "c71b5887511ce615c70fdf2064b14d8e",
+    "mtime": 1787854085.0237532,
+    "ast_hash": "ace3b1a2265aef7c26c1166d2e34e879",
     "semantic_hash": ""
   },
   "docs/cross-project.md": {
     "mtime": 1774710563.0,
     "ast_hash": "b8856661a75f2f0c56d5580545753ee2",
-    "semantic_hash": ""
+    "semantic_hash": "b8856661a75f2f0c56d5580545753ee2"
   },
   "docs/roadmap.md": {
-    "mtime": 1774710762.0,
-    "ast_hash": "3b87bacb8fc9cddaffe530c6acce4d86",
+    "mtime": 1787854572.0131943,
+    "ast_hash": "082fb397361d24ea944648b17fca529c",
     "semantic_hash": ""
   },
   "paper-plan.md": {
     "mtime": 1784082064.640928,
     "ast_hash": "de21348cffb34508e2f54e99eeaf77c7",
-    "semantic_hash": ""
+    "semantic_hash": "de21348cffb34508e2f54e99eeaf77c7"
   },
   "context/qdrift/raw_data/campbell_2019.md": {
-    "mtime": 1779897682.5447166,
+    "mtime": 1787836067.8884914,
     "ast_hash": "a2142e1610f0a0396ded56565576b313",
-    "semantic_hash": ""
+    "semantic_hash": "a2142e1610f0a0396ded56565576b313"
   },
   "context/qdrift/raw_data/david_2025.md": {
-    "mtime": 1779897682.5456781,
+    "mtime": 1787836067.890838,
     "ast_hash": "978326398720bc423216a575669a11e9",
-    "semantic_hash": ""
+    "semantic_hash": "978326398720bc423216a575669a11e9"
   },
   "context/qdrift/raw_data/wan_2023.md": {
-    "mtime": 1779897682.5485163,
+    "mtime": 1787836067.8935955,
     "ast_hash": "2161e0ce38646edc8e7fca866f07de4f",
-    "semantic_hash": ""
+    "semantic_hash": "2161e0ce38646edc8e7fca866f07de4f"
   },
   "context/trotterization/raw_data/Grimsley2020.md": {
     "mtime": 1779897585.78064,
     "ast_hash": "489da33c75a1491349cc7f1275bf4e8b",
-    "semantic_hash": ""
-  },
-  "context/trotterization/raw_data/tmp/_page_1_Figure_12.jpeg": {
-    "mtime": 1781112032.255115,
-    "ast_hash": "8d327207f72582ed6aa7bb37a4621931",
-    "semantic_hash": ""
-  },
-  "context/trotterization/raw_data/tmp/_page_2_Figure_1.jpeg": {
-    "mtime": 1781112032.2553391,
-    "ast_hash": "f8651f2c7f813cc464f88915e2646a6b",
-    "semantic_hash": ""
-  },
-  "context/trotterization/raw_data/tmp/_page_31_Figure_1.jpeg": {
-    "mtime": 1781112032.255678,
-    "ast_hash": "4aa71716d000a15661e7cf6496295d78",
-    "semantic_hash": ""
-  },
-  "context/trotterization/raw_data/tmp/_page_32_Figure_1.jpeg": {
-    "mtime": 1781112032.256019,
-    "ast_hash": "7271a0998ff541bc0880dcef960109fc",
-    "semantic_hash": ""
-  },
-  "context/trotterization/raw_data/tmp/_page_39_Figure_1.jpeg": {
-    "mtime": 1781112032.2563214,
-    "ast_hash": "13adea64eabf6860c347d278d795149c",
-    "semantic_hash": ""
-  },
-  "context/trotterization/raw_data/tmp/_page_3_Figure_1.jpeg": {
-    "mtime": 1781112032.2567577,
-    "ast_hash": "014ac212026194f8565b28711e56ec04",
-    "semantic_hash": ""
-  },
-  "context/trotterization/raw_data/tmp/_page_3_Picture_3.jpeg": {
-    "mtime": 1781112032.2571418,
-    "ast_hash": "80b358351f5d6d2ddc990bcedc56fd4a",
-    "semantic_hash": ""
-  },
-  "context/trotterization/raw_data/tmp/_page_41_Figure_1.jpeg": {
-    "mtime": 1781112032.257519,
-    "ast_hash": "2d281d87e49372c77106c32f07a60cf4",
-    "semantic_hash": ""
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/exact.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "2613df7fadddc1924d7ce509285246ac",
-    "semantic_hash": "2613df7fadddc1924d7ce509285246ac"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/schema.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "d50efe6dfde04f272fe98f8cc6635980",
-    "semantic_hash": "d50efe6dfde04f272fe98f8cc6635980"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotter_s1.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "8e23d7ac333c32fde93471c911dbd44c",
-    "semantic_hash": "8e23d7ac333c32fde93471c911dbd44c"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotter_s2.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "eda82cd91dc4190cdb571ee724a1dfc4",
-    "semantic_hash": "eda82cd91dc4190cdb571ee724a1dfc4"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/gonzalez2025_meta.json": {
-    "mtime": 1781112032.258248,
-    "ast_hash": "5f9209c1ce5004163fc102e70d96a257",
-    "semantic_hash": "5f9209c1ce5004163fc102e70d96a257"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/examples/trotter_convergence.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "71eedb8a9e8e9c0e43b752681ee4ad67",
-    "semantic_hash": "71eedb8a9e8e9c0e43b752681ee4ad67"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/__init__.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "b597c037d0e7e485d00d9382258d1bcf",
-    "semantic_hash": "b597c037d0e7e485d00d9382258d1bcf"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/adapters/__init__.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "2374f2d6f8d649366cc6eb975a39dff0",
-    "semantic_hash": "2374f2d6f8d649366cc6eb975a39dff0"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/adapters/pennylane_adapter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "9db4432b0bb2debf1106bfb012635832",
-    "semantic_hash": "9db4432b0bb2debf1106bfb012635832"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/adapters/qiskit_adapter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "ee8c7e875a0c64a7d240442e60dd0e5f",
-    "semantic_hash": "ee8c7e875a0c64a7d240442e60dd0e5f"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/adapters/qrack_adapter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "75f12ebeaa302724164635f27e5d85dc",
-    "semantic_hash": "75f12ebeaa302724164635f27e5d85dc"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/base.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "3f2d55436c308f1c43e206245ffb3fbf",
-    "semantic_hash": "3f2d55436c308f1c43e206245ffb3fbf"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/methods/__init__.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "9ddd254262abc36877a7b81544fdc062",
-    "semantic_hash": "9ddd254262abc36877a7b81544fdc062"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/methods/trotter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "7f8ce0b6c6d046ca9072000e6d275db8",
-    "semantic_hash": "7f8ce0b6c6d046ca9072000e6d275db8"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/src/openqevo/registry.py": {
-    "mtime": 1779897585.784116,
-    "ast_hash": "6e0fad51806d18e64826b46fbb8517bf",
-    "semantic_hash": "6e0fad51806d18e64826b46fbb8517bf"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/tests/__init__.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
-    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/tests/conftest.py": {
-    "mtime": 1779897585.7844563,
-    "ast_hash": "e7e42894a426815bb579d03e8fee8a92",
-    "semantic_hash": "e7e42894a426815bb579d03e8fee8a92"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/tests/test_context.py": {
-    "mtime": 1779897585.7854295,
-    "ast_hash": "197187aa1b68413db9c499864e2045fc",
-    "semantic_hash": "197187aa1b68413db9c499864e2045fc"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/tests/test_pennylane_adapter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "e2b2474aedd76062987b79fa830ed2ba",
-    "semantic_hash": "e2b2474aedd76062987b79fa830ed2ba"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/tests/test_qiskit_adapter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "cf04d7fda3be06d2d837e62755034f5a",
-    "semantic_hash": "cf04d7fda3be06d2d837e62755034f5a"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/tests/test_trotter.py": {
-    "mtime": 1774710563.0,
-    "ast_hash": "77b9fdeb1aede8dc581bf4011b58a0a4",
-    "semantic_hash": "77b9fdeb1aede8dc581bf4011b58a0a4"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/.github/workflows/ci.yml": {
-    "mtime": 1774710563.0,
-    "ast_hash": "9b77e575a36fad406788781f94907f54",
-    "semantic_hash": "9b77e575a36fad406788781f94907f54"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/CONTRIBUTING.md": {
-    "mtime": 1779897585.7756007,
-    "ast_hash": "746d26cfaaa6b08ce2a5b42764753ed8",
-    "semantic_hash": "746d26cfaaa6b08ce2a5b42764753ed8"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/README.md": {
-    "mtime": 1774710789.0,
-    "ast_hash": "c82d84c44c75ea275b9e03bcfdb40a80",
-    "semantic_hash": "c82d84c44c75ea275b9e03bcfdb40a80"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/krylov_subspace/krylov_subspace.md": {
-    "mtime": 1779897682.5440283,
-    "ast_hash": "8f2ef1bfb281bb7d380f45418380334f",
-    "semantic_hash": "8f2ef1bfb281bb7d380f45418380334f"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/qdrift.md": {
-    "mtime": 1779897682.54439,
-    "ast_hash": "54101387327d3ca4cf34b43c79227d6b",
-    "semantic_hash": "54101387327d3ca4cf34b43c79227d6b"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/childs_2019.md": {
-    "mtime": 1779897682.545402,
-    "ast_hash": "a3578a847556465283bf322ef335de92",
-    "semantic_hash": "a3578a847556465283bf322ef335de92"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/citing_faster_quantum_simulation_by_randomization_openalex.md": {
-    "mtime": 1779898703.6914375,
-    "ast_hash": "ff49f1902a7f5b76c5c76b443d5b40e6",
-    "semantic_hash": "ff49f1902a7f5b76c5c76b443d5b40e6"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/filtered_citing_papers_gt50_recent.md": {
-    "mtime": 1779899050.9577544,
-    "ast_hash": "bad2336df8062a30db2944080d34680c",
-    "semantic_hash": "bad2336df8062a30db2944080d34680c"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/kiss_2023.md": {
-    "mtime": 1779897682.546363,
-    "ast_hash": "698d6f584b4cd2c288c98ae87cd0b966",
-    "semantic_hash": "698d6f584b4cd2c288c98ae87cd0b966"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/ouyang_2020.md": {
-    "mtime": 1779897682.5471354,
-    "ast_hash": "eef493983b6d1ba48d6f0507f8d4ee79",
-    "semantic_hash": "eef493983b6d1ba48d6f0507f8d4ee79"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/piccinelli_2026.md": {
-    "mtime": 1779897682.5479693,
-    "ast_hash": "470078a407b8c389f596abbf9c8f53c3",
-    "semantic_hash": "470078a407b8c389f596abbf9c8f53c3"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/DOI_10.1002_jcc.27438.md": {
-    "mtime": 1779897585.776527,
-    "ast_hash": "db38fe2a76eba7c69b01487e9c4e753b",
-    "semantic_hash": "db38fe2a76eba7c69b01487e9c4e753b"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/DOI_10.1021_acs.jctc.9b01083.md": {
-    "mtime": 1779897585.7769902,
-    "ast_hash": "a746e170acb77bb679f46c7ad6a563d2",
-    "semantic_hash": "a746e170acb77bb679f46c7ad6a563d2"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/DOI_10.1063_5.0223661.md": {
-    "mtime": 1779897585.7773826,
-    "ast_hash": "d1bd0466d608c518722f73d4ce359242",
-    "semantic_hash": "d1bd0466d608c518722f73d4ce359242"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/DOI_10.1103_rd56-b8tc.md": {
-    "mtime": 1779897585.7779515,
-    "ast_hash": "a128f9f93f77be76ed126b2fe30d01b7",
-    "semantic_hash": "a128f9f93f77be76ed126b2fe30d01b7"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/DOI_10.22331.md": {
-    "mtime": 1779897585.7786305,
-    "ast_hash": "06460f0e0eaa9df4a48adcd5f64588d4",
-    "semantic_hash": "06460f0e0eaa9df4a48adcd5f64588d4"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/DOI_10.3390.md": {
-    "mtime": 1779897585.7792573,
-    "ast_hash": "a2fd83c5436a735e9cf7163fb3893c93",
-    "semantic_hash": "a2fd83c5436a735e9cf7163fb3893c93"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/DOI_10.48550.md": {
-    "mtime": 1779897585.7798152,
-    "ast_hash": "a128f9f93f77be76ed126b2fe30d01b7",
-    "semantic_hash": "a128f9f93f77be76ed126b2fe30d01b7"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/DOI_2505.04552.md": {
-    "mtime": 1779897585.7801907,
-    "ast_hash": "3d91df76b2b874fa6ae299307de7af21",
-    "semantic_hash": "3d91df76b2b874fa6ae299307de7af21"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/gonzalez2025.md": {
-    "mtime": 1781112032.254706,
-    "ast_hash": "368543fd56774aa8b806c50692929a03",
-    "semantic_hash": "368543fd56774aa8b806c50692929a03"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/gonzalez2025.md": {
-    "mtime": 1781112032.258035,
-    "ast_hash": "d55d4a19745c9998cb6ccca79e99c108",
-    "semantic_hash": "d55d4a19745c9998cb6ccca79e99c108"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/trotter.md": {
-    "mtime": 1779897585.7810013,
-    "ast_hash": "5a43da6cadb11973ff438866a64d0a35",
-    "semantic_hash": "5a43da6cadb11973ff438866a64d0a35"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/docs/architecture.md": {
-    "mtime": 1779897585.7823281,
-    "ast_hash": "c71b5887511ce615c70fdf2064b14d8e",
-    "semantic_hash": "c71b5887511ce615c70fdf2064b14d8e"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/docs/cross-project.md": {
-    "mtime": 1774710563.0,
-    "ast_hash": "b8856661a75f2f0c56d5580545753ee2",
-    "semantic_hash": "b8856661a75f2f0c56d5580545753ee2"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/docs/roadmap.md": {
-    "mtime": 1774710762.0,
-    "ast_hash": "3b87bacb8fc9cddaffe530c6acce4d86",
-    "semantic_hash": "3b87bacb8fc9cddaffe530c6acce4d86"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/paper-plan.md": {
-    "mtime": 1784082064.640928,
-    "ast_hash": "de21348cffb34508e2f54e99eeaf77c7",
-    "semantic_hash": "de21348cffb34508e2f54e99eeaf77c7"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/campbell_2019.md": {
-    "mtime": 1779897682.5447166,
-    "ast_hash": "a2142e1610f0a0396ded56565576b313",
-    "semantic_hash": "a2142e1610f0a0396ded56565576b313"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/david_2025.md": {
-    "mtime": 1779897682.5456781,
-    "ast_hash": "978326398720bc423216a575669a11e9",
-    "semantic_hash": "978326398720bc423216a575669a11e9"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/qdrift/raw_data/wan_2023.md": {
-    "mtime": 1779897682.5485163,
-    "ast_hash": "2161e0ce38646edc8e7fca866f07de4f",
-    "semantic_hash": "2161e0ce38646edc8e7fca866f07de4f"
-  },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/Grimsley2020.md": {
-    "mtime": 1779897585.78064,
-    "ast_hash": "489da33c75a1491349cc7f1275bf4e8b",
     "semantic_hash": "489da33c75a1491349cc7f1275bf4e8b"
   },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/_page_1_Figure_12.jpeg": {
-    "mtime": 1781112032.255115,
+  "context/trotterization/raw_data/tmp/_page_1_Figure_12.jpeg": {
+    "mtime": 1787836067.8964999,
     "ast_hash": "8d327207f72582ed6aa7bb37a4621931",
     "semantic_hash": "8d327207f72582ed6aa7bb37a4621931"
   },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/_page_2_Figure_1.jpeg": {
-    "mtime": 1781112032.2553391,
+  "context/trotterization/raw_data/tmp/_page_2_Figure_1.jpeg": {
+    "mtime": 1787836067.8967373,
     "ast_hash": "f8651f2c7f813cc464f88915e2646a6b",
     "semantic_hash": "f8651f2c7f813cc464f88915e2646a6b"
   },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/_page_31_Figure_1.jpeg": {
-    "mtime": 1781112032.255678,
+  "context/trotterization/raw_data/tmp/_page_31_Figure_1.jpeg": {
+    "mtime": 1787836067.8970506,
     "ast_hash": "4aa71716d000a15661e7cf6496295d78",
     "semantic_hash": "4aa71716d000a15661e7cf6496295d78"
   },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/_page_32_Figure_1.jpeg": {
-    "mtime": 1781112032.256019,
+  "context/trotterization/raw_data/tmp/_page_32_Figure_1.jpeg": {
+    "mtime": 1787836067.8973107,
     "ast_hash": "7271a0998ff541bc0880dcef960109fc",
     "semantic_hash": "7271a0998ff541bc0880dcef960109fc"
   },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/_page_39_Figure_1.jpeg": {
-    "mtime": 1781112032.2563214,
+  "context/trotterization/raw_data/tmp/_page_39_Figure_1.jpeg": {
+    "mtime": 1787836067.8975878,
     "ast_hash": "13adea64eabf6860c347d278d795149c",
     "semantic_hash": "13adea64eabf6860c347d278d795149c"
   },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/_page_3_Figure_1.jpeg": {
-    "mtime": 1781112032.2567577,
+  "context/trotterization/raw_data/tmp/_page_3_Figure_1.jpeg": {
+    "mtime": 1787836067.8980384,
     "ast_hash": "014ac212026194f8565b28711e56ec04",
     "semantic_hash": "014ac212026194f8565b28711e56ec04"
   },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/_page_3_Picture_3.jpeg": {
-    "mtime": 1781112032.2571418,
+  "context/trotterization/raw_data/tmp/_page_3_Picture_3.jpeg": {
+    "mtime": 1787836067.8986006,
     "ast_hash": "80b358351f5d6d2ddc990bcedc56fd4a",
     "semantic_hash": "80b358351f5d6d2ddc990bcedc56fd4a"
   },
-  "/Users/vlk/Library/CloudStorage/OneDrive-OakRidgeNationalLaboratory/QSC2/QSCSoftwareThrust/OpenQEvo/context/trotterization/raw_data/tmp/_page_41_Figure_1.jpeg": {
-    "mtime": 1781112032.257519,
+  "context/trotterization/raw_data/tmp/_page_41_Figure_1.jpeg": {
+    "mtime": 1787836067.8991606,
     "ast_hash": "2d281d87e49372c77106c32f07a60cf4",
     "semantic_hash": "2d281d87e49372c77106c32f07a60cf4"
+  },
+  "context/annealing/key_points/adiabatic_schedule_gap_constraints.json": {
+    "mtime": 1787854084.9936297,
+    "ast_hash": "b218d0aaa919c0f2ac9155dcf6ef65db",
+    "semantic_hash": ""
+  },
+  "context/annealing/key_points/quantum_annealing_scope.json": {
+    "mtime": 1787854084.993935,
+    "ast_hash": "0d417ef79e34958b3fa1432575748c14",
+    "semantic_hash": ""
+  },
+  "context/interaction_picture/key_points/interaction_picture_split_hamiltonian.json": {
+    "mtime": 1787854084.9992142,
+    "ast_hash": "9473644bd7264c0c1c765668570d6110",
+    "semantic_hash": ""
+  },
+  "context/methods/exact.json": {
+    "mtime": 1787854085.000662,
+    "ast_hash": "8e64f4bd0445b30160d4c242863f1cce",
+    "semantic_hash": ""
+  },
+  "context/methods/mitiq_zne.json": {
+    "mtime": 1787854085.0008333,
+    "ast_hash": "20d594c78bbc83fae8367dbabdd3ee90",
+    "semantic_hash": ""
+  },
+  "context/methods/pennylane_trotter.json": {
+    "mtime": 1787854085.0014415,
+    "ast_hash": "3eb222ef4c79c81009ef2dc93559edf3",
+    "semantic_hash": ""
+  },
+  "context/methods/qdrift.json": {
+    "mtime": 1787854085.0018592,
+    "ast_hash": "e0716735b9403dbbb61df971a2519cfc",
+    "semantic_hash": ""
+  },
+  "context/methods/qiskit_trotter.json": {
+    "mtime": 1787854085.0020044,
+    "ast_hash": "ace0a8eaa8444b2f48e1b7c942b0573b",
+    "semantic_hash": ""
+  },
+  "context/methods/qrack_trotter.json": {
+    "mtime": 1787854085.0021389,
+    "ast_hash": "47c6e0d62fd0a95b734a0f78c65d0b46",
+    "semantic_hash": ""
+  },
+  "context/methods/trotter_s1.json": {
+    "mtime": 1787854085.0027783,
+    "ast_hash": "c224a2907e8feafdf3db5094bc789674",
+    "semantic_hash": ""
+  },
+  "context/methods/trotter_s2.json": {
+    "mtime": 1787854085.002943,
+    "ast_hash": "ef4900bf0d41680db21e21bb05c88b8c",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/key_points/qdrift_randomized_scaling.json": {
+    "mtime": 1787854085.003434,
+    "ast_hash": "38164894992b2b949fbc37d667e74699",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/key_points/randomized_methods_precision_tradeoffs.json": {
+    "mtime": 1787854085.003575,
+    "ast_hash": "672b0eb376740ca22bd3f680ec56bba6",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/key_points/randomized_trotter_permutation_bounds.json": {
+    "mtime": 1787854085.0037243,
+    "ast_hash": "1ca437e823c92e1042766cbc8f4bc59c",
+    "semantic_hash": ""
+  },
+  "context/schema/key_point.schema.json": {
+    "mtime": 1787854085.0088832,
+    "ast_hash": "5e9be30e9e123c1f02ad2e5a36446a8d",
+    "semantic_hash": ""
+  },
+  "context/schema/method.schema.json": {
+    "mtime": 1787854085.009098,
+    "ast_hash": "07ce6c39bb83d52743b9fcfd953c797d",
+    "semantic_hash": ""
+  },
+  "context/schema/recommendation.schema.json": {
+    "mtime": 1787854085.0092824,
+    "ast_hash": "58ca1cd4bbdce9b1808c73a695bd69b8",
+    "semantic_hash": ""
+  },
+  "context/schema/selection_rule.schema.json": {
+    "mtime": 1787854085.0094705,
+    "ast_hash": "32d2a09c76ca76f59c88264dde6f8cdd",
+    "semantic_hash": ""
+  },
+  "context/schema/wiki_manifest.schema.json": {
+    "mtime": 1787854085.0096262,
+    "ast_hash": "1c71225ce057b6a0aeb9b2a2511dd44c",
+    "semantic_hash": ""
+  },
+  "context/selection/recommendation_examples/interaction_picture_non_executable.json": {
+    "mtime": 1787854085.0101788,
+    "ast_hash": "1e039c6876619f0756e455386579ad06",
+    "semantic_hash": ""
+  },
+  "context/selection/recommendation_examples/qdrift_executable.json": {
+    "mtime": 1787854085.0105207,
+    "ast_hash": "bdd46d2db4b36acb024b276b38f40e08",
+    "semantic_hash": ""
+  },
+  "context/selection/rules.json": {
+    "mtime": 1787854085.0114272,
+    "ast_hash": "b331b8eb0a1629deca67ab3631c361e6",
+    "semantic_hash": ""
+  },
+  "context/software/key_points/mitiq_zne_wrapper_scope.json": {
+    "mtime": 1787854085.0120218,
+    "ast_hash": "37835927f6e184efe3627baadf799f94",
+    "semantic_hash": ""
+  },
+  "context/software/key_points/openqevo_execute_recommendation_contract.json": {
+    "mtime": 1787854085.012153,
+    "ast_hash": "6594fa15d0b1d07df440339cf567878c",
+    "semantic_hash": ""
+  },
+  "context/software/key_points/pennylane_trotter_product.json": {
+    "mtime": 1787854085.0122733,
+    "ast_hash": "e2ccaa9919c2bf0541df2e70fad826d9",
+    "semantic_hash": ""
+  },
+  "context/software/key_points/qiskit_pauli_evolution_gate.json": {
+    "mtime": 1787854085.0123942,
+    "ast_hash": "215e400aded2fdf5851b9ce8ff9fe505",
+    "semantic_hash": ""
+  },
+  "context/software/key_points/qrack_runtime_requirements.json": {
+    "mtime": 1787854085.012521,
+    "ast_hash": "b641af4db4969c9a9c14a6b8b21382da",
+    "semantic_hash": ""
+  },
+  "context/trotterization/key_points/noisy_hardware_error_mitigation.json": {
+    "mtime": 1787854085.0164905,
+    "ast_hash": "a498263c7b4ac56de974542a6baa801d",
+    "semantic_hash": ""
+  },
+  "context/trotterization/key_points/quantum_chemistry_trotter_cautions.json": {
+    "mtime": 1787854085.0166125,
+    "ast_hash": "aa696c3b8a5d45f5f2ab9069f49768fc",
+    "semantic_hash": ""
+  },
+  "context/trotterization/key_points/trotter_alternatives_and_hybrid_methods.json": {
+    "mtime": 1787854085.0167422,
+    "ast_hash": "bc533ec33a915eb464f21c2bad29e3fc",
+    "semantic_hash": ""
+  },
+  "context/trotterization/key_points/trotter_error_commutators.json": {
+    "mtime": 1787854085.0168672,
+    "ast_hash": "042be00ad131e02c624a3085dedbb68b",
+    "semantic_hash": ""
+  },
+  "context/trotterization/key_points/trotter_order_depth_tradeoff.json": {
+    "mtime": 1787854085.0170054,
+    "ast_hash": "1491c2f7bb8657d9699b2800923a8c56",
+    "semantic_hash": ""
+  },
+  "context/wiki_manifest.json": {
+    "mtime": 1787854085.0233529,
+    "ast_hash": "ae341f341cf88e8a713d69951b75a6a7",
+    "semantic_hash": ""
+  },
+  "docs/conf.py": {
+    "mtime": 1787854085.0238795,
+    "ast_hash": "fa0260c5f8834d8d349c48c448273eec",
+    "semantic_hash": ""
+  },
+  "examples/recommendation_execution.py": {
+    "mtime": 1787854085.0246227,
+    "ast_hash": "c94032846d6f289d6e0dfe9e0018bb43",
+    "semantic_hash": ""
+  },
+  "experiments/xz_pilot/config.json": {
+    "mtime": 1787854498.6607752,
+    "ast_hash": "852f776abcb22469e345f4d67b8f8cba",
+    "semantic_hash": ""
+  },
+  "experiments/xz_pilot/results/config.json": {
+    "mtime": 1787854580.425148,
+    "ast_hash": "f933f5dd017715cc25af7ba226317e83",
+    "semantic_hash": ""
+  },
+  "experiments/xz_pilot/results/manifest.json": {
+    "mtime": 1787854582.6712754,
+    "ast_hash": "59b11d5f4d30b2746005a3b0e5b9799c",
+    "semantic_hash": ""
+  },
+  "experiments/xz_pilot/results/pilot_summary.json": {
+    "mtime": 1787854581.0000098,
+    "ast_hash": "fab9c635c2536379007d4e8e3afbd32c",
+    "semantic_hash": ""
+  },
+  "src/openqevo/benchmark.py": {
+    "mtime": 1787854509.8132052,
+    "ast_hash": "c5341b75d2656ebe022eaeeb2f61d69b",
+    "semantic_hash": ""
+  },
+  "src/openqevo/execution.py": {
+    "mtime": 1787854085.0283275,
+    "ast_hash": "c9e0395b1bd7b8888dfd6c53c5cfbc78",
+    "semantic_hash": ""
+  },
+  "src/openqevo/methods/randomized.py": {
+    "mtime": 1787854376.056697,
+    "ast_hash": "e29bbcdaa4fcdb83c09a1ff43836d6f3",
+    "semantic_hash": ""
+  },
+  "tests/test_benchmark.py": {
+    "mtime": 1787854572.0946958,
+    "ast_hash": "8adecfa01774b68bcfa100ced0e777a2",
+    "semantic_hash": ""
+  },
+  "tests/test_execution.py": {
+    "mtime": 1787854085.0307853,
+    "ast_hash": "4469ac447877e316587364e037295dea",
+    "semantic_hash": ""
+  },
+  "tests/test_qdrift.py": {
+    "mtime": 1787854376.1362207,
+    "ast_hash": "fc1c3bc3dd1b96fccb2934d99e9a77d1",
+    "semantic_hash": ""
+  },
+  "tests/test_qrack_adapter.py": {
+    "mtime": 1787854085.0311584,
+    "ast_hash": "a1879cd192df5919769b0b67f1653c4c",
+    "semantic_hash": ""
+  },
+  "context/README.md": {
+    "mtime": 1787854084.993021,
+    "ast_hash": "6d568419ed35eceb2e76c8892f804f50",
+    "semantic_hash": ""
+  },
+  "context/annealing/key_points/README.md": {
+    "mtime": 1787854084.9933271,
+    "ast_hash": "c05a51222900599d2668618527557c2f",
+    "semantic_hash": ""
+  },
+  "context/annealing/raw_data/README.md": {
+    "mtime": 1787854084.994167,
+    "ast_hash": "e2a50ec59fe22c1ac801354c99b732d7",
+    "semantic_hash": ""
+  },
+  "context/annealing/raw_data/openqevo-annealing-albash-lidar-2016-1611.04471.md": {
+    "mtime": 1787854084.9972072,
+    "ast_hash": "d641a9065b2c7ce709bd907f29e7d21e",
+    "semantic_hash": ""
+  },
+  "context/annealing/raw_data/openqevo-annealing-das-chakrabarti-2008-0801.2193.md": {
+    "mtime": 1787854084.9976904,
+    "ast_hash": "df9e23f75da6b0dd0a86cab59ea84383",
+    "semantic_hash": ""
+  },
+  "context/annealing/raw_data/openqevo-annealing-farhi-2000-quant-ph-0001106.md": {
+    "mtime": 1787854084.9979584,
+    "ast_hash": "399af340d25825d4fae20216e6ee1cf2",
+    "semantic_hash": ""
+  },
+  "context/annealing/source_inventory.md": {
+    "mtime": 1787854084.9981253,
+    "ast_hash": "0fbf7f84e856386be75f1d2e7f3f3706",
+    "semantic_hash": ""
+  },
+  "context/annealing/wiki/index.md": {
+    "mtime": 1787854084.9983485,
+    "ast_hash": "eb5de60a4c590f393525f1c354cd72f1",
+    "semantic_hash": ""
+  },
+  "context/evolution_strategy_families.md": {
+    "mtime": 1787854084.9986277,
+    "ast_hash": "9cd699b0181b5b077e413bdc580bd75c",
+    "semantic_hash": ""
+  },
+  "context/interaction_picture/key_points/README.md": {
+    "mtime": 1787854084.9990315,
+    "ast_hash": "c0054dd9a16e5a41b94e052cdd34d428",
+    "semantic_hash": ""
+  },
+  "context/interaction_picture/raw_data/README.md": {
+    "mtime": 1787854084.9996037,
+    "ast_hash": "34761d1f923d16ca75b389332817f4d3",
+    "semantic_hash": ""
+  },
+  "context/interaction_picture/raw_data/openqevo-interaction-low-wiebe-2018-1805.00675.md": {
+    "mtime": 1787854085.000005,
+    "ast_hash": "1b5250f3fe094d0234c519405ad24d60",
+    "semantic_hash": ""
+  },
+  "context/interaction_picture/source_inventory.md": {
+    "mtime": 1787854085.000186,
+    "ast_hash": "aba6cb19814b61b1e5e47045f66e569c",
+    "semantic_hash": ""
+  },
+  "context/interaction_picture/wiki/index.md": {
+    "mtime": 1787854085.0004086,
+    "ast_hash": "1499540ef1e3d1e1a9248b6e16e3302a",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/key_points/README.md": {
+    "mtime": 1787854085.0032723,
+    "ast_hash": "82e6967835ef2bdce236f9d449ec9e41",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/raw_data/README.md": {
+    "mtime": 1787854085.0040307,
+    "ast_hash": "075bcbe2b5c2d40d0db906b06516fb47",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/raw_data/openqevo-randomized-qdrift-campbell-2019-1811.08017.md": {
+    "mtime": 1787854085.0045788,
+    "ast_hash": "c5d6994f73f87fedec367e8617d69171",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/raw_data/openqevo-randomized-qswift-2023-2302.14811.md": {
+    "mtime": 1787854085.005167,
+    "ast_hash": "6a71bab57ab0484915e694cf05120f3d",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/raw_data/openqevo-randomized-random-trotter-childs-2019-1805.08385.md": {
+    "mtime": 1787854085.005489,
+    "ast_hash": "93c51186bc1ddb1c67ae6a6c90d38271",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/raw_data/openqevo-randomized-sparsification-campbell-2019-1910.06255.md": {
+    "mtime": 1787854085.0062919,
+    "ast_hash": "29b1144502e408559f857c83617cfff5",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/source_inventory.md": {
+    "mtime": 1787854085.007623,
+    "ast_hash": "bc8bfc217787ab00e2b52c87fb24fee6",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/wiki/index.md": {
+    "mtime": 1787854085.007853,
+    "ast_hash": "263e8204a11da50bfcfdd03d09cee8d6",
+    "semantic_hash": ""
+  },
+  "context/randomized_methods/wiki/review.md": {
+    "mtime": 1787854085.0085056,
+    "ast_hash": "161f31d6af5f74206cbc5ed42fb2f6fb",
+    "semantic_hash": ""
+  },
+  "context/selection/quantum_evolution_method_selection.md": {
+    "mtime": 1787854085.0099092,
+    "ast_hash": "af0167f06ed2deb55a87fef7dd5e0203",
+    "semantic_hash": ""
+  },
+  "context/selection/recommendation_orchestration.md": {
+    "mtime": 1787854085.0106726,
+    "ast_hash": "3d2c2118ecd603c7c017b2335b599837",
+    "semantic_hash": ""
+  },
+  "context/software/key_points/README.md": {
+    "mtime": 1787854085.01189,
+    "ast_hash": "65a5f6a28309fa5ca3e0ef042995b5b7",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/README.md": {
+    "mtime": 1787854085.0127132,
+    "ast_hash": "c79efd2c46189540451056c0e4650f72",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/mitiq-api-reference.md": {
+    "mtime": 1787854085.013592,
+    "ast_hash": "8b564b6a4036afa8ec1571e095c0442d",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/mitiq-zne-guide.md": {
+    "mtime": 1787854085.0138192,
+    "ast_hash": "fadcbeff5abeff151eae5c7568b1dbf2",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/openqevo-execute-recommendation.md": {
+    "mtime": 1787854085.0139754,
+    "ast_hash": "ce339bbdabbd26dc8108abf9f3b993e3",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/pennylane-approx-time-evolution.md": {
+    "mtime": 1787854085.0142965,
+    "ast_hash": "40066df6b22d5ce610863da69e94d4f9",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/pennylane-trotter-product.md": {
+    "mtime": 1787854085.0145624,
+    "ast_hash": "e7f3c2a9afe4ab606e17a956903fcaf4",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/pyqrack-readme.md": {
+    "mtime": 1787854085.0147612,
+    "ast_hash": "08549aaffeb6b8cdeeb16125530837cf",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/qiskit-pauli-evolution-gate.md": {
+    "mtime": 1787854085.0150585,
+    "ast_hash": "35aa59f3b77269362986d90868086a50",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/qiskit-sparse-pauli-op.md": {
+    "mtime": 1787854085.0152671,
+    "ast_hash": "fc899e8017718665e545e07fb186cde1",
+    "semantic_hash": ""
+  },
+  "context/software/raw_data/qrack-readme.md": {
+    "mtime": 1787854085.0154898,
+    "ast_hash": "7c78404aa2a37163e9d133bd7c2bbbf2",
+    "semantic_hash": ""
+  },
+  "context/software/source_inventory.md": {
+    "mtime": 1787854085.0156608,
+    "ast_hash": "671fa1bf4a8f39039b0476caa37a8202",
+    "semantic_hash": ""
+  },
+  "context/software/wiki/index.md": {
+    "mtime": 1787854085.0162327,
+    "ast_hash": "79222c589f083236bf9ad9223bc09282",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-gonzalez-garcia-2025-2502.05658.md": {
+    "mtime": 1787854085.0177042,
+    "ast_hash": "c2f71f95a237b74bd819d44dd9063189",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-mehendale-2025-2312.13282.md": {
+    "mtime": 1787854085.0182176,
+    "ast_hash": "b20873b491bbd81214aa5f4b07d29d82",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-rajput-2022-q-2022-08-17-780.md": {
+    "mtime": 1787854085.0185966,
+    "ast_hash": "11c60013123cca7e617ace0a1ab50f86",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-sugisaki-qpe-2024-2406.09830.md": {
+    "mtime": 1787854085.0195496,
+    "ast_hash": "3acc97d7d661cfd7084ccf33ed5789de",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-suzuki-1976-10.1007-BF01609348.md": {
+    "mtime": 1787854085.0197635,
+    "ast_hash": "902acb592689fae2e5101e39274d1418",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-yang-2025-2505.04552.md": {
+    "mtime": 1787854085.0202525,
+    "ast_hash": "28629670d071f93c50c397fc3d7fef72",
+    "semantic_hash": ""
+  },
+  "context/trotterization/wiki/changelog.md": {
+    "mtime": 1787854085.0220256,
+    "ast_hash": "f088fe06aace1e7fe6810f46df127a64",
+    "semantic_hash": ""
+  },
+  "context/trotterization/wiki/error_scaling.md": {
+    "mtime": 1787854085.0221696,
+    "ast_hash": "8f60ffb39f143557cc75b711f3e37044",
+    "semantic_hash": ""
+  },
+  "context/trotterization/wiki/hamiltonian_partitioning.md": {
+    "mtime": 1787854085.0224826,
+    "ast_hash": "c36ccd2a97c7809304893807b434ccfd",
+    "semantic_hash": ""
+  },
+  "context/trotterization/wiki/index.md": {
+    "mtime": 1787854085.0226269,
+    "ast_hash": "21dd7d0e8e8e7b36184fbafccfeca20b",
+    "semantic_hash": ""
+  },
+  "context/trotterization/wiki/method_selection.md": {
+    "mtime": 1787854085.0227985,
+    "ast_hash": "df52d7e3453c4a62e40392dc76649635",
+    "semantic_hash": ""
+  },
+  "context/trotterization/wiki/open_questions.md": {
+    "mtime": 1787854085.0229378,
+    "ast_hash": "659dfc6140d879af87385e92ba3d2980",
+    "semantic_hash": ""
+  },
+  "context/trotterization/wiki/product_formulas.md": {
+    "mtime": 1787854085.0230744,
+    "ast_hash": "bc6d9b1184fbefd450d90f71150d86a2",
+    "semantic_hash": ""
+  },
+  "context/trotterization/wiki/quantum_chemistry_cautions.md": {
+    "mtime": 1787854085.0232055,
+    "ast_hash": "01f81867d66fcbf09c476d4c7a5ff9e1",
+    "semantic_hash": ""
+  },
+  "docs/index.md": {
+    "mtime": 1787854085.0241601,
+    "ast_hash": "e197b8c44017ae13b780f197dc9c7258",
+    "semantic_hash": ""
+  },
+  "experiments/xz_pilot/README.md": {
+    "mtime": 1787854498.751989,
+    "ast_hash": "811caeb72e52273f7c0c589efd43de85",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260827_142548_now__again_what_we_can_do_in_this_session__remembe.md": {
+    "mtime": 1787840748.22064,
+    "ast_hash": "323ce3097eb4f02f7c170c4db3624b9c",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-grimsley-2020-1910.10329.md": {
+    "mtime": 1787854085.017964,
+    "ast_hash": "9ec08757c1105cf95893316f6459a00d",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-sugisaki-fmo-2024-2402.17993.md": {
+    "mtime": 1787854085.0191681,
+    "ast_hash": "c4894db6020a64ac332e2e0edb2e9ef7",
+    "semantic_hash": ""
+  },
+  "context/trotterization/raw_data/openqevo-trotter-tranter-2019-1912.07555.md": {
+    "mtime": 1787854085.020023,
+    "ast_hash": "1067af764bd4d5684a9d66d61c8a8593",
+    "semantic_hash": ""
+  },
+  "context/trotterization/source_inventory.md": {
+    "mtime": 1787854085.020507,
+    "ast_hash": "3c4cfdaf07f74f3745f36273fd74c225",
+    "semantic_hash": ""
+  },
+  ".github/assets/qsc-logo.png": {
+    "mtime": 1787678952.1325662,
+    "ast_hash": "bba1a21529ddb66f62f1d179d02a6b07",
+    "semantic_hash": ""
+  },
+  ".github/assets/repository-banner-source.svg": {
+    "mtime": 1787678952.1327896,
+    "ast_hash": "83c1f6fa47bee07e710297f781050819",
+    "semantic_hash": ""
+  },
+  ".github/assets/repository-banner.png": {
+    "mtime": 1787678952.1338258,
+    "ast_hash": "cda1fa15052bfe4f13418429b6d80040",
+    "semantic_hash": ""
+  },
+  ".github/assets/trotter-convergence.svg": {
+    "mtime": 1787678952.134246,
+    "ast_hash": "41bc9caf04bbf506c7b0d39ad091127d",
+    "semantic_hash": ""
+  },
+  "experiments/xz_pilot/results/pilot_convergence.svg": {
+    "mtime": 1787854582.6699662,
+    "ast_hash": "e7ae6eb2c8823418e2c916df717abc05",
+    "semantic_hash": ""
   }
 }

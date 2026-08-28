@@ -33,6 +33,11 @@
       "description": "Random seed for reproducible term sampling.",
       "required": false
     },
+    "sampled_sequence": {
+      "type": "list[int]",
+      "description": "Optional archived term-index sequence to replay a qDRIFT trajectory exactly. Its length must equal samples.",
+      "required": false
+    },
     "term_weights": {
       "type": "list[float]",
       "description": "Optional non-negative sampling weights for Hamiltonian terms. Defaults to spectral norms of the terms.",

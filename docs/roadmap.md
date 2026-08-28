@@ -36,8 +36,9 @@ from a clean environment.
 - Audit registered context claims and references against primary sources.
 - Validate native, Qiskit, PennyLane, and Qrack results with one shared
   conformance suite.
-- Archive one representative benchmark configuration, raw result, environment,
-  and generated figure.
+- Review and promote the archived exploratory `H = X + Z` pilot into the
+  representative release benchmark; retain its configuration, raw results,
+  environment, checksums, and generated figure.
 
 ### Software and release gates
 
