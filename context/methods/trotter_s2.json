@@ -10,8 +10,8 @@
     "Systems where first-order Trotter is too inaccurate"
   ],
   "limitations": [
-    "Error still grows with commutator norms, but with better scaling",
-    "Twice the gate count per step compared to first order",
+    "Error still depends on nested commutator norms, but has higher-order asymptotic scaling for fixed bounded terms",
+    "The uncompressed formula has twice the Pauli exponentials per step as first order, although adjacent identical terms can be merged",
     "Not efficient for highly non-local Hamiltonians",
     "For very high precision, even higher-order formulas may be needed"
   ],
@@ -42,12 +42,12 @@
       "classical Python runtime",
       "NumPy/SciPy-compatible matrix operations"
     ],
-    "returns": "EvolutionResult with an approximate dense unitary, normalized parameters, logical operation costs, and provenance; evolve(...) remains compatible."
+    "returns": "EvolutionResult with a dense unitary, framework-neutral Pauli-evolution operation sequence, or compiled reference circuit plus normalized parameters, logical and compiled costs, and provenance; evolve(...) remains compatible."
   },
   "complexity": {
-    "gate_count": "O(2 * L * n) where L = number of Hamiltonian terms, n = Trotter steps",
-    "circuit_depth": "O(2 * L * n)",
-    "error_scaling": "O(L^3 * t^3 / n^2)"
+    "gate_count": "2 * L * n Pauli-term exponentials before compaction; adjacent identical boundary terms may be merged",
+    "circuit_depth": "Backend-, connectivity-, and parallelization-dependent; OpenQEvo reports depth after compilation to its fixed logical reference basis",
+    "error_scaling": "For a fixed bounded term decomposition, second-order global error is O(t^3/n^2); rigorous prefactors depend on nested commutators rather than term count alone"
   },
   "references": [
     {
@@ -61,6 +61,13 @@
       "authors": "M. Suzuki",
       "year": 1991,
       "doi": "10.1063/1.529425"
+    },
+    {
+      "title": "A Theory of Trotter Error",
+      "authors": "A. M. Childs, Y. Su, M. C. Tran, N. Wiebe, and S. Zhu",
+      "year": 2021,
+      "doi": "10.1103/PhysRevX.11.011020",
+      "url": "https://arxiv.org/abs/1912.08854"
     }
   ],
   "example_path": "examples/trotter_convergence.py"

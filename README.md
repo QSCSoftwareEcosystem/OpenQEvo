@@ -31,8 +31,8 @@ remain research directions.
 
 > [!IMPORTANT]
 > openQEvo is a source-installable, pre-alpha prototype—not a published
-> release. The native Trotter implementations are reference placeholders
-> awaiting Algorithms Thrust review, and the project license is still
+> release. The native product formulas are executable references with shared
+> conformance evidence but still await Algorithms Thrust approval, and the project license is
 > undecided.
 
 ## At a glance
@@ -43,7 +43,7 @@ remain research directions.
 | **Ecosystem area** | Applications |
 | **Primary users** | Quantum-algorithm researchers, framework integrators, and QSC software teams |
 | **Maturity** | Prototype (`Development Status :: 2 - Pre-Alpha`) |
-| **Current milestone** | Replace reference placeholders with reviewed scientific implementations and complete the first licensed release. |
+| **Current milestone** | Obtain scientific approval for the executable references and complete the first licensed release. |
 | **Lead / contact** | QSC Software Thrust via the [OpenQEvo issue tracker](https://github.com/QSCSoftwareThrust/OpenQEvo/issues) |
 | **Last reviewed** | 2026-08-25 |
 
@@ -71,6 +71,9 @@ validated here.
   parameters, limitations, complexity, references, and example paths.
 - **Checks convergence and consistency.** Tests compare approximation methods
   against exact small-system evolution and validate method metadata.
+- **Provides scalable logical outputs.** Canonical Pauli inputs can return
+  serializable operation sequences or circuits compiled to a fixed logical
+  basis, with one-/two-qubit gate counts and depth.
 - **Keeps integrations optional.** Qiskit, PennyLane, and Qrack adapters load
   only when their dependencies are installed.
 
@@ -129,11 +132,12 @@ Status below reflects the repository on 2026-09-01.
 | Exact matrix evolution | Available | Classical small-system reference with context metadata and tests |
 | Canonical Hamiltonian contract | Available | Validated real-coefficient Pauli sums with explicit qubit ordering, serialization schema, hashes, and dense compatibility |
 | Structured evolution result | Available | Versioned method, parameter, cost, seed, environment, warning, limitation, and output metadata |
-| First-order Trotter | Prototype | Implemented and tested; explicitly a placeholder pending Algorithms Thrust review |
-| Second-order Trotter | Prototype | Implemented and tested; explicitly a placeholder pending Algorithms Thrust review |
-| qDRIFT randomized evolution | Prototype | Registered dense-unitary baseline with reproducible sampling, context metadata, and tests |
-| Qiskit adapter | Implemented | Optional adapter with 9 tests; exercised locally when Qiskit is installed |
-| PennyLane adapter | Implemented | Optional adapter and tests are present; dependency-conditional |
+| First-order Trotter | Approval pending | Dense, operation, and compiled reference-circuit outputs are implemented and tested; Algorithms Thrust review is still required |
+| Second-order Trotter | Approval pending | Dense, operation, and compiled reference-circuit outputs are implemented and tested; Algorithms Thrust review is still required |
+| qDRIFT randomized evolution | Approval pending | Reproducible dense, operation, and circuit trajectories plus expected-channel validation and ensemble statistics |
+| Shared conformance | Implemented | Native, Qiskit, and PennyLane conventions are exercised on sign, coefficient, qubit-order, time, and term-order controls |
+| Qiskit adapter | Implemented | Explicit product-formula synthesis, circuit output, compiled logical costs, and dependency-conditional tests |
+| PennyLane adapter | Implemented | Explicit sign/order mapping, circuit output, compiled reference costs, and dependency-conditional tests |
 | Qrack adapter | Experimental | Optional implementation with 7 fake-runtime integration tests; GPU/OpenCL validation remains pending |
 | Structured context and recommendations | Available | Schema-validated method metadata, selection rules, and executable recommendation payloads |
 | PyPI / Spack distribution | Planned | Source install works; no public package or Spack recipe is claimed |
@@ -195,6 +199,9 @@ the canonical and structured APIs.
 - **Qiskit adapter:** 9 additional tests pass when Qiskit is installed.
 - **PennyLane adapter:** 9 dependency-conditional tests cover the equivalent
   integration surface.
+- **Shared conformance:** analytic cases normalize the target sign, Pauli
+  rotation angle, logical/dense qubit order, coefficient handling, time, and
+  serialized term order across native, Qiskit, and PennyLane implementations.
 - **Qrack adapter:** 7 fake-runtime tests exercise decomposition and adapter
   behavior without requiring a host Qrack installation.
 - **Continuous integration:** linting and the default test suite run on Python
@@ -205,6 +212,10 @@ the canonical and structured APIs.
   second-order Trotter, and 30 seeded qDRIFT trajectories under equal
   formula-level operation budgets. It archives raw JSONL records, an aggregated
   summary, an uncertainty-aware figure, and SHA-256 checksums.
+- **Expanded study:** `experiments/publication_study/` freezes controlled
+  Pauli, spin-model, and fixed mapped H₂ workloads; equal logical budgets; 30
+  qDRIFT seeds; uncertainty rules; failure retention; compiled costs; and a
+  write-once artifact manifest. Scientific approval remains pending.
 
 Run the locally available suite with:
 
@@ -220,18 +231,17 @@ supported adapters explicitly in CI.
 
 ## Current limitations
 
-- Native Trotter code is a package-structure reference, not yet the reviewed
-  Algorithms Thrust production implementation.
-- The structured result contract can represent scalable outputs, but native
-  methods currently emit dense validation unitaries; circuit and operation
-  outputs remain implementation work.
-- qDRIFT provides sampled trajectories and a dense expected-channel validation
-  mode, but still needs shared scientific and adapter-conformance review.
+- Native Trotter and qDRIFT code has executable analytic and cross-framework
+  evidence, but is not yet Algorithms Thrust-approved.
+- Operation sequences and reference circuits are logical, all-to-all outputs;
+  hardware routing and device-specific optimization remain backend work.
+- qDRIFT's expected-channel bound does not guarantee the error of an individual
+  trajectory; the frozen study reports trajectory variation separately.
 - Qrack support is experimental; the included tests use a fake runtime, and
   GPU/OpenCL validation depends on the host environment.
-- Krylov, interaction-picture, annealing, automated method selection, and
-  production-scale controlled benchmark datasets remain research or roadmap
-  items; the repository contains only the exploratory `H = X + Z` pilot.
+- Krylov, interaction-picture, annealing, and automated method selection remain
+  research or roadmap items. The expanded native study is still limited to
+  small systems that permit exact dense references.
 - The package is not on PyPI, no Spack recipe is claimed, and no stable API
   compatibility promise has been made.
 - Licensing, citation, and approved QSC acknowledgment language remain open.
@@ -267,14 +277,13 @@ supported adapters explicitly in CI.
 
 ## Roadmap
 
-- **Now:** review the Trotter and qDRIFT implementations, validate adapters
-  against the canonical contract, decide the license, and rebaseline the first
-  release.
-- **Next:** publish a tested package with explicit adapter CI, documentation,
-  citation metadata, and one reproducible benchmark artifact.
+- **Now:** assign reviewers, approve the Trotter/qDRIFT definitions and frozen
+  study, decide the license, and complete release metadata.
+- **Next:** rerun the approved frozen protocol, publish explicit adapter CI,
+  documentation, citation metadata, and the reproducibility bundle.
 - **Later:** add reviewed methods such as Krylov and interaction-picture
-  approaches, scalable circuit and operation outputs, validated Qrack
-  acceleration, Spack support, and workflow or agent integrations.
+  approaches, hardware-aware circuit compilation, validated Qrack acceleration,
+  Spack support, and workflow or agent integrations.
 
 See the [project roadmap](docs/roadmap.md) for the release gates and historical
 planning context.

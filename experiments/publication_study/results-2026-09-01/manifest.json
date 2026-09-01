@@ -1,0 +1,31 @@
+{
+  "files": {
+    "protocol.json": {
+      "bytes": 2906,
+      "sha256": "feef7da76ff9d33204d2cc2873f2844a7207ebe1e952fbf8dbb569321564ff46"
+    },
+    "resource_estimate.json": {
+      "bytes": 2142,
+      "sha256": "923dedaa26d127eaaf7c522e326460c5908e08b319775b05c313837f3f0c0e87"
+    },
+    "study_overview.svg": {
+      "bytes": 133080,
+      "sha256": "f4ccdcbb5ceb903075ed1bbbeda9d8872e0abc88fecd36b232a0662fdd0a25ce"
+    },
+    "study_records.jsonl": {
+      "bytes": 2720952,
+      "sha256": "03935df39d18a965be6ed3fc7e501489b17f54264658184f7a0dfe34c708a2dd"
+    },
+    "study_summary.json": {
+      "bytes": 110795,
+      "sha256": "aa1ba6747f3342b7330a1e6150ba3dceb2d41e58a71ebecb2776b5734372c7d0"
+    },
+    "workloads.json": {
+      "bytes": 9574,
+      "sha256": "5693476284ce58caf6f233c01a993858ef2bb20c8a95cbaa9ebdc4ad9f473acc"
+    }
+  },
+  "run_id": "openqevo-publication-candidate-2026-09-01:b0216fac55f074c1",
+  "schema_version": "openqevo-publication-manifest/v1",
+  "scientific_review_status": "pending"
+}

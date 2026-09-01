@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "src/openqevo/__init__.py": {
-    "mtime": 1788270667.2280335,
-    "ast_hash": "de6e636da51b773306ae47e732a71ca7",
+    "mtime": 1788277263.4041884,
+    "ast_hash": "e9d2ee673ba785250480f5de921f239a",
     "semantic_hash": ""
   },
   "src/openqevo/adapters/__init__.py": {
@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "src/openqevo/adapters/pennylane_adapter.py": {
-    "mtime": 1788271126.9833736,
-    "ast_hash": "0c9ad7cf8d1b881f211d67c59151bd1a",
+    "mtime": 1788277765.8062415,
+    "ast_hash": "b8d43987d15aa07c4e38409c50338192",
     "semantic_hash": ""
   },
   "src/openqevo/adapters/qiskit_adapter.py": {
-    "mtime": 1788271126.894093,
-    "ast_hash": "1cf7d7d4fef93219efed8699a8062410",
+    "mtime": 1788276594.9576788,
+    "ast_hash": "0b3aca66166c4e0e696fca482030b064",
     "semantic_hash": ""
   },
   "src/openqevo/adapters/qrack_adapter.py": {
@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "src/openqevo/methods/trotter.py": {
-    "mtime": 1788270570.4723928,
-    "ast_hash": "894a71cb620e0e9f352bf7f228a7efb6",
+    "mtime": 1788276468.6734028,
+    "ast_hash": "e603f712421a4e47926e383bb29286aa",
     "semantic_hash": ""
   },
   "src/openqevo/registry.py": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1788270924.9317532,
-    "ast_hash": "ea1cc99dae7684515e1150d25e632448",
+    "mtime": 1788277589.2667267,
+    "ast_hash": "a9c59ea4b6583fe7b8292020d744adf3",
     "semantic_hash": ""
   },
   "context/krylov_subspace/krylov_subspace.md": {
@@ -105,9 +105,9 @@
     "semantic_hash": "8f2ef1bfb281bb7d380f45418380334f"
   },
   "context/qdrift/qdrift.md": {
-    "mtime": 1787836067.8880146,
-    "ast_hash": "54101387327d3ca4cf34b43c79227d6b",
-    "semantic_hash": "54101387327d3ca4cf34b43c79227d6b"
+    "mtime": 1788277681.072009,
+    "ast_hash": "c3891a0dc347e5c6c2f42c873e8d65c6",
+    "semantic_hash": ""
   },
   "context/qdrift/raw_data/childs_2019.md": {
     "mtime": 1787836067.8892226,
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "docs/architecture.md": {
-    "mtime": 1788270937.9215214,
-    "ast_hash": "cb0b46c9f131a151774f47aee7dbc07f",
+    "mtime": 1788277765.8045938,
+    "ast_hash": "0590d55ac1fd8f10e96163b635951ee8",
     "semantic_hash": ""
   },
   "docs/cross-project.md": {
@@ -205,8 +205,8 @@
     "semantic_hash": "b8856661a75f2f0c56d5580545753ee2"
   },
   "docs/roadmap.md": {
-    "mtime": 1788270925.0838518,
-    "ast_hash": "14373db6a886e106ee22dfcd4a0a0a72",
+    "mtime": 1788277755.9073505,
+    "ast_hash": "ad67b4a0e30c77a5676c5872e2f6b427",
     "semantic_hash": ""
   },
   "paper-plan.md": {
@@ -300,18 +300,18 @@
     "semantic_hash": ""
   },
   "context/methods/pennylane_trotter.json": {
-    "mtime": 1788271158.9593456,
-    "ast_hash": "30c01e7df4b0776dfc789afeab93293e",
+    "mtime": 1788277681.863109,
+    "ast_hash": "e527f3bccc2f071de94baf63e8471268",
     "semantic_hash": ""
   },
   "context/methods/qdrift.json": {
-    "mtime": 1788271149.8382044,
-    "ast_hash": "fc9346cce55fa0619d9b7c4f17c6999b",
+    "mtime": 1788277178.3991487,
+    "ast_hash": "5fce839b84ad44d42075efeed26ceaab",
     "semantic_hash": ""
   },
   "context/methods/qiskit_trotter.json": {
-    "mtime": 1788271158.8762834,
-    "ast_hash": "655b33ee9af5eba1c5119c001a5f5693",
+    "mtime": 1788277681.5013916,
+    "ast_hash": "1d127c548cbdd87a9432e185ebd1bd0d",
     "semantic_hash": ""
   },
   "context/methods/qrack_trotter.json": {
@@ -320,13 +320,13 @@
     "semantic_hash": ""
   },
   "context/methods/trotter_s1.json": {
-    "mtime": 1788271149.6371207,
-    "ast_hash": "264f7edae88a3d4168b61d3d397ca4b8",
+    "mtime": 1788277177.0968108,
+    "ast_hash": "060d7c69b75a5599de6dc62643d2c382",
     "semantic_hash": ""
   },
   "context/methods/trotter_s2.json": {
-    "mtime": 1788271149.7276623,
-    "ast_hash": "c9886c8b7350356c2903c3534171f53f",
+    "mtime": 1788277177.7008367,
+    "ast_hash": "cb4c183fecd1758981310fe49847f935",
     "semantic_hash": ""
   },
   "context/randomized_methods/key_points/qdrift_randomized_scaling.json": {
@@ -480,8 +480,8 @@
     "semantic_hash": ""
   },
   "src/openqevo/methods/randomized.py": {
-    "mtime": 1788271137.4565897,
-    "ast_hash": "885454d6ba8fc0cb782610aab63aca13",
+    "mtime": 1788276468.8034532,
+    "ast_hash": "750e5d1aabf6d0f3ad8965fa835787b5",
     "semantic_hash": ""
   },
   "tests/test_benchmark.py": {
@@ -824,16 +824,6 @@
     "ast_hash": "405382bfd3f57d82f3a144ce313cc646",
     "semantic_hash": ""
   },
-  "context/exact.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "2613df7fadddc1924d7ce509285246ac",
-    "semantic_hash": ""
-  },
-  "context/schema.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "d50efe6dfde04f272fe98f8cc6635980",
-    "semantic_hash": ""
-  },
   "context/schema/evolution_result.schema.json": {
     "mtime": 1788270812.5940416,
     "ast_hash": "2c3fff300acafeb56b1ded7aef09ef44",
@@ -844,24 +834,14 @@
     "ast_hash": "f58ef909fdd03b25dec7e9cbda3b40ac",
     "semantic_hash": ""
   },
-  "context/trotter_s1.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "8e23d7ac333c32fde93471c911dbd44c",
-    "semantic_hash": ""
-  },
-  "context/trotter_s2.json": {
-    "mtime": 1774710563.0,
-    "ast_hash": "eda82cd91dc4190cdb571ee724a1dfc4",
-    "semantic_hash": ""
-  },
   "src/openqevo/hamiltonian.py": {
     "mtime": 1788271104.313959,
     "ast_hash": "54f2087dcee8816906a1280dc9151a0e",
     "semantic_hash": ""
   },
   "src/openqevo/result.py": {
-    "mtime": 1788271126.7278461,
-    "ast_hash": "c47b5f2c95d63c250c5defd88a0b81e6",
+    "mtime": 1788276433.8997526,
+    "ast_hash": "f3f0e86c946328c5efe719a4b04c1976",
     "semantic_hash": ""
   },
   "tests/test_contracts.py": {
@@ -870,8 +850,8 @@
     "semantic_hash": ""
   },
   "docs/contracts.md": {
-    "mtime": 1788270924.7578428,
-    "ast_hash": "956bd348f85513ae9ceacf2aa437899c",
+    "mtime": 1788277619.1362932,
+    "ast_hash": "4f5ecb4e21f0b26efd6bdc226ad50155",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260828_174235_got_it__let_us_merge_main_into_dev__and_then_let_u.md": {
@@ -897,6 +877,106 @@
   "graphify-out/memory/query_20260901_132220_can_openqevo_keep_main_as_a_sanitized_public_relea.md": {
     "mtime": 1788268940.5871208,
     "ast_hash": "8614239356a1b0d57d55e2235378d58d",
+    "semantic_hash": ""
+  },
+  "context/schema/operation_sequence.schema.json": {
+    "mtime": 1788277710.3530338,
+    "ast_hash": "91e9549ec8091c00fdd547f066a72f76",
+    "semantic_hash": ""
+  },
+  "context/schema/reference_circuit.schema.json": {
+    "mtime": 1788277710.8691208,
+    "ast_hash": "db4d7e4f132aa73fb5df6d1448042578",
+    "semantic_hash": ""
+  },
+  "experiments/publication_study/protocol.json": {
+    "mtime": 1788277473.3515801,
+    "ast_hash": "f62912218e5faae1a407fb623b0bd45b",
+    "semantic_hash": ""
+  },
+  "experiments/publication_study/results-2026-09-01/manifest.json": {
+    "mtime": 1788277540.0901072,
+    "ast_hash": "9e63c204b414020572e2dd6dceadecdf",
+    "semantic_hash": ""
+  },
+  "experiments/publication_study/results-2026-09-01/protocol.json": {
+    "mtime": 1788277509.9513505,
+    "ast_hash": "be1f3902c0e42c9878de2f99f73465dc",
+    "semantic_hash": ""
+  },
+  "experiments/publication_study/results-2026-09-01/resource_estimate.json": {
+    "mtime": 1788277509.953915,
+    "ast_hash": "cc668350982ea008f70e33cbc92a1d9a",
+    "semantic_hash": ""
+  },
+  "experiments/publication_study/results-2026-09-01/study_summary.json": {
+    "mtime": 1788277536.5763044,
+    "ast_hash": "41f04ff732926625ac45b6649c838704",
+    "semantic_hash": ""
+  },
+  "experiments/publication_study/results-2026-09-01/workloads.json": {
+    "mtime": 1788277509.952607,
+    "ast_hash": "7541b46f417975dff96a68666970c42b",
+    "semantic_hash": ""
+  },
+  "src/openqevo/conformance.py": {
+    "mtime": 1788276685.8389702,
+    "ast_hash": "d22de978876ac2bc48b09bd31ffe04c4",
+    "semantic_hash": ""
+  },
+  "src/openqevo/operations.py": {
+    "mtime": 1788276479.2595098,
+    "ast_hash": "586b84daac96f32b8059155244e0de59",
+    "semantic_hash": ""
+  },
+  "src/openqevo/study.py": {
+    "mtime": 1788277496.4836612,
+    "ast_hash": "c9c11345eadad0e1db7c905b6dd7345c",
+    "semantic_hash": ""
+  },
+  "src/openqevo/workloads.py": {
+    "mtime": 1788277496.4827607,
+    "ast_hash": "9ef1ef59f87755a56a20d7dd8b7236ca",
+    "semantic_hash": ""
+  },
+  "tests/test_conformance.py": {
+    "mtime": 1788276675.281343,
+    "ast_hash": "f5b5a54802bce0fe1789453f221be533",
+    "semantic_hash": ""
+  },
+  "tests/test_operations.py": {
+    "mtime": 1788277765.8072605,
+    "ast_hash": "eff51e869d50440c212092da26dc0474",
+    "semantic_hash": ""
+  },
+  "tests/test_study.py": {
+    "mtime": 1788277496.481303,
+    "ast_hash": "c3036f78d807f4624fa6101478675002",
+    "semantic_hash": ""
+  },
+  "tests/test_workloads.py": {
+    "mtime": 1788277262.9164798,
+    "ast_hash": "20c13deb944b90b62802865aaef7919c",
+    "semantic_hash": ""
+  },
+  "experiments/publication_study/README.md": {
+    "mtime": 1788277473.954078,
+    "ast_hash": "200ac692a893ee1a3a12b5daa56b8bc4",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260901_143833_what_code_paths_and_tests_must_change_to_implement.md": {
+    "mtime": 1788273513.1243145,
+    "ast_hash": "c5963110449a0cf35348a80f73cc8cde",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260901_151821_what_is_pending.md": {
+    "mtime": 1788275901.6046236,
+    "ast_hash": "decae6da888e43ba4249d8971f7c7628",
+    "semantic_hash": ""
+  },
+  "experiments/publication_study/results-2026-09-01/study_overview.svg": {
+    "mtime": 1788277540.0704918,
+    "ast_hash": "9dd5d94dc64255faf8d3aee7b06f2fff",
     "semantic_hash": ""
   }
 }

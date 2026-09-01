@@ -1,16 +1,16 @@
 # Graph Report - OpenQEvo  (2026-09-01)
 
 ## Corpus Check
-- 157 files · ~646,442 words
+- 172 files · ~676,150 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2068 nodes · 2589 edges · 201 communities (173 shown, 28 thin omitted)
-- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 208 edges (avg confidence: 0.6)
+- 2313 nodes · 3156 edges · 217 communities (187 shown, 30 thin omitted)
+- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 304 edges (avg confidence: 0.57)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `febd65da`
+- Built from commit: `bbc881e6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -203,18 +203,34 @@
 - [[_COMMUNITY_Community 198|Community 198]]
 - [[_COMMUNITY_Community 199|Community 199]]
 - [[_COMMUNITY_Community 200|Community 200]]
+- [[_COMMUNITY_Community 201|Community 201]]
+- [[_COMMUNITY_Community 202|Community 202]]
+- [[_COMMUNITY_Community 203|Community 203]]
+- [[_COMMUNITY_Community 204|Community 204]]
+- [[_COMMUNITY_Community 205|Community 205]]
+- [[_COMMUNITY_Community 206|Community 206]]
+- [[_COMMUNITY_Community 207|Community 207]]
+- [[_COMMUNITY_Community 208|Community 208]]
+- [[_COMMUNITY_Community 209|Community 209]]
+- [[_COMMUNITY_Community 210|Community 210]]
+- [[_COMMUNITY_Community 211|Community 211]]
+- [[_COMMUNITY_Community 212|Community 212]]
+- [[_COMMUNITY_Community 213|Community 213]]
+- [[_COMMUNITY_Community 214|Community 214]]
+- [[_COMMUNITY_Community 215|Community 215]]
+- [[_COMMUNITY_Community 216|Community 216]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `EvolutionMethod` - 47 edges
-2. `HamiltonianInput` - 46 edges
-3. `EvolutionResult` - 39 edges
-4. `Methods` - 34 edges
-5. `Qrack` - 34 edges
-6. `PauliHamiltonian` - 31 edges
-7. `EvolutionCosts` - 30 edges
-8. `openQEvo` - 25 edges
-9. `TestContextLoading` - 17 edges
-10. `PauliTerm` - 16 edges
+1. `PauliHamiltonian` - 75 edges
+2. `EvolutionResult` - 60 edges
+3. `EvolutionMethod` - 50 edges
+4. `HamiltonianInput` - 49 edges
+5. `EvolutionCosts` - 45 edges
+6. `Methods` - 34 edges
+7. `Qrack` - 34 edges
+8. `PauliTerm` - 32 edges
+9. `openQEvo` - 25 edges
+10. `ExactEvolution` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `PennyLaneTrotterAdapter` --implements--> `Trotter-Suzuki Product Formula`  [INFERRED]
@@ -247,15 +263,15 @@
 - **High-Dissipation Local-Channel Decomposition** — tmp_page_3_picture_3_high_dissipation_regime, tmp_page_3_picture_3_convex_combination_local_channels, tmp_page_3_picture_3_second_order_error, tmp_page_3_picture_3_separability_preserving_channel [INFERRED 0.85]
 - **Four-Mode Fermionic Entanglement Diagnostic** — tmp_page_41_figure_1_four_mode_fermionic_model, tmp_page_41_figure_1_effective_two_qubit_state, tmp_page_41_figure_1_partial_transpose_entanglement_measure [INFERRED 0.95]
 
-## Communities (201 total, 28 thin omitted)
+## Communities (217 total, 30 thin omitted)
 
 ### Community 0 - "Context Schema Definitions"
-Cohesion: 0.07
-Nodes (49): _accuracy_metrics(), _canonical_json(), _decode_state(), _density_trace_distance(), _distribution_summary(), _encode_state(), _file_sha256(), generate_bundle() (+41 more)
+Cohesion: 0.10
+Nodes (42): _accuracy_metrics(), _canonical_json(), _decode_state(), _density_trace_distance(), _distribution_summary(), _encode_state(), _file_sha256(), generate_bundle() (+34 more)
 
 ### Community 1 - "Context Runtime Validation"
-Cohesion: 0.20
-Nodes (10): Runtime and Test-Time Context Validation, Structured Method Context Metadata, Data Schema Project, AI-Ready Method Metadata Deliverable, get_context(), Validate a method context dict against context/schema/method.schema.json., Load context JSON for a method, if it exists.      Looks for ``context/methods/{, _validate_context() (+2 more)
+Cohesion: 0.12
+Nodes (15): Structured Method Context Metadata, Data Schema Project, AI-Ready Method Metadata Deliverable, Cross-project contributions, Current baseline, First release objective, Historical planning context, OpenQEvo roadmap (+7 more)
 
 ### Community 2 - "Trotter Ordering Research"
 Cohesion: 0.04
@@ -270,20 +286,20 @@ Cohesion: 0.05
 Nodes (45): type, items, type, description, items, type, $id, type (+37 more)
 
 ### Community 5 - "Python Module Dependencies"
-Cohesion: 0.10
-Nodes (17): Registry-Based Method Discovery, One-File Method Extensibility, openQEvo Architecture, Strategy, Registry, and Adapter Pattern, Reusable Software Thrust Library Pattern, openQEvo — Open library for quantum evolution operators., get(), list_methods() (+9 more)
+Cohesion: 0.11
+Nodes (17): Registry-Based Method Discovery, One-File Method Extensibility, Runtime and Test-Time Context Validation, get(), get_context(), list_methods(), Registry for discovering and accessing evolution methods.  Methods self-register, Class decorator that registers an evolution method.      Usage::          @regis (+9 more)
 
 ### Community 6 - "Evolution Method Types"
-Cohesion: 0.14
-Nodes (27): PennyLaneTrotterAdapter, PennyLane-backed Trotter product decomposition., Approximate exp(-i H t) using PennyLane's TrotterProduct.          Parameters, QiskitTrotterAdapter, Qiskit-backed Trotter-Suzuki decomposition., Approximate exp(-i H t) using Qiskit's Trotter synthesis.          Parameters, Optional Adapter Loading, Algorithms Thrust Production-Code Replacement (+19 more)
+Cohesion: 0.12
+Nodes (26): ABC, _formula_costs(), _formula_order(), PennyLaneTrotterAdapter, Adapter wrapping PennyLane's TrotterProduct.  Requires: pip install pennylane  C, Return a dense unitary or reusable PennyLane circuit operation., PennyLane-backed Trotter product decomposition., Approximate exp(-i H t) using PennyLane's TrotterProduct.          Parameters (+18 more)
 
 ### Community 7 - "Architecture Documentation"
 Cohesion: 0.12
 Nodes (16): 1. Create the adapter file, 1. Create the method file, 2. Register it, 2. Register it, 3. (Optional) Add context metadata, Architecture, Class diagram, Context validation (+8 more)
 
 ### Community 8 - "Project Overview"
-Cohesion: 0.05
-Nodes (47): Context Schema Validation, Focused Pull Requests, Method Integration Workflow, Context JSON validation against schema, New method integration workflow, Cross-project responsibilities: HW DS AS SE, Registry and adapter workflow, Canonical Pauli Hamiltonian Contract (+39 more)
+Cohesion: 0.07
+Nodes (26): Context JSON validation against schema, New method integration workflow, Cross-project responsibilities: HW DS AS SE, Registry and adapter workflow, At a glance, Citation and acknowledgment, Compare two evolution methods, Contact (+18 more)
 
 ### Community 9 - "Qiskit Adapter Tests"
 Cohesion: 0.12
@@ -298,8 +314,8 @@ Cohesion: 0.29
 Nodes (9): Agentic Software Project, Algorithms Thrust, Cross-project workflow, Dependency chain, Hybrid Workflows Project, Packaged openQEvo Library with Structured Context, Schema-First Orchestration Dependency, Software Engineering Project (+1 more)
 
 ### Community 12 - "Native Trotter Methods"
-Cohesion: 0.10
-Nodes (4): Tests for Trotter-Suzuki decompositions via the registry., TestExactEvolution, TestFirstOrder, TestSecondOrder
+Cohesion: 0.15
+Nodes (3): Tests for Trotter-Suzuki decompositions via the registry., TestExactEvolution, TestSecondOrder
 
 ### Community 13 - "Trotter Method Tests"
 Cohesion: 0.05
@@ -338,8 +354,8 @@ Cohesion: 0.07
 Nodes (35): Commutativity-Guided Ordering Mechanism, depleteGroups Ordering Strategy, Trotter Error and Circuit-Length Tradeoff, Error-Operator Ordering Scalability Limit, First-Order Trotter Formula, Hamiltonian Incompatibility Graph, Lexicographic Pauli-String Ordering, Magnitude Ordering (+27 more)
 
 ### Community 23 - "Release Roadmap"
-Cohesion: 0.15
-Nodes (12): ABC, Adapter wrapping PennyLane's TrotterProduct.  Requires: pip install pennylane  C, Adapter wrapping Qiskit's Trotter-Suzuki synthesis.  Requires: pip install qiski, Base protocol for quantum evolution methods.  Every evolution method in openQEvo, dense_terms(), Canonical Hamiltonian contracts and dense compatibility helpers., Return coefficient-weighted dense terms for small-system validation., Return the complete dense Hamiltonian for reference calculations. (+4 more)
+Cohesion: 0.31
+Nodes (7): dense_terms(), Return coefficient-weighted dense terms for small-system validation., Return the complete dense Hamiltonian for reference calculations., Normalize canonical or legacy dense input into validated dense terms., Return the dense matrix in ascending computational-qubit order., complex128, NDArray
 
 ### Community 24 - "Benchmark Study Design"
 Cohesion: 0.07
@@ -354,8 +370,8 @@ Cohesion: 0.49
 Nodes (10): Bosonic Model, Bosonic Threshold min(κ1,κ2)/J = 2, Convex-Gaussian Regime, Fermionic Model, Fermionic Threshold κ3/J = 2U/J, Fermionic and Bosonic Noise-Interaction Phase Diagram, Normalized Dephasing Rate κ3/J, Normalized Interaction Strength U/J (+2 more)
 
 ### Community 27 - "Framework Adapters"
-Cohesion: 0.12
-Nodes (17): Trotterization as first target method family, Is the Trotterized UCCSD Ansatz Chemically Well-Defined?, Operator Ordering for Model-Chemistry Reproducibility, UCCSD Operator-Ordering Sensitivity, Duplicate source for Dynamical Complexity of Non-Gaussian Many-Body Systems with Dissipation, Dynamical Complexity of Non-Gaussian Many-Body Systems with Dissipation, Noise-Threshold Classical Simulability, Rajput Roggero Wiebe 2022 Hybridized Methods for Quantum Simulation in the Interaction Picture (+9 more)
+Cohesion: 0.13
+Nodes (16): Trotterization as first target method family, Is the Trotterized UCCSD Ansatz Chemically Well-Defined?, Operator Ordering for Model-Chemistry Reproducibility, UCCSD Operator-Ordering Sensitivity, Duplicate source for Dynamical Complexity of Non-Gaussian Many-Body Systems with Dissipation, Dynamical Complexity of Non-Gaussian Many-Body Systems with Dissipation, Noise-Threshold Classical Simulability, Rajput Roggero Wiebe 2022 Hybridized Methods for Quantum Simulation in the Interaction Picture (+8 more)
 
 ### Community 28 - "Trotter Research Context"
 Cohesion: 0.07
@@ -399,15 +415,15 @@ Nodes (6): Bringing a new method into openQEvo, Code style, Contributing to open
 
 ### Community 38 - "Trotter Evolution Typing"
 Cohesion: 0.15
-Nodes (22): EvolutionCosts, Trotter-Suzuki product formulas for computing exp(-iHt).  PLACEHOLDER IMPLEMENTA, Approximate exp(-i H t) using second-order Trotter.          Parameters, Approximate exp(-i H t) using first-order Trotter.          Parameters         -, _step_count(), _trotter_result(), hamiltonian_provenance(), Return stable labels for ordered Hamiltonian terms. (+14 more)
+Nodes (25): Algorithms Thrust Production-Code Replacement, EvolutionCosts, Trotter-Suzuki Convergence Example, ExactEvolution, Trotter-Suzuki product formulas for computing ``exp(-i H t)``.  The formulas are, Second-order (symmetric) Trotter-Suzuki decomposition., Approximate exp(-i H t) using second-order Trotter.          Parameters, Exact time evolution via direct matrix exponentiation.      Useful as a referenc (+17 more)
 
 ### Community 39 - "Required Software Work"
 Cohesion: 0.09
 Nodes (21): 1. High dephasing noise regime, 1. Non-separability for any observable, 2. High incoherent particle loss and gain regime, 2. Non-separability for even observables, A. Analyzing particle number moments, A. High-noise regime for the bosonic model is not convex-Gaussian at all times, A. Operators, superoperators and their norms, ACKNOWLEDGMENTS (+13 more)
 
 ### Community 40 - "Reproducible Benchmark Infrastructure"
-Cohesion: 0.10
-Nodes (30): _apply_qrack_native_exp(), _apply_qrack_pauli_exp(), _basis_vector(), _change_to_z_basis(), Qrack Gate-Level Construction Requirement, _pauli_decompose(), _pauli_matrix(), QrackTrotterAdapter (+22 more)
+Cohesion: 0.26
+Nodes (14): _apply_qrack_native_exp(), _apply_qrack_pauli_exp(), _basis_vector(), _change_to_z_basis(), _pauli_decompose(), _pauli_matrix(), Adapter wrapping Qrack's quantum simulation.  Requires: pip install pyqrack  Con, Approximate exp(-i H t) using Qrack Pauli exponentials.          Parameters (+6 more)
 
 ### Community 41 - "qDRIFT Importance Sampling"
 Cohesion: 0.22
@@ -418,16 +434,16 @@ Cohesion: 0.20
 Nodes (10): Importance sampling for qDRIFT, qDRIFT lambda norm scaling, qDRIFT randomized compiler, Stochastic term selection proportional to Hamiltonian coefficient norm, qDRIFT systematic bias floor, Campbell 2019 Random Compiler for Fast Hamiltonian Simulation, David Sinayskiy Petruccione 2025 Tighter Error Bounds for qDRIFT, Arbitrary qDRIFT Sampling Distributions (+2 more)
 
 ### Community 43 - "Stochastic Hybrid Simulation"
-Cohesion: 0.33
-Nodes (6): Stochastic Hamiltonian Sparsification, Interaction-Picture Simulation Hybridization, qDRIFT-Qubitization Hybrid, Convex Probability Optimization, SparSto, Ouyang White Campbell 2020 Compilation by Stochastic Hamiltonian Sparsification
+Cohesion: 0.29
+Nodes (7): Stochastic Hamiltonian Sparsification, Hybridized Methods for Quantum Simulation in the Interaction Picture, Interaction-Picture Simulation Hybridization, qDRIFT-Qubitization Hybrid, Convex Probability Optimization, SparSto, Ouyang White Campbell 2020 Compilation by Stochastic Hamiltonian Sparsification
 
 ### Community 44 - "qDRIFT Literature Network"
-Cohesion: 0.23
-Nodes (11): qDRIFT Algorithm Summary, Random Compiler for Fast Hamiltonian Simulation, Childs Ostrander Su 2019 Faster Quantum Simulation by Randomization, Faster Quantum Simulation Citation Catalog, Tighter Error Bounds for the qDRIFT Algorithm, Influential Recent Citing Papers, Theory of Trotter Error with Commutator Scaling, Bias and Variance Control (+3 more)
+Cohesion: 0.16
+Nodes (16): qDRIFT Algorithm Summary, qDRIFT Diamond-Norm Error Bound, Quantum Stochastic Drift Protocol, Random Compiler for Fast Hamiltonian Simulation, Term-Strength-Proportional Sampling, Childs Ostrander Su 2019 Faster Quantum Simulation by Randomization, Faster Quantum Simulation Citation Catalog, Jensen Integral-Error Refinement (+8 more)
 
 ### Community 45 - "Trotterization Scientific Context"
-Cohesion: 0.10
-Nodes (9): Method metadata can cite local context files, which must exist., The wiki manifest must validate and point to existing paths., LLM recommendations should validate against the output schema., Checked-in recommendation examples must match the schema., Software source inventory must cite existing local raw docs., All method context files must fully validate against method.schema.json., Every registered method should have a context JSON file., Executable method metadata must align with the OpenQEvo registry. (+1 more)
+Cohesion: 0.08
+Nodes (15): _key_point_ids(), _key_point_paths(), Tests for context JSON loading and schema validation., Method metadata can cite local context files, which must exist., Extracted key points must validate and cite existing raw data., Selection rules must validate and reference known key-point IDs., The wiki manifest must validate and point to existing paths., LLM recommendations should validate against the output schema. (+7 more)
 
 ### Community 46 - "Suzuki Formula Foundations"
 Cohesion: 0.11
@@ -438,8 +454,8 @@ Cohesion: 0.09
 Nodes (22): description, type, description, type, properties, description, type, description (+14 more)
 
 ### Community 48 - "Research Questions"
-Cohesion: 0.20
-Nodes (24): float64, _adjacent_merged_count(), _apply_trajectory(), _draw_sequence(), QDriftEvolution, Randomized quantum evolution methods., Return the exact expected qDRIFT channel in Liouville form.          This dense, Return the expected qDRIFT channel with structured provenance. (+16 more)
+Cohesion: 0.27
+Nodes (18): float64, _apply_trajectory(), _draw_sequence(), QDriftEvolution, Randomized quantum evolution methods., Return the sampled term indices for a reproducible qDRIFT trajectory.          T, Return the exact expected qDRIFT channel in Liouville form.          This dense, qDRIFT-style randomized product formula. (+10 more)
 
 ### Community 49 - "Scientific Validation Gates"
 Cohesion: 0.12
@@ -450,8 +466,8 @@ Cohesion: 0.53
 Nodes (6): Bosonic Wigner Function, Coherent-State Displacement Alpha, Dephasing-to-Interaction Ratio Kappa over U, High Noise Does Not Guarantee Convex Gaussianity, Wigner Negativity, Bosonic Wigner Negativity Figure
 
 ### Community 51 - "qDRIFT Error Bounds"
-Cohesion: 0.40
-Nodes (5): qDRIFT Diamond-Norm Error Bound, Quantum Stochastic Drift Protocol, Term-Strength-Proportional Sampling, Jensen Integral-Error Refinement, Linear-Norm qDRIFT Error Scaling
+Cohesion: 0.06
+Nodes (77): _accuracy_metrics(), build_workloads(), _canonical_json(), _cost_summary(), _decode_state(), _density_trace_distance(), _distribution_summary(), _encode_state() (+69 more)
 
 ### Community 52 - "Transient Wigner Negativity"
 Cohesion: 0.70
@@ -490,12 +506,12 @@ Cohesion: 0.14
 Nodes (14): properties, description, type, default, description, max, min, range (+6 more)
 
 ### Community 76 - "Community 76"
-Cohesion: 0.11
-Nodes (18): description, items, type, description, items, type, type, description (+10 more)
+Cohesion: 0.12
+Nodes (17): description, items, type, description, items, type, type, description (+9 more)
 
 ### Community 77 - "Community 77"
-Cohesion: 0.15
-Nodes (13): description, type, description, required, type, description, type, properties (+5 more)
+Cohesion: 0.13
+Nodes (15): description, type, description, required, type, description, type, properties (+7 more)
 
 ### Community 79 - "Community 79"
 Cohesion: 0.15
@@ -506,8 +522,8 @@ Cohesion: 0.14
 Nodes (16): items, items, description, type, properties, required, type, description (+8 more)
 
 ### Community 81 - "Community 81"
-Cohesion: 0.17
-Nodes (12): Braket Conversions[#](#module-mitiq.interface.mitiq_braket.conversions "Link to this heading"), Circuit types and result types[#](#circuit-types-and-result-types "Link to this heading"), Cirq Utils[#](#module-mitiq.interface.mitiq_cirq.cirq_utils "Link to this heading"), Core Utilities[#](#core-utilities "Link to this heading"), Mitiq Interface[#](#mitiq-interface "Link to this heading"), OpenQASM Conversions[#](#module-mitiq.interface.mitiq_openqasm.conversions "Link to this heading"), Pennylane Conversions[#](#module-mitiq.interface.mitiq_pennylane.conversions "Link to this heading"), PyQuil Conversions[#](#module-mitiq.interface.mitiq_pyquil.conversions "Link to this heading") (+4 more)
+Cohesion: 0.22
+Nodes (9): Braket Conversions[#](#module-mitiq.interface.mitiq_braket.conversions "Link to this heading"), Cirq Utils[#](#module-mitiq.interface.mitiq_cirq.cirq_utils "Link to this heading"), Mitiq Interface[#](#mitiq-interface "Link to this heading"), OpenQASM Conversions[#](#module-mitiq.interface.mitiq_openqasm.conversions "Link to this heading"), Pennylane Conversions[#](#module-mitiq.interface.mitiq_pennylane.conversions "Link to this heading"), PyQuil Conversions[#](#module-mitiq.interface.mitiq_pyquil.conversions "Link to this heading"), Qibo Conversions[#](#qibo-conversions "Link to this heading"), Qiskit Conversions[#](#module-mitiq.interface.mitiq_qiskit.conversions "Link to this heading") (+1 more)
 
 ### Community 82 - "Community 82"
 Cohesion: 0.17
@@ -526,20 +542,20 @@ Cohesion: 0.18
 Nodes (10): 1 Introduction, 2 The power of randomization, 3 Randomization lemma, 4 Error bounds, 5 Algorithm performance and comparisons, 6 Empirical performance, 7 Discussion, Acknowledgments (+2 more)
 
 ### Community 86 - "Community 86"
-Cohesion: 0.18
-Nodes (11): type, type, properties, authors, doi, title, url, year (+3 more)
+Cohesion: 0.14
+Nodes (14): type, type, properties, authors, doi, references, title, url (+6 more)
 
 ### Community 87 - "Community 87"
 Cohesion: 0.18
 Nodes (10): Decision policy, Evidence chain, EvolutionTask, Execution bridge, HamiltonianProfile, Input classes, MethodRecommendation, Minimum questions before a high-confidence recommendation (+2 more)
 
 ### Community 88 - "Community 88"
-Cohesion: 0.11
-Nodes (22): execute_recommendation(), _execution_contract(), _merge_parameters(), _normalize_terms(), Execution helpers for context-backed recommendations., Execute a recommendation, optionally returning structured provenance., _recommendation_method_name(), _validate_required_arguments() (+14 more)
+Cohesion: 0.09
+Nodes (22): Exception, PauliHamiltonian, Validated, ordered Pauli-sum Hamiltonian used across OpenQEvo methods., Number of qubits in every full-system Pauli word., Declared tensor-factor ordering shared by every term., Coefficient one-norm used by standard qDRIFT., Stable hash of the canonical JSON representation., Return the versioned JSON-compatible Hamiltonian contract. (+14 more)
 
 ### Community 89 - "Community 89"
-Cohesion: 0.20
-Nodes (9): API-doc[#](#module-mitiq "Link to this heading"), Depolarizing Amplifications[#](#module-mitiq.experimental.pea.amplifications.amplify_depolarizing "Link to this heading"), Experimental Techniques[#](#experimental-techniques "Link to this heading"), Noise Amplification Utilities[#](#module-mitiq.experimental.pea.scale_amplifications "Link to this heading"), Probabilistic Error Amplification (High-Level Tools)[#](#module-mitiq.experimental.pea.pea "Link to this heading"), Probabilistic Error Amplification[#](#probabilistic-error-amplification "Link to this heading"), TREX (High-Level Tools)[#](#module-mitiq.experimental.trex.trex "Link to this heading"), Twirled Readout Error eXtinction[#](#twirled-readout-error-extinction "Link to this heading") (+1 more)
+Cohesion: 0.15
+Nodes (13): Classical Post-Processing[#](#module-mitiq.experimental.shadows.classical_postprocessing "Link to this heading"), Classical Shadows[#](#classical-shadows "Link to this heading"), Classical Shadows (High-Level Tools)[#](#module-mitiq.experimental.shadows.shadows "Link to this heading"), Depolarizing Amplifications[#](#module-mitiq.experimental.pea.amplifications.amplify_depolarizing "Link to this heading"), Experimental Techniques[#](#experimental-techniques "Link to this heading"), Noise Amplification Utilities[#](#module-mitiq.experimental.pea.scale_amplifications "Link to this heading"), Probabilistic Error Amplification (High-Level Tools)[#](#module-mitiq.experimental.pea.pea "Link to this heading"), Probabilistic Error Amplification[#](#probabilistic-error-amplification "Link to this heading") (+5 more)
 
 ### Community 90 - "Community 90"
 Cohesion: 0.20
@@ -550,8 +566,8 @@ Cohesion: 0.20
 Nodes (10): 1. Number partitioning, 2. Exact Cover and its generalizations, 2. Large plateaus, 3. 3-Regular MAXCUT, 4. Ramsey numbers, 5. Finding largest cliques in random graphs, 6. Graph isomorphism, 7. Machine learning (+2 more)
 
 ### Community 92 - "Community 92"
-Cohesion: 0.22
-Nodes (6): _key_point_ids(), _key_point_paths(), Tests for context JSON loading and schema validation., Extracted key points must validate and cite existing raw data., Selection rules must validate and reference known key-point IDs., Wiki pages should cite known key-point IDs when making claims.
+Cohesion: 0.04
+Nodes (44): additionalProperties, not, type, $defs, pauli_evolution, $id, minimum, $ref (+36 more)
 
 ### Community 94 - "Community 94"
 Cohesion: 0.25
@@ -570,8 +586,8 @@ Cohesion: 0.29
 Nodes (6): Current status, Evidence state, Scope, Source inventory, Method metadata, Randomized Evolution Methods
 
 ### Community 98 - "Community 98"
-Cohesion: 0.11
-Nodes (17): Structured metadata for this method, loaded from context/methods/ JSON., Compute the time-evolution operator exp(-i H t).          Parameters         ---, Execute a method and return the structured provenance contract.          ``evolv, EvolutionResult, installed_versions(), Return a dense unitary output or fail clearly for another mode., Stable byte hash for NumPy output representations., Resolve installed backend distribution versions for result provenance. (+9 more)
+Cohesion: 0.17
+Nodes (12): Structured metadata for this method, loaded from context/methods/ JSON., Compute the time-evolution operator exp(-i H t).          Parameters         ---, Execute a method and return the structured provenance contract.          ``evolv, installed_versions(), Resolve installed backend distribution versions for result provenance., HamiltonianInput, Any, complexfloating (+4 more)
 
 ### Community 99 - "Community 99"
 Cohesion: 0.29
@@ -630,8 +646,8 @@ Cohesion: 0.40
 Nodes (5): AS — Agentic Software ([Issue #3](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/3)), DS — Data Schema ([Issue #2](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/2)), HW — Hybrid Workflows ([Issue #4](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/4)), Responsibilities, SE — Software Engineering ([Issue #1](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/1))
 
 ### Community 113 - "Community 113"
-Cohesion: 0.40
-Nodes (5): Classical Post-Processing[#](#module-mitiq.experimental.shadows.classical_postprocessing "Link to this heading"), Classical Shadows[#](#classical-shadows "Link to this heading"), Classical Shadows (High-Level Tools)[#](#module-mitiq.experimental.shadows.shadows "Link to this heading"), Quantum Processing[#](#module-mitiq.experimental.shadows.quantum_processing "Link to this heading"), Utility Functions[#](#module-mitiq.experimental.shadows.shadows_utils "Link to this heading")
+Cohesion: 0.09
+Nodes (22): files, protocol.json, resource_estimate.json, study_overview.svg, study_records.jsonl, study_summary.json, workloads.json, bytes (+14 more)
 
 ### Community 114 - "Community 114"
 Cohesion: 0.40
@@ -710,16 +726,16 @@ Cohesion: 0.13
 Nodes (15): $ref, $ref, $ref, $ref, additionalProperties, properties, required, type (+7 more)
 
 ### Community 133 - "Community 133"
-Cohesion: 0.50
-Nodes (4): source, description, enum, type
+Cohesion: 0.13
+Nodes (17): _adjacent_merged_count(), Return the expected qDRIFT channel with structured provenance., Return one qDRIFT trajectory with its complete sampled sequence., hamiltonian_provenance(), Return JSON-compatible input provenance without embedding dense matrices., EvolutionCosts, implementation_provenance(), ImplementationProvenance (+9 more)
 
 ### Community 134 - "Community 134"
 Cohesion: 0.50
 Nodes (4): rationale, description, items, type
 
 ### Community 135 - "Community 135"
-Cohesion: 0.17
-Nodes (12): description, items, type, type, description, items, type, applicable_hamiltonians (+4 more)
+Cohesion: 0.14
+Nodes (19): canonical_conformance_cases(), ConformanceCase, evaluate_trotter_adapter(), phase_aligned_operator_error(), Executable cross-framework conformance cases for product formulas., Return normalized spectral error after removing one global phase., Evaluate one registered adapter against native formula references., Run every requested adapter and return a serializable suite record. (+11 more)
 
 ### Community 136 - "Community 136"
 Cohesion: 0.50
@@ -746,16 +762,16 @@ Cohesion: 0.67
 Nodes (3): description, type, alternatives
 
 ### Community 144 - "Community 144"
-Cohesion: 0.17
-Nodes (12): description, type, properties, type, description, type, description, type (+4 more)
+Cohesion: 0.11
+Nodes (21): Context Schema Validation, Focused Pull Requests, Method Integration Workflow, Canonical Pauli Hamiltonian Contract, Common Method and Result Contract, Compiled Gate Cost Model, Cross-Framework Conformance, Equal Logical Operation Budget (+13 more)
 
 ### Community 145 - "Community 145"
 Cohesion: 0.26
 Nodes (8): Tests for canonical Hamiltonian and structured result contracts., test_dense_matrix_compatibility_is_preserved(), test_pauli_hamiltonian_contract_validates_against_schema(), test_pauli_hamiltonian_dense_conversion_and_round_trip(), test_recommendation_accepts_serialized_hamiltonian_and_structured_result(), test_structured_result_carries_costs_and_provenance(), test_structured_result_contract_validates_against_schema(), xz_hamiltonian()
 
 ### Community 146 - "Community 146"
-Cohesion: 0.18
-Nodes (11): type, type, properties, authors, doi, title, url, year (+3 more)
+Cohesion: 0.24
+Nodes (12): _formula_costs(), _formula_order(), _gate_counts(), QiskitTrotterAdapter, Adapter wrapping Qiskit's Trotter-Suzuki synthesis.  Requires: pip install qiski, Return a dense unitary or compiled Qiskit circuit with resources., Qiskit-backed Trotter-Suzuki decomposition., Approximate exp(-i H t) using Qiskit's Trotter synthesis.          Parameters (+4 more)
 
 ### Community 147 - "Community 147"
 Cohesion: 0.67
@@ -766,8 +782,8 @@ Cohesion: 0.67
 Nodes (3): source, description, type
 
 ### Community 163 - "Community 163"
-Cohesion: 0.18
-Nodes (11): description, type, description, type, properties, example_path, method_name, source (+3 more)
+Cohesion: 0.16
+Nodes (10): PauliTerm, Return a JSON-compatible canonical representation., Construct a validated term from its JSON-compatible form., One real-weighted Pauli word with explicit tensor-factor ordering.      ``pauli_, Number of qubits represented by the full Pauli word., Number of non-identity factors in the Pauli word., Materialize the sequence for validation; not a scalable execution path., Materialize the operation for small-system validation only. (+2 more)
 
 ### Community 164 - "Community 164"
 Cohesion: 0.18
@@ -783,15 +799,15 @@ Nodes (11): minimum, type, items, type, limitations, shape, warnings, items (+3 
 
 ### Community 172 - "Community 172"
 Cohesion: 0.18
-Nodes (11): minLength, type, exclusiveMinimum, type, type, properties, id, lambda (+3 more)
+Nodes (11): exclusiveMinimum, type, type, properties, lambda, mapping_metadata, qubits, schema_version (+3 more)
 
 ### Community 173 - "Community 173"
-Cohesion: 0.20
-Nodes (5): ImplementationProvenance, _json_compatible(), Return the versioned JSON metadata contract without embedding output., Identity and dependency versions for one method implementation., Any
+Cohesion: 0.28
+Nodes (4): _json_compatible(), Stable hash for NumPy or serializable structured outputs., Return the versioned JSON metadata contract without embedding output., Any
 
 ### Community 174 - "Community 174"
-Cohesion: 0.22
-Nodes (9): properties, description, type, default, description, required, type, type (+1 more)
+Cohesion: 0.29
+Nodes (12): execute_recommendation(), _execution_contract(), _merge_parameters(), _normalize_terms(), Execution helpers for context-backed recommendations., Execute a recommendation, optionally returning structured provenance., _recommendation_method_name(), _validate_required_arguments() (+4 more)
 
 ### Community 175 - "Community 175"
 Cohesion: 0.25
@@ -806,24 +822,24 @@ Cohesion: 0.25
 Nodes (7): additionalProperties, description, $id, required, $schema, title, type
 
 ### Community 178 - "Community 178"
-Cohesion: 0.29
-Nodes (6): description, $id, required, $schema, title, type
+Cohesion: 0.21
+Nodes (5): _json_sha256(), Circuit compiled to the fixed ``H/S/Sdg/RZ/CX`` logical basis., ASAP depth under gate-order and shared-qubit dependencies., ReferenceCircuit, Any
 
 ### Community 179 - "Community 179"
 Cohesion: 0.29
 Nodes (7): minimum, type, qubit_order, items, minItems, type, uniqueItems
 
 ### Community 180 - "Community 180"
-Cohesion: 0.40
-Nodes (5): type, additionalProperties, description, type, parameters
+Cohesion: 0.27
+Nodes (10): _json_compatible(), _operation_from_term(), OperationSequence, Scalable Pauli-evolution operations and a deterministic reference compiler.  The, Ordered, serializable Pauli-evolution operations., Build the exact ordered Pauli rotations for first/second-order formulas., Build qDRIFT rotations for an already sampled term-index sequence., sampled_operation_sequence() (+2 more)
 
 ### Community 181 - "Community 181"
-Cohesion: 0.40
-Nodes (5): max, min, range, properties, type
+Cohesion: 0.18
+Nodes (6): PauliEvolutionOperation, Merge adjacent rotations generated by the same Hamiltonian term., One operation with unitary ``exp(-i * coefficient * time * P)``.      ``rotation, Angle in ``R_P(theta) = exp(-i theta P / 2)`` convention., _same_generator(), test_pauli_operation_uses_explicit_rotation_and_qubit_order_conventions()
 
 ### Community 182 - "Community 182"
-Cohesion: 0.40
-Nodes (4): Agentic Software boundary, Canonical Pauli Hamiltonians, Scientific contracts, Structured execution
+Cohesion: 0.33
+Nodes (5): Agentic Software boundary, Canonical Pauli Hamiltonians, Cross-framework convention contract, Scientific contracts, Structured execution
 
 ### Community 183 - "Community 183"
 Cohesion: 0.40
@@ -878,8 +894,8 @@ Cohesion: 0.50
 Nodes (4): additionalProperties, description, type, parameters
 
 ### Community 196 - "Community 196"
-Cohesion: 0.67
-Nodes (3): qubits, minimum, type
+Cohesion: 0.20
+Nodes (10): type, properties, enum, angle, name, qubits, maxItems, minItems (+2 more)
 
 ### Community 197 - "Community 197"
 Cohesion: 0.67
@@ -889,25 +905,81 @@ Nodes (3): source, minLength, type
 Cohesion: 0.67
 Nodes (3): description, type, execution
 
+### Community 201 - "Community 201"
+Cohesion: 0.20
+Nodes (10): minimum, type, minimum, type, depth, one_qubit_gates, two_qubit_gates, properties (+2 more)
+
+### Community 202 - "Community 202"
+Cohesion: 0.25
+Nodes (8): items, type, additionalProperties, minimum, required, type, gates, items
+
+### Community 203 - "Community 203"
+Cohesion: 0.25
+Nodes (8): type, minimum, type, properties, global_phase, n_qubits, schema_version, const
+
+### Community 204 - "Community 204"
+Cohesion: 0.39
+Nodes (6): Tests for scalable operation output and deterministic reference costs., test_native_trotter_operation_output_matches_dense_compatibility_path(), test_qdrift_operation_output_replays_the_sampled_dense_trajectory(), test_scalable_outputs_validate_against_dedicated_schemas(), test_structured_operation_metadata_validates_against_result_schema(), _xz_hamiltonian()
+
+### Community 206 - "Community 206"
+Cohesion: 0.29
+Nodes (6): additionalProperties, $id, required, $schema, title, type
+
+### Community 207 - "Community 207"
+Cohesion: 0.33
+Nodes (3): GateOperation, One gate in the backend-independent reference circuit., Compile Pauli rotations to the documented all-to-all logical basis.
+
+### Community 208 - "Community 208"
+Cohesion: 0.33
+Nodes (3): list_methods_detail(), Return details for all registered methods., TestRegistry
+
+### Community 209 - "Community 209"
+Cohesion: 0.40
+Nodes (4): API-doc[#](#module-mitiq "Link to this heading"), Circuit types and result types[#](#circuit-types-and-result-types "Link to this heading"), Core Utilities[#](#core-utilities "Link to this heading"), This Page
+
+### Community 210 - "Community 210"
+Cohesion: 0.40
+Nodes (5): items, type, uniqueItems, enum, basis
+
+### Community 211 - "Community 211"
+Cohesion: 0.50
+Nodes (3): Answer, Q: What code paths and tests must change to implement canonical PauliHamiltonian contracts, structured EvolutionResult provenance, preserve dense compatibility, and migrate the X plus Z publication pilot?, Source Nodes
+
+### Community 212 - "Community 212"
+Cohesion: 0.50
+Nodes (3): Answer, Q: what is pending?, Source Nodes
+
+### Community 213 - "Community 213"
+Cohesion: 0.50
+Nodes (3): Return a dense unitary output or fail clearly for another mode., complex128, NDArray
+
+### Community 214 - "Community 214"
+Cohesion: 0.50
+Nodes (4): resources, additionalProperties, required, type
+
+### Community 215 - "Community 215"
+Cohesion: 0.67
+Nodes (3): minLength, type, id
+
 ## Knowledge Gaps
-- **929 isolated node(s):** `$schema`, `$id`, `title`, `description`, `type` (+924 more)
+- **968 isolated node(s):** `$schema`, `$id`, `title`, `description`, `type` (+963 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **28 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **30 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Trotterization and Trotter-Suzuki formulae` connect `Framework Adapters` to `qDRIFT Importance Sampling`, `qDRIFT Scaling Research`, `UCCSD Ordering Sensitivity`, `Community 175`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+- **Why does `PauliHamiltonian` connect `Community 88` to `Context Schema Definitions`, `Community 163`, `Community 133`, `Trotter Evolution Typing`, `Evolution Method Types`, `Community 135`, `Community 174`, `Community 207`, `Research Questions`, `Community 146`, `Community 178`, `Community 180`, `Community 181`, `qDRIFT Error Bounds`, `Release Roadmap`, `Evolution Data Contracts`?**
+  _High betweenness centrality (0.044) - this node is a cross-community bridge._
 - **Why does `Tranter et al. 2019 Ordering of Trotterization` connect `UCCSD Ordering Sensitivity` to `Framework Adapters`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
-- **Why does `EvolutionResult` connect `Community 98` to `Context Schema Definitions`, `Trotter Evolution Typing`, `Evolution Method Types`, `Community 173`, `Research Questions`, `Community 88`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **Are the 38 inferred relationships involving `EvolutionMethod` (e.g. with `PennyLaneTrotterAdapter` and `QiskitTrotterAdapter`) actually correct?**
-  _`EvolutionMethod` has 38 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 43 inferred relationships involving `HamiltonianInput` (e.g. with `PennyLaneTrotterAdapter` and `QiskitTrotterAdapter`) actually correct?**
-  _`HamiltonianInput` has 43 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 33 inferred relationships involving `EvolutionResult` (e.g. with `EvolutionCosts` and `float64`) actually correct?**
-  _`EvolutionResult` has 33 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `$schema`, `$id`, `title` to the rest of the system?**
-  _1058 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.038) - this node is a cross-community bridge._
+- **Why does `Trotterization and Trotter-Suzuki formulae` connect `Framework Adapters` to `qDRIFT Importance Sampling`, `qDRIFT Scaling Research`, `UCCSD Ordering Sensitivity`, `Community 175`?**
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Are the 62 inferred relationships involving `PauliHamiltonian` (e.g. with `PennyLaneTrotterAdapter` and `QiskitTrotterAdapter`) actually correct?**
+  _`PauliHamiltonian` has 62 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 54 inferred relationships involving `EvolutionResult` (e.g. with `PennyLaneTrotterAdapter` and `QiskitTrotterAdapter`) actually correct?**
+  _`EvolutionResult` has 54 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 41 inferred relationships involving `EvolutionMethod` (e.g. with `PennyLaneTrotterAdapter` and `QiskitTrotterAdapter`) actually correct?**
+  _`EvolutionMethod` has 41 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 46 inferred relationships involving `HamiltonianInput` (e.g. with `PennyLaneTrotterAdapter` and `QiskitTrotterAdapter`) actually correct?**
+  _`HamiltonianInput` has 46 INFERRED edges - model-reasoned connections that need verification._

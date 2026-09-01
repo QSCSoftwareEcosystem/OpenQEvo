@@ -1,11 +1,8 @@
-"""Trotter-Suzuki product formulas for computing exp(-iHt).
+"""Trotter-Suzuki product formulas for computing ``exp(-i H t)``.
 
-PLACEHOLDER IMPLEMENTATION — This module contains a reference implementation
-of first- and second-order Trotter-Suzuki decompositions used to validate
-the package structure, tests, and CI/CD pipeline. It will be replaced by
-the production implementation from the QSC Algorithms Thrust.
-
-See: https://github.com/QSCSoftwareThrust/OpenQEvo/issues/4
+The formulas are executable reference implementations with analytic controls,
+operation-sequence output, and deterministic logical compilation.  Formal
+Algorithms Thrust sign-off is tracked separately from software verification.
 """
 
 from __future__ import annotations
@@ -20,10 +17,12 @@ from scipy.linalg import expm
 from openqevo.base import EvolutionMethod
 from openqevo.hamiltonian import (
     HamiltonianInput,
+    PauliHamiltonian,
     dense_terms,
     hamiltonian_provenance,
     term_labels,
 )
+from openqevo.operations import trotter_operation_sequence
 from openqevo.registry import register
 from openqevo.result import (
     EvolutionCosts,
@@ -80,10 +79,34 @@ class TrotterFirstOrder(EvolutionMethod):
         t: float,
         **params: Any,
     ) -> EvolutionResult:
+        representation = _result_representation(params)
         steps = _step_count(params)
         labels = term_labels(terms)
-        output = self.evolve(terms, t, steps=steps)
         operations = steps * len(labels)
+        costs = EvolutionCosts(
+            formula_level_pauli_operations=operations,
+            adjacent_merged_pauli_operations=operations,
+        )
+        if isinstance(terms, PauliHamiltonian):
+            raw_sequence = trotter_operation_sequence(terms, t, steps=steps, order=1)
+            sequence = raw_sequence.compact_adjacent()
+            circuit = sequence.compile_reference()
+            costs = EvolutionCosts(
+                formula_level_pauli_operations=len(raw_sequence.operations),
+                adjacent_merged_pauli_operations=len(sequence.operations),
+                compiled_one_qubit_gates=circuit.one_qubit_gates,
+                compiled_two_qubit_gates=circuit.two_qubit_gates,
+                circuit_depth=circuit.depth,
+            )
+            output = _select_output(
+                representation=representation,
+                unitary_factory=lambda: self.evolve(terms, t, steps=steps),
+                sequence=sequence,
+                circuit=circuit,
+            )
+        else:
+            _require_dense_unitary_output(representation)
+            output = self.evolve(terms, t, steps=steps)
         return _trotter_result(
             method=self,
             terms=terms,
@@ -91,10 +114,8 @@ class TrotterFirstOrder(EvolutionMethod):
             steps=steps,
             labels=labels,
             output=output,
-            costs=EvolutionCosts(
-                formula_level_pauli_operations=operations,
-                adjacent_merged_pauli_operations=operations,
-            ),
+            representation=representation,
+            costs=costs,
         )
 
 
@@ -154,11 +175,35 @@ class TrotterSecondOrder(EvolutionMethod):
         t: float,
         **params: Any,
     ) -> EvolutionResult:
+        representation = _result_representation(params)
         steps = _step_count(params)
         labels = term_labels(terms)
-        output = self.evolve(terms, t, steps=steps)
         formula_operations = 2 * steps * len(labels)
         merged_operations = 2 * steps * (len(labels) - 1) + 1
+        costs = EvolutionCosts(
+            formula_level_pauli_operations=formula_operations,
+            adjacent_merged_pauli_operations=merged_operations,
+        )
+        if isinstance(terms, PauliHamiltonian):
+            raw_sequence = trotter_operation_sequence(terms, t, steps=steps, order=2)
+            sequence = raw_sequence.compact_adjacent()
+            circuit = sequence.compile_reference()
+            costs = EvolutionCosts(
+                formula_level_pauli_operations=len(raw_sequence.operations),
+                adjacent_merged_pauli_operations=len(sequence.operations),
+                compiled_one_qubit_gates=circuit.one_qubit_gates,
+                compiled_two_qubit_gates=circuit.two_qubit_gates,
+                circuit_depth=circuit.depth,
+            )
+            output = _select_output(
+                representation=representation,
+                unitary_factory=lambda: self.evolve(terms, t, steps=steps),
+                sequence=sequence,
+                circuit=circuit,
+            )
+        else:
+            _require_dense_unitary_output(representation)
+            output = self.evolve(terms, t, steps=steps)
         return _trotter_result(
             method=self,
             terms=terms,
@@ -166,10 +211,8 @@ class TrotterSecondOrder(EvolutionMethod):
             steps=steps,
             labels=labels,
             output=output,
-            costs=EvolutionCosts(
-                formula_level_pauli_operations=formula_operations,
-                adjacent_merged_pauli_operations=merged_operations,
-            ),
+            representation=representation,
+            costs=costs,
         )
 
 
@@ -199,6 +242,9 @@ class ExactEvolution(EvolutionMethod):
         t: float,
         **params: Any,
     ) -> EvolutionResult:
+        representation = _result_representation(params)
+        if representation != "unitary":
+            raise ValueError("Exact evolution supports only unitary result output.")
         output = self.evolve(terms, t, **params)
         return EvolutionResult(
             output=output,
@@ -236,12 +282,13 @@ def _trotter_result(
     t: float,
     steps: int,
     labels: tuple[str, ...],
-    output: NDArray[np.complexfloating],
+    output: Any,
+    representation: str,
     costs: EvolutionCosts,
 ) -> EvolutionResult:
     return EvolutionResult(
         output=output,
-        representation="unitary",
+        representation=representation,
         method_name=method.name,
         implementation=implementation_provenance(method.source),
         parameters={
@@ -254,3 +301,33 @@ def _trotter_result(
         environment=runtime_environment(),
         limitations=method._limitations(),
     )
+
+
+def _result_representation(params: dict[str, Any]) -> str:
+    representation = params.pop("representation", "unitary")
+    if representation not in {"unitary", "operations", "circuit"}:
+        raise ValueError(
+            "'representation' must be 'unitary', 'operations', or 'circuit'."
+        )
+    return str(representation)
+
+
+def _select_output(
+    *,
+    representation: str,
+    unitary_factory: Any,
+    sequence: Any,
+    circuit: Any,
+) -> Any:
+    if representation == "unitary":
+        return unitary_factory()
+    if representation == "operations":
+        return sequence
+    return circuit
+
+
+def _require_dense_unitary_output(representation: str) -> None:
+    if representation != "unitary":
+        raise TypeError(
+            "Scalable operation and circuit outputs require PauliHamiltonian input."
+        )

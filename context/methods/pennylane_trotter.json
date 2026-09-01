@@ -11,7 +11,8 @@
     "Requires PennyLane to be installed",
     "Input terms must be square Hermitian matrices with power-of-two dimension",
     "Large dense matrices can make Pauli decomposition expensive",
-    "Single-term Hamiltonians are handled with exact qml.exp rather than TrotterProduct"
+    "Single-term Hamiltonians are handled with exact qml.exp rather than TrotterProduct",
+    "Canonical compiled costs use OpenQEvo's fixed logical reference basis rather than device-specific PennyLane routing"
   ],
   "parameters": {
     "steps": {
@@ -48,11 +49,11 @@
       "pennylane optional dependency",
       "classical Python runtime"
     ],
-    "returns": "EvolutionResult with a dense PennyLane-synthesized unitary and backend version provenance; evolve(...) remains compatible."
+    "returns": "EvolutionResult with a dense PennyLane-synthesized unitary or reusable PennyLane operation, backend version provenance, explicit time/order mapping, and canonical-input reference costs; evolve(...) remains compatible."
   },
   "complexity": {
-    "gate_count": "Depends on number of Pauli terms after decomposition, product formula order, and steps",
-    "circuit_depth": "Depends on PennyLane TrotterProduct expansion, product formula order, and steps",
+    "gate_count": "Formula-level Pauli exponentials are reported; canonical order-1/2 inputs also receive one-/two-qubit counts from the fixed OpenQEvo logical reference compiler",
+    "circuit_depth": "Canonical order-1/2 inputs receive fixed-basis logical depth; device routing and optimization remain backend-specific",
     "error_scaling": "Product-formula error depends on order, step count, simulation time, and commutator structure"
   },
   "references": [

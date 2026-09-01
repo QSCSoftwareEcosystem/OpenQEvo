@@ -22,6 +22,7 @@ flowchart TB
             B1["base.py\nEvolutionMethod protocol"]
             B2["registry.py\n@register decorator\nget() / list_methods()"]
             B3["result.py\nEvolutionResult\nprovenance + costs"]
+            B4["operations.py\noperation sequences\nreference compiler"]
         end
 
         subgraph METHODS ["methods/"]
@@ -60,6 +61,7 @@ flowchart TB
     B0 --- B1
     B1 --- B2
     B1 --- B3
+    B1 --- B4
     B2 --- M1
     B2 --- M2
     B2 --- AD1
@@ -122,6 +124,20 @@ classDiagram
         +to_metadata() dict
     }
 
+    class OperationSequence {
+        +operations: tuple
+        +compact_adjacent() OperationSequence
+        +compile_reference() ReferenceCircuit
+        +to_unitary() NDArray
+    }
+
+    class ReferenceCircuit {
+        +gates: tuple
+        +one_qubit_gates: int
+        +two_qubit_gates: int
+        +depth: int
+    }
+
     class Registry {
         +register(name) decorator
         +get(name) EvolutionMethod
@@ -176,6 +192,8 @@ classDiagram
     PauliHamiltonian *-- PauliTerm
     EvolutionMethod --> PauliHamiltonian : consumes
     EvolutionMethod --> EvolutionResult : produces
+    EvolutionResult --> OperationSequence : scalable output
+    OperationSequence --> ReferenceCircuit : compiles
     Registry --> EvolutionMethod : manages
 ```
 
@@ -186,11 +204,15 @@ src/openqevo/
 ├── __init__.py              # Auto-registers methods, exports registry API
 ├── base.py                  # EvolutionMethod ABC
 ├── hamiltonian.py           # Canonical Pauli input + dense compatibility
+├── operations.py            # Scalable Pauli operations + logical compiler
 ├── result.py                # Structured results, costs, and provenance
+├── conformance.py           # Native/Qiskit/PennyLane convention suite
+├── workloads.py             # Controlled, spin, and mapped chemistry inputs
+├── study.py                 # Frozen study runner and immutable archive
 ├── registry.py              # @register, get(), list_methods(), context loader
 ├── methods/
 │   ├── __init__.py          # Auto-imports all native methods
-│   └── trotter.py           # Trotter-Suzuki 1st/2nd order + exact (placeholder)
+│   └── trotter.py           # Trotter-Suzuki 1st/2nd order + exact references
 └── adapters/
     ├── __init__.py          # Optional imports (skip if lib not installed)
     ├── qiskit_adapter.py    # Qiskit wrapper (working)
@@ -202,6 +224,8 @@ The canonical `PauliHamiltonian` is the benchmark and adapter input boundary.
 Legacy sequences of dense Hermitian terms are validated and retained for
 small-system compatibility. `EvolutionMethod.run(...)` returns structured
 metadata and output, while `evolve(...)` remains the direct dense-unitary API.
+Canonical Pauli inputs can instead return operation sequences or reference
+circuits without materializing exponentially large unitaries.
 
 The Qrack adapter is implemented and validated in CPU mode with real
 `pyqrack`. GPU acceleration depends on a working host OpenCL/NVIDIA runtime;
@@ -218,13 +242,13 @@ Adding a new evolution method requires **one file** and **one import line**:
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
 
+
 @register("qdrift")
 class QDrift(EvolutionMethod):
     description = "Randomized product formula"
     source = "algorithms-thrust"
 
-    def evolve(self, terms, t, **params):
-        ...
+    def evolve(self, terms, t, **params): ...
 ```
 
 ### 2. Register it
@@ -269,6 +293,7 @@ from new_lib import SomeEvolver
 
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
+
 
 @register("new_lib_evolver")
 class NewLibAdapter(EvolutionMethod):

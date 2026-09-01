@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/QSCSoftwareEcosystem/OpenQEvo/context/schema/reference_circuit.schema.json",
+  "title": "OpenQEvo Logical Reference Circuit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "n_qubits",
+    "basis",
+    "global_phase",
+    "gates",
+    "resources"
+  ],
+  "properties": {
+    "schema_version": {"const": "openqevo-reference-circuit/v1"},
+    "n_qubits": {"type": "integer", "minimum": 1},
+    "basis": {
+      "type": "array",
+      "items": {"enum": ["h", "s", "sdg", "rz", "cx"]},
+      "uniqueItems": true
+    },
+    "global_phase": {"type": "number"},
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "qubits"],
+        "properties": {
+          "name": {"enum": ["h", "s", "sdg", "rz", "cx"]},
+          "qubits": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {"type": "integer", "minimum": 0},
+            "uniqueItems": true
+          },
+          "angle": {"type": "number"}
+        }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["one_qubit_gates", "two_qubit_gates", "depth"],
+      "properties": {
+        "one_qubit_gates": {"type": "integer", "minimum": 0},
+        "two_qubit_gates": {"type": "integer", "minimum": 0},
+        "depth": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

@@ -17,6 +17,7 @@ from openqevo.hamiltonian import (
     dense_terms,
     hamiltonian_provenance,
 )
+from openqevo.operations import sampled_operation_sequence
 from openqevo.registry import register
 from openqevo.result import (
     EvolutionCosts,
@@ -50,11 +51,47 @@ class QDriftEvolution(EvolutionMethod):
         **params: Any,
     ) -> EvolutionResult:
         """Return one qDRIFT trajectory with its complete sampled sequence."""
+        representation = params.pop("representation", "unitary")
+        if representation not in {"unitary", "operations", "circuit"}:
+            raise ValueError(
+                "'representation' must be 'unitary', 'operations', or 'circuit'."
+            )
         samples = _sample_count(params)
         matrix_terms, weights, probabilities, sequence = _trajectory_inputs(
             terms, params
         )
-        output = _apply_trajectory(matrix_terms, probabilities, sequence, t)
+        costs = EvolutionCosts(
+            formula_level_pauli_operations=samples,
+            adjacent_merged_pauli_operations=_adjacent_merged_count(sequence),
+        )
+        if isinstance(terms, PauliHamiltonian):
+            raw_operations = sampled_operation_sequence(
+                terms,
+                t,
+                sampled_sequence=sequence,
+            )
+            operations = raw_operations.compact_adjacent()
+            circuit = operations.compile_reference()
+            costs = EvolutionCosts(
+                formula_level_pauli_operations=len(raw_operations.operations),
+                adjacent_merged_pauli_operations=len(operations.operations),
+                compiled_one_qubit_gates=circuit.one_qubit_gates,
+                compiled_two_qubit_gates=circuit.two_qubit_gates,
+                circuit_depth=circuit.depth,
+            )
+            if representation == "operations":
+                output = operations
+            elif representation == "circuit":
+                output = circuit
+            else:
+                output = _apply_trajectory(matrix_terms, probabilities, sequence, t)
+        else:
+            if representation != "unitary":
+                raise TypeError(
+                    "Scalable operation and circuit outputs require "
+                    "PauliHamiltonian input."
+                )
+            output = _apply_trajectory(matrix_terms, probabilities, sequence, t)
         seed = params.get("seed")
         metadata_parameters: dict[str, Any] = {
             "evolution_time": float(t),
@@ -69,14 +106,11 @@ class QDriftEvolution(EvolutionMethod):
 
         return EvolutionResult(
             output=output,
-            representation="unitary",
+            representation=str(representation),
             method_name=self.name,
             implementation=implementation_provenance(self.source),
             parameters=metadata_parameters,
-            costs=EvolutionCosts(
-                formula_level_pauli_operations=samples,
-                adjacent_merged_pauli_operations=_adjacent_merged_count(sequence),
-            ),
+            costs=costs,
             hamiltonian=hamiltonian_provenance(terms),
             seed=seed,
             sampled_sequence=sequence,

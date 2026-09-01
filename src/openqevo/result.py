@@ -174,13 +174,22 @@ class EvolutionResult:
 
     @property
     def output_sha256(self) -> str | None:
-        """Stable byte hash for NumPy output representations."""
-        if not isinstance(self.output, np.ndarray):
-            return None
-        array = np.ascontiguousarray(self.output)
-        if np.issubdtype(array.dtype, np.complexfloating):
-            array = np.ascontiguousarray(array, dtype="<c16")
-        return hashlib.sha256(array.tobytes()).hexdigest()
+        """Stable hash for NumPy or serializable structured outputs."""
+        if isinstance(self.output, np.ndarray):
+            array = np.ascontiguousarray(self.output)
+            if np.issubdtype(array.dtype, np.complexfloating):
+                array = np.ascontiguousarray(array, dtype="<c16")
+            return hashlib.sha256(array.tobytes()).hexdigest()
+        to_dict = getattr(self.output, "to_dict", None)
+        if callable(to_dict):
+            import json
+
+            payload = _json_compatible(to_dict())
+            encoded = (
+                json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n"
+            ).encode("utf-8")
+            return hashlib.sha256(encoded).hexdigest()
+        return None
 
     def to_metadata(self) -> dict[str, Any]:
         """Return the versioned JSON metadata contract without embedding output."""
@@ -193,6 +202,20 @@ class EvolutionResult:
                     "sha256": self.output_sha256,
                 }
             )
+        else:
+            to_dict = getattr(self.output, "to_dict", None)
+            if callable(to_dict):
+                payload = _json_compatible(to_dict())
+                output["sha256"] = self.output_sha256
+                if isinstance(payload, Mapping):
+                    if "schema_version" in payload:
+                        output["schema_version"] = payload["schema_version"]
+                    if isinstance(payload.get("operations"), list):
+                        output["operations"] = len(payload["operations"])
+                    if isinstance(payload.get("gates"), list):
+                        output["gates"] = len(payload["gates"])
+                    if "n_qubits" in payload:
+                        output["n_qubits"] = payload["n_qubits"]
 
         return {
             "schema_version": EVOLUTION_RESULT_SCHEMA_VERSION,

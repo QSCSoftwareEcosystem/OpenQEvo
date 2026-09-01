@@ -11,9 +11,9 @@
   "limitations": [
     "Individual trajectory results are stochastic unless a seed or sampled sequence is fixed",
     "Requires enough samples for convergence of observables or state evolution",
-    "Current implementation exponentiates dense matrix terms classically",
-    "Does not directly expose circuit-level randomized sampling yet",
-    "Accuracy depends on sample count, total evolution time, term norms, and observable"
+    "Legacy matrix-term inputs produce dense outputs only",
+    "Canonical Pauli inputs expose framework-neutral operations and reference circuits; hardware routing remains backend-specific",
+    "The standard bound applies to the expected quantum channel, not to every individual sampled trajectory"
   ],
   "parameters": {
     "samples": {
@@ -63,12 +63,12 @@
       "classical Python runtime",
       "NumPy/SciPy-compatible dense matrix operations"
     ],
-    "returns": "EvolutionResult containing a sampled unitary, seed, complete sampled sequence, logical costs, and provenance; run_ensemble(...) returns the expected dense validation channel."
+    "returns": "EvolutionResult containing a sampled dense unitary, framework-neutral operation sequence, or compiled reference circuit plus seed, complete sampled sequence, logical and compiled costs, and provenance; run_ensemble(...) returns the expected dense validation channel."
   },
   "complexity": {
-    "gate_count": "O(N) sampled exponentials where N = samples, for an eventual circuit implementation",
-    "circuit_depth": "O(N) sampled term evolutions where N = samples",
-    "error_scaling": "Randomized product-formula error depends on total term weight, simulation time, sample count, and target observable"
+    "gate_count": "Exactly N sampled Pauli-term exponentials before reference-gate synthesis, where N is the sample count",
+    "circuit_depth": "Backend-, connectivity-, and sampled-sequence-dependent; OpenQEvo reports depth after compilation to its fixed logical reference basis",
+    "error_scaling": "The expected-channel diamond-distance bound is approximately 2(lambda * t)^2/N in the small-step regime, with a rigorous exponential correction; individual trajectory variation must be estimated separately"
   },
   "references": [
     {
@@ -76,7 +76,7 @@
       "authors": "E. Campbell",
       "year": 2019,
       "doi": "10.1103/PhysRevLett.123.070503",
-      "url": "https://doi.org/10.1103/PhysRevLett.123.070503"
+      "url": "https://arxiv.org/abs/1811.08017"
     }
   ],
   "example_path": "examples/recommendation_execution.py"
