@@ -31,6 +31,37 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: pytest -v --tb=short
 
+  adapter-conformance:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - adapter: qiskit
+            tests: tests/test_qiskit_adapter.py
+          - adapter: pennylane
+            tests: tests/test_pennylane_adapter.py
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev,${{ matrix.adapter }}]"
+      - run: >-
+          pytest -v --tb=short tests/test_conformance.py
+          ${{ matrix.tests }}
+
+  publication-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - run: >-
+          python -m openqevo.study --verify-bundle
+          experiments/publication_study/results-2026-09-01
+
   docs:
     runs-on: ubuntu-latest
     steps:
@@ -39,4 +70,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -e ".[docs]"
-      - run: sphinx-build -b html docs docs/_build/html
+      - run: sphinx-build -W -b html docs docs/_build/html
