@@ -25,3 +25,14 @@ seed and complete sampled sequence; failed attempts remain in the raw stream.
 The H₂ input is a fixed two-qubit operator archived in IBM Quantum tutorial
 material. It is used as a mapped chemistry workload; OpenQEvo does not claim to
 regenerate its electronic-structure transformation.
+
+Verify an existing bundle without modifying or rerunning it:
+
+```bash
+python -m openqevo.study \
+  --verify-bundle experiments/publication_study/results-2026-09-01
+```
+
+The verifier checks every byte count and SHA-256 digest, then audits protocol,
+run, workload, record, group, equal-budget, and qDRIFT seed consistency. A
+successful verification establishes archive integrity, not scientific approval.

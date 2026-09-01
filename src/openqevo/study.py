@@ -455,6 +455,183 @@ def generate_bundle(
     return {key: path for key, path in paths.items() if path.exists()}
 
 
+def verify_bundle(bundle_dir: Path) -> dict[str, Any]:
+    """Verify an archived study bundle without modifying it.
+
+    Verification covers the byte manifest and the cross-file invariants needed
+    to use a bundle as publication evidence.  It deliberately does not confer
+    scientific approval.
+    """
+    if not bundle_dir.is_dir():
+        raise ValueError(f"Study bundle does not exist: {bundle_dir}")
+
+    manifest = _read_json_object(bundle_dir / "manifest.json", "manifest")
+    if manifest.get("schema_version") != MANIFEST_SCHEMA_VERSION:
+        raise ValueError(
+            f"Manifest 'schema_version' must be {MANIFEST_SCHEMA_VERSION!r}."
+        )
+    files = manifest.get("files")
+    if not isinstance(files, Mapping) or not files:
+        raise ValueError("Manifest 'files' must be a non-empty object.")
+
+    integrity_errors: list[str] = []
+    expected_names: set[str] = set()
+    for name, metadata in files.items():
+        if not isinstance(name, str) or Path(name).name != name:
+            integrity_errors.append(f"unsafe manifest path {name!r}")
+            continue
+        expected_names.add(name)
+        if not isinstance(metadata, Mapping):
+            integrity_errors.append(f"invalid metadata for {name!r}")
+            continue
+        path = bundle_dir / name
+        if not path.is_file():
+            integrity_errors.append(f"missing file {name!r}")
+            continue
+        if metadata.get("bytes") != path.stat().st_size:
+            integrity_errors.append(f"byte-count mismatch for {name!r}")
+        if metadata.get("sha256") != _file_sha256(path):
+            integrity_errors.append(f"SHA-256 mismatch for {name!r}")
+
+    actual_names = {
+        path.name
+        for path in bundle_dir.iterdir()
+        if path.is_file() and path.name != "manifest.json"
+    }
+    for name in sorted(actual_names - expected_names):
+        integrity_errors.append(f"unmanifested file {name!r}")
+    if integrity_errors:
+        raise ValueError(
+            "Bundle byte-integrity verification failed: "
+            + "; ".join(integrity_errors)
+        )
+
+    required = {
+        "protocol.json",
+        "resource_estimate.json",
+        "study_records.jsonl",
+        "study_summary.json",
+        "workloads.json",
+    }
+    missing_required = sorted(required - expected_names)
+    if missing_required:
+        raise ValueError(
+            "Bundle manifest is missing required artifacts: "
+            + ", ".join(missing_required)
+        )
+
+    protocol = load_protocol(bundle_dir / "protocol.json")
+    resources = _read_json_object(
+        bundle_dir / "resource_estimate.json", "resource estimate"
+    )
+    summary = _read_json_object(bundle_dir / "study_summary.json", "study summary")
+    workloads = _read_json_list(bundle_dir / "workloads.json", "workloads")
+    records = _read_jsonl(bundle_dir / "study_records.jsonl")
+
+    consistency_errors: list[str] = []
+    run_id = summary.get("run_id")
+    protocol_hash = _json_sha256(protocol)
+    statuses = {
+        manifest.get("scientific_review_status"),
+        protocol.get("scientific_review_status"),
+        summary.get("scientific_review_status"),
+    }
+    if len(statuses) != 1:
+        consistency_errors.append("scientific-review statuses differ")
+    if manifest.get("run_id") != run_id:
+        consistency_errors.append("manifest and summary run ids differ")
+    if summary.get("protocol_id") != protocol.get("protocol_id"):
+        consistency_errors.append("protocol ids differ")
+    if summary.get("protocol_sha256") != protocol_hash:
+        consistency_errors.append("summary protocol hash is incorrect")
+    if resources.get("total_records") != len(records):
+        consistency_errors.append("resource-estimate record count is incorrect")
+    if resources.get("total_workloads") != len(workloads):
+        consistency_errors.append("resource-estimate workload count is incorrect")
+
+    workload_ids = {
+        workload.get("id")
+        for workload in workloads
+        if isinstance(workload, Mapping)
+    }
+    protocol_workload_ids = {spec["id"] for spec in protocol["workloads"]}
+    if workload_ids != protocol_workload_ids:
+        consistency_errors.append("archived workloads differ from the protocol")
+
+    failure_count = sum(record.get("status") != "success" for record in records)
+    if summary.get("failures", {}).get("count") != failure_count:
+        consistency_errors.append("summary failure count is incorrect")
+
+    budget_violations = 0
+    qdrift_seeds: dict[tuple[str, int], set[int]] = defaultdict(set)
+    exact_counts: dict[str, int] = defaultdict(int)
+    for record in records:
+        if record.get("run_id") != run_id:
+            consistency_errors.append("a record has an inconsistent run id")
+            break
+        if record.get("protocol_sha256") != protocol_hash:
+            consistency_errors.append("a record has an inconsistent protocol hash")
+            break
+        workload_id = str(record.get("workload_id"))
+        if workload_id not in protocol_workload_ids:
+            consistency_errors.append("a record references an unknown workload")
+            break
+        method = record.get("method")
+        if method == "exact":
+            exact_counts[workload_id] += 1
+            continue
+        budget = record.get("logical_budget")
+        if record.get("status") == "success" and (
+            not isinstance(budget, int)
+            or record.get("costs", {}).get("formula_level_pauli_operations") != budget
+        ):
+            budget_violations += 1
+        if method == "qdrift" and isinstance(budget, int):
+            seed = record.get("parameters", {}).get("seed")
+            if isinstance(seed, int):
+                qdrift_seeds[(workload_id, budget)].add(seed)
+
+    if budget_violations:
+        consistency_errors.append(
+            f"{budget_violations} successful records violate equal logical budgets"
+        )
+    if exact_counts != {workload_id: 1 for workload_id in protocol_workload_ids}:
+        consistency_errors.append("each workload must have exactly one exact record")
+
+    expected_seeds = set(protocol["qdrift_seeds"])
+    expected_qdrift_groups = len(protocol_workload_ids) * len(
+        protocol["logical_budget_multipliers"]
+    )
+    if len(qdrift_seeds) != expected_qdrift_groups or any(
+        seeds != expected_seeds for seeds in qdrift_seeds.values()
+    ):
+        consistency_errors.append("qDRIFT groups do not contain every frozen seed")
+
+    expected_groups = expected_qdrift_groups * len(METHOD_ORDER)
+    if len(summary.get("groups", [])) != expected_groups:
+        consistency_errors.append("summary method-group count is incorrect")
+    if consistency_errors:
+        raise ValueError(
+            "Bundle cross-file verification failed: "
+            + "; ".join(consistency_errors)
+        )
+
+    return {
+        "schema_version": MANIFEST_SCHEMA_VERSION,
+        "status": "passed",
+        "bundle": str(bundle_dir),
+        "run_id": run_id,
+        "scientific_review_status": protocol["scientific_review_status"],
+        "files": len(expected_names),
+        "workloads": len(workloads),
+        "records": len(records),
+        "groups": len(summary["groups"]),
+        "failures": failure_count,
+        "equal_budget_violations": budget_violations,
+        "qdrift_trajectories_per_group": len(expected_seeds),
+    }
+
+
 def plot_summary(summary: Mapping[str, Any], output_path: Path) -> None:
     """Plot cross-workload accuracy and compiled two-qubit gate costs."""
     try:
@@ -767,13 +944,43 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
         return [json.loads(line) for line in stream if line.strip()]
 
 
+def _read_json_object(path: Path, label: str) -> dict[str, Any]:
+    with path.open(encoding="utf-8") as stream:
+        value = json.load(stream)
+    if not isinstance(value, dict):
+        raise ValueError(f"Archived {label} must be a JSON object.")
+    return value
+
+
+def _read_json_list(path: Path, label: str) -> list[Any]:
+    with path.open(encoding="utf-8") as stream:
+        value = json.load(stream)
+    if not isinstance(value, list):
+        raise ValueError(f"Archived {label} must be a JSON array.")
+    return value
+
+
 def main(argv: Sequence[str] | None = None) -> None:
     """Execute a frozen study into a new immutable bundle directory."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--protocol", type=Path, required=True)
-    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--protocol", type=Path)
+    parser.add_argument("--output-dir", type=Path)
+    parser.add_argument("--verify-bundle", type=Path)
     parser.add_argument("--no-plot", action="store_true")
     args = parser.parse_args(argv)
+    if args.verify_bundle is not None:
+        if args.protocol is not None or args.output_dir is not None or args.no_plot:
+            parser.error("--verify-bundle cannot be combined with generation options")
+        try:
+            report = verify_bundle(args.verify_bundle)
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            parser.error(str(exc))
+        print(json.dumps(report, indent=2, sort_keys=True))
+        return
+    if args.protocol is None or args.output_dir is None:
+        parser.error(
+            "--protocol and --output-dir are required when generating a bundle"
+        )
     try:
         paths = generate_bundle(
             args.protocol, args.output_dir, create_plot=not args.no_plot

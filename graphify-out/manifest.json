@@ -920,8 +920,8 @@
     "semantic_hash": ""
   },
   "src/openqevo/study.py": {
-    "mtime": 1788277496.4836612,
-    "ast_hash": "c9c11345eadad0e1db7c905b6dd7345c",
+    "mtime": 1788299174.8284383,
+    "ast_hash": "64a153b1375f8bcafa213c9f999d9b20",
     "semantic_hash": ""
   },
   "src/openqevo/workloads.py": {
@@ -940,8 +940,8 @@
     "semantic_hash": ""
   },
   "tests/test_study.py": {
-    "mtime": 1788277496.481303,
-    "ast_hash": "c3036f78d807f4624fa6101478675002",
+    "mtime": 1788299135.7509966,
+    "ast_hash": "475b44b14c08ae8f74bf8ce6032dd88b",
     "semantic_hash": ""
   },
   "tests/test_workloads.py": {
@@ -950,8 +950,8 @@
     "semantic_hash": ""
   },
   "experiments/publication_study/README.md": {
-    "mtime": 1788277473.954078,
-    "ast_hash": "200ac692a893ee1a3a12b5daa56b8bc4",
+    "mtime": 1788299135.8735797,
+    "ast_hash": "e94e0d4817bd9c96edeaa0a9036d79d8",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260901_143833_what_code_paths_and_tests_must_change_to_implement.md": {
@@ -982,6 +982,11 @@
   "graphify-out/memory/query_20260901_203958_how_many_plans_we_have.md": {
     "mtime": 1788295198.0796769,
     "ast_hash": "0470f09085fe913378b6413f6c4af808",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260901_213945_what_remains_pending_to_make_openqevo_publishable.md": {
+    "mtime": 1788298785.8545043,
+    "ast_hash": "a86c01625faae1fb463fd6d6074f1861",
     "semantic_hash": ""
   }
 }

@@ -14,6 +14,7 @@ from openqevo.study import (
     run_study,
     summarize_records,
     validate_protocol,
+    verify_bundle,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -101,8 +102,23 @@ def test_bundle_is_write_once_and_byte_reproducible(tmp_path, small_protocol):
         "manifest",
     ):
         assert first[artifact].read_bytes() == second[artifact].read_bytes()
+    report = verify_bundle(tmp_path / "first")
+    assert report["status"] == "passed"
+    assert report["records"] == 11
+    assert report["groups"] == 6
+    assert report["equal_budget_violations"] == 0
     with pytest.raises(FileExistsError, match="new directory"):
         generate_bundle(protocol_path, tmp_path / "first", create_plot=False)
+
+
+def test_bundle_verifier_detects_tampering(tmp_path, small_protocol):
+    protocol_path = tmp_path / "protocol.json"
+    protocol_path.write_text(json.dumps(small_protocol), encoding="utf-8")
+    paths = generate_bundle(protocol_path, tmp_path / "bundle", create_plot=False)
+    paths["records"].write_text("tampered\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="SHA-256 mismatch"):
+        verify_bundle(tmp_path / "bundle")
 
 
 def test_protocol_rejects_unfrozen_or_duplicate_seed(small_protocol):
