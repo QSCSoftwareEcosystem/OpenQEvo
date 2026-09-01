@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1788277589.2667267,
-    "ast_hash": "a9c59ea4b6583fe7b8292020d744adf3",
+    "mtime": 1788295793.4676924,
+    "ast_hash": "e2c8ed0d3920a16de10020a012c5d4a4",
     "semantic_hash": ""
   },
   "context/krylov_subspace/krylov_subspace.md": {
@@ -203,16 +203,6 @@
     "mtime": 1774710563.0,
     "ast_hash": "b8856661a75f2f0c56d5580545753ee2",
     "semantic_hash": "b8856661a75f2f0c56d5580545753ee2"
-  },
-  "docs/roadmap.md": {
-    "mtime": 1788277755.9073505,
-    "ast_hash": "ad67b4a0e30c77a5676c5872e2f6b427",
-    "semantic_hash": ""
-  },
-  "paper-plan.md": {
-    "mtime": 1784082064.640928,
-    "ast_hash": "de21348cffb34508e2f54e99eeaf77c7",
-    "semantic_hash": "de21348cffb34508e2f54e99eeaf77c7"
   },
   "context/qdrift/raw_data/campbell_2019.md": {
     "mtime": 1787836067.8884914,
@@ -765,8 +755,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1788270924.8380716,
-    "ast_hash": "6b6b792323665b7204afc092d7ad146a",
+    "mtime": 1788295796.6816826,
+    "ast_hash": "161cad44a478cbe57795ac2cb18e4842",
     "semantic_hash": ""
   },
   "experiments/xz_pilot/README.md": {
@@ -977,6 +967,21 @@
   "experiments/publication_study/results-2026-09-01/study_overview.svg": {
     "mtime": 1788277540.0704918,
     "ast_hash": "9dd5d94dc64255faf8d3aee7b06f2fff",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260901_155026_what_remains_after_implementing_scientific_review.md": {
+    "mtime": 1788277826.090135,
+    "ast_hash": "5c6351b2b556242f866595eed88dce32",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260901_160905_let_s_update_the_plan.md": {
+    "mtime": 1788278945.6120374,
+    "ast_hash": "17236e768f09df13b2434fe9104ca388",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260901_203958_how_many_plans_we_have.md": {
+    "mtime": 1788295198.0796769,
+    "ast_hash": "0470f09085fe913378b6413f6c4af808",
     "semantic_hash": ""
   }
 }

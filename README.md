@@ -26,7 +26,6 @@ remain research directions.
 [See the example](#see-it-in-action) ·
 [Quick start](#quick-start) ·
 [Architecture](docs/architecture.md) ·
-[Roadmap](docs/roadmap.md) ·
 [Contributing](CONTRIBUTING.md)
 
 > [!IMPORTANT]
@@ -260,7 +259,6 @@ supported adapters explicitly in CI.
 
 - [Architecture](docs/architecture.md) — method, registry, adapter, and context design
 - [Scientific contracts](docs/contracts.md) — canonical Hamiltonians and structured results
-- [Roadmap](docs/roadmap.md) — release gates and longer-term direction
 - [Cross-project workflow](docs/cross-project.md) — collaboration model
 - [Contributing](CONTRIBUTING.md) — development setup and review process
 
@@ -272,21 +270,8 @@ supported adapters explicitly in CI.
 ├── context/        # Input/result schemas and method metadata
 ├── examples/       # Reproducible demonstrations
 ├── tests/          # Core, context, and optional-adapter validation
-└── docs/           # Architecture, roadmap, and cross-project workflow
+└── docs/           # Architecture, contracts, and cross-project workflow
 ```
-
-## Roadmap
-
-- **Now:** assign reviewers, approve the Trotter/qDRIFT definitions and frozen
-  study, decide the license, and complete release metadata.
-- **Next:** rerun the approved frozen protocol, publish explicit adapter CI,
-  documentation, citation metadata, and the reproducibility bundle.
-- **Later:** add reviewed methods such as Krylov and interaction-picture
-  approaches, hardware-aware circuit compilation, validated Qrack acceleration,
-  Spack support, and workflow or agent integrations.
-
-See the [project roadmap](docs/roadmap.md) for the release gates and historical
-planning context.
 
 ## Contributing
 
