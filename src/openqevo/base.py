@@ -13,6 +13,15 @@ from typing import Any
 import numpy as np
 from numpy.typing import NDArray
 
+from openqevo.hamiltonian import HamiltonianInput, hamiltonian_provenance
+from openqevo.result import (
+    EvolutionCosts,
+    EvolutionResult,
+    implementation_provenance,
+    installed_versions,
+    runtime_environment,
+)
+
 
 class EvolutionMethod(ABC):
     """Abstract base class for a time-evolution strategy.
@@ -24,11 +33,12 @@ class EvolutionMethod(ABC):
     name: str = ""
     description: str = ""
     source: str = ""  # e.g. "algorithms-thrust", "qiskit", "pennylane"
+    backend_packages: tuple[str, ...] = ()
 
     @abstractmethod
     def evolve(
         self,
-        terms: list[NDArray[np.complexfloating]],
+        terms: HamiltonianInput,
         t: float,
         **params: Any,
     ) -> NDArray[np.complexfloating]:
@@ -49,6 +59,50 @@ class EvolutionMethod(ABC):
         ndarray
             Unitary matrix approximating exp(-i H t).
         """
+
+    def run(
+        self,
+        terms: HamiltonianInput,
+        t: float,
+        **params: Any,
+    ) -> EvolutionResult:
+        """Execute a method and return the structured provenance contract.
+
+        ``evolve`` remains the dense-unitary compatibility API. Native methods
+        override this method when they can report exact formula costs or sampled
+        randomized trajectories.
+        """
+        output = self.evolve(terms, t, **params)
+        metadata_parameters = {
+            "evolution_time": float(t),
+            **{
+                name: value
+                for name, value in params.items()
+                if name not in {"rng", "sampled_sequence"}
+            },
+        }
+        return EvolutionResult(
+            output=output,
+            representation="unitary",
+            method_name=self.name,
+            implementation=implementation_provenance(
+                self.source,
+                backend_versions=installed_versions(self.backend_packages),
+            ),
+            parameters=metadata_parameters,
+            costs=EvolutionCosts(),
+            hamiltonian=hamiltonian_provenance(terms),
+            seed=params.get("seed"),
+            sampled_sequence=params.get("sampled_sequence"),
+            environment=runtime_environment(),
+            limitations=self._limitations(),
+        )
+
+    def _limitations(self) -> tuple[str, ...]:
+        context = self.context
+        if context is None:
+            return ()
+        return tuple(str(item) for item in context.get("limitations", ()))
 
     @property
     def context(self) -> dict[str, Any] | None:

@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/QSCSoftwareEcosystem/OpenQEvo/context/schema/evolution_result.schema.json",
+  "title": "OpenQEvo Structured Evolution Result",
+  "description": "Method output metadata contract carrying provenance, normalized parameters, execution costs, random sampling data, environment, and limitations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "representation",
+    "method",
+    "implementation",
+    "parameters",
+    "costs",
+    "hamiltonian",
+    "seed",
+    "sampled_sequence",
+    "runtime_seconds",
+    "environment",
+    "warnings",
+    "limitations",
+    "output"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "openqevo-evolution-result/v1"
+    },
+    "representation": {
+      "enum": ["unitary", "state", "circuit", "operations", "channel"]
+    },
+    "method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["package", "version", "source"],
+      "properties": {
+        "package": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "source": {"type": "string", "minLength": 1},
+        "backend_versions": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        }
+      }
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "costs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formula_level_pauli_operations",
+        "adjacent_merged_pauli_operations",
+        "compiled_one_qubit_gates",
+        "compiled_two_qubit_gates",
+        "circuit_depth"
+      ],
+      "properties": {
+        "formula_level_pauli_operations": {"$ref": "#/$defs/count"},
+        "adjacent_merged_pauli_operations": {"$ref": "#/$defs/count"},
+        "compiled_one_qubit_gates": {"$ref": "#/$defs/count"},
+        "compiled_two_qubit_gates": {"$ref": "#/$defs/count"},
+        "circuit_depth": {"$ref": "#/$defs/count"}
+      }
+    },
+    "hamiltonian": {
+      "type": "object"
+    },
+    "seed": {
+      "oneOf": [
+        {"type": "integer", "minimum": 0},
+        {"type": "null"}
+      ]
+    },
+    "sampled_sequence": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 0}
+        },
+        {"type": "null"}
+      ]
+    },
+    "runtime_seconds": {
+      "oneOf": [
+        {"type": "number", "minimum": 0},
+        {"type": "null"}
+      ]
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "warnings": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "output": {
+      "type": "object",
+      "required": ["python_type"],
+      "properties": {
+        "python_type": {"type": "string"},
+        "shape": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "dtype": {"type": "string"},
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "count": {
+      "oneOf": [
+        {"type": "integer", "minimum": 0},
+        {"type": "null"}
+      ]
+    }
+  }
+}

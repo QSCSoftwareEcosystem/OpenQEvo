@@ -25,10 +25,13 @@
   "execution": {
     "implemented": true,
     "method_name": "trotter_s1",
-    "entrypoint": "openqevo.get(\"trotter_s1\").evolve(terms, t, **parameters)",
+    "entrypoint": "openqevo.get(\"trotter_s1\").run(terms, t, **parameters)",
     "input_representation": [
+      "pauli_hamiltonian_v1",
       "matrix_terms"
     ],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
     "required_arguments": [
       "terms",
       "t",
@@ -38,7 +41,7 @@
       "classical Python runtime",
       "NumPy/SciPy-compatible matrix operations"
     ],
-    "returns": "Approximate time-evolution operator from first-order product formula."
+    "returns": "EvolutionResult with an approximate dense unitary, normalized parameters, logical operation costs, and provenance; evolve(...) remains compatible."
   },
   "complexity": {
     "gate_count": "O(L * n) where L = number of Hamiltonian terms, n = Trotter steps",

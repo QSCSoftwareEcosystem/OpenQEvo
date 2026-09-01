@@ -80,6 +80,14 @@
           "items": { "type": "string" },
           "description": "Supported input representations for the terms argument."
         },
+        "input_schema": {
+          "type": "string",
+          "description": "Versioned canonical input schema used when a structured representation is supplied."
+        },
+        "result_schema": {
+          "type": "string",
+          "description": "Versioned structured result metadata schema returned by the run entrypoint."
+        },
         "required_arguments": {
           "type": "array",
           "items": { "type": "string" },

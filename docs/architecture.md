@@ -18,8 +18,10 @@ flowchart TB
         direction TB
 
         subgraph CORE ["Core Architecture"]
+            B0["hamiltonian.py\nPauliTerm / PauliHamiltonian\ncanonical input + dense bridge"]
             B1["base.py\nEvolutionMethod protocol"]
             B2["registry.py\n@register decorator\nget() / list_methods()"]
+            B3["result.py\nEvolutionResult\nprovenance + costs"]
         end
 
         subgraph METHODS ["methods/"]
@@ -55,7 +57,9 @@ flowchart TB
 
     A1 -->|"Integrate &\nengineer"| M1
     A2 -.->|"Future"| M2
+    B0 --- B1
     B1 --- B2
+    B1 --- B3
     B2 --- M1
     B2 --- M2
     B2 --- AD1
@@ -87,8 +91,35 @@ classDiagram
         +name: str
         +description: str
         +source: str
-        +evolve(terms, t, **params) NDArray
+        +evolve(hamiltonian, t, **params) NDArray
+        +run(hamiltonian, t, **params) EvolutionResult
         +context: dict | None
+    }
+
+    class PauliTerm {
+        +coefficient: float
+        +pauli_word: str
+        +qubit_order: tuple
+        +to_matrix() NDArray
+        +to_dict() dict
+    }
+
+    class PauliHamiltonian {
+        +identifier: str
+        +terms: tuple~PauliTerm~
+        +lambda_norm: float
+        +sha256: str
+        +dense_terms() tuple
+        +to_dict() dict
+    }
+
+    class EvolutionResult {
+        +representation: str
+        +method_name: str
+        +parameters: dict
+        +costs: EvolutionCosts
+        +sampled_sequence: tuple
+        +to_metadata() dict
     }
 
     class Registry {
@@ -142,6 +173,9 @@ classDiagram
     EvolutionMethod <|-- PennyLaneTrotterAdapter
     EvolutionMethod <|-- QrackTrotterAdapter
     EvolutionMethod <|-- FutureMethod
+    PauliHamiltonian *-- PauliTerm
+    EvolutionMethod --> PauliHamiltonian : consumes
+    EvolutionMethod --> EvolutionResult : produces
     Registry --> EvolutionMethod : manages
 ```
 
@@ -151,6 +185,8 @@ classDiagram
 src/openqevo/
 ├── __init__.py              # Auto-registers methods, exports registry API
 ├── base.py                  # EvolutionMethod ABC
+├── hamiltonian.py           # Canonical Pauli input + dense compatibility
+├── result.py                # Structured results, costs, and provenance
 ├── registry.py              # @register, get(), list_methods(), context loader
 ├── methods/
 │   ├── __init__.py          # Auto-imports all native methods
@@ -161,6 +197,11 @@ src/openqevo/
     ├── pennylane_adapter.py # PennyLane wrapper (working)
     └── qrack_adapter.py     # Qrack-backed Trotter adapter (experimental)
 ```
+
+The canonical `PauliHamiltonian` is the benchmark and adapter input boundary.
+Legacy sequences of dense Hermitian terms are validated and retained for
+small-system compatibility. `EvolutionMethod.run(...)` returns structured
+metadata and output, while `evolve(...)` remains the direct dense-unitary API.
 
 The Qrack adapter is implemented and validated in CPU mode with real
 `pyqrack`. GPU acceleration depends on a working host OpenCL/NVIDIA runtime;

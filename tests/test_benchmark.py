@@ -42,6 +42,7 @@ def test_equal_budget_records_and_qdrift_provenance(small_config):
             == record["logical_budget"]
         )
         assert record["status"] == "success"
+        assert record["result_schema_version"] == "openqevo-evolution-result/v1"
         if record["method"] == "qdrift":
             assert len(record["sampled_sequence"]) == record["logical_budget"]
             assert record["parameters"]["seed"] in small_config["qdrift_seeds"]
@@ -80,6 +81,19 @@ def test_bundle_is_immutable_without_explicit_replace(tmp_path, small_config):
     assert paths["manifest"].exists()
     with pytest.raises(FileExistsError, match="--replace"):
         generate_bundle(config_path, output_dir, create_plot=False)
+
+
+def test_generated_bundles_are_byte_reproducible(tmp_path, small_config):
+    config_path = tmp_path / "config.json"
+    config_path.write_text(json.dumps(small_config), encoding="utf-8")
+    first_dir = tmp_path / "first"
+    second_dir = tmp_path / "second"
+
+    first = generate_bundle(config_path, first_dir, create_plot=False)
+    second = generate_bundle(config_path, second_dir, create_plot=False)
+
+    for artifact in ("config", "records", "summary", "manifest"):
+        assert first[artifact].read_bytes() == second[artifact].read_bytes()
 
 
 def test_config_rejects_unfair_budget(small_config):

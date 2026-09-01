@@ -41,13 +41,20 @@ OpenQEvo already provides:
 - a versioned `H = X + Z` pilot with equal logical-operation budgets, 30 fixed
   qDRIFT seeds, append-only raw records, bootstrap uncertainty, checksums, and a
   generated convergence figure under `experiments/xz_pilot/`.
+- a validated canonical real-coefficient Pauli Hamiltonian contract with
+  explicit qubit ordering, serialization, stable hashes, and dense compatibility;
+- a versioned `EvolutionResult` contract carrying normalized parameters,
+  implementation and environment provenance, logical and compiled-cost slots,
+  seeds, sampled sequences, warnings, limitations, and output hashes;
+- analytic commuting controls, first- and second-order convergence-slope gates,
+  and an exact dense qDRIFT expected-channel validation mode.
 
 The following gaps prevent a strong publication:
 
 - the native Trotter and qDRIFT implementations still require Algorithms
   Thrust scientific review;
-- the API returns dense unitary matrices and therefore does not define a
-  scalable execution boundary;
+- native methods still emit dense validation outputs even though the structured
+  result contract can represent circuit, state, operation, and channel modes;
 - the `H = X + Z` pilot is exploratory; the production benchmark grid,
   cross-framework conformance study, and broader archival dataset do not yet
   exist;
@@ -154,7 +161,8 @@ contribution.
 
 ### 7.1 Hamiltonian contract
 
-Introduce a validated representation for Pauli-sum Hamiltonians. Each term must
+OpenQEvo now includes a validated v1 representation for Pauli-sum Hamiltonians.
+Each term records:
 record:
 
 - coefficient, including its sign;
@@ -169,8 +177,7 @@ use the same canonical Pauli representation across methods.
 
 ### 7.2 Evolution result contract
 
-Replace the assumption that every method returns only a dense unitary with a
-structured result that can carry:
+`EvolutionMethod.run(...)` now returns a structured v1 result that can carry:
 
 - output representation, such as circuit, state, or unitary;
 - method name and implementation version;
@@ -441,12 +448,15 @@ Exit: signed-off method specifications and benchmark questions.
 
 ### WP1: Core scientific data model
 
-Status: partial. Method metadata and recommendation execution contracts exist;
-the canonical Pauli Hamiltonian and scalable evolution-result contracts remain.
+Status: implemented for the v1 contract. Canonical Pauli Hamiltonians,
+structured results, schemas, native method costs, qDRIFT seed/sequence capture,
+serialized recommendation inputs, and dense compatibility are covered by tests.
+Native circuit and operation outputs remain in WP2.
 
-- Implement canonical Pauli Hamiltonian representation.
-- Implement structured evolution results and provenance.
-- Preserve a compatibility path for existing examples where practical.
+- Review and stabilize the implemented v1 schemas with DS and Agentic Software.
+- Add circuit or operation-sequence output implementations under the same result
+  contract.
+- Preserve the tested dense compatibility path through the first release.
 
 Exit: conformance tests pass for native and adapter methods.
 
@@ -538,8 +548,8 @@ The work is ready for submission only when:
    with the Algorithms Thrust; identify scientific owners and reviewers.
 2. Validate the pilot's equal-budget accounting, trajectory versus empirical
    ensemble metrics, bootstrap procedure, and fixed 30-seed schedule.
-3. Write the canonical Pauli Hamiltonian and scalable evolution-result
-   contracts while preserving compatibility with the pilot records.
+3. Review the implemented canonical Pauli Hamiltonian and evolution-result v1
+   contracts with DS, Agentic Software, and the Algorithms Thrust.
 4. Convert the research questions and remaining validation gates into
    repository issues with explicit owners and exit criteria.
 5. Extend the controlled synthetic pilot to vary term count, `lambda`, Pauli

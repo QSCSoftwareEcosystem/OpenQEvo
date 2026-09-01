@@ -32,10 +32,13 @@
     "implemented": true,
     "method_name": "pennylane_trotter",
     "adapter_name": "pennylane",
-    "entrypoint": "openqevo.get(\"pennylane_trotter\").evolve(terms, t, **parameters)",
+    "entrypoint": "openqevo.get(\"pennylane_trotter\").run(terms, t, **parameters)",
     "input_representation": [
+      "pauli_hamiltonian_v1",
       "matrix_terms"
     ],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
     "required_arguments": [
       "terms",
       "t",
@@ -45,7 +48,7 @@
       "pennylane optional dependency",
       "classical Python runtime"
     ],
-    "returns": "Approximate time-evolution unitary matrix synthesized through PennyLane."
+    "returns": "EvolutionResult with a dense PennyLane-synthesized unitary and backend version provenance; evolve(...) remains compatible."
   },
   "complexity": {
     "gate_count": "Depends on number of Pauli terms after decomposition, product formula order, and steps",

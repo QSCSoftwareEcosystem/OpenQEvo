@@ -33,10 +33,13 @@
     "implemented": true,
     "method_name": "qiskit_trotter",
     "adapter_name": "qiskit",
-    "entrypoint": "openqevo.get(\"qiskit_trotter\").evolve(terms, t, **parameters)",
+    "entrypoint": "openqevo.get(\"qiskit_trotter\").run(terms, t, **parameters)",
     "input_representation": [
+      "pauli_hamiltonian_v1",
       "matrix_terms"
     ],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
     "required_arguments": [
       "terms",
       "t",
@@ -46,7 +49,7 @@
       "qiskit optional dependency",
       "classical Python runtime"
     ],
-    "returns": "Approximate time-evolution unitary matrix synthesized through Qiskit."
+    "returns": "EvolutionResult with a dense Qiskit-synthesized unitary and backend version provenance; evolve(...) remains compatible."
   },
   "complexity": {
     "gate_count": "Depends on number of Pauli terms after SparsePauliOp conversion, product formula order, and steps",

@@ -21,6 +21,7 @@ from qiskit.quantum_info import Operator, SparsePauliOp
 from qiskit.synthesis import LieTrotter, SuzukiTrotter
 
 from openqevo.base import EvolutionMethod
+from openqevo.hamiltonian import HamiltonianInput, dense_terms
 from openqevo.registry import register
 
 
@@ -30,10 +31,11 @@ class QiskitTrotterAdapter(EvolutionMethod):
 
     description = "Trotter-Suzuki via qiskit PauliEvolutionGate + SuzukiTrotter"
     source = "qiskit"
+    backend_packages = ("qiskit",)
 
     def evolve(
         self,
-        terms: list[NDArray[np.complexfloating]],
+        terms: HamiltonianInput,
         t: float,
         **params: Any,
     ) -> NDArray[np.complexfloating]:
@@ -54,15 +56,16 @@ class QiskitTrotterAdapter(EvolutionMethod):
         steps = params.get("steps")
         if steps is None:
             raise TypeError("'steps' is a required parameter.")
-        if not terms:
-            raise ValueError("At least one Hamiltonian term is required.")
         if steps < 1:
             raise ValueError("Number of steps must be at least 1.")
+        matrix_terms = dense_terms(terms)
 
         order = params.get("order", 2)
 
         # Convert each numpy matrix to SparsePauliOp and sum
-        pauli_ops = [SparsePauliOp.from_operator(Operator(term)) for term in terms]
+        pauli_ops = [
+            SparsePauliOp.from_operator(Operator(term)) for term in matrix_terms
+        ]
         hamiltonian = sum(pauli_ops[1:], pauli_ops[0])
 
         # Qiskit's SuzukiTrotter only accepts even orders; first-order
@@ -74,7 +77,7 @@ class QiskitTrotterAdapter(EvolutionMethod):
         gate = PauliEvolutionGate(hamiltonian, time=t, synthesis=synthesis)
 
         # Build circuit, decompose to apply Trotter splitting, extract unitary
-        n_qubits = int(np.log2(terms[0].shape[0]))
+        n_qubits = int(np.log2(matrix_terms[0].shape[0]))
         qc = QuantumCircuit(n_qubits)
         qc.append(gate, range(n_qubits))
 

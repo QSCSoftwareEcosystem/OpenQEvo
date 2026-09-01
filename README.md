@@ -122,11 +122,13 @@ python examples/trotter_convergence.py \
 
 ## Project status
 
-Status below reflects the repository on 2026-08-25.
+Status below reflects the repository on 2026-09-01.
 
 | Capability | Status | Evidence / boundary |
 | --- | --- | --- |
 | Exact matrix evolution | Available | Classical small-system reference with context metadata and tests |
+| Canonical Hamiltonian contract | Available | Validated real-coefficient Pauli sums with explicit qubit ordering, serialization schema, hashes, and dense compatibility |
+| Structured evolution result | Available | Versioned method, parameter, cost, seed, environment, warning, limitation, and output metadata |
 | First-order Trotter | Prototype | Implemented and tested; explicitly a placeholder pending Algorithms Thrust review |
 | Second-order Trotter | Prototype | Implemented and tested; explicitly a placeholder pending Algorithms Thrust review |
 | qDRIFT randomized evolution | Prototype | Registered dense-unitary baseline with reproducible sampling, context metadata, and tests |
@@ -160,29 +162,36 @@ python -m pip install -e ".[adapters]"
 ### Compare two evolution methods
 
 ```python
-import numpy as np
 import openqevo
 
-x = np.array([[0, 1], [1, 0]], dtype=complex)
-z = np.array([[1, 0], [0, -1]], dtype=complex)
-terms = [x, z]
+hamiltonian = openqevo.PauliHamiltonian(
+    identifier="quickstart-xz",
+    terms=(
+        openqevo.PauliTerm(1.0, "X"),
+        openqevo.PauliTerm(1.0, "Z"),
+    ),
+)
 
-exact = openqevo.get("exact").evolve(terms, t=1.0)
-approx = openqevo.get("trotter_s2").evolve(terms, t=1.0, steps=20)
+exact = openqevo.get("exact").run(hamiltonian, t=1.0)
+approx = openqevo.get("trotter_s2").run(hamiltonian, t=1.0, steps=20)
 
 print(openqevo.list_methods())
-print("approximation error:", np.linalg.norm(approx - exact))
+print("formula operations:", approx.costs.formula_level_pauli_operations)
+print("unitary shape:", approx.unitary.shape)
 ```
 
 The registry always lists the native/reference methods (`exact`, `trotter_s1`,
 `trotter_s2`, and `qdrift`). Optional adapter names appear when their
-dependencies are installed.
+dependencies are installed. Existing callers can continue passing dense matrix
+terms to `evolve(...)`; see the [scientific contracts](docs/contracts.md) for
+the canonical and structured APIs.
 
 ## Validation and evidence
 
 - **Core and context:** tests cover registry behavior, Trotter and qDRIFT
-  behavior, exact reference cases, recommendation execution, error handling,
-  and JSON-schema validation.
+  behavior, exact and commuting reference cases, expected convergence slopes,
+  qDRIFT expected-channel convergence, recommendation execution, error
+  handling, and JSON-schema validation.
 - **Qiskit adapter:** 9 additional tests pass when Qiskit is installed.
 - **PennyLane adapter:** 9 dependency-conditional tests cover the equivalent
   integration surface.
@@ -213,10 +222,11 @@ supported adapters explicitly in CI.
 
 - Native Trotter code is a package-structure reference, not yet the reviewed
   Algorithms Thrust production implementation.
-- The public interface currently returns dense unitaries, which limits useful
-  validation to small systems and is not a scalable execution boundary.
-- qDRIFT is a dense-unitary randomized baseline that still needs shared
-  scientific and adapter-conformance review.
+- The structured result contract can represent scalable outputs, but native
+  methods currently emit dense validation unitaries; circuit and operation
+  outputs remain implementation work.
+- qDRIFT provides sampled trajectories and a dense expected-channel validation
+  mode, but still needs shared scientific and adapter-conformance review.
 - Qrack support is experimental; the included tests use a fake runtime, and
   GPU/OpenCL validation depends on the host environment.
 - Krylov, interaction-picture, annealing, automated method selection, and
@@ -239,6 +249,7 @@ supported adapters explicitly in CI.
 ## Documentation
 
 - [Architecture](docs/architecture.md) — method, registry, adapter, and context design
+- [Scientific contracts](docs/contracts.md) — canonical Hamiltonians and structured results
 - [Roadmap](docs/roadmap.md) — release gates and longer-term direction
 - [Cross-project workflow](docs/cross-project.md) — collaboration model
 - [Contributing](CONTRIBUTING.md) — development setup and review process
@@ -247,8 +258,8 @@ supported adapters explicitly in CI.
 
 ```text
 .
-├── src/openqevo/   # Registry, method contract, reference methods, adapters
-├── context/        # Schema and method metadata
+├── src/openqevo/   # Scientific contracts, registry, methods, and adapters
+├── context/        # Input/result schemas and method metadata
 ├── examples/       # Reproducible demonstrations
 ├── tests/          # Core, context, and optional-adapter validation
 └── docs/           # Architecture, roadmap, and cross-project workflow
@@ -256,13 +267,14 @@ supported adapters explicitly in CI.
 
 ## Roadmap
 
-- **Now:** review the Trotter and qDRIFT implementations, update the context
-  claims, decide the license, and rebaseline the first release.
+- **Now:** review the Trotter and qDRIFT implementations, validate adapters
+  against the canonical contract, decide the license, and rebaseline the first
+  release.
 - **Next:** publish a tested package with explicit adapter CI, documentation,
   citation metadata, and one reproducible benchmark artifact.
 - **Later:** add reviewed methods such as Krylov and interaction-picture
-  approaches, scalable result contracts, validated Qrack acceleration, Spack
-  support, and workflow or agent integrations.
+  approaches, scalable circuit and operation outputs, validated Qrack
+  acceleration, Spack support, and workflow or agent integrations.
 
 See the [project roadmap](docs/roadmap.md) for the release gates and historical
 planning context.

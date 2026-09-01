@@ -108,3 +108,49 @@ class TestExactEvolution:
     def test_identity_at_zero_time(self):
         result = self.method.evolve([SIGMA_X, SIGMA_Z], t=0.0)
         np.testing.assert_allclose(result, np.eye(2), atol=1e-12)
+
+
+def test_trotter_formulas_are_exact_for_commuting_terms():
+    hamiltonian = openqevo.PauliHamiltonian(
+        identifier="commuting-zi-iz",
+        terms=(
+            openqevo.PauliTerm(0.7, "ZI"),
+            openqevo.PauliTerm(-0.2, "IZ"),
+        ),
+    )
+    exact = openqevo.get("exact").evolve(hamiltonian, t=1.3)
+
+    for method_name in ("trotter_s1", "trotter_s2"):
+        approximation = openqevo.get(method_name).evolve(hamiltonian, t=1.3, steps=3)
+        np.testing.assert_allclose(approximation, exact, atol=1e-12)
+
+
+def test_trotter_convergence_slopes_match_expected_orders():
+    hamiltonian = openqevo.PauliHamiltonian(
+        identifier="noncommuting-xz",
+        terms=(
+            openqevo.PauliTerm(1.0, "X"),
+            openqevo.PauliTerm(1.0, "Z"),
+        ),
+    )
+    exact = openqevo.get("exact").evolve(hamiltonian, t=1.0)
+    steps = np.array([8, 16, 32, 64, 128])
+
+    slopes = {}
+    for method_name in ("trotter_s1", "trotter_s2"):
+        errors = np.array(
+            [
+                np.linalg.norm(
+                    openqevo.get(method_name).evolve(
+                        hamiltonian, t=1.0, steps=int(count)
+                    )
+                    - exact,
+                    ord=2,
+                )
+                for count in steps
+            ]
+        )
+        slopes[method_name] = np.polyfit(np.log(steps), np.log(errors), 1)[0]
+
+    assert -1.1 < slopes["trotter_s1"] < -0.9
+    assert -2.1 < slopes["trotter_s2"] < -1.9

@@ -25,6 +25,17 @@ class TestQiskitAdapter:
         approx = self.method.evolve(terms, t=1.0, steps=1)
         np.testing.assert_allclose(approx, exact, atol=1e-10)
 
+    def test_canonical_input_and_structured_backend_provenance(self):
+        hamiltonian = openqevo.PauliHamiltonian(
+            identifier="qiskit-z",
+            terms=(openqevo.PauliTerm(1.0, "Z"),),
+        )
+        result = self.method.run(hamiltonian, t=0.25, steps=1)
+        exact = openqevo.get("exact").evolve(hamiltonian, t=0.25)
+
+        np.testing.assert_allclose(result.unitary, exact, atol=1e-10)
+        assert "qiskit" in result.implementation.backend_versions
+
     def test_converges_with_more_steps(self):
         """Use 2-qubit non-commuting terms to see Trotter error."""
         # XI and ZZ do not commute

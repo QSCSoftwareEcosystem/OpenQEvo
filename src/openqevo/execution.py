@@ -2,22 +2,26 @@
 
 from __future__ import annotations
 
-from collections.abc import Mapping, Sequence
+from collections.abc import Mapping
 from typing import Any
 
 from numpy.typing import NDArray
 
 import openqevo.registry as registry
+from openqevo.hamiltonian import HamiltonianInput, PauliHamiltonian
+from openqevo.result import EvolutionResult
 
 
 def execute_recommendation(
     recommendation: Mapping[str, Any],
-    terms: Sequence[NDArray[Any]] | None = None,
+    terms: HamiltonianInput | Mapping[str, Any] | None = None,
     t: float | None = None,
     parameters: Mapping[str, Any] | None = None,
+    *,
+    structured: bool = False,
     **overrides: Any,
-) -> NDArray[Any]:
-    """Execute an implemented recommendation through the OpenQEvo registry."""
+) -> NDArray[Any] | EvolutionResult:
+    """Execute a recommendation, optionally returning structured provenance."""
     method_name = _recommendation_method_name(recommendation)
     context = registry.get_context(method_name, validate=False)
     execution = _execution_contract(recommendation, context)
@@ -40,15 +44,30 @@ def execute_recommendation(
     if t is None:
         t = recommendation.get("t")
 
-    params = _merge_parameters(recommendation, parameters, overrides)
-    _validate_required_arguments(execution, terms, t, params)
+    normalized_terms = _normalize_terms(terms)
 
-    if terms is None:
+    params = _merge_parameters(recommendation, parameters, overrides)
+    _validate_required_arguments(execution, normalized_terms, t, params)
+
+    if normalized_terms is None:
         raise ValueError("'terms' is required.")
     if t is None:
         raise ValueError("'t' is required.")
 
-    return registry.get(method_name).evolve(list(terms), t, **params)
+    method = registry.get(method_name)
+    if structured:
+        return method.run(normalized_terms, t, **params)
+    return method.evolve(normalized_terms, t, **params)
+
+
+def _normalize_terms(
+    terms: HamiltonianInput | Mapping[str, Any] | None,
+) -> HamiltonianInput | None:
+    if terms is None or isinstance(terms, PauliHamiltonian):
+        return terms
+    if isinstance(terms, Mapping):
+        return PauliHamiltonian.from_dict(terms)
+    return terms
 
 
 def _recommendation_method_name(recommendation: Mapping[str, Any]) -> str:
@@ -97,7 +116,7 @@ def _merge_parameters(
 
 def _validate_required_arguments(
     execution: Mapping[str, Any] | None,
-    terms: Sequence[NDArray[Any]] | None,
+    terms: HamiltonianInput | None,
     t: float | None,
     parameters: Mapping[str, Any],
 ) -> None:

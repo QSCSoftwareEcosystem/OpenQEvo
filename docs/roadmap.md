@@ -1,6 +1,6 @@
 # OpenQEvo roadmap
 
-_Last reviewed: 2026-08-25_
+_Last reviewed: 2026-09-01_
 
 > [!IMPORTANT]
 > The original June 2026 release target was not completed. The package contains
@@ -13,6 +13,7 @@ _Last reviewed: 2026-08-25_
 | Area | Verified repository state |
 | --- | --- |
 | Package foundation | `src/` layout, `pyproject.toml`, registry, method contract, tests, and CI are present. |
+| Scientific contracts | Canonical Pauli Hamiltonians, structured evolution results, JSON schemas, input hashes, logical costs, seed capture, and dense compatibility are implemented. |
 | Native methods | Exact evolution, first-/second-order Trotter references, and a qDRIFT randomized baseline are available; the approximation methods still need Algorithms Thrust review. |
 | Context | Schema-validated metadata exists for native and adapter methods, with selection rules and executable recommendation examples. Research notes alone are not registered package methods. |
 | Qiskit | Adapter and 9 dependency-conditional tests are implemented. |
@@ -31,8 +32,8 @@ from a clean environment.
 
 - Replace or formally approve the reference Trotter and qDRIFT implementations
   with Algorithms Thrust-reviewed code.
-- Define Hamiltonian term ordering, sign, time, qubit-order, and coefficient
-  conventions explicitly.
+- Review the implemented Hamiltonian term-ordering, sign, time, qubit-order,
+  and coefficient conventions with the Algorithms Thrust.
 - Audit registered context claims and references against primary sources.
 - Validate native, Qiskit, PennyLane, and Qrack results with one shared
   conformance suite.
@@ -86,8 +87,6 @@ or supported method.
 
 Longer-term work may include:
 
-- structured result objects that carry method parameters, provenance, costs,
-  seeds, warnings, and environment metadata;
 - circuit or state outputs in addition to dense unitaries;
 - validated GPU/OpenCL execution through Qrack and other accelerated adapters;
 - Spack and quantum-HPC deployment support;

@@ -18,6 +18,7 @@ import pennylane as qml
 from numpy.typing import NDArray
 
 from openqevo.base import EvolutionMethod
+from openqevo.hamiltonian import HamiltonianInput, dense_terms
 from openqevo.registry import register
 
 
@@ -27,10 +28,11 @@ class PennyLaneTrotterAdapter(EvolutionMethod):
 
     description = "Trotter product via pennylane TrotterProduct"
     source = "pennylane"
+    backend_packages = ("pennylane",)
 
     def evolve(
         self,
-        terms: list[NDArray[np.complexfloating]],
+        terms: HamiltonianInput,
         t: float,
         **params: Any,
     ) -> NDArray[np.complexfloating]:
@@ -51,24 +53,24 @@ class PennyLaneTrotterAdapter(EvolutionMethod):
         steps = params.get("steps")
         if steps is None:
             raise TypeError("'steps' is a required parameter.")
-        if not terms:
-            raise ValueError("At least one Hamiltonian term is required.")
         if steps < 1:
             raise ValueError("Number of steps must be at least 1.")
+        matrix_terms = dense_terms(terms)
 
         order = params.get("order", 2)
-        n_qubits = int(np.log2(terms[0].shape[0]))
+        n_qubits = int(np.log2(matrix_terms[0].shape[0]))
 
         # Decompose each numpy matrix into PennyLane Pauli operators and sum
         pauli_ops = [
-            qml.pauli_decompose(term, wire_order=range(n_qubits)) for term in terms
+            qml.pauli_decompose(term, wire_order=range(n_qubits))
+            for term in matrix_terms
         ]
         hamiltonian = qml.sum(*pauli_ops) if len(pauli_ops) > 1 else pauli_ops[0]
 
         # PennyLane computes exp(+iHt), so negate time to get exp(-iHt).
         # TrotterProduct requires >= 2 Hamiltonian terms; for a single
         # term, use qml.exp which is exact.
-        if len(terms) == 1:
+        if len(matrix_terms) == 1:
             op = qml.exp(hamiltonian, coeff=-1j * t)
             return np.array(qml.matrix(op))
 
