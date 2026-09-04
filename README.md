@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://qscience.org/">
     <img
-      src=".github/assets/repository-banner.png"
-      alt="QSC Software Ecosystem — openQEvo: reusable quantum evolution methods"
+      src=".github/assets/openqevo-banner.png"
+      alt="OpenQEvo workflow: research prototype, common interface, registry and validated context, then reusable execution"
       width="100%"
     >
   </a>
@@ -28,6 +28,14 @@ remain research directions.
 [Architecture](docs/architecture.md) ·
 [Roadmap](docs/roadmap.md) ·
 [Contributing](CONTRIBUTING.md)
+
+[![Animated OpenQEvo integration pattern: scientific methods and framework adapters enter the OpenQEvo registry and structured context layer, then produce reproducible evidence and future QSC workflow integrations](.github/assets/openqevo-architecture-trace.gif)](.github/assets/openqevo-architecture.html)
+
+*Figure 1. The animated trace follows the path from reviewed scientific methods
+and optional framework adapters through the registry and context layer to
+reproducible evidence and future workflow integration. Open the
+[interactive architecture map](.github/assets/openqevo-architecture.html) for
+reader-controlled Live/Still tracing.*
 
 > [!IMPORTANT]
 > openQEvo is a source-installable, pre-alpha prototype—not a published
@@ -73,29 +81,6 @@ validated here.
   against exact small-system evolution and validate method metadata.
 - **Keeps integrations optional.** Qiskit, PennyLane, and Qrack adapters load
   only when their dependencies are installed.
-
-```mermaid
-flowchart LR
-    A[Scientific method] -. reviewed implementation .-> N[Native methods]
-    F[Qiskit / PennyLane / Qrack] --> D[Optional adapters]
-
-    subgraph O[openQEvo]
-        N --> R[Common registry]
-        D --> R
-        C[Structured context] --- R
-    end
-
-    R --> E[Reproducible examples and tests]
-    R -. future integration .-> W[QSC workflows and agents]
-
-    style O fill:#F4F1E9,stroke:#101D2D,color:#101D2D
-    style R fill:#AE1935,stroke:#AE1935,color:#FFFDF8
-    style C fill:#FFFDF8,stroke:#306A91,color:#101D2D
-    style E fill:#FFFDF8,stroke:#306A91,color:#101D2D
-```
-
-*Figure 1. The registry and context layer provide a stable discovery boundary
-while scientific implementations and external-framework adapters evolve.*
 
 ## See it in action
 

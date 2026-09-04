@@ -1,0 +1,86 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "OpenQEvo: from research prototype to reusable method",
+    "quality_profile": "showcase",
+    "visual_preset": "editorial",
+    "legend": { "mode": "hidden" },
+    "viewBox": [1120, 360]
+  },
+  "lanes": [
+    { "id": "evolution", "label": "Quantum-evolution software path" }
+  ],
+  "mainPath": ["prototype", "interface", "registry", "execution"],
+  "semanticChecks": {
+    "allowedRoots": ["prototype"],
+    "allowedTerminals": ["execution"],
+    "requiredPaths": [
+      { "from": "prototype", "to": "execution" }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "prototype",
+      "lane": "evolution",
+      "col": 0,
+      "type": "external",
+      "label": "Research prototype",
+      "sublabel": "scientific method + assumptions",
+      "width": 154
+    },
+    {
+      "id": "interface",
+      "lane": "evolution",
+      "col": 2,
+      "type": "backend",
+      "label": "Common method interface",
+      "sublabel": "one contract across implementations",
+      "width": 168
+    },
+    {
+      "id": "registry",
+      "lane": "evolution",
+      "col": 3,
+      "type": "database",
+      "label": "Method registry + context",
+      "sublabel": "parameters, limits, provenance",
+      "width": 164
+    },
+    {
+      "id": "execution",
+      "lane": "evolution",
+      "col": 5,
+      "type": "cloud",
+      "label": "Reusable execution",
+      "sublabel": "tested methods + adapters",
+      "width": 164
+    }
+  ],
+  "edges": [
+    {
+      "id": "prototype-interface",
+      "from": "prototype",
+      "to": "interface",
+      "label": "package",
+      "role": "main",
+      "variant": "emphasis"
+    },
+    {
+      "id": "interface-registry",
+      "from": "interface",
+      "to": "registry",
+      "label": "register",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "registry-execution",
+      "from": "registry",
+      "to": "execution",
+      "label": "choose + run",
+      "role": "main",
+      "variant": "emphasis"
+    }
+  ]
+}

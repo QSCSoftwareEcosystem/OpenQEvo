@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "OpenQEvo integration pattern",
+    "quality_profile": "showcase",
+    "animation": "trace",
+    "visual_preset": "editorial",
+    "legend": { "mode": "hidden" },
+    "repository": {
+      "url": "https://github.com/QSCSoftwareThrust/OpenQEvo",
+      "revision": "70e3304d4921e9062c5d37ec21aa6fccc8f252f4"
+    },
+    "viewBox": [1280, 500]
+  },
+  "components": [
+    {
+      "id": "scientific_method",
+      "type": "external",
+      "label": "Scientific method",
+      "sublabel": "reviewed research implementation",
+      "pos": [48, 300],
+      "size": [174, 72],
+      "sources": [{ "path": "README.md", "line": 77, "label": "Figure 1 source" }]
+    },
+    {
+      "id": "frameworks",
+      "type": "external",
+      "label": "Qiskit · PennyLane · Qrack",
+      "sublabel": "optional framework integrations",
+      "pos": [48, 92],
+      "size": [202, 72],
+      "sources": [{ "path": "README.md", "line": 75, "label": "Optional adapters" }]
+    },
+    {
+      "id": "native_methods",
+      "type": "backend",
+      "label": "Native methods",
+      "sublabel": "shared EvolutionMethod contract",
+      "pos": [320, 300],
+      "size": [186, 72],
+      "sources": [{ "path": "README.md", "line": 58, "label": "Method interface" }]
+    },
+    {
+      "id": "adapters",
+      "type": "backend",
+      "label": "Optional adapters",
+      "sublabel": "framework-specific bridges",
+      "pos": [320, 92],
+      "size": [186, 72],
+      "sources": [{ "path": "README.md", "line": 75, "label": "Optional adapters" }]
+    },
+    {
+      "id": "registry",
+      "type": "database",
+      "label": "Common registry",
+      "sublabel": "discover and select methods",
+      "pos": [618, 300],
+      "size": [184, 72],
+      "sources": [{ "path": "README.md", "line": 60, "label": "Method discovery" }]
+    },
+    {
+      "id": "context",
+      "type": "database",
+      "label": "Structured context",
+      "sublabel": "parameters, limits, provenance",
+      "pos": [618, 92],
+      "size": [184, 72],
+      "sources": [{ "path": "README.md", "line": 63, "label": "Scientific context" }]
+    },
+    {
+      "id": "evidence",
+      "type": "cloud",
+      "label": "Examples and tests",
+      "sublabel": "reproducible evidence",
+      "pos": [918, 300],
+      "size": [174, 72],
+      "sources": [{ "path": "README.md", "line": 66, "label": "Convergence and consistency" }]
+    },
+    {
+      "id": "workflows",
+      "type": "cloud",
+      "label": "QSC workflows and agents",
+      "sublabel": "future integration",
+      "pos": [1094, 92],
+      "size": [170, 72],
+      "sources": [{ "path": "README.md", "line": 79, "label": "Future integration" }]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "OpenQEvo",
+      "wraps": ["native_methods", "adapters", "registry", "context"],
+      "pad": 34
+    }
+  ],
+  "connections": [
+    {
+      "id": "reviewed_implementation",
+      "from": "scientific_method",
+      "to": "native_methods",
+      "label": "reviewed implementation",
+      "variant": "dashed",
+      "labelDy": -30
+    },
+    {
+      "id": "framework_adapter",
+      "from": "frameworks",
+      "to": "adapters",
+      "label": "integrate",
+      "variant": "default"
+    },
+    {
+      "id": "native_registry",
+      "from": "native_methods",
+      "to": "registry",
+      "label": "register",
+      "variant": "emphasis"
+    },
+    {
+      "id": "adapter_registry",
+      "from": "adapters",
+      "to": "registry",
+      "label": "register",
+      "variant": "default",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "context_registry",
+      "from": "context",
+      "to": "registry",
+      "label": "describe",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "id": "registry_evidence",
+      "from": "registry",
+      "to": "evidence",
+      "label": "validate",
+      "variant": "emphasis"
+    },
+    {
+      "id": "registry_workflows",
+      "from": "registry",
+      "to": "workflows",
+      "label": "future integration",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "left"
+    }
+  ]
+}
