@@ -4,12 +4,12 @@
   "meta": {
     "title": "OpenQEvo integration pattern",
     "quality_profile": "showcase",
-    "animation": "trace",
+    "animation": "none",
     "visual_preset": "editorial",
     "legend": { "mode": "hidden" },
     "repository": {
       "url": "https://github.com/QSCSoftwareThrust/OpenQEvo",
-      "revision": "70e3304d4921e9062c5d37ec21aa6fccc8f252f4"
+      "revision": "73804e5a4b5482248ca81a3692bfa24f02a5b1fc"
     },
     "viewBox": [1280, 500]
   },

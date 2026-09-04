@@ -31,11 +31,11 @@ remain research directions.
 
 [![Animated OpenQEvo integration pattern: scientific methods and framework adapters enter the OpenQEvo registry and structured context layer, then produce reproducible evidence and future QSC workflow integrations](.github/assets/openqevo-architecture-trace.gif)](.github/assets/openqevo-architecture.html)
 
-*Figure 1. The animated trace follows the path from reviewed scientific methods
-and optional framework adapters through the registry and context layer to
+*Figure 1. The staged reveal introduces reviewed scientific methods and
+optional framework adapters, then the registry and context layer, and finally
 reproducible evidence and future workflow integration. Open the
 [interactive architecture map](.github/assets/openqevo-architecture.html) for
-reader-controlled Live/Still tracing.*
+the complete explorable diagram.*
 
 > [!IMPORTANT]
 > openQEvo is a source-installable, pre-alpha prototype—not a published
