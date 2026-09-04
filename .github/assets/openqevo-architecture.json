@@ -4,7 +4,7 @@
   "meta": {
     "title": "OpenQEvo integration pattern",
     "quality_profile": "showcase",
-    "animation": "none",
+    "animation": "trace",
     "visual_preset": "editorial",
     "legend": { "mode": "hidden" },
     "repository": {
