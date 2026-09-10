@@ -177,13 +177,13 @@ Adding a new evolution method requires **one file** and **one import line**:
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
 
+
 @register("qdrift")
 class QDrift(EvolutionMethod):
     description = "Randomized product formula"
     source = "algorithms-thrust"
 
-    def evolve(self, terms, t, **params):
-        ...
+    def evolve(self, terms, t, **params): ...
 ```
 
 ### 2. Register it
@@ -228,6 +228,7 @@ from new_lib import SomeEvolver
 
 from openqevo.base import EvolutionMethod
 from openqevo.registry import register
+
 
 @register("new_lib_evolver")
 class NewLibAdapter(EvolutionMethod):

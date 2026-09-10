@@ -1,0 +1,631 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Determining eigenstates and thermal states on a quantum computer using quantum imaginary time evolution",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          40.48476580948914,
+          101.94756603240967
+        ],
+        [
+          552.5420815109907,
+          100.4512223230154
+        ],
+        [
+          552.5420815109907,
+          176.0912504196167
+        ],
+        [
+          40.48476580948914,
+          176.0912504196167
+        ]
+      ]
+    },
+    {
+      "title": "Quantum imaginary time evolution",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          41.23448369485005,
+          137.93302169727488
+        ],
+        [
+          191.92777865239296,
+          137.93302169727488
+        ],
+        [
+          191.92777865239296,
+          147.90120375156403
+        ],
+        [
+          41.23448369485005,
+          147.90120375156403
+        ]
+      ]
+    },
+    {
+      "title": "Cost of QITE",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          302.13630780044673,
+          253.37696376999406
+        ],
+        [
+          358.0957193374634,
+          253.37696376999406
+        ],
+        [
+          358.0957193374634,
+          262.20605051517487
+        ],
+        [
+          302.13630780044673,
+          262.20605051517487
+        ]
+      ]
+    },
+    {
+      "title": "Inexact QITE",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          302.8860256858076,
+          642.4380412748075
+        ],
+        [
+          359.1148670878759,
+          642.4380412748075
+        ],
+        [
+          359.1148670878759,
+          653.0050536394119
+        ],
+        [
+          302.8860256858076,
+          653.0050536394119
+        ]
+      ]
+    },
+    {
+      "title": "Illustrative QITE calculations",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          40.48476580948914,
+          473.0203081031546
+        ],
+        [
+          164.9379347794002,
+          473.0203081031546
+        ],
+        [
+          164.9379347794002,
+          483.0924435853958
+        ],
+        [
+          40.48476580948914,
+          483.0924435853958
+        ]
+      ]
+    },
+    {
+      "title": "QLanczos algorithm",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          41.23448369485005,
+          274.3667714195794
+        ],
+        [
+          127.4520405113547,
+          274.3667714195794
+        ],
+        [
+          127.4520405113547,
+          284.21745681762695
+        ],
+        [
+          41.23448369485005,
+          284.21745681762695
+        ]
+      ]
+    },
+    {
+      "title": "Quantum thermal averages",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          301.70727002620697,
+          305.8514828939573
+        ],
+        [
+          419.8420158021096,
+          305.8514828939573
+        ],
+        [
+          419.8420158021096,
+          316.65531873703003
+        ],
+        [
+          301.70727002620697,
+          316.65531873703003
+        ]
+      ]
+    },
+    {
+      "title": "Conclusions",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          301.9979321360588,
+          631.9431374500148
+        ],
+        [
+          355.36627766107136,
+          631.9431374500148
+        ],
+        [
+          355.36627766107136,
+          640.9387692998371
+        ],
+        [
+          301.9979321360588,
+          640.9387692998371
+        ]
+      ]
+    },
+    {
+      "title": "Data availability",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          41.23448369485005,
+          53.67693817615509
+        ],
+        [
+          112.4576828041365,
+          53.67693817615509
+        ],
+        [
+          112.4576828041365,
+          62.96942294875592
+        ],
+        [
+          41.23448369485005,
+          62.96942294875592
+        ]
+      ]
+    },
+    {
+      "title": "Code availability",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          41.23448369485005,
+          95.95340639810426
+        ],
+        [
+          113.95711857485831,
+          95.95340639810426
+        ],
+        [
+          113.95711857485831,
+          104.94903824792654
+        ],
+        [
+          41.23448369485005,
+          104.94903824792654
+        ]
+      ]
+    },
+    {
+      "title": "Online content",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          41.23448369485005,
+          148.42792552206754
+        ],
+        [
+          106.45993972124921,
+          148.42792552206754
+        ],
+        [
+          106.45993972124921,
+          156.67392138440462
+        ],
+        [
+          41.23448369485005,
+          156.67392138440462
+        ]
+      ]
+    },
+    {
+      "title": "References",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          40.48476580948914,
+          261.81988549232483
+        ],
+        [
+          90.7158641286701,
+          261.81988549232483
+        ],
+        [
+          90.7158641286701,
+          270.6185914821534
+        ],
+        [
+          40.48476580948914,
+          270.6185914821534
+        ]
+      ]
+    },
+    {
+      "title": "Acknowledgements",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          301.9979321360588,
+          395.80780139218007
+        ],
+        [
+          388.3538646169514,
+          395.80780139218007
+        ],
+        [
+          388.3538646169514,
+          405.8594390153885
+        ],
+        [
+          301.9979321360588,
+          405.8594390153885
+        ]
+      ]
+    },
+    {
+      "title": "Author contributions",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          301.9979321360588,
+          502.40069472789764
+        ],
+        [
+          393.6018898144778,
+          502.40069472789764
+        ],
+        [
+          393.6018898144778,
+          512.0013794523844
+        ],
+        [
+          301.9979321360588,
+          512.0013794523844
+        ]
+      ]
+    },
+    {
+      "title": "Competing interests",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          302.8860256858076,
+          567.2764185667038
+        ],
+        [
+          389.8533003876732,
+          567.2764185667038
+        ],
+        [
+          389.8533003876732,
+          576.4700743761108
+        ],
+        [
+          302.8860256858076,
+          576.4700743761108
+        ]
+      ]
+    },
+    {
+      "title": "Additional information",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          302.8860256858076,
+          598.1696203947067
+        ],
+        [
+          400.34935078272594,
+          598.1696203947067
+        ],
+        [
+          400.34935078272594,
+          609.4540578254591
+        ],
+        [
+          302.8860256858076,
+          609.4540578254591
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          90
+        ],
+        [
+          "Span",
+          78
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Equation",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          186
+        ],
+        [
+          "Line",
+          138
+        ],
+        [
+          "Text",
+          15
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          129
+        ],
+        [
+          "Span",
+          114
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          127
+        ],
+        [
+          "Span",
+          79
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          140
+        ],
+        [
+          "Span",
+          134
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          236
+        ],
+        [
+          "Span",
+          144
+        ],
+        [
+          "ListItem",
+          38
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "SectionHeader",
+          8
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/Motta2020_c"
+}

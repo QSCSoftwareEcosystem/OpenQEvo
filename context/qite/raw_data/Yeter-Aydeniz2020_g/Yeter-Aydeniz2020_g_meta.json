@@ -1,0 +1,860 @@
+{
+  "table_of_contents": [
+    {
+      "title": "ARTICLE OPEN",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          34.48702272660186,
+          82.45995862337085
+        ],
+        [
+          139.22715061903,
+          82.45995862337085
+        ],
+        [
+          139.22715061903,
+          92.67960548400879
+        ],
+        [
+          34.48702272660186,
+          92.67960548400879
+        ]
+      ]
+    },
+    {
+      "title": "Practical quantum computation of chemical and nuclear\nenergy levels using quantum imaginary time evolution and\nLanczos algorithms",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          34.48702272660186,
+          101.20085831050059
+        ],
+        [
+          524.802519752637,
+          101.20085831050059
+        ],
+        [
+          524.802519752637,
+          165.6647948026657
+        ],
+        [
+          34.48702272660186,
+          165.6647948026657
+        ]
+      ]
+    },
+    {
+      "title": "INTRODUCTION",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          34.48702272660186,
+          365.0727259052873
+        ],
+        [
+          98.96276086764011,
+          365.0727259052873
+        ],
+        [
+          98.96276086764011,
+          373.3187217676244
+        ],
+        [
+          34.48702272660186,
+          373.3187217676244
+        ]
+      ]
+    },
+    {
+      "title": "RESULTS",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          44.18064069747925,
+          386.06253355487263
+        ],
+        [
+          80.96953161897828,
+          386.06253355487263
+        ],
+        [
+          80.96953161897828,
+          394.6606533527374
+        ],
+        [
+          44.18064069747925,
+          394.6606533527374
+        ]
+      ]
+    },
+    {
+      "title": "OITE results",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          44.23335523629369,
+          449.88225162029266
+        ],
+        [
+          89.9661462433092,
+          449.88225162029266
+        ],
+        [
+          89.9661462433092,
+          458.37788212299347
+        ],
+        [
+          44.23335523629369,
+          458.37788212299347
+        ]
+      ]
+    },
+    {
+      "title": "QLanczos results",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          300.6368720297249,
+          332.088742455939
+        ],
+        [
+          365.943596303463,
+          332.088742455939
+        ],
+        [
+          365.943596303463,
+          340.33473831827604
+        ],
+        [
+          300.6368720297249,
+          340.33473831827604
+        ]
+      ]
+    },
+    {
+      "title": "DISCUSSION",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          43.48363735093278,
+          663.0453442335129
+        ],
+        [
+          95.21417144083557,
+          663.0453442335129
+        ],
+        [
+          95.21417144083557,
+          671.5409747362137
+        ],
+        [
+          43.48363735093278,
+          671.5409747362137
+        ]
+      ]
+    },
+    {
+      "title": "METHODS",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          309.63348665405584,
+          354.5778220804947
+        ],
+        [
+          353.1171240049886,
+          354.5778220804947
+        ],
+        [
+          353.1171240049886,
+          362.82381794283174
+        ],
+        [
+          309.63348665405584,
+          362.82381794283174
+        ]
+      ]
+    },
+    {
+      "title": "Algorithms",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          34.48702272660186,
+          190.37935626506805
+        ],
+        [
+          77.22094219217372,
+          190.37935626506805
+        ],
+        [
+          77.22094219217372,
+          200.1528086585456
+        ],
+        [
+          34.48702272660186,
+          200.1528086585456
+        ]
+      ]
+    },
+    {
+      "title": "Quantum program",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          44.18064069747925,
+          296.8558510441351
+        ],
+        [
+          116.95599011630196,
+          296.96090257167816
+        ],
+        [
+          116.95599011630196,
+          306.6011188814425
+        ],
+        [
+          44.18064069747925,
+          305.45653307437897
+        ]
+      ]
+    },
+    {
+      "title": "Error mitigation",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          43.48363735093278,
+          650.6880635023117
+        ],
+        [
+          104.9605039505274,
+          650.6880635023117
+        ],
+        [
+          104.9605039505274,
+          659.6796689869668
+        ],
+        [
+          43.48363735093278,
+          659.6796689869668
+        ]
+      ]
+    },
+    {
+      "title": "Extrapolation to the infinite HO basis",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          309.63348665405584,
+          576.5443791151047
+        ],
+        [
+          452.8296027579896,
+          576.5443791151047
+        ],
+        [
+          452.8296027579896,
+          585.0400096178055
+        ],
+        [
+          309.63348665405584,
+          585.0400096178055
+        ]
+      ]
+    },
+    {
+      "title": "DATA AVAILABILITY",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          34.48702272660186,
+          612.4526017753999
+        ],
+        [
+          116.95599011630196,
+          612.4526017753999
+        ],
+        [
+          116.95599011630196,
+          622.111851811409
+        ],
+        [
+          34.48702272660186,
+          622.111851811409
+        ]
+      ]
+    },
+    {
+      "title": "CODE AVAILABILITY",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          34.48702272660186,
+          659.6796689869668
+        ],
+        [
+          116.95599011630196,
+          659.6796689869668
+        ],
+        [
+          116.95599011630196,
+          668.4516545534134
+        ],
+        [
+          34.48702272660186,
+          668.4516545534134
+        ]
+      ]
+    },
+    {
+      "title": "REFERENCES",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          300.6368720297249,
+          57.92475342750549
+        ],
+        [
+          352.3674061196277,
+          57.92475342750549
+        ],
+        [
+          352.3674061196277,
+          65.2183309112115
+        ],
+        [
+          300.6368720297249,
+          65.2183309112115
+        ]
+      ]
+    },
+    {
+      "title": "ACKNOWLEDGEMENTS",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          300.6368720297249,
+          675.402624964714
+        ],
+        [
+          393.6018898144778,
+          675.402624964714
+        ],
+        [
+          393.6018898144778,
+          683.8982554674149
+        ],
+        [
+          300.6368720297249,
+          683.8982554674149
+        ]
+      ]
+    },
+    {
+      "title": "AUTHOR CONTRIBUTIONS",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          43.48363735093278,
+          129.6870258349378
+        ],
+        [
+          150.69329495754292,
+          129.6870258349378
+        ],
+        [
+          150.69329495754292,
+          137.93302169727488
+        ],
+        [
+          43.48363735093278,
+          137.93302169727488
+        ]
+      ]
+    },
+    {
+      "title": "COMPETING INTERESTS",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          44.18064069747925,
+          187.40899687129738
+        ],
+        [
+          140.9469624478511,
+          187.40899687129738
+        ],
+        [
+          140.9469624478511,
+          195.6549927336345
+        ],
+        [
+          44.18064069747925,
+          195.6549927336345
+        ]
+      ]
+    },
+    {
+      "title": "ADDITIONAL INFORMATION",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          43.48363735093278,
+          226.39006822052724
+        ],
+        [
+          158.190473811152,
+          226.39006822052724
+        ],
+        [
+          158.190473811152,
+          234.63606408286432
+        ],
+        [
+          43.48363735093278,
+          234.63606408286432
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          101
+        ],
+        [
+          "Span",
+          57
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "Picture",
+          3
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Equation",
+          1
+        ],
+        [
+          "Footnote",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          147
+        ],
+        [
+          "Span",
+          122
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "Figure",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          163
+        ],
+        [
+          "Span",
+          76
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          154
+        ],
+        [
+          "Span",
+          105
+        ],
+        [
+          "TableCell",
+          48
+        ],
+        [
+          "Text",
+          27
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          156
+        ],
+        [
+          "Span",
+          125
+        ],
+        [
+          "Text",
+          27
+        ],
+        [
+          "Equation",
+          18
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          145
+        ],
+        [
+          "Span",
+          118
+        ],
+        [
+          "Text",
+          18
+        ],
+        [
+          "Equation",
+          8
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          164
+        ],
+        [
+          "Span",
+          111
+        ],
+        [
+          "TableCell",
+          93
+        ],
+        [
+          "ListItem",
+          30
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "Table",
+          3
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          45
+        ],
+        [
+          "Span",
+          17
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/Yeter-Aydeniz2020_g"
+}
