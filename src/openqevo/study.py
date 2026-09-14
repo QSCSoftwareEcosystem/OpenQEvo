@@ -502,8 +502,7 @@ def verify_bundle(bundle_dir: Path) -> dict[str, Any]:
         integrity_errors.append(f"unmanifested file {name!r}")
     if integrity_errors:
         raise ValueError(
-            "Bundle byte-integrity verification failed: "
-            + "; ".join(integrity_errors)
+            "Bundle byte-integrity verification failed: " + "; ".join(integrity_errors)
         )
 
     required = {
@@ -550,9 +549,7 @@ def verify_bundle(bundle_dir: Path) -> dict[str, Any]:
         consistency_errors.append("resource-estimate workload count is incorrect")
 
     workload_ids = {
-        workload.get("id")
-        for workload in workloads
-        if isinstance(workload, Mapping)
+        workload.get("id") for workload in workloads if isinstance(workload, Mapping)
     }
     protocol_workload_ids = {spec["id"] for spec in protocol["workloads"]}
     if workload_ids != protocol_workload_ids:
@@ -612,8 +609,7 @@ def verify_bundle(bundle_dir: Path) -> dict[str, Any]:
         consistency_errors.append("summary method-group count is incorrect")
     if consistency_errors:
         raise ValueError(
-            "Bundle cross-file verification failed: "
-            + "; ".join(consistency_errors)
+            "Bundle cross-file verification failed: " + "; ".join(consistency_errors)
         )
 
     return {

@@ -19,9 +19,10 @@ method interface, registry, framework adapters, and structured context.**
 [![Maturity](https://img.shields.io/badge/Maturity-Prototype-AE1935)](#project-status)
 
 The current prototype covers exact evolution, first- and second-order product
-formulas, a qDRIFT randomized baseline, and optional Qiskit, PennyLane, and
-Qrack adapters. Interaction-picture, annealing, and other evolution families
-remain research directions.
+formulas, a qDRIFT randomized baseline, and dense reference implementations
+of Krylov, interaction-picture, and annealing evolution. Optional Qiskit,
+PennyLane, and Qrack adapters provide framework integrations. The new dense
+references are experimental research tools, not hardware-scale solvers.
 
 [See the example](#see-it-in-action) ·
 [Quick start](#quick-start) ·
@@ -50,9 +51,9 @@ reader-controlled Live/Still tracing.*
 | **Ecosystem area** | Applications |
 | **Primary users** | Quantum-algorithm researchers, framework integrators, and QSC software teams |
 | **Maturity** | Prototype (`Development Status :: 2 - Pre-Alpha`) |
-| **Current milestone** | Obtain scientific approval for the executable references and complete the first licensed release. |
-| **Lead / contact** | QSC Software Thrust via the [OpenQEvo issue tracker](https://github.com/QSCSoftwareThrust/OpenQEvo/issues) |
-| **Last reviewed** | 2026-08-25 |
+| **Current milestone** | Review the completed MPV evidence, resolve release formalities, and prepare the first submission-ready manuscript revision. |
+| **Lead / contact** | Project owner via the [OpenQEvo issue tracker](https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues) |
+| **Last reviewed** | 2026-09-14 |
 
 ## Why this matters
 
@@ -97,6 +98,9 @@ Run the example in the terminal:
 
 ```bash
 python examples/trotter_convergence.py
+
+# compare the experimental dense references
+python examples/advanced_evolution.py
 ```
 
 Recreate the figure after installing the optional visualization dependency:
@@ -109,7 +113,7 @@ python examples/trotter_convergence.py \
 
 ## Project status
 
-Status below reflects the repository on 2026-09-01.
+Status below reflects the repository on 2026-09-11.
 
 | Capability | Status | Evidence / boundary |
 | --- | --- | --- |
@@ -119,12 +123,16 @@ Status below reflects the repository on 2026-09-01.
 | First-order Trotter | Approval pending | Dense, operation, and compiled reference-circuit outputs are implemented and tested; Algorithms Thrust review is still required |
 | Second-order Trotter | Approval pending | Dense, operation, and compiled reference-circuit outputs are implemented and tested; Algorithms Thrust review is still required |
 | qDRIFT randomized evolution | Approval pending | Reproducible dense, operation, and circuit trajectories plus expected-channel validation and ensemble statistics |
+| Krylov evolution | Experimental | Dense Lanczos-Krylov reference propagation with explicit subspace dimension and approximation warnings |
+| Interaction-picture evolution | Experimental | Dense midpoint integration with a documented reference/perturbation split; no circuit or asymptotic resource model |
+| Linear annealing evolution | Experimental | Dense midpoint evolution from a transverse-field or caller-supplied driver to a target Hamiltonian |
 | Shared conformance | Implemented | Native, Qiskit, and PennyLane conventions are exercised on sign, coefficient, qubit-order, time, and term-order controls |
 | Qiskit adapter | Implemented | Explicit product-formula synthesis, circuit output, compiled logical costs, and dependency-conditional tests |
 | PennyLane adapter | Implemented | Explicit sign/order mapping, circuit output, compiled reference costs, and dependency-conditional tests |
 | Qrack adapter | Experimental | Optional implementation with 7 fake-runtime integration tests; GPU/OpenCL validation remains pending |
 | Structured context and recommendations | Available | Schema-validated method metadata, selection rules, and executable recommendation payloads |
-| PyPI / Spack distribution | Planned | Source install works; no public package or Spack recipe is claimed |
+| PyPI distribution | Planned | Source install works; no public package is claimed |
+| Spack packaging | Staged | A development Spack repository is included; immutable release versions and upstream Spack submission remain pending |
 | License and citation metadata | Blocked | License decision, `LICENSE`, and `CITATION.cff` are required before release |
 
 ## Quick start
@@ -199,7 +207,9 @@ the canonical and structured APIs.
 - **Expanded study:** `experiments/publication_study/` freezes controlled
   Pauli, spin-model, and fixed mapped H₂ workloads; equal logical budgets; 30
   qDRIFT seeds; uncertainty rules; failure retention; compiled costs; and a
-  write-once artifact manifest. Scientific approval remains pending.
+  write-once artifact manifest. Its integrity verifier passes. The
+  [first review draft](paper/openqevo_equal_budget_benchmarks.md) reports its
+  results and limitations; scientific approval remains pending.
 
 Run the locally available suite with:
 
@@ -223,28 +233,31 @@ supported adapters explicitly in CI.
   trajectory; the frozen study reports trajectory variation separately.
 - Qrack support is experimental; the included tests use a fake runtime, and
   GPU/OpenCL validation depends on the host environment.
-- Krylov, interaction-picture, annealing, and automated method selection remain
-  research or roadmap items. The expanded native study is still limited to
-  small systems that permit exact dense references.
-- The package is not on PyPI, no Spack recipe is claimed, and no stable API
-  compatibility promise has been made.
+- Krylov, interaction-picture, and annealing are experimental dense references;
+  they do not yet provide scalable solvers, hardware circuits, or a stable API
+  compatibility promise. Automated method selection remains roadmap work. The
+  expanded native study is still limited to small systems that permit exact
+  dense references.
+- The package is not on PyPI. A development Spack recipe is included, but it
+  must gain immutable tagged-release versions and HPC validation before an
+  upstream Spack submission.
 - Licensing, citation, and approved QSC acknowledgment language remain open.
 
 ## Cross-project responsibilities
 
 | Project | Contribution | Coordination |
 | --- | --- | --- |
-| **Algorithms Thrust** | Review and supply scientific method implementations | Current release gate |
-| **HW — Hybrid Workflows** | Context, how-to guidance, and representative examples | [Issue #4](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/4) |
-| **DS — Data Schema** | Refine and validate method-context schema | [Issue #2](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/2) |
-| **AS — Agentic Software** | Define future MCP/RAG orchestration boundary | [Issue #3](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/3) |
-| **SE — Software Engineering** | Packaging, testing, CI, documentation, and release process | [Issue #1](https://github.com/QSCSoftwareThrust/OpenQEvo/issues/1) |
+| **Project owner** | Implementation, context, schema, validation, packaging, documentation, and release coordination | `dev` until the MPV milestone |
+| **AS — Agentic Software** | Method-selection and future MCP/RAG orchestration boundary | [Issue #3](https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues/3), [Issue #7](https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues/7) |
+| **HW / DS / SE** | Historical responsibility labels; no active delivery team | Issues #1, #2, and #4 closed |
 
 ## Documentation
 
 - [Architecture](docs/architecture.md) — method, registry, adapter, and context design
 - [Scientific contracts](docs/contracts.md) — canonical Hamiltonians and structured results
 - [Cross-project workflow](docs/cross-project.md) — collaboration model
+- [Spack repository](spack/README.md) — development-environment installation
+- [First manuscript review draft](paper/openqevo_equal_budget_benchmarks.md) — frozen-study results and limitations
 - [Contributing](CONTRIBUTING.md) — development setup and review process
 
 ## Repository layout
@@ -254,6 +267,8 @@ supported adapters explicitly in CI.
 ├── src/openqevo/   # Scientific contracts, registry, methods, and adapters
 ├── context/        # Input/result schemas and method metadata
 ├── examples/       # Reproducible demonstrations
+├── paper/          # First manuscript review draft and publication routing
+├── spack/          # Local Spack repository for the development package
 ├── tests/          # Core, context, and optional-adapter validation
 └── docs/           # Architecture, contracts, and cross-project workflow
 ```
@@ -278,5 +293,5 @@ software.
 
 ## Contact
 
-Use the [OpenQEvo issue tracker](https://github.com/QSCSoftwareThrust/OpenQEvo/issues)
+Use the [OpenQEvo issue tracker](https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues)
 for questions, method proposals, integration requests, or release blockers.
