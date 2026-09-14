@@ -51,7 +51,7 @@ reader-controlled Live/Still tracing.*
 | **Ecosystem area** | Applications |
 | **Primary users** | Quantum-algorithm researchers, framework integrators, and QSC software teams |
 | **Maturity** | Prototype (`Development Status :: 2 - Pre-Alpha`) |
-| **Current milestone** | Review the completed MPV evidence, resolve release formalities, and prepare the first submission-ready manuscript revision. |
+| **Current milestone** | Review the completed MPV evidence and resolve release formalities. |
 | **Lead / contact** | Project owner via the [OpenQEvo issue tracker](https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues) |
 | **Last reviewed** | 2026-09-14 |
 
@@ -207,9 +207,8 @@ the canonical and structured APIs.
 - **Expanded study:** `experiments/publication_study/` freezes controlled
   Pauli, spin-model, and fixed mapped H₂ workloads; equal logical budgets; 30
   qDRIFT seeds; uncertainty rules; failure retention; compiled costs; and a
-  write-once artifact manifest. Its integrity verifier passes. The
-  [first review draft](paper/openqevo_equal_budget_benchmarks.md) reports its
-  results and limitations; scientific approval remains pending.
+  write-once artifact manifest. Its integrity verifier passes; scientific
+  approval remains pending.
 
 Run the locally available suite with:
 
@@ -257,7 +256,6 @@ supported adapters explicitly in CI.
 - [Scientific contracts](docs/contracts.md) — canonical Hamiltonians and structured results
 - [Cross-project workflow](docs/cross-project.md) — collaboration model
 - [Spack repository](spack/README.md) — development-environment installation
-- [First manuscript review draft](paper/openqevo_equal_budget_benchmarks.md) — frozen-study results and limitations
 - [Contributing](CONTRIBUTING.md) — development setup and review process
 
 ## Repository layout
@@ -267,7 +265,6 @@ supported adapters explicitly in CI.
 ├── src/openqevo/   # Scientific contracts, registry, methods, and adapters
 ├── context/        # Input/result schemas and method metadata
 ├── examples/       # Reproducible demonstrations
-├── paper/          # First manuscript review draft and publication routing
 ├── spack/          # Local Spack repository for the development package
 ├── tests/          # Core, context, and optional-adapter validation
 └── docs/           # Architecture, contracts, and cross-project workflow
