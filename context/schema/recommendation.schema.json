@@ -65,6 +65,14 @@
           "type": "array",
           "items": { "type": "string" }
         },
+        "input_schema": {
+          "type": "string",
+          "description": "Versioned canonical input schema for structured Hamiltonian payloads."
+        },
+        "result_schema": {
+          "type": "string",
+          "description": "Versioned structured result schema available from the execution entrypoint."
+        },
         "required_arguments": {
           "type": "array",
           "items": { "type": "string" }

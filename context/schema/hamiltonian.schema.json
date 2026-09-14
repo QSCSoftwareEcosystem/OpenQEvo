@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/QSCSoftwareEcosystem/OpenQEvo/context/schema/hamiltonian.schema.json",
+  "title": "OpenQEvo Canonical Pauli Hamiltonian",
+  "description": "Versioned Pauli-sum input contract shared by native methods, adapters, benchmarks, and Agentic Software.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "qubits",
+    "qubit_order",
+    "terms",
+    "lambda"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "openqevo-pauli-hamiltonian/v1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "qubits": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "qubit_order": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "terms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/pauli_term"
+      }
+    },
+    "lambda": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "units": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mapping_metadata": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "pauli_term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient", "pauli_word", "qubit_order"],
+      "properties": {
+        "coefficient": {
+          "type": "number",
+          "not": {
+            "const": 0
+          }
+        },
+        "pauli_word": {
+          "type": "string",
+          "pattern": "^[IXYZ]+$"
+        },
+        "qubit_order": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "units": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metadata": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

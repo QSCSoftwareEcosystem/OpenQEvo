@@ -1,0 +1,60 @@
+{
+  "method_name": "annealing",
+  "description": "Dense reference evolution under the linear interpolation H(s) = (1-s) H_initial + s H_target. The target Hamiltonian is the terms argument; the default driver is a transverse field -sum_i X_i.",
+  "source": "openqevo",
+  "applicable_hamiltonians": [
+    "Small target Hamiltonians for schedule-discretization studies",
+    "Canonical real-coefficient PauliHamiltonian inputs",
+    "Legacy lists of Hermitian dense matrix terms"
+  ],
+  "limitations": [
+    "Only a linear schedule and dense unitary output are implemented",
+    "The default transverse-field driver is a generic reference choice, not a problem-specific preparation protocol",
+    "This does not model open-system effects, hardware controls, minimum-gap estimation, or measurement/readout"
+  ],
+  "parameters": {
+    "steps": {
+      "type": "int",
+      "description": "Number of midpoint piecewise-constant schedule intervals.",
+      "required": true,
+      "range": { "min": 1 }
+    },
+    "initial_hamiltonian": {
+      "type": "HamiltonianInput",
+      "description": "Optional driver Hamiltonian with the same dimension as the target. Defaults to -sum_i X_i.",
+      "required": false
+    },
+    "schedule": {
+      "type": "string",
+      "description": "Annealing schedule. Only linear is currently supported.",
+      "required": false,
+      "default": "linear"
+    }
+  },
+  "execution": {
+    "implemented": true,
+    "method_name": "annealing",
+    "entrypoint": "openqevo.get(\"annealing\").run(terms, t, **parameters)",
+    "input_representation": ["pauli_hamiltonian_v1", "matrix_terms"],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
+    "required_arguments": ["terms", "t", "steps"],
+    "backend_requirements": [
+      "classical Python runtime",
+      "NumPy/SciPy-compatible dense matrix operations"
+    ],
+    "returns": "EvolutionResult containing a dense unitary, schedule details, and driver provenance."
+  },
+  "complexity": {
+    "gate_count": "Not applicable: this dense reference does not synthesize a circuit",
+    "circuit_depth": "Not applicable",
+    "error_scaling": "For a fixed linear schedule, midpoint piecewise-constant integration converges as the schedule interval decreases; physical adiabatic error also depends on the spectral gap and total evolution time."
+  },
+  "example_path": "examples/advanced_evolution.py",
+  "references": [
+    {
+      "title": "Quantum annealing context",
+      "url": "../annealing/wiki/index.md"
+    }
+  ]
+}

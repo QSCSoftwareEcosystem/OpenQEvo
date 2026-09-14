@@ -4,6 +4,6 @@
 :maxdepth: 2
 
 architecture
-roadmap
+contracts
 cross-project
 ```

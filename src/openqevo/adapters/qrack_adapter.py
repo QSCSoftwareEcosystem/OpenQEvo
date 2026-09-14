@@ -20,6 +20,7 @@ from pyqrack import QrackSimulator
 from pyqrack.pauli import Pauli
 
 from openqevo.base import EvolutionMethod
+from openqevo.hamiltonian import HamiltonianInput, dense_terms
 from openqevo.registry import register
 
 _PAULI_MATRICES: dict[str, NDArray[np.complexfloating]] = {
@@ -108,10 +109,11 @@ class QrackTrotterAdapter(EvolutionMethod):
 
     description = "GPU-accelerated Trotter-Suzuki via Qrack (Unitary Foundation)"
     source = "qrack"
+    backend_packages = ("pyqrack",)
 
     def evolve(
         self,
-        terms: list[NDArray[np.complexfloating]],
+        terms: HamiltonianInput,
         t: float,
         **params: Any,
     ) -> NDArray[np.complexfloating]:
@@ -143,10 +145,11 @@ class QrackTrotterAdapter(EvolutionMethod):
             raise ValueError("Qrack adapter currently supports order 1 or 2.")
 
         atol = params.get("atol", 1e-12)
-        dim, n_qubits = _validate_terms(terms)
+        matrix_terms = list(dense_terms(terms))
+        dim, n_qubits = _validate_terms(matrix_terms)
         decomposed = [
             _pauli_decompose(np.asarray(term, dtype=complex), n_qubits, atol=atol)
-            for term in terms
+            for term in matrix_terms
         ]
 
         dt = t / steps

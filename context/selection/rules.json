@@ -150,24 +150,28 @@
       ]
     },
     {
-      "id": "direct-trotter-impractical-flag-alternatives",
+      "id": "dominant-reference-use-interaction-picture-reference",
       "when": [
-        "Hamiltonian is time dependent or has a dominant exactly simulable component",
+        "Hamiltonian has a dominant exactly or cheaply simulable reference component",
+        "Hamiltonian is time independent",
         "direct Trotter depth is impractical",
-        "oracle or hybrid method support is acceptable"
+        "a dense small-system numerical reference is acceptable"
       ],
       "recommendation": {
-        "method": "trotter_s2",
+        "method": "interaction_picture",
         "confidence": "low",
         "parameters": {
-          "steps": "use only as a baseline while evaluating alternatives"
+          "steps": "start with a convergence sweep; validate the selected reference split"
         }
       },
       "avoid": [
-        "Overstating current native support for non-native hybrid methods"
+        "Treating this dense reference as an interaction-picture circuit, LCU method, or asymptotic resource estimate",
+        "Using the automatic diagonal reference split without checking its suitability"
       ],
       "rationale": [
-        "Interaction-picture and hybrid methods may be better suited, but current executable OpenQEvo coverage is limited to exact, Trotter-style methods, qDRIFT, and registered third-party Trotter adapters."
+        "OpenQEvo provides an executable dense midpoint interaction-picture reference for a split H = H0 + V.",
+        "For canonical Pauli input, diagonal I/Z terms define H0 by default; callers can select reference term indices explicitly.",
+        "Trotter and qDRIFT remain useful executable baselines when no useful reference split is available."
       ],
       "key_points": [
         "trotter-alternatives-and-hybrid-methods",

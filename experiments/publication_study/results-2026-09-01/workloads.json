@@ -1,0 +1,493 @@
+[
+  {
+    "id": "controlled-commuting-uniform",
+    "lambda": 2.0,
+    "mapping_metadata": {
+      "coefficient_distribution": "uniform",
+      "commutator_graph_density": 0.0,
+      "family": "controlled_pauli",
+      "generator_version": "v1",
+      "pauli_weight": 1,
+      "requested_commutator_structure": "commuting",
+      "seed": 3101
+    },
+    "qubit_order": [
+      0,
+      1,
+      2
+    ],
+    "qubits": 3,
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "source": "openqevo-controlled-generator/v1",
+    "terms": [
+      {
+        "coefficient": 0.6666666666666666,
+        "pauli_word": "IZI",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": -0.6666666666666666,
+        "pauli_word": "IIZ",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.6666666666666666,
+        "pauli_word": "ZII",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "controlled-mixed-skewed",
+    "lambda": 2.0,
+    "mapping_metadata": {
+      "coefficient_distribution": "skewed",
+      "commutator_graph_density": 0.5,
+      "family": "controlled_pauli",
+      "generator_version": "v1",
+      "pauli_weight": 2,
+      "requested_commutator_structure": "mixed",
+      "seed": 3102
+    },
+    "qubit_order": [
+      0,
+      1,
+      2
+    ],
+    "qubits": 3,
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "source": "openqevo-controlled-generator/v1",
+    "terms": [
+      {
+        "coefficient": 0.9274729885661565,
+        "pauli_word": "IXZ",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": -0.5215563894685459,
+        "pauli_word": "IXX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.2932927112152359,
+        "pauli_word": "IYX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": -0.16493061189344613,
+        "pauli_word": "IYY",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.09274729885661565,
+        "pauli_word": "IZX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "controlled-dense-uniform",
+    "lambda": 2.0,
+    "mapping_metadata": {
+      "coefficient_distribution": "uniform",
+      "commutator_graph_density": 1.0,
+      "family": "controlled_pauli",
+      "generator_version": "v1",
+      "pauli_weight": 2,
+      "requested_commutator_structure": "dense",
+      "seed": 3103
+    },
+    "qubit_order": [
+      0,
+      1,
+      2
+    ],
+    "qubits": 3,
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "source": "openqevo-controlled-generator/v1",
+    "terms": [
+      {
+        "coefficient": 0.4,
+        "pauli_word": "XIY",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": -0.4,
+        "pauli_word": "IXX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.4,
+        "pauli_word": "IXZ",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": -0.4,
+        "pauli_word": "YIY",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.4,
+        "pauli_word": "ZIY",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "controlled-dense-high-lambda",
+    "lambda": 4.0,
+    "mapping_metadata": {
+      "coefficient_distribution": "skewed",
+      "commutator_graph_density": 1.0,
+      "family": "controlled_pauli",
+      "generator_version": "v1",
+      "pauli_weight": 2,
+      "requested_commutator_structure": "dense",
+      "seed": 3104
+    },
+    "qubit_order": [
+      0,
+      1,
+      2
+    ],
+    "qubits": 3,
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "source": "openqevo-controlled-generator/v1",
+    "terms": [
+      {
+        "coefficient": 1.854945977132313,
+        "pauli_word": "IZX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": -1.0431127789370918,
+        "pauli_word": "IXX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.5865854224304718,
+        "pauli_word": "IYX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": -0.32986122378689225,
+        "pauli_word": "XIY",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.1854945977132313,
+        "pauli_word": "XIZ",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tfim-q3-open",
+    "lambda": 4.1000000000000005,
+    "mapping_metadata": {
+      "commutator_graph_density": 0.4,
+      "family": "transverse_field_ising",
+      "parameters": {
+        "coupling": 1.0,
+        "field": 0.7,
+        "periodic": false
+      }
+    },
+    "qubit_order": [
+      0,
+      1,
+      2
+    ],
+    "qubits": 3,
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "source": "openqevo-spin-model/v1",
+    "terms": [
+      {
+        "coefficient": 1.0,
+        "pauli_word": "ZZI",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 1.0,
+        "pauli_word": "IZZ",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.7,
+        "pauli_word": "XII",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.7,
+        "pauli_word": "IXI",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.7,
+        "pauli_word": "IIX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "heisenberg-q3-open",
+    "lambda": 6.8999999999999995,
+    "mapping_metadata": {
+      "commutator_graph_density": 0.3888888888888889,
+      "family": "heisenberg",
+      "parameters": {
+        "coupling": 1.0,
+        "field": 0.3,
+        "periodic": false
+      }
+    },
+    "qubit_order": [
+      0,
+      1,
+      2
+    ],
+    "qubits": 3,
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "source": "openqevo-spin-model/v1",
+    "terms": [
+      {
+        "coefficient": 1.0,
+        "pauli_word": "XXI",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 1.0,
+        "pauli_word": "YYI",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 1.0,
+        "pauli_word": "ZZI",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 1.0,
+        "pauli_word": "IXX",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 1.0,
+        "pauli_word": "IYY",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 1.0,
+        "pauli_word": "IZZ",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.3,
+        "pauli_word": "ZII",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.3,
+        "pauli_word": "IZI",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": 0.3,
+        "pauli_word": "IIZ",
+        "qubit_order": [
+          0,
+          1,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "h2-two-qubit",
+    "lambda": 2.040459399499687,
+    "mapping_metadata": {
+      "family": "chemistry_archived_operator",
+      "molecule": "H2",
+      "provenance_url": "https://qiskit.qotlabs.org/learning/courses/variational-algorithm-design/examples-and-applications",
+      "scope_note": "Fixed tutorial coefficients; OpenQEvo does not claim to regenerate the electronic-structure mapping."
+    },
+    "qubit_order": [
+      0,
+      1
+    ],
+    "qubits": 2,
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "source": "IBM Quantum tutorial archived two-qubit H2 operator",
+    "terms": [
+      {
+        "coefficient": -1.052373245772859,
+        "pauli_word": "II",
+        "qubit_order": [
+          0,
+          1
+        ],
+        "units": "hartree"
+      },
+      {
+        "coefficient": 0.39793742484318045,
+        "pauli_word": "IZ",
+        "qubit_order": [
+          0,
+          1
+        ],
+        "units": "hartree"
+      },
+      {
+        "coefficient": -0.39793742484318045,
+        "pauli_word": "ZI",
+        "qubit_order": [
+          0,
+          1
+        ],
+        "units": "hartree"
+      },
+      {
+        "coefficient": -0.01128010425623538,
+        "pauli_word": "ZZ",
+        "qubit_order": [
+          0,
+          1
+        ],
+        "units": "hartree"
+      },
+      {
+        "coefficient": 0.18093119978423156,
+        "pauli_word": "XX",
+        "qubit_order": [
+          0,
+          1
+        ],
+        "units": "hartree"
+      }
+    ],
+    "units": "hartree"
+  }
+]

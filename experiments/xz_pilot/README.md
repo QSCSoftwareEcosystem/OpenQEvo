@@ -7,6 +7,12 @@ noncommuting one-qubit Hamiltonian
 
 `H = X + Z`, with `t = 1`.
 
+The runner constructs this input with the versioned canonical
+`PauliHamiltonian` contract and executes every method through structured
+`EvolutionResult` objects. The archived records preserve the input hash,
+implementation and environment provenance, logical costs, qDRIFT seed and full
+sampled sequence, warnings, and limitations.
+
 Every approximation receives the same formula-level Pauli evolution-operation
 budget. Trotter errors are deterministic. qDRIFT reports the distribution of
 individual trajectory errors and the trace distance of the empirical ensemble

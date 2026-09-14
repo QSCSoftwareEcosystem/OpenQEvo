@@ -10,26 +10,23 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import platform
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
-from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from typing import Any
 
 import numpy as np
-import scipy
 from numpy.typing import NDArray
 
+from openqevo.hamiltonian import PauliHamiltonian, PauliTerm
 from openqevo.registry import get
+from openqevo.result import EvolutionResult
 
 CONFIG_SCHEMA_VERSION = "openqevo-xz-pilot-config/v1"
-RECORD_SCHEMA_VERSION = "openqevo-benchmark-record/v1"
+RECORD_SCHEMA_VERSION = "openqevo-benchmark-record/v2"
 SUMMARY_SCHEMA_VERSION = "openqevo-benchmark-summary/v1"
 MANIFEST_SCHEMA_VERSION = "openqevo-benchmark-manifest/v1"
 
-SIGMA_X = np.array([[0, 1], [1, 0]], dtype=complex)
-SIGMA_Z = np.array([[1, 0], [0, -1]], dtype=complex)
 INITIAL_STATE = np.array([1, 0], dtype=complex)
 
 METHOD_ORDER = {"trotter_s1": 0, "trotter_s2": 1, "qdrift": 2}
@@ -92,22 +89,28 @@ def run_pilot(config: Mapping[str, Any]) -> list[dict[str, Any]]:
     validate_config(config)
     config_hash = _json_sha256(config)
     run_id = f"{config['benchmark_id']}:{config_hash[:16]}"
-    environment = _environment()
-    hamiltonian = {
-        "id": "pauli-x-plus-z",
-        "qubits": 1,
-        "terms": [
-            {"coefficient": 1.0, "pauli_word": "X"},
-            {"coefficient": 1.0, "pauli_word": "Z"},
-        ],
-        "lambda": 2.0,
-    }
-    input_hash = _json_sha256(hamiltonian)
-    terms = [SIGMA_X, SIGMA_Z]
+    hamiltonian = PauliHamiltonian(
+        identifier="pauli-x-plus-z",
+        source=str(config["benchmark_id"]),
+        terms=(
+            PauliTerm(
+                coefficient=1.0,
+                pauli_word="X",
+                source=str(config["benchmark_id"]),
+            ),
+            PauliTerm(
+                coefficient=1.0,
+                pauli_word="Z",
+                source=str(config["benchmark_id"]),
+            ),
+        ),
+    )
+    input_hash = hamiltonian.sha256
     evolution_time = float(config["evolution_time"])
 
     exact_method = get("exact")
-    exact_unitary = exact_method.evolve(terms, evolution_time)
+    exact_result = exact_method.run(hamiltonian, evolution_time)
+    exact_unitary = exact_result.unitary
     exact_state = exact_unitary @ INITIAL_STATE
     records = [
         _record(
@@ -115,15 +118,8 @@ def run_pilot(config: Mapping[str, Any]) -> list[dict[str, Any]]:
             benchmark_id=str(config["benchmark_id"]),
             config_hash=config_hash,
             input_hash=input_hash,
-            environment=environment,
-            method_name="exact",
-            method_source=exact_method.source,
             logical_budget=None,
-            parameters={"evolution_time": evolution_time},
-            sampled_sequence=None,
-            formula_operations=0,
-            merged_operations=0,
-            unitary=exact_unitary,
+            result=exact_result,
             exact_unitary=exact_unitary,
             exact_state=exact_state,
         )
@@ -134,69 +130,44 @@ def run_pilot(config: Mapping[str, Any]) -> list[dict[str, Any]]:
     qdrift = get("qdrift")
 
     for logical_budget in config["logical_budgets"]:
-        first_steps = logical_budget // len(terms)
-        first_unitary = first_order.evolve(terms, evolution_time, steps=first_steps)
+        first_steps = logical_budget // len(hamiltonian.terms)
+        first_result = first_order.run(hamiltonian, evolution_time, steps=first_steps)
         records.append(
             _record(
                 run_id=run_id,
                 benchmark_id=str(config["benchmark_id"]),
                 config_hash=config_hash,
                 input_hash=input_hash,
-                environment=environment,
-                method_name="trotter_s1",
-                method_source=first_order.source,
                 logical_budget=logical_budget,
-                parameters={
-                    "evolution_time": evolution_time,
-                    "steps": first_steps,
-                    "term_order": ["X", "Z"],
-                },
-                sampled_sequence=None,
-                formula_operations=logical_budget,
-                merged_operations=logical_budget,
-                unitary=first_unitary,
+                result=first_result,
                 exact_unitary=exact_unitary,
                 exact_state=exact_state,
             )
         )
 
-        second_steps = logical_budget // (2 * len(terms))
-        second_unitary = second_order.evolve(terms, evolution_time, steps=second_steps)
+        second_steps = logical_budget // (2 * len(hamiltonian.terms))
+        second_result = second_order.run(
+            hamiltonian, evolution_time, steps=second_steps
+        )
         records.append(
             _record(
                 run_id=run_id,
                 benchmark_id=str(config["benchmark_id"]),
                 config_hash=config_hash,
                 input_hash=input_hash,
-                environment=environment,
-                method_name="trotter_s2",
-                method_source=second_order.source,
                 logical_budget=logical_budget,
-                parameters={
-                    "evolution_time": evolution_time,
-                    "steps": second_steps,
-                    "term_order": ["X", "Z"],
-                },
-                sampled_sequence=None,
-                formula_operations=logical_budget,
-                merged_operations=2 * second_steps * (len(terms) - 1) + 1,
-                unitary=second_unitary,
+                result=second_result,
                 exact_unitary=exact_unitary,
                 exact_state=exact_state,
             )
         )
 
         for seed in config["qdrift_seeds"]:
-            sequence = qdrift.sample_sequence(
-                terms,
-                samples=logical_budget,
-                seed=seed,
-            )
-            qdrift_unitary = qdrift.evolve(
-                terms,
+            qdrift_result = qdrift.run(
+                hamiltonian,
                 evolution_time,
                 samples=logical_budget,
-                sampled_sequence=sequence,
+                seed=seed,
             )
             records.append(
                 _record(
@@ -204,20 +175,8 @@ def run_pilot(config: Mapping[str, Any]) -> list[dict[str, Any]]:
                     benchmark_id=str(config["benchmark_id"]),
                     config_hash=config_hash,
                     input_hash=input_hash,
-                    environment=environment,
-                    method_name="qdrift",
-                    method_source=qdrift.source,
                     logical_budget=logical_budget,
-                    parameters={
-                        "evolution_time": evolution_time,
-                        "samples": logical_budget,
-                        "seed": seed,
-                        "term_weights": [1.0, 1.0],
-                    },
-                    sampled_sequence=sequence,
-                    formula_operations=logical_budget,
-                    merged_operations=_adjacent_merged_count(sequence),
-                    unitary=qdrift_unitary,
+                    result=qdrift_result,
                     exact_unitary=exact_unitary,
                     exact_state=exact_state,
                 )
@@ -506,47 +465,38 @@ def _record(
     benchmark_id: str,
     config_hash: str,
     input_hash: str,
-    environment: Mapping[str, str],
-    method_name: str,
-    method_source: str,
     logical_budget: int | None,
-    parameters: Mapping[str, Any],
-    sampled_sequence: Sequence[int] | None,
-    formula_operations: int,
-    merged_operations: int,
-    unitary: NDArray[np.complexfloating],
+    result: EvolutionResult,
     exact_unitary: NDArray[np.complexfloating],
     exact_state: NDArray[np.complexfloating],
 ) -> dict[str, Any]:
+    unitary = result.unitary
     state = unitary @ INITIAL_STATE
     metrics = _accuracy_metrics(unitary, state, exact_unitary, exact_state)
     return {
         "schema_version": RECORD_SCHEMA_VERSION,
+        "result_schema_version": result.to_metadata()["schema_version"],
         "run_id": run_id,
         "benchmark_id": benchmark_id,
         "config_sha256": config_hash,
         "input_sha256": input_hash,
         "status": "success",
-        "method": method_name,
-        "implementation": {
-            "package": "openqevo",
-            "version": _openqevo_version(),
-            "source": method_source,
-        },
-        "environment": dict(environment),
+        "method": result.method_name,
+        "implementation": result.implementation.to_dict(),
+        "environment": dict(result.environment),
         "logical_budget": logical_budget,
-        "parameters": dict(parameters),
-        "costs": {
-            "formula_level_pauli_operations": formula_operations,
-            "adjacent_merged_pauli_operations": merged_operations,
-            "compiled_gate_counts": None,
-        },
+        "parameters": dict(result.parameters),
+        "costs": result.costs.to_dict(),
         "sampled_sequence": (
-            list(sampled_sequence) if sampled_sequence is not None else None
+            list(result.sampled_sequence)
+            if result.sampled_sequence is not None
+            else None
         ),
         "metrics": metrics,
         "output_state": _encode_state(state),
-        "output_sha256": _array_sha256(unitary),
+        "output_sha256": result.output_sha256,
+        "warnings": list(result.warnings),
+        "limitations": list(result.limitations),
         "failure": None,
     }
 
@@ -623,28 +573,6 @@ def _decode_state(encoded: Mapping[str, Sequence[float]]) -> NDArray[np.complex1
     )
 
 
-def _adjacent_merged_count(sequence: Sequence[int]) -> int:
-    if not sequence:
-        return 0
-    return 1 + sum(left != right for left, right in zip(sequence, sequence[1:]))
-
-
-def _environment() -> dict[str, str]:
-    return {
-        "python": platform.python_version(),
-        "numpy": np.__version__,
-        "scipy": scipy.__version__,
-        "openqevo": _openqevo_version(),
-    }
-
-
-def _openqevo_version() -> str:
-    try:
-        return version("openqevo")
-    except PackageNotFoundError:  # pragma: no cover - source import without install
-        return "0.1.0+source"
-
-
 def _is_integer(value: Any) -> bool:
     return isinstance(value, int) and not isinstance(value, bool)
 
@@ -658,11 +586,6 @@ def _canonical_json(value: Any) -> bytes:
 
 def _json_sha256(value: Any) -> str:
     return hashlib.sha256(_canonical_json(value)).hexdigest()
-
-
-def _array_sha256(value: NDArray[np.complexfloating]) -> str:
-    array = np.ascontiguousarray(value, dtype="<c16")
-    return hashlib.sha256(array.tobytes()).hexdigest()
 
 
 def _file_sha256(path: Path) -> str:

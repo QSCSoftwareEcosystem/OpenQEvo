@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/QSCSoftwareEcosystem/OpenQEvo/context/schema/operation_sequence.schema.json",
+  "title": "OpenQEvo Pauli Evolution Operation Sequence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "n_qubits", "operations", "metadata"],
+  "properties": {
+    "schema_version": {"const": "openqevo-operation-sequence/v1"},
+    "n_qubits": {"type": "integer", "minimum": 1},
+    "operations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/pauli_evolution"}
+    },
+    "metadata": {"type": "object"}
+  },
+  "$defs": {
+    "pauli_evolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "term_index",
+        "coefficient",
+        "pauli_word",
+        "qubit_order",
+        "time",
+        "rotation_angle"
+      ],
+      "properties": {
+        "term_index": {"type": "integer", "minimum": 0},
+        "coefficient": {"type": "number", "not": {"const": 0}},
+        "pauli_word": {"type": "string", "pattern": "^[IXYZ]+$"},
+        "qubit_order": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 0},
+          "uniqueItems": true
+        },
+        "time": {"type": "number"},
+        "rotation_angle": {"type": "number"}
+      }
+    }
+  }
+}

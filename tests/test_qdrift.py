@@ -84,6 +84,15 @@ class TestQDrift:
                 sampled_sequence=[0, 2],
             )
 
+        with pytest.raises(ValueError, match="does not match"):
+            self.method.evolve(
+                terms,
+                t=0.5,
+                samples=2,
+                seed=7,
+                sampled_sequence=[0, 0],
+            )
+
     def test_result_is_unitary(self):
         result = self.method.evolve([SIGMA_X, SIGMA_Z], t=0.5, samples=8, seed=3)
         identity = result @ result.conj().T
@@ -120,3 +129,53 @@ class TestQDrift:
 
         with pytest.raises(ValueError, match="non-negative"):
             self.method.evolve([SIGMA_Z], t=0.5, samples=1, term_weights=[-1.0])
+
+    def test_canonical_coefficients_control_sampling_and_sign(self):
+        hamiltonian = openqevo.PauliHamiltonian(
+            identifier="negative-z",
+            terms=(openqevo.PauliTerm(-2.0, "Z"),),
+        )
+        result = self.method.run(hamiltonian, t=0.5, samples=4, seed=7)
+        exact = openqevo.get("exact").evolve(hamiltonian, t=0.5)
+
+        np.testing.assert_allclose(result.unitary, exact, atol=1e-12)
+        assert result.parameters["term_weights"] == [2.0]
+        assert result.parameters["sampling_probabilities"] == [1.0]
+        assert result.sampled_sequence == (0, 0, 0, 0)
+
+    def test_canonical_weights_cannot_be_overridden(self):
+        hamiltonian = openqevo.PauliHamiltonian(
+            identifier="xz",
+            terms=(
+                openqevo.PauliTerm(1.0, "X"),
+                openqevo.PauliTerm(2.0, "Z"),
+            ),
+        )
+
+        with pytest.raises(ValueError, match="cannot override"):
+            self.method.evolve(
+                hamiltonian,
+                t=0.5,
+                samples=4,
+                seed=3,
+                term_weights=[1.0, 1.0],
+            )
+
+    def test_expected_ensemble_channel_converges_with_budget(self):
+        hamiltonian = openqevo.PauliHamiltonian(
+            identifier="xz",
+            terms=(
+                openqevo.PauliTerm(1.0, "X"),
+                openqevo.PauliTerm(1.0, "Z"),
+            ),
+        )
+        exact_unitary = openqevo.get("exact").evolve(hamiltonian, t=1.0)
+        exact_channel = np.kron(exact_unitary.conj(), exact_unitary)
+
+        low_budget = self.method.run_ensemble(hamiltonian, t=1.0, samples=8)
+        high_budget = self.method.run_ensemble(hamiltonian, t=1.0, samples=128)
+        low_error = np.linalg.norm(low_budget.output - exact_channel, ord=2)
+        high_error = np.linalg.norm(high_budget.output - exact_channel, ord=2)
+
+        assert low_budget.representation == "channel"
+        assert high_error < low_error

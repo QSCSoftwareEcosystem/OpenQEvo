@@ -12,10 +12,13 @@
   "execution": {
     "implemented": true,
     "method_name": "qdrift",
-    "entrypoint": "openqevo.get(\"qdrift\").evolve(terms, t, **parameters)",
+    "entrypoint": "openqevo.get(\"qdrift\").run(terms, t, **parameters)",
     "input_representation": [
+      "pauli_hamiltonian_v1",
       "matrix_terms"
     ],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
     "required_arguments": [
       "terms",
       "t",

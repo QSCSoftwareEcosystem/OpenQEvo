@@ -1,0 +1,57 @@
+{
+  "method_name": "krylov",
+  "description": "Dense Lanczos-Krylov reference propagation for Hermitian Hamiltonians. The implementation applies a Krylov approximation to each computational-basis state and assembles the resulting small-system propagator.",
+  "source": "openqevo",
+  "applicable_hamiltonians": [
+    "Small Hermitian Hamiltonians requiring a dense reference propagator",
+    "Canonical real-coefficient PauliHamiltonian inputs",
+    "Legacy lists of Hermitian dense matrix terms"
+  ],
+  "limitations": [
+    "This is a dense reference implementation, not a sparse or distributed Krylov solver",
+    "The propagator is assembled from independent state actions; users must assess error and unitarity for the chosen Krylov dimension",
+    "No circuit, gate-count, or hardware-resource output is available"
+  ],
+  "parameters": {
+    "krylov_dim": {
+      "type": "int",
+      "description": "Maximum Lanczos subspace dimension per propagated basis state. Values larger than the Hilbert-space dimension are capped.",
+      "required": false,
+      "default": 12,
+      "range": { "min": 1 }
+    },
+    "tolerance": {
+      "type": "float",
+      "description": "Positive Lanczos-breakdown tolerance.",
+      "required": false,
+      "default": 1e-12,
+      "range": { "min": 0.0 }
+    }
+  },
+  "execution": {
+    "implemented": true,
+    "method_name": "krylov",
+    "entrypoint": "openqevo.get(\"krylov\").run(terms, t, **parameters)",
+    "input_representation": ["pauli_hamiltonian_v1", "matrix_terms"],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
+    "required_arguments": ["terms", "t"],
+    "backend_requirements": [
+      "classical Python runtime",
+      "NumPy/SciPy-compatible dense matrix operations"
+    ],
+    "returns": "EvolutionResult containing an approximate dense unitary and Krylov configuration provenance."
+  },
+  "complexity": {
+    "gate_count": "Not applicable: this dense reference does not synthesize a circuit",
+    "circuit_depth": "Not applicable",
+    "error_scaling": "For a fixed propagated state, accuracy improves as the Lanczos subspace captures more of the spectral action; convergence depends on the Hamiltonian spectrum, evolution time, and Krylov dimension."
+  },
+  "example_path": "examples/advanced_evolution.py",
+  "references": [
+    {
+      "title": "Krylov-subspace approximation methods for quantum time evolution",
+      "url": "../krylov_subspace/krylov_subspace.md"
+    }
+  ]
+}
