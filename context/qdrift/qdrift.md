@@ -8,7 +8,7 @@
 * **Stochastic Term Selection:** Given a Hamiltonian decomposed into a sum of normalized Hermitian terms, $H = \sum_{j=1}^{L} h_j H_j$ (where $h_j > 0$), an auxiliary metric $\lambda = \sum_{j=1}^{L} h_j$ (the $\ell_1$ norm of the coefficients) is defined (Campbell, 2019). For each step of a sequence containing $N$ total gates, an operator $H_k$ is randomly sampled from the distribution with probability:
 $$P(H_k) = \frac{h_k}{\lambda}$$
 * **Constant Rotation Angles:** Unlike Trotterization, which scales down rotation angles by dividing time into small intervals across all terms simultaneously, qDRIFT implements macro-rotations of a fixed duration $\tau = \frac{t\lambda}{N}$ for each sampled term. The resulting random compilation constructs a single sample unitary sequence $V_k = \prod_{j=1}^{N} e^{-i \tau H_{k_j}}$ .
-* **Quantum Drift to Target Dynamics:** While an individual compiled circuit looks like a random walk of operations, the average over many channel executions converges exponentially toward the true physical density matrix $\rho(t) = e^{-iHt}\rho_0 e^{iHt}$ (Kiss et al., 2023).
+* **Expected Channel and Trajectories:** An individual compiled circuit is one random trajectory, not a deterministic approximation guarantee. Campbell's standard result bounds the expected qDRIFT channel, with leading diamond-norm error approximately $2\lambda^2t^2/N$ in the small-step regime. A finite empirical ensemble adds sampling variation that must be reported separately; concentration in the number of independent trajectories must not be confused with the channel's $1/N$ algorithmic error.
 
 ---
 
@@ -20,7 +20,7 @@ The defining feature of qDRIFT is its relationship with the Hamiltonian complexi
 
 #### I. Error Scaling
 * **Diamond Norm Error:** The mathematical distance (precision $\epsilon$) between the target evolution channel and the expected qDRIFT channel scales as $O\left(\frac{\lambda^2 t^2}{N}\right)$ under standard upper bounds (Campbell, 2019). 
-* **Refined Linear Scaling Bounds:** Traditional bounds dictated that the total number of required steps scaled quadratically with the norm of the generator (Campbell, 2019; David, 2025). However, mathematical refinements using Jensen's inequality and integral-form expansions show that for closed quantum systems, the theoretical error scaling can be tightened from quadratic down to linear with respect to $\lambda$, significantly dropping actual gate budgets (David, 2025).
+* **Emerging Bounds:** Later preprints investigate tighter norm dependence under additional assumptions (David, 2025). Those results are research context, not the registered OpenQEvo complexity contract; the executable baseline and frozen study use Campbell's standard expected-channel bound.
 
 #### II. Gate Count and Circuit Depth
 * **Independence from $L$:** To achieve a target precision $\epsilon$ over a total time $t$, the required total number of gates $N$ scales as $O\left(\frac{\lambda^2 t^2}{\epsilon}\right)$ (Campbell, 2019). Notably, $L$ (the number of terms in the Hamiltonian) does not appear in this cost function (Campbell, 2019).
@@ -30,10 +30,10 @@ The defining feature of qDRIFT is its relationship with the Hamiltonian complexi
 
 | Metric | Deterministic 1st-Order Trotter | Standard qDRIFT |
 | :--- | :--- | :--- |
-| **Total Gate Count ($N$)** | $O\left(\frac{L^3 (\Lambda t)^2}{\epsilon}\right)$  | $O\left(\frac{\lambda^2 t^2}{\epsilon}\right)$ (Campbell, 2019) |
-| **Dependence on Number of Terms ($L$)** | High Cubic Scaling ($L^3$) | **Completely Independent ($L^0$)** |
+| **Formula operations** | Traverses all $L$ terms per first-order step; rigorous error prefactors depend on commutators | $O\left(\frac{\lambda^2 t^2}{\epsilon}\right)$ for the standard expected-channel bound (Campbell, 2019) |
+| **Dependence on Number of Terms ($L$)** | Explicit per-step traversal | No explicit $L$ in the standard bound when $\lambda$ is held fixed; $\lambda$ may itself grow with the decomposition |
 | **Ancilla Qubits Required** | 0 | 0 |
-| **Hardware Suitability** | Low for complex molecules (Deep) | High for NISQ/Early Fault-Tolerant (Shallow) |
+| **Hardware Suitability** | Workload and compiler dependent | Workload, coefficient norm, sampling, synthesis, and hardware dependent |
 
 ---
 

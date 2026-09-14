@@ -12,7 +12,7 @@
     "Error grows with commutator norms of Hamiltonian terms",
     "Requires many steps for high accuracy on non-commuting terms",
     "Not efficient for highly non-local Hamiltonians",
-    "First-order error scaling: O(t^2/n) — slower convergence than higher-order formulas"
+    "For fixed bounded terms, first-order global error is O(t^2/n); the prefactor depends on the commutator structure"
   ],
   "parameters": {
     "steps": {
@@ -25,10 +25,13 @@
   "execution": {
     "implemented": true,
     "method_name": "trotter_s1",
-    "entrypoint": "openqevo.get(\"trotter_s1\").evolve(terms, t, **parameters)",
+    "entrypoint": "openqevo.get(\"trotter_s1\").run(terms, t, **parameters)",
     "input_representation": [
+      "pauli_hamiltonian_v1",
       "matrix_terms"
     ],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
     "required_arguments": [
       "terms",
       "t",
@@ -38,12 +41,12 @@
       "classical Python runtime",
       "NumPy/SciPy-compatible matrix operations"
     ],
-    "returns": "Approximate time-evolution operator from first-order product formula."
+    "returns": "EvolutionResult with a dense unitary, framework-neutral Pauli-evolution operation sequence, or compiled reference circuit plus normalized parameters, logical and compiled costs, and provenance; evolve(...) remains compatible."
   },
   "complexity": {
-    "gate_count": "O(L * n) where L = number of Hamiltonian terms, n = Trotter steps",
-    "circuit_depth": "O(L * n)",
-    "error_scaling": "O(L^2 * t^2 / n)"
+    "gate_count": "Exactly L * n Pauli-term exponentials before reference-gate synthesis, where L is the number of Hamiltonian terms and n is the number of steps",
+    "circuit_depth": "Backend-, connectivity-, and parallelization-dependent; OpenQEvo reports depth after compilation to its fixed logical reference basis",
+    "error_scaling": "For a fixed bounded term decomposition, first-order global error is O(t^2/n); rigorous prefactors depend on nested commutators rather than term count alone"
   },
   "references": [
     {
@@ -57,6 +60,13 @@
       "authors": "M. Suzuki",
       "year": 1991,
       "doi": "10.1063/1.529425"
+    },
+    {
+      "title": "A Theory of Trotter Error",
+      "authors": "A. M. Childs, Y. Su, M. C. Tran, N. Wiebe, and S. Zhu",
+      "year": 2021,
+      "doi": "10.1103/PhysRevX.11.011020",
+      "url": "https://arxiv.org/abs/1912.08854"
     }
   ],
   "example_path": "examples/trotter_convergence.py"

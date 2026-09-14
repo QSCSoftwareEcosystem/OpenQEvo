@@ -15,10 +15,13 @@
   "execution": {
     "implemented": true,
     "method_name": "exact",
-    "entrypoint": "openqevo.get(\"exact\").evolve(terms, t, **parameters)",
+    "entrypoint": "openqevo.get(\"exact\").run(terms, t, **parameters)",
     "input_representation": [
+      "pauli_hamiltonian_v1",
       "matrix_terms"
     ],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
     "required_arguments": [
       "terms",
       "t"
@@ -27,7 +30,7 @@
       "classical Python runtime",
       "NumPy/SciPy-compatible dense matrix operations"
     ],
-    "returns": "Dense unitary time-evolution matrix or state evolution result, depending on implementation input."
+    "returns": "EvolutionResult with a dense exact unitary and provenance; evolve(...) remains the dense-matrix compatibility API."
   },
   "complexity": {
     "gate_count": "N/A (classical computation)",

@@ -1,0 +1,46 @@
+{
+  "recommendation_id": "example-interaction-picture-executable",
+  "method_name": "interaction_picture",
+  "method_family": "interaction_picture",
+  "executable": true,
+  "confidence": "medium",
+  "parameters": {
+    "steps": 64
+  },
+  "required_inputs": [],
+  "execution": {
+    "implemented": true,
+    "method_name": "interaction_picture",
+    "entrypoint": "openqevo.get(\"interaction_picture\").evolve(terms, t, **parameters)",
+    "input_representation": ["pauli_hamiltonian_v1", "matrix_terms"],
+    "required_arguments": ["terms", "t", "steps"]
+  },
+  "rationale": [
+    "Interaction-picture evolution is appropriate when a Hamiltonian has a dominant exactly or cheaply evolvable reference component.",
+    "For canonical Pauli input, OpenQEvo selects all diagonal I/Z terms as the reference by default; callers can provide reference_term_indices when a different split is justified.",
+    "The method is executable as a dense midpoint reference, so its numerical convergence should be checked by increasing steps."
+  ],
+  "warnings": [
+    "This is an experimental dense reference implementation, not an interaction-picture circuit, LCU method, or asymptotic resource estimate.",
+    "The automatic diagonal reference split is heuristic; validate a caller-selected split and convergence for the problem of interest."
+  ],
+  "evidence": [
+    {
+      "key_point_id": "interaction-picture-split-hamiltonian",
+      "source": "interaction_picture/raw_data/openqevo-interaction-low-wiebe-2018-1805.00675.md",
+      "note": "Supports the split-Hamiltonian applicability condition and the need to identify a useful reference component."
+    }
+  ],
+  "alternatives": [
+    {
+      "method_name": "trotter_s2",
+      "reason": "Use a circuit-oriented executable baseline when no useful reference split is available.",
+      "executable": true
+    },
+    {
+      "method_name": "krylov",
+      "reason": "Use a dense small-system static-Hamiltonian reference when a direct Krylov approximation is a better numerical comparison.",
+      "executable": true
+    }
+  ]
+}

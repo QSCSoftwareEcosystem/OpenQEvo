@@ -1,0 +1,135 @@
+{
+  "bootstrap_resamples": 4000,
+  "bootstrap_seed": 20260901,
+  "comparison_basis": "equal formula-level Pauli-evolution operation budget",
+  "confidence_z": 1.96,
+  "evolution_time": 0.75,
+  "failure_policy": "retain every failed run in the immutable JSONL stream",
+  "freeze_date": "2026-09-01",
+  "logical_budget_multipliers": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "protocol_id": "openqevo-publication-candidate-2026-09-01",
+  "protocol_status": "software-frozen",
+  "qdrift_seeds": [
+    260901,
+    260902,
+    260903,
+    260904,
+    260905,
+    260906,
+    260907,
+    260908,
+    260909,
+    260910,
+    260911,
+    260912,
+    260913,
+    260914,
+    260915,
+    260916,
+    260917,
+    260918,
+    260919,
+    260920,
+    260921,
+    260922,
+    260923,
+    260924,
+    260925,
+    260926,
+    260927,
+    260928,
+    260929,
+    260930
+  ],
+  "schema_version": "openqevo-publication-study/v1",
+  "scientific_review_status": "pending",
+  "target_expected_channel_error": 0.05,
+  "target_mean_ci_half_width": 0.01,
+  "tolerances": {
+    "conformance_operator_norm": 1e-10,
+    "probability_normalization": 1e-12,
+    "unitarity_operator_norm": 1e-10
+  },
+  "workloads": [
+    {
+      "id": "controlled-commuting-uniform",
+      "kind": "controlled",
+      "parameters": {
+        "coefficient_distribution": "uniform",
+        "commutator_structure": "commuting",
+        "lambda_norm": 2.0,
+        "n_qubits": 3,
+        "pauli_weight": 1,
+        "seed": 3101,
+        "term_count": 3
+      }
+    },
+    {
+      "id": "controlled-mixed-skewed",
+      "kind": "controlled",
+      "parameters": {
+        "coefficient_distribution": "skewed",
+        "commutator_structure": "mixed",
+        "lambda_norm": 2.0,
+        "n_qubits": 3,
+        "pauli_weight": 2,
+        "seed": 3102,
+        "term_count": 5
+      }
+    },
+    {
+      "id": "controlled-dense-uniform",
+      "kind": "controlled",
+      "parameters": {
+        "coefficient_distribution": "uniform",
+        "commutator_structure": "dense",
+        "lambda_norm": 2.0,
+        "n_qubits": 3,
+        "pauli_weight": 2,
+        "seed": 3103,
+        "term_count": 5
+      }
+    },
+    {
+      "id": "controlled-dense-high-lambda",
+      "kind": "controlled",
+      "parameters": {
+        "coefficient_distribution": "skewed",
+        "commutator_structure": "dense",
+        "lambda_norm": 4.0,
+        "n_qubits": 3,
+        "pauli_weight": 2,
+        "seed": 3104,
+        "term_count": 5
+      }
+    },
+    {
+      "id": "tfim-q3-open",
+      "kind": "tfim",
+      "parameters": {
+        "coupling": 1.0,
+        "field": 0.7,
+        "n_qubits": 3
+      }
+    },
+    {
+      "id": "heisenberg-q3-open",
+      "kind": "heisenberg",
+      "parameters": {
+        "coupling": 1.0,
+        "field": 0.3,
+        "n_qubits": 3
+      }
+    },
+    {
+      "id": "h2-two-qubit",
+      "kind": "h2",
+      "parameters": {}
+    }
+  ]
+}

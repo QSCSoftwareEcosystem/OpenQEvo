@@ -48,8 +48,8 @@ visualization = [
 ]
 
 [project.urls]
-Repository = "https://github.com/QSCSoftwareThrust/OpenQEvo"
-Issues = "https://github.com/QSCSoftwareThrust/OpenQEvo/issues"
+Repository = "https://github.com/QSCSoftwareEcosystem/OpenQEvo"
+Issues = "https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

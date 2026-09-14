@@ -1,0 +1,3224 @@
+{
+  "comparison_basis": "equal formula-level Pauli-evolution operations",
+  "failures": {
+    "count": 0,
+    "records": []
+  },
+  "groups": [
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 6.0,
+        "circuit_depth": 2.0,
+        "compiled_one_qubit_gates": 6.0,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 6.0
+      },
+      "logical_budget": 6,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 3.510833468576701e-16,
+        "mean": 3.510833468576701e-16,
+        "mean_ci95_high": 3.510833468576701e-16,
+        "mean_ci95_low": 3.510833468576701e-16,
+        "median": 3.510833468576701e-16,
+        "minimum": 3.510833468576701e-16,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 2.1073424255447017e-08,
+        "mean": 2.1073424255447017e-08,
+        "mean_ci95_high": 2.1073424255447017e-08,
+        "mean_ci95_low": 2.1073424255447017e-08,
+        "median": 2.1073424255447017e-08,
+        "minimum": 2.1073424255447017e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 5.0,
+        "circuit_depth": 2.0,
+        "compiled_one_qubit_gates": 5.0,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 6.0
+      },
+      "logical_budget": 6,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 3.510833468576701e-16,
+        "mean": 3.510833468576701e-16,
+        "mean_ci95_high": 3.510833468576701e-16,
+        "mean_ci95_low": 3.510833468576701e-16,
+        "median": 3.510833468576701e-16,
+        "minimum": 3.510833468576701e-16,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 2.1073424255447017e-08,
+        "mean": 2.1073424255447017e-08,
+        "mean_ci95_high": 2.1073424255447017e-08,
+        "mean_ci95_low": 2.1073424255447017e-08,
+        "median": 2.1073424255447017e-08,
+        "minimum": 2.1073424255447017e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 4.333333333333333,
+        "circuit_depth": 2.1,
+        "compiled_one_qubit_gates": 4.333333333333333,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 6.0
+      },
+      "empirical_ensemble_state_trace_distance": 1.1102230246251565e-16,
+      "logical_budget": 6,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 1.3632775200466682,
+        "mean": 0.6104763451301773,
+        "mean_ci95_high": 0.7342849475752826,
+        "mean_ci95_low": 0.48461675869775994,
+        "median": 0.49480791850904593,
+        "minimum": 3.7878989011964013e-16,
+        "standard_deviation": 0.362421514930072
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 1,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 3.3508198741274193e-09,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 2.9802322387695312e-08,
+        "mean": 2.5453459501143917e-08,
+        "mean_ci95_high": 2.6617312585443692e-08,
+        "mean_ci95_low": 2.426482675298103e-08,
+        "median": 2.5809568279517847e-08,
+        "minimum": 2.1073424255447017e-08,
+        "standard_deviation": 3.3508198741274193e-09
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 12.0,
+        "circuit_depth": 4.0,
+        "compiled_one_qubit_gates": 12.0,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 12.0
+      },
+      "logical_budget": 12,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 7.021666937153402e-16,
+        "mean": 7.021666937153402e-16,
+        "mean_ci95_high": 7.021666937153402e-16,
+        "mean_ci95_low": 7.021666937153402e-16,
+        "median": 7.021666937153402e-16,
+        "minimum": 7.021666937153402e-16,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 3.650024149988857e-08,
+        "mean": 3.650024149988857e-08,
+        "mean_ci95_high": 3.650024149988857e-08,
+        "mean_ci95_low": 3.650024149988857e-08,
+        "median": 3.650024149988857e-08,
+        "minimum": 3.650024149988857e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 9.0,
+        "circuit_depth": 4.0,
+        "compiled_one_qubit_gates": 9.0,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 12.0
+      },
+      "logical_budget": 12,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 5.9787339602818175e-16,
+        "mean": 5.9787339602818175e-16,
+        "mean_ci95_high": 5.9787339602818175e-16,
+        "mean_ci95_low": 5.9787339602818175e-16,
+        "median": 5.9787339602818175e-16,
+        "minimum": 5.9787339602818175e-16,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 3.332000937312528e-08,
+        "mean": 3.332000937312528e-08,
+        "mean_ci95_high": 3.332000937312528e-08,
+        "mean_ci95_low": 3.332000937312528e-08,
+        "median": 3.332000937312528e-08,
+        "minimum": 3.332000937312528e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 8.166666666666666,
+        "circuit_depth": 3.466666666666667,
+        "compiled_one_qubit_gates": 8.166666666666666,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 12.0
+      },
+      "empirical_ensemble_state_trace_distance": 3.885780586188048e-16,
+      "logical_budget": 12,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.7325450581720951,
+        "mean": 0.4027434217855393,
+        "mean_ci95_high": 0.483663097922726,
+        "mean_ci95_low": 0.3209198900067966,
+        "median": 0.4948079185090457,
+        "minimum": 6.866350197783356e-16,
+        "standard_deviation": 0.23535927835960013
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 1,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 5.520277644105481e-09,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 4.2146848510894035e-08,
+        "mean": 3.1961749746940806e-08,
+        "mean_ci95_high": 3.38095246382687e-08,
+        "mean_ci95_low": 2.995669280918768e-08,
+        "median": 3.332000937312528e-08,
+        "minimum": 2.1073424255447017e-08,
+        "standard_deviation": 5.520277644105481e-09
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 24.0,
+        "circuit_depth": 8.0,
+        "compiled_one_qubit_gates": 24.0,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 24.0
+      },
+      "logical_budget": 24,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 1.1957467920563635e-15,
+        "mean": 1.1957467920563635e-15,
+        "mean_ci95_high": 1.1957467920563635e-15,
+        "mean_ci95_low": 1.1957467920563635e-15,
+        "median": 1.1957467920563635e-15,
+        "minimum": 1.1957467920563635e-15,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 4.712160915387242e-08,
+        "mean": 4.712160915387242e-08,
+        "mean_ci95_high": 4.712160915387242e-08,
+        "mean_ci95_low": 4.712160915387242e-08,
+        "median": 4.712160915387242e-08,
+        "minimum": 4.712160915387242e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 17.0,
+        "circuit_depth": 8.0,
+        "compiled_one_qubit_gates": 17.0,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 24.0
+      },
+      "logical_budget": 24,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 1.217454592664719e-15,
+        "mean": 1.217454592664719e-15,
+        "mean_ci95_high": 1.217454592664719e-15,
+        "mean_ci95_low": 1.217454592664719e-15,
+        "median": 1.217454592664719e-15,
+        "minimum": 1.217454592664719e-15,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 4.712160915387242e-08,
+        "mean": 4.712160915387242e-08,
+        "mean_ci95_high": 4.712160915387242e-08,
+        "mean_ci95_low": 4.712160915387242e-08,
+        "median": 4.712160915387242e-08,
+        "minimum": 4.712160915387242e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 15.966666666666667,
+        "circuit_depth": 6.333333333333333,
+        "compiled_one_qubit_gates": 15.966666666666667,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 24.0
+      },
+      "empirical_ensemble_state_trace_distance": 6.661338147750939e-16,
+      "logical_budget": 24,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.732545058172095,
+        "mean": 0.32256753066340454,
+        "mean_ci95_high": 0.3785076568826087,
+        "mean_ci95_low": 0.2733458235756465,
+        "median": 0.3728065935245394,
+        "minimum": 0.12491863568476035,
+        "standard_deviation": 0.14943201205275564
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 1,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 8.004028031459076e-09,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 4.712160915387242e-08,
+        "mean": 3.605474440767478e-08,
+        "mean_ci95_high": 3.881414930895982e-08,
+        "mean_ci95_low": 3.323392560315325e-08,
+        "median": 3.650024149988857e-08,
+        "minimum": 1.4901161193847656e-08,
+        "standard_deviation": 8.004028031459076e-09
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 48.0,
+        "circuit_depth": 16.0,
+        "compiled_one_qubit_gates": 48.0,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 48.0
+      },
+      "logical_budget": 48,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 2.286089127109703e-15,
+        "mean": 2.286089127109703e-15,
+        "mean_ci95_high": 2.286089127109703e-15,
+        "mean_ci95_low": 2.286089127109703e-15,
+        "median": 2.286089127109703e-15,
+        "minimum": 2.286089127109703e-15,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 33.0,
+        "circuit_depth": 16.0,
+        "compiled_one_qubit_gates": 33.0,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 48.0
+      },
+      "logical_budget": 48,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 1.4895204919483639e-15,
+        "mean": 1.4895204919483639e-15,
+        "mean_ci95_high": 1.4895204919483639e-15,
+        "mean_ci95_low": 1.4895204919483639e-15,
+        "median": 1.4895204919483639e-15,
+        "minimum": 1.4895204919483639e-15,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 32.1,
+        "circuit_depth": 12.4,
+        "compiled_one_qubit_gates": 32.1,
+        "compiled_two_qubit_gates": 0.0,
+        "formula_level_pauli_operations": 48.0
+      },
+      "empirical_ensemble_state_trace_distance": 1.6653345369377348e-15,
+      "logical_budget": 48,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.49480791850904654,
+        "mean": 0.27150807179349135,
+        "mean_ci95_high": 0.3148106451986096,
+        "mean_ci95_low": 0.22817301261580933,
+        "median": 0.2493494667704555,
+        "minimum": 0.062489827970652306,
+        "standard_deviation": 0.12722188707558038
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 1,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.0,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 10.0,
+        "circuit_depth": 53.0,
+        "compiled_one_qubit_gates": 50.0,
+        "compiled_two_qubit_gates": 20.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.5279954654466896,
+        "mean": 0.5279954654466896,
+        "mean_ci95_high": 0.5279954654466896,
+        "mean_ci95_low": 0.5279954654466896,
+        "median": 0.5279954654466896,
+        "minimum": 0.5279954654466896,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.42998550816552367,
+        "mean": 0.42998550816552367,
+        "mean_ci95_high": 0.42998550816552367,
+        "mean_ci95_low": 0.42998550816552367,
+        "median": 0.42998550816552367,
+        "minimum": 0.42998550816552367,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 9.0,
+        "circuit_depth": 49.0,
+        "compiled_one_qubit_gates": 47.0,
+        "compiled_two_qubit_gates": 18.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.3896191777175672,
+        "mean": 0.3896191777175672,
+        "mean_ci95_high": 0.3896191777175672,
+        "mean_ci95_low": 0.3896191777175672,
+        "median": 0.3896191777175672,
+        "minimum": 0.3896191777175672,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.3809845104377543,
+        "mean": 0.3809845104377543,
+        "mean_ci95_high": 0.3809845104377543,
+        "mean_ci95_low": 0.3809845104377543,
+        "median": 0.3809845104377543,
+        "minimum": 0.3809845104377543,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 7.133333333333334,
+        "circuit_depth": 36.6,
+        "compiled_one_qubit_gates": 32.733333333333334,
+        "compiled_two_qubit_gates": 14.266666666666667,
+        "formula_level_pauli_operations": 10.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.48408877357991575,
+      "logical_budget": 10,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 1.4780056710718303,
+        "mean": 0.9586721337780312,
+        "mean_ci95_high": 1.0298989273110946,
+        "mean_ci95_low": 0.889353344195701,
+        "median": 0.949866330262003,
+        "minimum": 0.6245890444366192,
+        "standard_deviation": 0.20250592597630665
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 574,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.12222046025386205,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.8174354321131206,
+        "mean": 0.6716549332754213,
+        "mean_ci95_high": 0.7132744046244709,
+        "mean_ci95_low": 0.6283820380557198,
+        "median": 0.7020375508668304,
+        "minimum": 0.37316107144781646,
+        "standard_deviation": 0.12222046025386205
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 20.0,
+        "circuit_depth": 105.0,
+        "compiled_one_qubit_gates": 100.0,
+        "compiled_two_qubit_gates": 40.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.24945565582122053,
+        "mean": 0.24945565582122053,
+        "mean_ci95_high": 0.24945565582122053,
+        "mean_ci95_low": 0.24945565582122053,
+        "median": 0.24945565582122053,
+        "minimum": 0.24945565582122053,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.2137321997459838,
+        "mean": 0.2137321997459838,
+        "mean_ci95_high": 0.2137321997459838,
+        "mean_ci95_low": 0.2137321997459838,
+        "median": 0.2137321997459838,
+        "minimum": 0.2137321997459838,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 17.0,
+        "circuit_depth": 93.0,
+        "compiled_one_qubit_gates": 91.0,
+        "compiled_two_qubit_gates": 34.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.0871766642808851,
+        "mean": 0.0871766642808851,
+        "mean_ci95_high": 0.0871766642808851,
+        "mean_ci95_low": 0.0871766642808851,
+        "median": 0.0871766642808851,
+        "minimum": 0.0871766642808851,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.08691142852883268,
+        "mean": 0.08691142852883268,
+        "mean_ci95_high": 0.08691142852883268,
+        "mean_ci95_low": 0.08691142852883268,
+        "median": 0.08691142852883268,
+        "minimum": 0.08691142852883268,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 13.966666666666667,
+        "circuit_depth": 72.23333333333333,
+        "compiled_one_qubit_gates": 65.03333333333333,
+        "compiled_two_qubit_gates": 27.933333333333334,
+        "formula_level_pauli_operations": 20.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.2741381298854576,
+      "logical_budget": 20,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 1.0511294546067502,
+        "mean": 0.6871895812633045,
+        "mean_ci95_high": 0.7461751288576574,
+        "mean_ci95_low": 0.6283999721237884,
+        "median": 0.7187662033085473,
+        "minimum": 0.39351848679591955,
+        "standard_deviation": 0.16673591939789642
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 611,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.12605640490861142,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.762910229640848,
+        "mean": 0.4972215435831408,
+        "mean_ci95_high": 0.5443147018497835,
+        "mean_ci95_low": 0.454134165688823,
+        "median": 0.4789778328548362,
+        "minimum": 0.3207376046226364,
+        "standard_deviation": 0.12605640490861142
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 40.0,
+        "circuit_depth": 209.0,
+        "compiled_one_qubit_gates": 200.0,
+        "compiled_two_qubit_gates": 80.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.12175554154331852,
+        "mean": 0.12175554154331852,
+        "mean_ci95_high": 0.12175554154331852,
+        "mean_ci95_low": 0.12175554154331852,
+        "median": 0.12175554154331852,
+        "minimum": 0.12175554154331852,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.10639078837619051,
+        "mean": 0.10639078837619051,
+        "mean_ci95_high": 0.10639078837619051,
+        "mean_ci95_low": 0.10639078837619051,
+        "median": 0.10639078837619051,
+        "minimum": 0.10639078837619051,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 33.0,
+        "circuit_depth": 181.0,
+        "compiled_one_qubit_gates": 179.0,
+        "compiled_two_qubit_gates": 66.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.021014818558261473,
+        "mean": 0.021014818558261473,
+        "mean_ci95_high": 0.021014818558261473,
+        "mean_ci95_low": 0.021014818558261473,
+        "median": 0.021014818558261473,
+        "minimum": 0.021014818558261473,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.02097388814164519,
+        "mean": 0.02097388814164519,
+        "mean_ci95_high": 0.02097388814164519,
+        "mean_ci95_low": 0.02097388814164519,
+        "median": 0.02097388814164519,
+        "minimum": 0.02097388814164519,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 27.633333333333333,
+        "circuit_depth": 143.3,
+        "compiled_one_qubit_gates": 129.43333333333334,
+        "compiled_two_qubit_gates": 55.266666666666666,
+        "formula_level_pauli_operations": 40.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.1322130166463426,
+      "logical_budget": 40,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.6795258187825023,
+        "mean": 0.4592865457073223,
+        "mean_ci95_high": 0.5002550444222783,
+        "mean_ci95_low": 0.4196882831672968,
+        "median": 0.4258298839479042,
+        "minimum": 0.23082430336260254,
+        "standard_deviation": 0.11310474174378575
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 394,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.10118552217722689,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.5585696721960283,
+        "mean": 0.3405239253881652,
+        "mean_ci95_high": 0.3763500422042475,
+        "mean_ci95_low": 0.30503734199646376,
+        "median": 0.3345433050432477,
+        "minimum": 0.15004311773258935,
+        "standard_deviation": 0.10118552217722689
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 80.0,
+        "circuit_depth": 417.0,
+        "compiled_one_qubit_gates": 400.0,
+        "compiled_two_qubit_gates": 160.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.06032686746833374,
+        "mean": 0.06032686746833374,
+        "mean_ci95_high": 0.06032686746833374,
+        "mean_ci95_low": 0.06032686746833374,
+        "median": 0.06032686746833374,
+        "minimum": 0.06032686746833374,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.053095898999874463,
+        "mean": 0.053095898999874463,
+        "mean_ci95_high": 0.053095898999874463,
+        "mean_ci95_low": 0.053095898999874463,
+        "median": 0.053095898999874463,
+        "minimum": 0.053095898999874463,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 65.0,
+        "circuit_depth": 357.0,
+        "compiled_one_qubit_gates": 355.0,
+        "compiled_two_qubit_gates": 130.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.005204258369920106,
+        "mean": 0.005204258369920106,
+        "mean_ci95_high": 0.005204258369920106,
+        "mean_ci95_low": 0.005204258369920106,
+        "median": 0.005204258369920106,
+        "minimum": 0.005204258369920106,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.005194639897880487,
+        "mean": 0.005194639897880487,
+        "mean_ci95_high": 0.005194639897880487,
+        "mean_ci95_low": 0.005194639897880487,
+        "median": 0.005194639897880487,
+        "minimum": 0.005194639897880487,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 55.6,
+        "circuit_depth": 288.76666666666665,
+        "compiled_one_qubit_gates": 262.26666666666665,
+        "compiled_two_qubit_gates": 111.2,
+        "formula_level_pauli_operations": 80.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.07716759817324681,
+      "logical_budget": 80,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.5128876812701243,
+        "mean": 0.3443844313809217,
+        "mean_ci95_high": 0.37622854916305987,
+        "mean_ci95_low": 0.31226473157477136,
+        "median": 0.36256259935714874,
+        "minimum": 0.20344681060544353,
+        "standard_deviation": 0.09304064592916556
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 172,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.06680905351942532,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.3702484498475582,
+        "mean": 0.2558353175916212,
+        "mean_ci95_high": 0.2796936535763943,
+        "mean_ci95_low": 0.23162870878460542,
+        "median": 0.2662827746891526,
+        "minimum": 0.13998474506256536,
+        "standard_deviation": 0.06680905351942532
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 10.0,
+        "circuit_depth": 60.0,
+        "compiled_one_qubit_gates": 58.0,
+        "compiled_two_qubit_gates": 20.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.1666692762552087,
+        "mean": 0.1666692762552087,
+        "mean_ci95_high": 0.1666692762552087,
+        "mean_ci95_low": 0.1666692762552087,
+        "median": 0.1666692762552087,
+        "minimum": 0.1666692762552087,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.14020017559650996,
+        "mean": 0.14020017559650996,
+        "mean_ci95_high": 0.14020017559650996,
+        "mean_ci95_low": 0.14020017559650996,
+        "median": 0.14020017559650996,
+        "minimum": 0.14020017559650996,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 9.0,
+        "circuit_depth": 53.0,
+        "compiled_one_qubit_gates": 53.0,
+        "compiled_two_qubit_gates": 18.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.04446105144425167,
+        "mean": 0.04446105144425167,
+        "mean_ci95_high": 0.04446105144425167,
+        "mean_ci95_low": 0.04446105144425167,
+        "median": 0.04446105144425167,
+        "minimum": 0.04446105144425167,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.043298186542320274,
+        "mean": 0.043298186542320274,
+        "mean_ci95_high": 0.043298186542320274,
+        "mean_ci95_low": 0.043298186542320274,
+        "median": 0.043298186542320274,
+        "minimum": 0.043298186542320274,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 8.0,
+        "circuit_depth": 46.766666666666666,
+        "compiled_one_qubit_gates": 45.86666666666667,
+        "compiled_two_qubit_gates": 16.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.19444591513905862,
+      "logical_budget": 10,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.7487362400446689,
+        "mean": 0.4998034441829104,
+        "mean_ci95_high": 0.5469717030793614,
+        "mean_ci95_low": 0.4471822712940575,
+        "median": 0.5126868184756981,
+        "minimum": 0.19443648526994245,
+        "standard_deviation": 0.1459118297889338
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 625,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.12747466401303628,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.6298518880278468,
+        "mean": 0.383004722891722,
+        "mean_ci95_high": 0.427773142533068,
+        "mean_ci95_low": 0.33645374600685174,
+        "median": 0.38687433421789,
+        "minimum": 0.14837584026494885,
+        "standard_deviation": 0.12747466401303628
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 20.0,
+        "circuit_depth": 120.0,
+        "compiled_one_qubit_gates": 116.0,
+        "compiled_two_qubit_gates": 40.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.08230008359244312,
+        "mean": 0.08230008359244312,
+        "mean_ci95_high": 0.08230008359244312,
+        "mean_ci95_low": 0.08230008359244312,
+        "median": 0.08230008359244312,
+        "minimum": 0.08230008359244312,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.06974718444458108,
+        "mean": 0.06974718444458108,
+        "mean_ci95_high": 0.06974718444458108,
+        "mean_ci95_low": 0.06974718444458108,
+        "median": 0.06974718444458108,
+        "minimum": 0.06974718444458108,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 17.0,
+        "circuit_depth": 99.0,
+        "compiled_one_qubit_gates": 99.0,
+        "compiled_two_qubit_gates": 34.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.011105100945738787,
+        "mean": 0.011105100945738787,
+        "mean_ci95_high": 0.011105100945738787,
+        "mean_ci95_low": 0.011105100945738787,
+        "median": 0.011105100945738787,
+        "minimum": 0.011105100945738787,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.01079955137162355,
+        "mean": 0.01079955137162355,
+        "mean_ci95_high": 0.01079955137162355,
+        "mean_ci95_low": 0.01079955137162355,
+        "median": 0.01079955137162355,
+        "minimum": 0.01079955137162355,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 16.233333333333334,
+        "circuit_depth": 95.06666666666666,
+        "compiled_one_qubit_gates": 92.83333333333333,
+        "compiled_two_qubit_gates": 32.46666666666667,
+        "formula_level_pauli_operations": 20.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.09673801614398278,
+      "logical_budget": 20,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.5551519601905229,
+        "mean": 0.35834620220169267,
+        "mean_ci95_high": 0.3926288342670547,
+        "mean_ci95_low": 0.32243909405475235,
+        "median": 0.3573571545270889,
+        "minimum": 0.2074095341766663,
+        "standard_deviation": 0.10015786303116016
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 324,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.09183430022279285,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.44616050134544144,
+        "mean": 0.27055501742332916,
+        "mean_ci95_high": 0.3026615561398981,
+        "mean_ci95_low": 0.23875043874258778,
+        "median": 0.2641351085843848,
+        "minimum": 0.11174584681428437,
+        "standard_deviation": 0.09183430022279285
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 40.0,
+        "circuit_depth": 240.0,
+        "compiled_one_qubit_gates": 232.0,
+        "compiled_two_qubit_gates": 80.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.04087724257274066,
+        "mean": 0.04087724257274066,
+        "mean_ci95_high": 0.04087724257274066,
+        "mean_ci95_low": 0.04087724257274066,
+        "median": 0.04087724257274066,
+        "minimum": 0.04087724257274066,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.03474106776538873,
+        "mean": 0.03474106776538873,
+        "mean_ci95_high": 0.03474106776538873,
+        "mean_ci95_low": 0.03474106776538873,
+        "median": 0.03474106776538873,
+        "minimum": 0.03474106776538873,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 33.0,
+        "circuit_depth": 191.0,
+        "compiled_one_qubit_gates": 191.0,
+        "compiled_two_qubit_gates": 66.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.0027746696258611,
+        "mean": 0.0027746696258611,
+        "mean_ci95_high": 0.0027746696258611,
+        "mean_ci95_low": 0.0027746696258611,
+        "median": 0.0027746696258611,
+        "minimum": 0.0027746696258611,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0026972791613833957,
+        "mean": 0.0026972791613833957,
+        "mean_ci95_high": 0.0026972791613833957,
+        "mean_ci95_low": 0.0026972791613833957,
+        "median": 0.0026972791613833957,
+        "minimum": 0.0026972791613833957,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 32.46666666666667,
+        "circuit_depth": 191.26666666666668,
+        "compiled_one_qubit_gates": 188.26666666666668,
+        "compiled_two_qubit_gates": 64.93333333333334,
+        "formula_level_pauli_operations": 40.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.05363643374538121,
+      "logical_budget": 40,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.37556779417729375,
+        "mean": 0.2632945131715191,
+        "mean_ci95_high": 0.28275687727668125,
+        "mean_ci95_low": 0.24393123042581066,
+        "median": 0.2594254006688649,
+        "minimum": 0.14583276334622408,
+        "standard_deviation": 0.05548559204370013
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 129,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.05775367142891373,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.3290004383270619,
+        "mean": 0.20130755879072437,
+        "mean_ci95_high": 0.22229166014493165,
+        "mean_ci95_low": 0.1807224606812675,
+        "median": 0.2026194730603533,
+        "minimum": 0.09433465219963402,
+        "standard_deviation": 0.05775367142891373
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 80.0,
+        "circuit_depth": 480.0,
+        "compiled_one_qubit_gates": 464.0,
+        "compiled_two_qubit_gates": 160.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.02037038926941252,
+        "mean": 0.02037038926941252,
+        "mean_ci95_high": 0.02037038926941252,
+        "mean_ci95_low": 0.02037038926941252,
+        "median": 0.02037038926941252,
+        "minimum": 0.02037038926941252,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.01733258519679832,
+        "mean": 0.01733258519679832,
+        "mean_ci95_high": 0.01733258519679832,
+        "mean_ci95_low": 0.01733258519679832,
+        "median": 0.01733258519679832,
+        "minimum": 0.01733258519679832,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 65.0,
+        "circuit_depth": 375.0,
+        "compiled_one_qubit_gates": 375.0,
+        "compiled_two_qubit_gates": 130.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.0006935522355398913,
+        "mean": 0.0006935522355398913,
+        "mean_ci95_high": 0.0006935522355398913,
+        "mean_ci95_low": 0.0006935522355398913,
+        "median": 0.0006935522355398913,
+        "minimum": 0.0006935522355398913,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0006741407978410975,
+        "mean": 0.0006741407978410975,
+        "mean_ci95_high": 0.0006741407978410975,
+        "mean_ci95_low": 0.0006741407978410975,
+        "median": 0.0006741407978410975,
+        "minimum": 0.0006741407978410975,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 64.2,
+        "circuit_depth": 379.9,
+        "compiled_one_qubit_gates": 374.0,
+        "compiled_two_qubit_gates": 128.4,
+        "formula_level_pauli_operations": 80.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.02858790299317962,
+      "logical_budget": 80,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.29714787933299386,
+        "mean": 0.1881633634994032,
+        "mean_ci95_high": 0.20462476126793494,
+        "mean_ci95_low": 0.1708568093868214,
+        "median": 0.18019712689317355,
+        "minimum": 0.10024949008622494,
+        "standard_deviation": 0.047651420453862336
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 73,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.0435470681195151,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.26354970964183916,
+        "mean": 0.14527654513721305,
+        "mean_ci95_high": 0.16126085863180312,
+        "mean_ci95_low": 0.1308173454930477,
+        "median": 0.1360375984410583,
+        "minimum": 0.07099394878196934,
+        "standard_deviation": 0.0435470681195151
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 10.0,
+        "circuit_depth": 57.0,
+        "compiled_one_qubit_gates": 54.0,
+        "compiled_two_qubit_gates": 20.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.17142443174440075,
+        "mean": 0.17142443174440075,
+        "mean_ci95_high": 0.17142443174440075,
+        "mean_ci95_low": 0.17142443174440075,
+        "median": 0.17142443174440075,
+        "minimum": 0.17142443174440075,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.12270087834880565,
+        "mean": 0.12270087834880565,
+        "mean_ci95_high": 0.12270087834880565,
+        "mean_ci95_low": 0.12270087834880565,
+        "median": 0.12270087834880565,
+        "minimum": 0.12270087834880565,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 9.0,
+        "circuit_depth": 53.0,
+        "compiled_one_qubit_gates": 51.0,
+        "compiled_two_qubit_gates": 18.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.05302505650413451,
+        "mean": 0.05302505650413451,
+        "mean_ci95_high": 0.05302505650413451,
+        "mean_ci95_low": 0.05302505650413451,
+        "median": 0.05302505650413451,
+        "minimum": 0.05302505650413451,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.04282269585368673,
+        "mean": 0.04282269585368673,
+        "mean_ci95_high": 0.04282269585368673,
+        "mean_ci95_low": 0.04282269585368673,
+        "median": 0.04282269585368673,
+        "minimum": 0.04282269585368673,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 7.133333333333334,
+        "circuit_depth": 38.766666666666666,
+        "compiled_one_qubit_gates": 33.86666666666667,
+        "compiled_two_qubit_gates": 14.266666666666667,
+        "formula_level_pauli_operations": 10.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.14869489334484218,
+      "logical_budget": 10,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.8159095492410491,
+        "mean": 0.4907733195218507,
+        "mean_ci95_high": 0.5439989412170751,
+        "mean_ci95_low": 0.4383783467801032,
+        "median": 0.4964492809747794,
+        "minimum": 0.21524948618932246,
+        "standard_deviation": 0.14938229602606556
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 540,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.11848893874514892,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.6369955252530431,
+        "mean": 0.34664133704412603,
+        "mean_ci95_high": 0.3891610295690583,
+        "mean_ci95_low": 0.3052750504599076,
+        "median": 0.32577057218249084,
+        "minimum": 0.1173713186157215,
+        "standard_deviation": 0.11848893874514892
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 20.0,
+        "circuit_depth": 113.0,
+        "compiled_one_qubit_gates": 108.0,
+        "compiled_two_qubit_gates": 40.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.08585226770351884,
+        "mean": 0.08585226770351884,
+        "mean_ci95_high": 0.08585226770351884,
+        "mean_ci95_low": 0.08585226770351884,
+        "median": 0.08585226770351884,
+        "minimum": 0.08585226770351884,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.060398650857422846,
+        "mean": 0.060398650857422846,
+        "mean_ci95_high": 0.060398650857422846,
+        "mean_ci95_low": 0.060398650857422846,
+        "median": 0.060398650857422846,
+        "minimum": 0.060398650857422846,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 17.0,
+        "circuit_depth": 101.0,
+        "compiled_one_qubit_gates": 99.0,
+        "compiled_two_qubit_gates": 34.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.0124636686372092,
+        "mean": 0.0124636686372092,
+        "mean_ci95_high": 0.0124636686372092,
+        "mean_ci95_low": 0.0124636686372092,
+        "median": 0.0124636686372092,
+        "minimum": 0.0124636686372092,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.010318440949730811,
+        "mean": 0.010318440949730811,
+        "mean_ci95_high": 0.010318440949730811,
+        "mean_ci95_low": 0.010318440949730811,
+        "median": 0.010318440949730811,
+        "minimum": 0.010318440949730811,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 13.966666666666667,
+        "circuit_depth": 76.33333333333333,
+        "compiled_one_qubit_gates": 68.03333333333333,
+        "compiled_two_qubit_gates": 27.933333333333334,
+        "formula_level_pauli_operations": 20.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.08519869655496087,
+      "logical_budget": 20,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.6491026883311308,
+        "mean": 0.35822092219712937,
+        "mean_ci95_high": 0.3955909117742278,
+        "mean_ci95_low": 0.3242732991815676,
+        "median": 0.35630710689414846,
+        "minimum": 0.11238072894765405,
+        "standard_deviation": 0.10002969549630449
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 214,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.07452098121090718,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.4220016321375751,
+        "mean": 0.2659179905848152,
+        "mean_ci95_high": 0.29142826679334805,
+        "mean_ci95_low": 0.24041790387676198,
+        "median": 0.2633971865908666,
+        "minimum": 0.07342136953641686,
+        "standard_deviation": 0.07452098121090718
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 40.0,
+        "circuit_depth": 225.0,
+        "compiled_one_qubit_gates": 216.0,
+        "compiled_two_qubit_gates": 80.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.04293408545395096,
+        "mean": 0.04293408545395096,
+        "mean_ci95_high": 0.04293408545395096,
+        "mean_ci95_low": 0.04293408545395096,
+        "median": 0.04293408545395096,
+        "minimum": 0.04293408545395096,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.030007921753373155,
+        "mean": 0.030007921753373155,
+        "mean_ci95_high": 0.030007921753373155,
+        "mean_ci95_low": 0.030007921753373155,
+        "median": 0.030007921753373155,
+        "minimum": 0.030007921753373155,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 33.0,
+        "circuit_depth": 197.0,
+        "compiled_one_qubit_gates": 195.0,
+        "compiled_two_qubit_gates": 66.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.0030714418014308902,
+        "mean": 0.0030714418014308902,
+        "mean_ci95_high": 0.0030714418014308902,
+        "mean_ci95_low": 0.0030714418014308902,
+        "median": 0.0030714418014308902,
+        "minimum": 0.0030714418014308902,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0025573462057108757,
+        "mean": 0.0025573462057108757,
+        "mean_ci95_high": 0.0025573462057108757,
+        "mean_ci95_low": 0.0025573462057108757,
+        "median": 0.0025573462057108757,
+        "minimum": 0.0025573462057108757,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 27.633333333333333,
+        "circuit_depth": 151.4,
+        "compiled_one_qubit_gates": 135.23333333333332,
+        "compiled_two_qubit_gates": 55.266666666666666,
+        "formula_level_pauli_operations": 40.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.04749985244177382,
+      "logical_budget": 40,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.4009034397850347,
+        "mean": 0.2473311523185004,
+        "mean_ci95_high": 0.2757000818817283,
+        "mean_ci95_low": 0.21885053594369758,
+        "median": 0.23525737940331726,
+        "minimum": 0.09851989077160533,
+        "standard_deviation": 0.08027338508721352
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 160,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.0643744764256901,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.32077765162484073,
+        "mean": 0.1866938523571937,
+        "mean_ci95_high": 0.2091421762432373,
+        "mean_ci95_low": 0.16493324904707926,
+        "median": 0.1864148103841166,
+        "minimum": 0.06051957949401428,
+        "standard_deviation": 0.0643744764256901
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 80.0,
+        "circuit_depth": 449.0,
+        "compiled_one_qubit_gates": 432.0,
+        "compiled_two_qubit_gates": 160.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.021465702623266907,
+        "mean": 0.021465702623266907,
+        "mean_ci95_high": 0.021465702623266907,
+        "mean_ci95_low": 0.021465702623266907,
+        "median": 0.021465702623266907,
+        "minimum": 0.021465702623266907,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.014963295144342335,
+        "mean": 0.014963295144342335,
+        "mean_ci95_high": 0.014963295144342335,
+        "mean_ci95_low": 0.014963295144342335,
+        "median": 0.014963295144342335,
+        "minimum": 0.014963295144342335,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 65.0,
+        "circuit_depth": 389.0,
+        "compiled_one_qubit_gates": 387.0,
+        "compiled_two_qubit_gates": 130.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.0007651608167380592,
+        "mean": 0.0007651608167380592,
+        "mean_ci95_high": 0.0007651608167380592,
+        "mean_ci95_low": 0.0007651608167380592,
+        "median": 0.0007651608167380592,
+        "minimum": 0.0007651608167380592,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.000637972701812006,
+        "mean": 0.000637972701812006,
+        "mean_ci95_high": 0.000637972701812006,
+        "mean_ci95_low": 0.000637972701812006,
+        "median": 0.000637972701812006,
+        "minimum": 0.000637972701812006,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 55.6,
+        "circuit_depth": 305.73333333333335,
+        "compiled_one_qubit_gates": 274.8,
+        "compiled_two_qubit_gates": 111.2,
+        "formula_level_pauli_operations": 80.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.02587443544351592,
+      "logical_budget": 80,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.32646812027393535,
+        "mean": 0.18535944339431745,
+        "mean_ci95_high": 0.20944033892517294,
+        "mean_ci95_low": 0.16241132165991684,
+        "median": 0.1690917791904093,
+        "minimum": 0.05880385303218276,
+        "standard_deviation": 0.06920912083775933
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 94,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.04920651269969088,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.24972531152387487,
+        "mean": 0.14328400980633674,
+        "mean_ci95_high": 0.16138974287838231,
+        "mean_ci95_low": 0.12601814076676615,
+        "median": 0.13976451463090223,
+        "minimum": 0.04982945216018597,
+        "standard_deviation": 0.04920651269969088
+      },
+      "trajectories": 30,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 10.0,
+        "circuit_depth": 18.0,
+        "compiled_one_qubit_gates": 16.0,
+        "compiled_two_qubit_gates": 8.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.03821876680021884,
+        "mean": 0.03821876680021884,
+        "mean_ci95_high": 0.03821876680021884,
+        "mean_ci95_low": 0.03821876680021884,
+        "median": 0.03821876680021884,
+        "minimum": 0.03821876680021884,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 9.0,
+        "circuit_depth": 13.0,
+        "compiled_one_qubit_gates": 11.0,
+        "compiled_two_qubit_gates": 6.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.008666421519436463,
+        "mean": 0.008666421519436463,
+        "mean_ci95_high": 0.008666421519436463,
+        "mean_ci95_low": 0.008666421519436463,
+        "median": 0.008666421519436463,
+        "minimum": 0.008666421519436463,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 6.766666666666667,
+        "circuit_depth": 6.4,
+        "compiled_one_qubit_gates": 7.066666666666666,
+        "compiled_two_qubit_gates": 1.7333333333333334,
+        "formula_level_pauli_operations": 10.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.026861691759115482,
+      "logical_budget": 10,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.7645147071938877,
+        "mean": 0.32475923744083096,
+        "mean_ci95_high": 0.37744761473743765,
+        "mean_ci95_low": 0.27400616844740955,
+        "median": 0.3204683047508767,
+        "minimum": 0.09694577241867171,
+        "standard_deviation": 0.14904219224487655
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 329,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.09252124576113056,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.45232570684184054,
+        "mean": 0.12722270110754033,
+        "mean_ci95_high": 0.16203103012646308,
+        "mean_ci95_low": 0.0964002141746815,
+        "median": 0.13528232345640628,
+        "minimum": 0.017335186777775777,
+        "standard_deviation": 0.09252124576113056
+      },
+      "trajectories": 30,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 20.0,
+        "circuit_depth": 36.0,
+        "compiled_one_qubit_gates": 32.0,
+        "compiled_two_qubit_gates": 16.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.019033688421434776,
+        "mean": 0.019033688421434776,
+        "mean_ci95_high": 0.019033688421434776,
+        "mean_ci95_low": 0.019033688421434776,
+        "median": 0.019033688421434776,
+        "minimum": 0.019033688421434776,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 2.9802322387695312e-08,
+        "mean": 2.9802322387695312e-08,
+        "mean_ci95_high": 2.9802322387695312e-08,
+        "mean_ci95_low": 2.9802322387695312e-08,
+        "median": 2.9802322387695312e-08,
+        "minimum": 2.9802322387695312e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 17.0,
+        "circuit_depth": 26.0,
+        "compiled_one_qubit_gates": 22.0,
+        "compiled_two_qubit_gates": 12.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.002103438203883912,
+        "mean": 0.002103438203883912,
+        "mean_ci95_high": 0.002103438203883912,
+        "mean_ci95_low": 0.002103438203883912,
+        "median": 0.002103438203883912,
+        "minimum": 0.002103438203883912,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 2.1073424255447017e-08,
+        "mean": 2.1073424255447017e-08,
+        "mean_ci95_high": 2.1073424255447017e-08,
+        "mean_ci95_low": 2.1073424255447017e-08,
+        "median": 2.1073424255447017e-08,
+        "minimum": 2.1073424255447017e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 13.133333333333333,
+        "circuit_depth": 13.733333333333333,
+        "compiled_one_qubit_gates": 14.966666666666667,
+        "compiled_two_qubit_gates": 4.066666666666666,
+        "formula_level_pauli_operations": 20.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.017108087644060292,
+      "logical_budget": 20,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.44170798126093375,
+        "mean": 0.22181350744434183,
+        "mean_ci95_high": 0.2566539264002244,
+        "mean_ci95_low": 0.18850654921081772,
+        "median": 0.23116340286646497,
+        "minimum": 0.07756702561086552,
+        "standard_deviation": 0.09670567811677135
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 184,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.06909927430559189,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.3126492808498309,
+        "mean": 0.08021692832375968,
+        "mean_ci95_high": 0.1067437815249405,
+        "mean_ci95_low": 0.05829359947063615,
+        "median": 0.061131973705990154,
+        "minimum": 0.017335186777852632,
+        "standard_deviation": 0.06909927430559189
+      },
+      "trajectories": 30,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 40.0,
+        "circuit_depth": 72.0,
+        "compiled_one_qubit_gates": 64.0,
+        "compiled_two_qubit_gates": 32.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.009507449625738046,
+        "mean": 0.009507449625738046,
+        "mean_ci95_high": 0.009507449625738046,
+        "mean_ci95_low": 0.009507449625738046,
+        "median": 0.009507449625738046,
+        "minimum": 0.009507449625738046,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 5.5755039852469285e-08,
+        "mean": 5.5755039852469285e-08,
+        "mean_ci95_high": 5.5755039852469285e-08,
+        "mean_ci95_low": 5.5755039852469285e-08,
+        "median": 5.5755039852469285e-08,
+        "minimum": 5.5755039852469285e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 33.0,
+        "circuit_depth": 52.0,
+        "compiled_one_qubit_gates": 44.0,
+        "compiled_two_qubit_gates": 24.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.0005220292044405178,
+        "mean": 0.0005220292044405178,
+        "mean_ci95_high": 0.0005220292044405178,
+        "mean_ci95_low": 0.0005220292044405178,
+        "median": 0.0005220292044405178,
+        "minimum": 0.0005220292044405178,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 5.5755039852469285e-08,
+        "mean": 5.5755039852469285e-08,
+        "mean_ci95_high": 5.5755039852469285e-08,
+        "mean_ci95_low": 5.5755039852469285e-08,
+        "median": 5.5755039852469285e-08,
+        "minimum": 5.5755039852469285e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 26.266666666666666,
+        "circuit_depth": 25.2,
+        "compiled_one_qubit_gates": 28.733333333333334,
+        "compiled_two_qubit_gates": 7.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.006976278312715499,
+      "logical_budget": 40,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.2842904269056549,
+        "mean": 0.1678501915551248,
+        "mean_ci95_high": 0.19015731426202395,
+        "mean_ci95_low": 0.14681565671780783,
+        "median": 0.16695805077584241,
+        "minimum": 0.06781306612449338,
+        "standard_deviation": 0.06209978401972163
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 39,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.03173035728500517,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.13409939301938031,
+        "mean": 0.05100374953482188,
+        "mean_ci95_high": 0.06243637461755389,
+        "mean_ci95_low": 0.04034630663052298,
+        "median": 0.04817899449441929,
+        "minimum": 0.016095669331861854,
+        "standard_deviation": 0.03173035728500517
+      },
+      "trajectories": 30,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 80.0,
+        "circuit_depth": 144.0,
+        "compiled_one_qubit_gates": 128.0,
+        "compiled_two_qubit_gates": 64.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.004752552578017385,
+        "mean": 0.004752552578017385,
+        "mean_ci95_high": 0.004752552578017385,
+        "mean_ci95_low": 0.004752552578017385,
+        "median": 0.004752552578017385,
+        "minimum": 0.004752552578017385,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 65.0,
+        "circuit_depth": 104.0,
+        "compiled_one_qubit_gates": 88.0,
+        "compiled_two_qubit_gates": 48.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.00013026969454558274,
+        "mean": 0.00013026969454558274,
+        "mean_ci95_high": 0.00013026969454558274,
+        "mean_ci95_low": 0.00013026969454558274,
+        "median": 0.00013026969454558274,
+        "minimum": 0.00013026969454558274,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 52.766666666666666,
+        "circuit_depth": 52.833333333333336,
+        "compiled_one_qubit_gates": 59.86666666666667,
+        "compiled_two_qubit_gates": 14.8,
+        "formula_level_pauli_operations": 80.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.00679942098123005,
+      "logical_budget": 80,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.19606629481876767,
+        "mean": 0.12756018568900387,
+        "mean_ci95_high": 0.14245845507108024,
+        "mean_ci95_low": 0.11211935898571883,
+        "median": 0.12957455675934101,
+        "minimum": 0.02818821780421838,
+        "standard_deviation": 0.04300590285411519
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 26,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.02557078782449899,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.0937432547465991,
+        "mean": 0.041369465494087425,
+        "mean_ci95_high": 0.0504660355606782,
+        "mean_ci95_low": 0.032335742896136464,
+        "median": 0.0396082062165731,
+        "minimum": 0.0028802433990482534,
+        "standard_deviation": 0.02557078782449899
+      },
+      "trajectories": 30,
+      "workload_id": "h2-two-qubit"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 18.0,
+        "circuit_depth": 62.0,
+        "compiled_one_qubit_gates": 66.0,
+        "compiled_two_qubit_gates": 24.0,
+        "formula_level_pauli_operations": 18.0
+      },
+      "logical_budget": 18,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.6686071990320576,
+        "mean": 0.6686071990320576,
+        "mean_ci95_high": 0.6686071990320576,
+        "mean_ci95_low": 0.6686071990320576,
+        "median": 0.6686071990320576,
+        "minimum": 0.6686071990320576,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 2.9802322387695312e-08,
+        "mean": 2.9802322387695312e-08,
+        "mean_ci95_high": 2.9802322387695312e-08,
+        "mean_ci95_low": 2.9802322387695312e-08,
+        "median": 2.9802322387695312e-08,
+        "minimum": 2.9802322387695312e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 17.0,
+        "circuit_depth": 62.0,
+        "compiled_one_qubit_gates": 65.0,
+        "compiled_two_qubit_gates": 24.0,
+        "formula_level_pauli_operations": 18.0
+      },
+      "logical_budget": 18,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.6334215415910406,
+        "mean": 0.6334215415910406,
+        "mean_ci95_high": 0.6334215415910406,
+        "mean_ci95_low": 0.6334215415910406,
+        "median": 0.6334215415910406,
+        "minimum": 0.6334215415910406,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 3.650024149988857e-08,
+        "mean": 3.650024149988857e-08,
+        "mean_ci95_high": 3.650024149988857e-08,
+        "mean_ci95_low": 3.650024149988857e-08,
+        "median": 3.650024149988857e-08,
+        "minimum": 3.650024149988857e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 15.7,
+        "circuit_depth": 67.9,
+        "compiled_one_qubit_gates": 69.03333333333333,
+        "compiled_two_qubit_gates": 26.666666666666668,
+        "formula_level_pauli_operations": 18.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.5407233251400844,
+      "logical_budget": 18,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 1.9960709747768604,
+        "mean": 1.5092476820920666,
+        "mean_ci95_high": 1.6044132461551555,
+        "mean_ci95_low": 1.4124454436801595,
+        "median": 1.475070614851592,
+        "minimum": 1.0008907562949154,
+        "standard_deviation": 0.2716861255536639
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 970,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.15883249666776939,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.9576372678352807,
+        "mean": 0.7161556510749569,
+        "mean_ci95_high": 0.7701187867922604,
+        "mean_ci95_low": 0.6602195959993863,
+        "median": 0.7454389314401708,
+        "minimum": 0.296085178979553,
+        "standard_deviation": 0.15883249666776939
+      },
+      "trajectories": 30,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 36.0,
+        "circuit_depth": 124.0,
+        "compiled_one_qubit_gates": 132.0,
+        "compiled_two_qubit_gates": 48.0,
+        "formula_level_pauli_operations": 36.0
+      },
+      "logical_budget": 36,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.3269595793882764,
+        "mean": 0.3269595793882764,
+        "mean_ci95_high": 0.3269595793882764,
+        "mean_ci95_low": 0.3269595793882764,
+        "median": 0.3269595793882764,
+        "minimum": 0.3269595793882764,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 33.0,
+        "circuit_depth": 119.0,
+        "compiled_one_qubit_gates": 125.0,
+        "compiled_two_qubit_gates": 46.0,
+        "formula_level_pauli_operations": 36.0
+      },
+      "logical_budget": 36,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.16395870364650572,
+        "mean": 0.16395870364650572,
+        "mean_ci95_high": 0.16395870364650572,
+        "mean_ci95_low": 0.16395870364650572,
+        "median": 0.16395870364650572,
+        "minimum": 0.16395870364650572,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 31.633333333333333,
+        "circuit_depth": 139.83333333333334,
+        "compiled_one_qubit_gates": 142.7,
+        "compiled_two_qubit_gates": 54.53333333333333,
+        "formula_level_pauli_operations": 36.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.39943130670756755,
+      "logical_budget": 36,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 1.7112634403469367,
+        "mean": 1.1621975929005912,
+        "mean_ci95_high": 1.250081183387079,
+        "mean_ci95_low": 1.076892089906089,
+        "median": 1.1477928417934884,
+        "minimum": 0.7651938124545413,
+        "standard_deviation": 0.24174507702990305
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 1106,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.16965786053104978,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.9230459214399631,
+        "mean": 0.6033924946730967,
+        "mean_ci95_high": 0.6634623760617733,
+        "mean_ci95_low": 0.5438556584599304,
+        "median": 0.6032557833204786,
+        "minimum": 0.25923681569490215,
+        "standard_deviation": 0.16965786053104978
+      },
+      "trajectories": 30,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 72.0,
+        "circuit_depth": 248.0,
+        "compiled_one_qubit_gates": 264.0,
+        "compiled_two_qubit_gates": 96.0,
+        "formula_level_pauli_operations": 72.0
+      },
+      "logical_budget": 72,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.1623618938254736,
+        "mean": 0.1623618938254736,
+        "mean_ci95_high": 0.1623618938254736,
+        "mean_ci95_low": 0.1623618938254736,
+        "median": 0.1623618938254736,
+        "minimum": 0.1623618938254736,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 5.960464477539063e-08,
+        "mean": 5.960464477539063e-08,
+        "mean_ci95_high": 5.960464477539063e-08,
+        "mean_ci95_low": 5.960464477539063e-08,
+        "median": 5.960464477539063e-08,
+        "minimum": 5.960464477539063e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 65.0,
+        "circuit_depth": 233.0,
+        "compiled_one_qubit_gates": 245.0,
+        "compiled_two_qubit_gates": 90.0,
+        "formula_level_pauli_operations": 72.0
+      },
+      "logical_budget": 72,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.04046661045282983,
+        "mean": 0.04046661045282983,
+        "mean_ci95_high": 0.04046661045282983,
+        "mean_ci95_low": 0.04046661045282983,
+        "median": 0.04046661045282983,
+        "minimum": 0.04046661045282983,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 5.5755039852469285e-08,
+        "mean": 5.5755039852469285e-08,
+        "mean_ci95_high": 5.5755039852469285e-08,
+        "mean_ci95_low": 5.5755039852469285e-08,
+        "median": 5.5755039852469285e-08,
+        "minimum": 5.5755039852469285e-08,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 63.36666666666667,
+        "circuit_depth": 280.26666666666665,
+        "compiled_one_qubit_gates": 286.8333333333333,
+        "compiled_two_qubit_gates": 108.86666666666666,
+        "formula_level_pauli_operations": 72.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.2760470800635906,
+      "logical_budget": 72,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 1.5097038210713634,
+        "mean": 0.9069194161221137,
+        "mean_ci95_high": 0.9894546015373136,
+        "mean_ci95_low": 0.8314315976487661,
+        "median": 0.8843872119622611,
+        "minimum": 0.5077826314440448,
+        "standard_deviation": 0.2251988009598871
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 1036,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.16421542850369453,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.7891394050938089,
+        "mean": 0.4819613530145092,
+        "mean_ci95_high": 0.5399660181729483,
+        "mean_ci95_low": 0.42496156259930296,
+        "median": 0.43858251912980223,
+        "minimum": 0.2149776449609439,
+        "standard_deviation": 0.16421542850369453
+      },
+      "trajectories": 30,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 144.0,
+        "circuit_depth": 496.0,
+        "compiled_one_qubit_gates": 528.0,
+        "compiled_two_qubit_gates": 192.0,
+        "formula_level_pauli_operations": 144.0
+      },
+      "logical_budget": 144,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.08103548372275912,
+        "mean": 0.08103548372275912,
+        "mean_ci95_high": 0.08103548372275912,
+        "mean_ci95_low": 0.08103548372275912,
+        "median": 0.08103548372275912,
+        "minimum": 0.08103548372275912,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 129.0,
+        "circuit_depth": 461.0,
+        "compiled_one_qubit_gates": 485.0,
+        "compiled_two_qubit_gates": 178.0,
+        "formula_level_pauli_operations": 144.0
+      },
+      "logical_budget": 144,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.01007101982466562,
+        "mean": 0.01007101982466562,
+        "mean_ci95_high": 0.01007101982466562,
+        "mean_ci95_low": 0.01007101982466562,
+        "median": 0.01007101982466562,
+        "minimum": 0.01007101982466562,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "mean_ci95_high": 0.0,
+        "mean_ci95_low": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 126.13333333333334,
+        "circuit_depth": 547.2333333333333,
+        "compiled_one_qubit_gates": 555.6,
+        "compiled_two_qubit_gates": 215.2,
+        "formula_level_pauli_operations": 144.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.14844399180282575,
+      "logical_budget": 144,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.92016199109419,
+        "mean": 0.6142676180775611,
+        "mean_ci95_high": 0.6577673215493209,
+        "mean_ci95_low": 0.5738461763212098,
+        "median": 0.5920379644480627,
+        "minimum": 0.39238651263646607,
+        "standard_deviation": 0.11922305524344148
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 364,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.09728791389947382,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.5318442978565775,
+        "mean": 0.3517248442639195,
+        "mean_ci95_high": 0.3856229793673405,
+        "mean_ci95_low": 0.31727963393122727,
+        "median": 0.3533354755148438,
+        "minimum": 0.17123275030451834,
+        "standard_deviation": 0.09728791389947382
+      },
+      "trajectories": 30,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 10.0,
+        "circuit_depth": 18.0,
+        "compiled_one_qubit_gates": 22.0,
+        "compiled_two_qubit_gates": 8.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.3850777966365474,
+        "mean": 0.3850777966365474,
+        "mean_ci95_high": 0.3850777966365474,
+        "mean_ci95_low": 0.3850777966365474,
+        "median": 0.3850777966365474,
+        "minimum": 0.3850777966365474,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.26548790168100495,
+        "mean": 0.26548790168100495,
+        "mean_ci95_high": 0.26548790168100495,
+        "mean_ci95_low": 0.26548790168100495,
+        "median": 0.26548790168100495,
+        "minimum": 0.26548790168100495,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 9.0,
+        "circuit_depth": 18.0,
+        "compiled_one_qubit_gates": 19.0,
+        "compiled_two_qubit_gates": 8.0,
+        "formula_level_pauli_operations": 10.0
+      },
+      "logical_budget": 10,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.361787143351461,
+        "mean": 0.361787143351461,
+        "mean_ci95_high": 0.361787143351461,
+        "mean_ci95_low": 0.361787143351461,
+        "median": 0.361787143351461,
+        "minimum": 0.361787143351461,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.29200522562796893,
+        "mean": 0.29200522562796893,
+        "mean_ci95_high": 0.29200522562796893,
+        "mean_ci95_low": 0.29200522562796893,
+        "median": 0.29200522562796893,
+        "minimum": 0.29200522562796893,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 8.2,
+        "circuit_depth": 19.2,
+        "compiled_one_qubit_gates": 16.8,
+        "compiled_two_qubit_gates": 7.8,
+        "formula_level_pauli_operations": 10.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.36192585010213363,
+      "logical_budget": 10,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 1.680809971051726,
+        "mean": 1.0584614185340717,
+        "mean_ci95_high": 1.1609072329682044,
+        "mean_ci95_low": 0.9551732344994568,
+        "median": 1.0369597357775706,
+        "minimum": 0.4714518400930455,
+        "standard_deviation": 0.2905171397704106
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 772,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.14168298533656087,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.851724325956424,
+        "mean": 0.573575385228678,
+        "mean_ci95_high": 0.6234094062666338,
+        "mean_ci95_low": 0.5241624108646561,
+        "median": 0.5873665677006916,
+        "minimum": 0.27163331149208647,
+        "standard_deviation": 0.14168298533656087
+      },
+      "trajectories": 30,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 20.0,
+        "circuit_depth": 36.0,
+        "compiled_one_qubit_gates": 44.0,
+        "compiled_two_qubit_gates": 16.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.18828150408313882,
+        "mean": 0.18828150408313882,
+        "mean_ci95_high": 0.18828150408313882,
+        "mean_ci95_low": 0.18828150408313882,
+        "median": 0.18828150408313882,
+        "minimum": 0.18828150408313882,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.12585842286719073,
+        "mean": 0.12585842286719073,
+        "mean_ci95_high": 0.12585842286719073,
+        "mean_ci95_low": 0.12585842286719073,
+        "median": 0.12585842286719073,
+        "minimum": 0.12585842286719073,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 17.0,
+        "circuit_depth": 33.0,
+        "compiled_one_qubit_gates": 37.0,
+        "compiled_two_qubit_gates": 14.0,
+        "formula_level_pauli_operations": 20.0
+      },
+      "logical_budget": 20,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.07660119112110698,
+        "mean": 0.07660119112110698,
+        "mean_ci95_high": 0.07660119112110698,
+        "mean_ci95_low": 0.07660119112110698,
+        "median": 0.07660119112110698,
+        "minimum": 0.07660119112110698,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.05966037596377929,
+        "mean": 0.05966037596377929,
+        "mean_ci95_high": 0.05966037596377929,
+        "mean_ci95_low": 0.05966037596377929,
+        "median": 0.05966037596377929,
+        "minimum": 0.05966037596377929,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 16.2,
+        "circuit_depth": 35.7,
+        "compiled_one_qubit_gates": 33.2,
+        "compiled_two_qubit_gates": 15.4,
+        "formula_level_pauli_operations": 20.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.21664667097483103,
+      "logical_budget": 20,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 1.0932154974159727,
+        "mean": 0.7511437874827691,
+        "mean_ci95_high": 0.8132436336514575,
+        "mean_ci95_low": 0.6866412472074881,
+        "median": 0.7434162676018113,
+        "minimum": 0.45615477296980433,
+        "standard_deviation": 0.18172663506516998
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 450,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.10818919988578662,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.7403213044028588,
+        "mean": 0.44063014879752943,
+        "mean_ci95_high": 0.48124993318794174,
+        "mean_ci95_low": 0.4038398180639239,
+        "median": 0.43799227474247915,
+        "minimum": 0.2856855588792865,
+        "standard_deviation": 0.10818919988578662
+      },
+      "trajectories": 30,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 40.0,
+        "circuit_depth": 72.0,
+        "compiled_one_qubit_gates": 88.0,
+        "compiled_two_qubit_gates": 32.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.09358940385753771,
+        "mean": 0.09358940385753771,
+        "mean_ci95_high": 0.09358940385753771,
+        "mean_ci95_low": 0.09358940385753771,
+        "median": 0.09358940385753771,
+        "minimum": 0.09358940385753771,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0615878061356741,
+        "mean": 0.0615878061356741,
+        "mean_ci95_high": 0.0615878061356741,
+        "mean_ci95_low": 0.0615878061356741,
+        "median": 0.0615878061356741,
+        "minimum": 0.0615878061356741,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 33.0,
+        "circuit_depth": 63.0,
+        "compiled_one_qubit_gates": 73.0,
+        "compiled_two_qubit_gates": 26.0,
+        "formula_level_pauli_operations": 40.0
+      },
+      "logical_budget": 40,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.018444999909647066,
+        "mean": 0.018444999909647066,
+        "mean_ci95_high": 0.018444999909647066,
+        "mean_ci95_low": 0.018444999909647066,
+        "median": 0.018444999909647066,
+        "minimum": 0.018444999909647066,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.01420937229217513,
+        "mean": 0.01420937229217513,
+        "mean_ci95_high": 0.01420937229217513,
+        "mean_ci95_low": 0.01420937229217513,
+        "median": 0.01420937229217513,
+        "minimum": 0.01420937229217513,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 32.6,
+        "circuit_depth": 70.7,
+        "compiled_one_qubit_gates": 66.73333333333333,
+        "compiled_two_qubit_gates": 31.066666666666666,
+        "formula_level_pauli_operations": 40.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.13126479299156893,
+      "logical_budget": 40,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.8813747419827144,
+        "mean": 0.5794835327437795,
+        "mean_ci95_high": 0.6250522764954183,
+        "mean_ci95_low": 0.5339215723900994,
+        "median": 0.5622190808971609,
+        "minimum": 0.3440661054349144,
+        "standard_deviation": 0.13059855549916627
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 267,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.0833326849616841,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.5256426834361808,
+        "mean": 0.33334951974587274,
+        "mean_ci95_high": 0.3630022839338735,
+        "mean_ci95_low": 0.3055574065987917,
+        "median": 0.3260763747690247,
+        "minimum": 0.19599107451731299,
+        "standard_deviation": 0.0833326849616841
+      },
+      "trajectories": 30,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 80.0,
+        "circuit_depth": 144.0,
+        "compiled_one_qubit_gates": 176.0,
+        "compiled_two_qubit_gates": 64.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.04671860517023252,
+        "mean": 0.04671860517023252,
+        "mean_ci95_high": 0.04671860517023252,
+        "mean_ci95_low": 0.04671860517023252,
+        "median": 0.04671860517023252,
+        "minimum": 0.04671860517023252,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.03050324742514544,
+        "mean": 0.03050324742514544,
+        "mean_ci95_high": 0.03050324742514544,
+        "mean_ci95_low": 0.03050324742514544,
+        "median": 0.03050324742514544,
+        "minimum": 0.03050324742514544,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 65.0,
+        "circuit_depth": 123.0,
+        "compiled_one_qubit_gates": 145.0,
+        "compiled_two_qubit_gates": 50.0,
+        "formula_level_pauli_operations": 80.0
+      },
+      "logical_budget": 80,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "phase_aligned_operator_error": {
+        "count": 1,
+        "maximum": 0.004569423622309674,
+        "mean": 0.004569423622309674,
+        "mean_ci95_high": 0.004569423622309674,
+        "mean_ci95_low": 0.004569423622309674,
+        "median": 0.004569423622309674,
+        "minimum": 0.004569423622309674,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.003510438416324483,
+        "mean": 0.003510438416324483,
+        "mean_ci95_high": 0.003510438416324483,
+        "mean_ci95_low": 0.003510438416324483,
+        "median": 0.003510438416324483,
+        "minimum": 0.003510438416324483,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "costs": {
+        "adjacent_merged_pauli_operations": 64.13333333333334,
+        "circuit_depth": 137.9,
+        "compiled_one_qubit_gates": 132.33333333333334,
+        "compiled_two_qubit_gates": 60.06666666666667,
+        "formula_level_pauli_operations": 80.0
+      },
+      "empirical_ensemble_state_trace_distance": 0.08635450246101253,
+      "logical_budget": 80,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "phase_aligned_operator_error": {
+        "count": 30,
+        "maximum": 0.6106116269418395,
+        "mean": 0.41795443864878046,
+        "mean_ci95_high": 0.4572507669184811,
+        "mean_ci95_low": 0.37721137610959515,
+        "median": 0.4438544966711913,
+        "minimum": 0.22782210178741008,
+        "standard_deviation": 0.11481661237793343
+      },
+      "qdrift_ensemble_sizing": {
+        "confidence_z": 1.96,
+        "estimated_trajectories": 232,
+        "estimator": "normal approximation; review required before inference",
+        "pilot_standard_deviation": 0.07763207700903593,
+        "statistic": "mean individual-trajectory state trace distance",
+        "target_ci_half_width": 0.01
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.39791081334921374,
+        "mean": 0.2566020492436052,
+        "mean_ci95_high": 0.2838352019368779,
+        "mean_ci95_low": 0.22902502580525555,
+        "median": 0.27067086527406303,
+        "minimum": 0.15610187311280285,
+        "standard_deviation": 0.07763207700903593
+      },
+      "trajectories": 30,
+      "workload_id": "tfim-q3-open"
+    }
+  ],
+  "initial_state": "computational |0...0>",
+  "protocol_id": "openqevo-publication-candidate-2026-09-01",
+  "protocol_sha256": "b0216fac55f074c1505ed84e9117af4f2c1e36c5ec764fb854778aa0becb92ef",
+  "protocol_status": "software-frozen",
+  "run_id": "openqevo-publication-candidate-2026-09-01:b0216fac55f074c1",
+  "schema_version": "openqevo-publication-summary/v1",
+  "scientific_review_status": "pending",
+  "workloads": [
+    {
+      "commutator_graph_density": 0.0,
+      "input_sha256": "a1768565ef00f07704ba0639a19f5241175fa0eb35153cb1050e11137bf81773",
+      "lambda": 2.0,
+      "qdrift_small_step_sample_estimate": {
+        "formula": "ceil(2 * lambda^2 * t^2 / epsilon)",
+        "samples": 90,
+        "scope": "small-step expected-channel approximation",
+        "target_expected_channel_error": 0.05
+      },
+      "qubits": 3,
+      "terms": 3,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "commutator_graph_density": 0.5,
+      "input_sha256": "797c4cf8e93ffa4f60a1d1941ed46fbc89d3b4d39c6eb403e8c259ec50ac818c",
+      "lambda": 2.0,
+      "qdrift_small_step_sample_estimate": {
+        "formula": "ceil(2 * lambda^2 * t^2 / epsilon)",
+        "samples": 90,
+        "scope": "small-step expected-channel approximation",
+        "target_expected_channel_error": 0.05
+      },
+      "qubits": 3,
+      "terms": 5,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "commutator_graph_density": 1.0,
+      "input_sha256": "6387505bf84370c7fda061b1804240cc82a11621af1546fe0faa50c63cc95360",
+      "lambda": 2.0,
+      "qdrift_small_step_sample_estimate": {
+        "formula": "ceil(2 * lambda^2 * t^2 / epsilon)",
+        "samples": 90,
+        "scope": "small-step expected-channel approximation",
+        "target_expected_channel_error": 0.05
+      },
+      "qubits": 3,
+      "terms": 5,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "commutator_graph_density": 1.0,
+      "input_sha256": "89fb3c751b1e90c4c314698f0fef1de56fd1f2ee2460768ed0df16391ce1d4d2",
+      "lambda": 4.0,
+      "qdrift_small_step_sample_estimate": {
+        "formula": "ceil(2 * lambda^2 * t^2 / epsilon)",
+        "samples": 360,
+        "scope": "small-step expected-channel approximation",
+        "target_expected_channel_error": 0.05
+      },
+      "qubits": 3,
+      "terms": 5,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "commutator_graph_density": 0.4,
+      "input_sha256": "679a05a64b985f14fe1456ec2aae0a48a2512341cd280bf88cd2deb28faee796",
+      "lambda": 4.1000000000000005,
+      "qdrift_small_step_sample_estimate": {
+        "formula": "ceil(2 * lambda^2 * t^2 / epsilon)",
+        "samples": 379,
+        "scope": "small-step expected-channel approximation",
+        "target_expected_channel_error": 0.05
+      },
+      "qubits": 3,
+      "terms": 5,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "commutator_graph_density": 0.3888888888888889,
+      "input_sha256": "ca90a332db20ad506cd31aa1f05c1991a3a49c45b0d993c250843dbe5435de55",
+      "lambda": 6.8999999999999995,
+      "qdrift_small_step_sample_estimate": {
+        "formula": "ceil(2 * lambda^2 * t^2 / epsilon)",
+        "samples": 1072,
+        "scope": "small-step expected-channel approximation",
+        "target_expected_channel_error": 0.05
+      },
+      "qubits": 3,
+      "terms": 9,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "commutator_graph_density": 0.2,
+      "input_sha256": "00a4d2c864963ff6d37ee9241b710bc42a845a2bb5a5d063ac06ce2d72c6ccfb",
+      "lambda": 2.040459399499687,
+      "qdrift_small_step_sample_estimate": {
+        "formula": "ceil(2 * lambda^2 * t^2 / epsilon)",
+        "samples": 94,
+        "scope": "small-step expected-channel approximation",
+        "target_expected_channel_error": 0.05
+      },
+      "qubits": 2,
+      "terms": 5,
+      "workload_id": "h2-two-qubit"
+    }
+  ]
+}

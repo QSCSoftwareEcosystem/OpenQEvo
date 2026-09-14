@@ -1,0 +1,667 @@
+{
+  "benchmark_id": "xz-noncommuting-v1",
+  "comparison_basis": "equal formula-level Pauli evolution operations",
+  "config_sha256": "b69fcf5d912642497559955ecf3bdbcca1c08af2af11a9492fc96f8abed3dd71",
+  "environment": {
+    "numpy": "1.26.4",
+    "openqevo": "0.1.0",
+    "python": "3.11.7",
+    "scipy": "1.11.4"
+  },
+  "groups": [
+    {
+      "empirical_ensemble_state_trace_distance": 0.2251166620959809,
+      "logical_budget": 4,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.3624099238836895,
+        "mean": 0.3624099238836895,
+        "mean_ci95_high": 0.3624099238836895,
+        "mean_ci95_low": 0.3624099238836895,
+        "median": 0.3624099238836895,
+        "minimum": 0.3624099238836895,
+        "q25": 0.3624099238836895,
+        "q75": 0.3624099238836895,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.22511666209598097,
+        "mean": 0.22511666209598097,
+        "mean_ci95_high": 0.22511666209598097,
+        "mean_ci95_low": 0.22511666209598097,
+        "median": 0.22511666209598097,
+        "minimum": 0.22511666209598097,
+        "q25": 0.22511666209598097,
+        "q75": 0.22511666209598097,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.3011392925515656,
+      "logical_budget": 4,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.3136664217668512,
+        "mean": 0.3136664217668512,
+        "mean_ci95_high": 0.3136664217668512,
+        "mean_ci95_low": 0.3136664217668512,
+        "median": 0.3136664217668512,
+        "minimum": 0.3136664217668512,
+        "q25": 0.3136664217668512,
+        "q75": 0.3136664217668512,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.30113929255156546,
+        "mean": 0.30113929255156546,
+        "mean_ci95_high": 0.30113929255156546,
+        "mean_ci95_low": 0.30113929255156546,
+        "median": 0.30113929255156546,
+        "minimum": 0.30113929255156546,
+        "q25": 0.30113929255156546,
+        "q75": 0.30113929255156546,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.3198320871362147,
+      "logical_budget": 4,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "normalized_operator_error": {
+        "count": 30,
+        "maximum": 0.9271367029137116,
+        "mean": 0.6668837659690137,
+        "mean_ci95_high": 0.7511010098967705,
+        "mean_ci95_low": 0.5785607630059416,
+        "median": 0.7992141739660588,
+        "minimum": 0.3136664217668512,
+        "q25": 0.4123997830286353,
+        "q75": 0.8428702466965454,
+        "standard_deviation": 0.24700228941777902
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.7683609689096066,
+        "mean": 0.528331104461701,
+        "mean_ci95_high": 0.5943099011788967,
+        "mean_ci95_low": 0.4624433204221639,
+        "median": 0.6355279051085514,
+        "minimum": 0.22511666209598097,
+        "q25": 0.36433357181070974,
+        "q75": 0.6984559986366085,
+        "standard_deviation": 0.18936052282098031
+      },
+      "trajectories": 30
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.11863252275422184,
+      "logical_budget": 8,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.1762609676177642,
+        "mean": 0.1762609676177642,
+        "mean_ci95_high": 0.1762609676177642,
+        "mean_ci95_low": 0.1762609676177642,
+        "median": 0.1762609676177642,
+        "minimum": 0.1762609676177642,
+        "q25": 0.1762609676177642,
+        "q75": 0.1762609676177642,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.1186325227542263,
+        "mean": 0.1186325227542263,
+        "mean_ci95_high": 0.1186325227542263,
+        "mean_ci95_low": 0.1186325227542263,
+        "median": 0.1186325227542263,
+        "minimum": 0.1186325227542263,
+        "q25": 0.1186325227542263,
+        "q75": 0.1186325227542263,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.06949765760890797,
+      "logical_budget": 8,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.07113037861201532,
+        "mean": 0.07113037861201532,
+        "mean_ci95_high": 0.07113037861201532,
+        "mean_ci95_low": 0.07113037861201532,
+        "median": 0.07113037861201532,
+        "minimum": 0.07113037861201532,
+        "q25": 0.07113037861201532,
+        "q75": 0.07113037861201532,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.06949765760891288,
+        "mean": 0.06949765760891288,
+        "mean_ci95_high": 0.06949765760891288,
+        "mean_ci95_low": 0.06949765760891288,
+        "median": 0.06949765760891288,
+        "minimum": 0.06949765760891288,
+        "q25": 0.06949765760891288,
+        "q75": 0.06949765760891288,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.15247435193171788,
+      "logical_budget": 8,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "normalized_operator_error": {
+        "count": 30,
+        "maximum": 0.799214173966059,
+        "mean": 0.40533949903241095,
+        "mean_ci95_high": 0.4781223918296829,
+        "mean_ci95_low": 0.33541878195642627,
+        "median": 0.37637142150085545,
+        "minimum": 0.08122986609214321,
+        "q25": 0.27989218921453163,
+        "q75": 0.5982121038468531,
+        "standard_deviation": 0.20120471827839578
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.6371966085795795,
+        "mean": 0.3362667809695838,
+        "mean_ci95_high": 0.4012233911924269,
+        "mean_ci95_low": 0.2760001526495946,
+        "median": 0.30343337521606684,
+        "minimum": 0.06497523006405975,
+        "q25": 0.19319936525363074,
+        "q75": 0.520676599858281,
+        "standard_deviation": 0.17938688372216274
+      },
+      "trajectories": 30
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.060854056650288424,
+      "logical_budget": 16,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.08751272753596263,
+        "mean": 0.08751272753596263,
+        "mean_ci95_high": 0.08751272753596263,
+        "mean_ci95_low": 0.08751272753596263,
+        "median": 0.08751272753596263,
+        "minimum": 0.08751272753596263,
+        "q25": 0.08751272753596263,
+        "q75": 0.08751272753596263,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.060854056650300185,
+        "mean": 0.060854056650300185,
+        "mean_ci95_high": 0.060854056650300185,
+        "mean_ci95_low": 0.060854056650300185,
+        "median": 0.060854056650300185,
+        "minimum": 0.060854056650300185,
+        "q25": 0.060854056650300185,
+        "q75": 0.060854056650300185,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.016900999996404466,
+      "logical_budget": 16,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.017272846924978033,
+        "mean": 0.017272846924978033,
+        "mean_ci95_high": 0.017272846924978033,
+        "mean_ci95_low": 0.017272846924978033,
+        "median": 0.017272846924978033,
+        "minimum": 0.017272846924978033,
+        "q25": 0.017272846924978033,
+        "q75": 0.017272846924978033,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.016900999996444264,
+        "mean": 0.016900999996444264,
+        "mean_ci95_high": 0.016900999996444264,
+        "mean_ci95_low": 0.016900999996444264,
+        "median": 0.016900999996444264,
+        "minimum": 0.016900999996444264,
+        "q25": 0.016900999996444264,
+        "q75": 0.016900999996444264,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.08994818587930092,
+      "logical_budget": 16,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "normalized_operator_error": {
+        "count": 30,
+        "maximum": 0.5236437867074584,
+        "mean": 0.2567111105031253,
+        "mean_ci95_high": 0.29842040271427434,
+        "mean_ci95_low": 0.21364834704314523,
+        "median": 0.27414568803082107,
+        "minimum": 0.02442351715658489,
+        "q25": 0.16349743833137903,
+        "q75": 0.33553500747799136,
+        "standard_deviation": 0.11849856283411617
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.4453916022071585,
+        "mean": 0.21156238063160643,
+        "mean_ci95_high": 0.246571505771539,
+        "mean_ci95_low": 0.17899468268651025,
+        "median": 0.19982651383168082,
+        "minimum": 0.02233824733250185,
+        "q25": 0.14717923840526018,
+        "q75": 0.2690885888501255,
+        "standard_deviation": 0.09806597287111331
+      },
+      "trajectories": 30
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.030826946873336408,
+      "logical_budget": 32,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.043679210531901776,
+        "mean": 0.043679210531901776,
+        "mean_ci95_high": 0.043679210531901776,
+        "mean_ci95_low": 0.043679210531901776,
+        "median": 0.043679210531901776,
+        "minimum": 0.043679210531901776,
+        "q25": 0.043679210531901776,
+        "q75": 0.043679210531901776,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.03082694687338349,
+        "mean": 0.03082694687338349,
+        "mean_ci95_high": 0.03082694687338349,
+        "mean_ci95_low": 0.03082694687338349,
+        "median": 0.03082694687338349,
+        "minimum": 0.03082694687338349,
+        "q25": 0.03082694687338349,
+        "q75": 0.03082694687338349,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.004194742547661587,
+      "logical_budget": 32,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.004286071248132006,
+        "mean": 0.004286071248132006,
+        "mean_ci95_high": 0.004286071248132006,
+        "mean_ci95_low": 0.004286071248132006,
+        "median": 0.004286071248132006,
+        "minimum": 0.004286071248132006,
+        "q25": 0.004286071248132006,
+        "q75": 0.004286071248132006,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.004194742548173972,
+        "mean": 0.004194742548173972,
+        "mean_ci95_high": 0.004194742548173972,
+        "mean_ci95_low": 0.004194742548173972,
+        "median": 0.004194742548173972,
+        "minimum": 0.004194742548173972,
+        "q25": 0.004194742548173972,
+        "q75": 0.004194742548173972,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.036814584157134345,
+      "logical_budget": 32,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "normalized_operator_error": {
+        "count": 30,
+        "maximum": 0.3957197134821088,
+        "mean": 0.1726913269260403,
+        "mean_ci95_high": 0.205186070133903,
+        "mean_ci95_low": 0.14131838331825247,
+        "median": 0.1508931338484179,
+        "minimum": 0.04074033980397616,
+        "q25": 0.11495457330568778,
+        "q75": 0.2135638517995148,
+        "standard_deviation": 0.09167248870765426
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.34608221806400463,
+        "mean": 0.15172938072533118,
+        "mean_ci95_high": 0.18108927725400917,
+        "mean_ci95_low": 0.12514296456154683,
+        "median": 0.1394004683385083,
+        "minimum": 0.01852081608239777,
+        "q25": 0.10093689350020633,
+        "q75": 0.19564083231253726,
+        "standard_deviation": 0.08028694653733782
+      },
+      "trajectories": 30
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.015515985902497812,
+      "logical_budget": 64,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.02182996361080143,
+        "mean": 0.02182996361080143,
+        "mean_ci95_high": 0.02182996361080143,
+        "mean_ci95_low": 0.02182996361080143,
+        "median": 0.02182996361080143,
+        "minimum": 0.02182996361080143,
+        "q25": 0.02182996361080143,
+        "q75": 0.02182996361080143,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.015515985902408375,
+        "mean": 0.015515985902408375,
+        "mean_ci95_high": 0.015515985902408375,
+        "mean_ci95_low": 0.015515985902408375,
+        "median": 0.015515985902408375,
+        "minimum": 0.015515985902408375,
+        "q25": 0.015515985902408375,
+        "q75": 0.015515985902408375,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.001046767373782107,
+      "logical_budget": 64,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.001069506481224068,
+        "mean": 0.001069506481224068,
+        "mean_ci95_high": 0.001069506481224068,
+        "mean_ci95_low": 0.001069506481224068,
+        "median": 0.001069506481224068,
+        "minimum": 0.001069506481224068,
+        "q25": 0.001069506481224068,
+        "q75": 0.001069506481224068,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.0010467673736407142,
+        "mean": 0.0010467673736407142,
+        "mean_ci95_high": 0.0010467673736407142,
+        "mean_ci95_low": 0.0010467673736407142,
+        "median": 0.0010467673736407142,
+        "minimum": 0.0010467673736407142,
+        "q25": 0.0010467673736407142,
+        "q75": 0.0010467673736407142,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.02237253298144483,
+      "logical_budget": 64,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "normalized_operator_error": {
+        "count": 30,
+        "maximum": 0.31427474933079264,
+        "mean": 0.13345660171001122,
+        "mean_ci95_high": 0.15922257276328367,
+        "mean_ci95_low": 0.10998059447934411,
+        "median": 0.14258955582384797,
+        "minimum": 0.020491297637466075,
+        "q25": 0.06924979508052648,
+        "q75": 0.17072080611741758,
+        "standard_deviation": 0.070721639835717
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.2524752400218815,
+        "mean": 0.11666495499420616,
+        "mean_ci95_high": 0.1390636236580405,
+        "mean_ci95_low": 0.09454267751753036,
+        "median": 0.11820323947417762,
+        "minimum": 0.019806979863158262,
+        "q25": 0.056092752189484396,
+        "q75": 0.15736288906959295,
+        "standard_deviation": 0.06385065833926828
+      },
+      "trajectories": 30
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.007783969549157805,
+      "logical_budget": 128,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.010913776679892238,
+        "mean": 0.010913776679892238,
+        "mean_ci95_high": 0.010913776679892238,
+        "mean_ci95_low": 0.010913776679892238,
+        "median": 0.010913776679892238,
+        "minimum": 0.010913776679892238,
+        "q25": 0.010913776679892238,
+        "q75": 0.010913776679892238,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.007783969549417756,
+        "mean": 0.007783969549417756,
+        "mean_ci95_high": 0.007783969549417756,
+        "mean_ci95_low": 0.007783969549417756,
+        "median": 0.007783969549417756,
+        "minimum": 0.007783969549417756,
+        "q25": 0.007783969549417756,
+        "q75": 0.007783969549417756,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.00026157178202316475,
+      "logical_budget": 128,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.00026725087906710954,
+        "mean": 0.00026725087906710954,
+        "mean_ci95_high": 0.00026725087906710954,
+        "mean_ci95_low": 0.00026725087906710954,
+        "median": 0.00026725087906710954,
+        "minimum": 0.00026725087906710954,
+        "q25": 0.00026725087906710954,
+        "q75": 0.00026725087906710954,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.00026157180177971455,
+        "mean": 0.00026157180177971455,
+        "mean_ci95_high": 0.00026157180177971455,
+        "mean_ci95_low": 0.00026157180177971455,
+        "median": 0.00026157180177971455,
+        "minimum": 0.00026157180177971455,
+        "q25": 0.00026157180177971455,
+        "q75": 0.00026157180177971455,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.013175543593867776,
+      "logical_budget": 128,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "normalized_operator_error": {
+        "count": 30,
+        "maximum": 0.20287710950813867,
+        "mean": 0.1005401897972462,
+        "mean_ci95_high": 0.11560031083493548,
+        "mean_ci95_low": 0.08617725116442974,
+        "median": 0.09724873084856657,
+        "minimum": 0.0286793850867235,
+        "q25": 0.0644892212427896,
+        "q75": 0.13155684026537026,
+        "standard_deviation": 0.04182332528138171
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.1511053340722677,
+        "mean": 0.08615037740055383,
+        "mean_ci95_high": 0.09839148512254002,
+        "mean_ci95_low": 0.07411435451660114,
+        "median": 0.0830520535701017,
+        "minimum": 0.02370530372929148,
+        "q25": 0.05570098104455517,
+        "q75": 0.11161939106632339,
+        "standard_deviation": 0.03439056249254362
+      },
+      "trajectories": 30
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.003898524313880097,
+      "logical_budget": 256,
+      "method": "trotter_s1",
+      "method_label": "First-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 0.005456737701826466,
+        "mean": 0.005456737701826466,
+        "mean_ci95_high": 0.005456737701826466,
+        "mean_ci95_low": 0.005456737701826466,
+        "median": 0.005456737701826466,
+        "minimum": 0.005456737701826466,
+        "q25": 0.005456737701826466,
+        "q75": 0.005456737701826466,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 0.003898524316292725,
+        "mean": 0.003898524316292725,
+        "mean_ci95_high": 0.003898524316292725,
+        "mean_ci95_low": 0.003898524316292725,
+        "median": 0.003898524316292725,
+        "minimum": 0.003898524316292725,
+        "q25": 0.003898524316292725,
+        "q75": 0.003898524316292725,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 6.538543905118332e-05,
+      "logical_budget": 256,
+      "method": "trotter_s2",
+      "method_label": "Second-order Trotter",
+      "normalized_operator_error": {
+        "count": 1,
+        "maximum": 6.680486044828923e-05,
+        "mean": 6.680486044828923e-05,
+        "mean_ci95_high": 6.680486044828923e-05,
+        "mean_ci95_low": 6.680486044828923e-05,
+        "median": 6.680486044828923e-05,
+        "minimum": 6.680486044828923e-05,
+        "q25": 6.680486044828923e-05,
+        "q75": 6.680486044828923e-05,
+        "standard_deviation": 0.0
+      },
+      "state_trace_distance": {
+        "count": 1,
+        "maximum": 6.538558727190098e-05,
+        "mean": 6.538558727190098e-05,
+        "mean_ci95_high": 6.538558727190098e-05,
+        "mean_ci95_low": 6.538558727190098e-05,
+        "median": 6.538558727190098e-05,
+        "minimum": 6.538558727190098e-05,
+        "q25": 6.538558727190098e-05,
+        "q75": 6.538558727190098e-05,
+        "standard_deviation": 0.0
+      },
+      "trajectories": 1
+    },
+    {
+      "empirical_ensemble_state_trace_distance": 0.019128188024948856,
+      "logical_budget": 256,
+      "method": "qdrift",
+      "method_label": "qDRIFT",
+      "normalized_operator_error": {
+        "count": 30,
+        "maximum": 0.1918312832881412,
+        "mean": 0.08065099056541652,
+        "mean_ci95_high": 0.0940929692185516,
+        "mean_ci95_low": 0.06723694417121949,
+        "median": 0.08351073049061626,
+        "minimum": 0.018059011101331665,
+        "q25": 0.04619170338349697,
+        "q75": 0.1054218134050493,
+        "standard_deviation": 0.03896551418856002
+      },
+      "state_trace_distance": {
+        "count": 30,
+        "maximum": 0.1783627445607972,
+        "mean": 0.07142256502080752,
+        "mean_ci95_high": 0.08426319132486494,
+        "mean_ci95_low": 0.05897859778517492,
+        "median": 0.07313079340025708,
+        "minimum": 0.017732514244756428,
+        "q25": 0.03937269018159946,
+        "q75": 0.09482739757226302,
+        "standard_deviation": 0.03594191683246312
+      },
+      "trajectories": 30
+    }
+  ],
+  "initial_state": "|0>",
+  "run_id": "xz-noncommuting-v1:b69fcf5d91264249",
+  "schema_version": "openqevo-benchmark-summary/v1"
+}

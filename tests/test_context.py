@@ -115,6 +115,8 @@ class TestContextLoading:
                     )
                     continue
                 assert execution["entrypoint"].startswith("openqevo.get(")
+                assert execution["input_schema"] == ("openqevo-pauli-hamiltonian/v1")
+                assert execution["result_schema"] == ("openqevo-evolution-result/v1")
             else:
                 assert method_name not in registered_methods
                 assert execution.get("non_executable_reason")

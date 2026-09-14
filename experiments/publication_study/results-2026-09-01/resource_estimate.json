@@ -1,0 +1,107 @@
+{
+  "qdrift_trajectories_per_budget": 30,
+  "schema_version": "openqevo-publication-resource-estimate/v1",
+  "total_formula_level_pauli_operations": 35520,
+  "total_records": 903,
+  "total_workloads": 7,
+  "workloads": [
+    {
+      "dense_dimension": 8,
+      "formula_level_pauli_operations": 2880,
+      "logical_budgets": [
+        6,
+        12,
+        24,
+        48
+      ],
+      "qubits": 3,
+      "records": 129,
+      "terms": 3,
+      "workload_id": "controlled-commuting-uniform"
+    },
+    {
+      "dense_dimension": 8,
+      "formula_level_pauli_operations": 4800,
+      "logical_budgets": [
+        10,
+        20,
+        40,
+        80
+      ],
+      "qubits": 3,
+      "records": 129,
+      "terms": 5,
+      "workload_id": "controlled-mixed-skewed"
+    },
+    {
+      "dense_dimension": 8,
+      "formula_level_pauli_operations": 4800,
+      "logical_budgets": [
+        10,
+        20,
+        40,
+        80
+      ],
+      "qubits": 3,
+      "records": 129,
+      "terms": 5,
+      "workload_id": "controlled-dense-uniform"
+    },
+    {
+      "dense_dimension": 8,
+      "formula_level_pauli_operations": 4800,
+      "logical_budgets": [
+        10,
+        20,
+        40,
+        80
+      ],
+      "qubits": 3,
+      "records": 129,
+      "terms": 5,
+      "workload_id": "controlled-dense-high-lambda"
+    },
+    {
+      "dense_dimension": 8,
+      "formula_level_pauli_operations": 4800,
+      "logical_budgets": [
+        10,
+        20,
+        40,
+        80
+      ],
+      "qubits": 3,
+      "records": 129,
+      "terms": 5,
+      "workload_id": "tfim-q3-open"
+    },
+    {
+      "dense_dimension": 8,
+      "formula_level_pauli_operations": 8640,
+      "logical_budgets": [
+        18,
+        36,
+        72,
+        144
+      ],
+      "qubits": 3,
+      "records": 129,
+      "terms": 9,
+      "workload_id": "heisenberg-q3-open"
+    },
+    {
+      "dense_dimension": 4,
+      "formula_level_pauli_operations": 4800,
+      "logical_budgets": [
+        10,
+        20,
+        40,
+        80
+      ],
+      "qubits": 2,
+      "records": 129,
+      "terms": 5,
+      "workload_id": "h2-two-qubit"
+    }
+  ]
+}

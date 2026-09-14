@@ -10,6 +10,8 @@ import numpy as np
 import pytest
 from scipy.linalg import expm
 
+from openqevo import PauliHamiltonian, PauliTerm
+
 SIGMA_X = np.array([[0, 1], [1, 0]], dtype=complex)
 SIGMA_Y = np.array([[0, -1j], [1j, 0]], dtype=complex)
 SIGMA_Z = np.array([[1, 0], [0, -1]], dtype=complex)
@@ -80,6 +82,18 @@ class TestQrackAdapter:
             dtype=complex,
         )
         np.testing.assert_allclose(result, expected, atol=1e-12)
+
+    def test_canonical_input_and_structured_backend_provenance(self, qrack_module):
+        method = qrack_module.QrackTrotterAdapter()
+        hamiltonian = PauliHamiltonian(
+            identifier="qrack-z",
+            terms=(PauliTerm(1.0, "Z"),),
+        )
+        result = method.run(hamiltonian, t=0.25, steps=1)
+        expected = expm(-1j * SIGMA_Z * 0.25)
+
+        np.testing.assert_allclose(result.unitary, expected, atol=1e-12)
+        assert "pyqrack" in result.implementation.backend_versions
 
     def test_converges_with_more_steps(self, qrack_module):
         method = qrack_module.QrackTrotterAdapter()

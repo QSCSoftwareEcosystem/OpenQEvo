@@ -17,5 +17,6 @@ docs/_build/
 PENDING_TASKS.local.md
 
 # Development-only planning and generated knowledge graph
-paper-plan.md
+.development/
+paper/
 graphify-out/

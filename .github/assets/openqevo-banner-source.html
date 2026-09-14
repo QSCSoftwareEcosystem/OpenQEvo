@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OpenQEvo repository banner source</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1600px; height: 600px; overflow: hidden; }
+      body {
+        background: #f4f1e9;
+        color: #101d2d;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .top-rule { height: 18px; background: #101d2d; position: relative; }
+      .top-rule::after { content: ""; display: block; width: 420px; height: 7px; background: #ae1935; }
+      .masthead { height: 194px; display: flex; align-items: center; padding: 32px 72px 20px; }
+      .logo-wrap { width: 304px; padding-right: 44px; border-right: 1px solid rgba(16, 29, 45, .22); }
+      .logo-wrap img { display: block; width: 260px; height: auto; }
+      .message { padding-left: 46px; }
+      .eyebrow { margin: 0 0 10px; color: #ae1935; font-size: 15px; font-weight: 700; letter-spacing: 2.1px; }
+      h1 { margin: 0; color: #101d2d; font-size: 59px; line-height: .95; letter-spacing: -2px; }
+      h1 span { color: #ae1935; }
+      .summary { margin: 14px 0 0; font-size: 25px; line-height: 1.2; }
+      .workflow { margin: 0 72px; padding: 16px 22px 18px; background: #fffdf8; border: 1px solid #d9d4c8; box-shadow: 0 7px 18px rgba(16, 29, 45, .10); }
+      .workflow-label { margin: 0 0 8px; color: #306a91; font-size: 13px; font-weight: 700; letter-spacing: 1.7px; }
+      .workflow img { display: block; width: 100%; height: auto; }
+      .footer { display: flex; justify-content: space-between; margin: 14px 72px 0; color: #101d2d; font-size: 14px; font-weight: 700; letter-spacing: 1.05px; }
+      .footer span:last-child { color: #ae1935; }
+    </style>
+  </head>
+  <body>
+    <div class="top-rule"></div>
+    <header class="masthead">
+      <div class="logo-wrap"><img src="qsc-logo.png" alt="Quantum Science Center"></div>
+      <div class="message">
+        <p class="eyebrow">QSC SOFTWARE ECOSYSTEM</p>
+        <h1>Open<span>Q</span>Evo</h1>
+        <p class="summary">From quantum-evolution research to reusable software.</p>
+      </div>
+    </header>
+    <section class="workflow" aria-label="OpenQEvo workflow">
+      <p class="workflow-label">THE OPENQEVO METHOD PATH</p>
+      <img src="openqevo-workflow-banner.png" alt="Archify workflow: research prototype, common method interface, method registry and context, reusable execution">
+    </section>
+    <footer class="footer">
+      <span>EXACT · TROTTER–SUZUKI · qDRIFT · QISKIT · PENNYLANE · QRACK</span>
+      <span>QSC</span>
+    </footer>
+  </body>
+</html>

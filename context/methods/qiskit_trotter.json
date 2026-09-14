@@ -12,7 +12,7 @@
     "Requires Qiskit to be installed",
     "Input terms must be square Hermitian matrices with power-of-two dimension",
     "Large dense matrices can make conversion to Pauli operators expensive",
-    "Returns a decomposed unitary matrix in the current adapter rather than a reusable circuit object"
+    "Reported circuit resources use a declared logical basis and omit hardware routing unless the caller performs a separate backend transpilation"
   ],
   "parameters": {
     "steps": {
@@ -33,10 +33,13 @@
     "implemented": true,
     "method_name": "qiskit_trotter",
     "adapter_name": "qiskit",
-    "entrypoint": "openqevo.get(\"qiskit_trotter\").evolve(terms, t, **parameters)",
+    "entrypoint": "openqevo.get(\"qiskit_trotter\").run(terms, t, **parameters)",
     "input_representation": [
+      "pauli_hamiltonian_v1",
       "matrix_terms"
     ],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
     "required_arguments": [
       "terms",
       "t",
@@ -46,11 +49,11 @@
       "qiskit optional dependency",
       "classical Python runtime"
     ],
-    "returns": "Approximate time-evolution unitary matrix synthesized through Qiskit."
+    "returns": "EvolutionResult with a dense Qiskit-synthesized unitary or reusable compiled QuantumCircuit, backend version provenance, declared basis, logical wire map, gate counts, and depth; evolve(...) remains compatible."
   },
   "complexity": {
-    "gate_count": "Depends on number of Pauli terms after SparsePauliOp conversion, product formula order, and steps",
-    "circuit_depth": "Depends on Qiskit synthesis output, product formula order, and steps",
+    "gate_count": "Formula-level Pauli exponentials and compiled one-/two-qubit gates are reported separately after explicit product-formula synthesis",
+    "circuit_depth": "Reported after transpilation to the declared logical basis; hardware routing is not included by default",
     "error_scaling": "Product-formula error depends on order, step count, simulation time, and commutator structure"
   },
   "references": [
@@ -58,7 +61,7 @@
       "title": "Qiskit PauliEvolutionGate documentation",
       "authors": "Qiskit contributors",
       "year": 2026,
-      "url": "https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.PauliEvolutionGate"
+      "url": "https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.PauliEvolutionGate"
     },
     {
       "title": "Local raw software docs for Qiskit PauliEvolutionGate",

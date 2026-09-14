@@ -1,0 +1,22 @@
+{
+  "files": {
+    "config.json": {
+      "bytes": 587,
+      "sha256": "c98eacae5a619e3d837ad179a43a39eddc2aa3a1aaee77ce4591de10df03b366"
+    },
+    "pilot_convergence.svg": {
+      "bytes": 121108,
+      "sha256": "11e844c4fa50c1b5cb658b362c2e2f452e52cd5309cf2b5f32266c6f405f1ce1"
+    },
+    "pilot_records.jsonl": {
+      "bytes": 402304,
+      "sha256": "a61751289c709396ba9065e925018810f59434ff4a465f4cd2dc3e56e5716289"
+    },
+    "pilot_summary.json": {
+      "bytes": 22715,
+      "sha256": "cfe86d91c33c9b764ab897468fbbe853577f58a99026290b5e2d0d0ab8fb9f46"
+    }
+  },
+  "run_id": "xz-noncommuting-v1:b69fcf5d91264249",
+  "schema_version": "openqevo-benchmark-manifest/v1"
+}

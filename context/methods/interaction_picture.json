@@ -1,0 +1,54 @@
+{
+  "method_name": "interaction_picture",
+  "description": "Dense midpoint interaction-picture integration for a Hamiltonian split H = H0 + V. For canonical Pauli inputs, diagonal I/Z terms form H0 by default; callers may choose reference term indices explicitly.",
+  "source": "openqevo",
+  "applicable_hamiltonians": [
+    "Small Hamiltonians with a useful solvable or diagonal reference component",
+    "Canonical PauliHamiltonian inputs containing diagonal I/Z terms",
+    "Legacy lists of Hermitian dense matrix terms with an explicitly chosen reference term"
+  ],
+  "limitations": [
+    "Only dense unitary output is implemented",
+    "The default split is a heuristic and may not be the physically or numerically best interaction-picture reference",
+    "No time-dependent oracle, LCU, circuit, or asymptotic interaction-picture resource model is provided"
+  ],
+  "parameters": {
+    "steps": {
+      "type": "int",
+      "description": "Number of midpoint interaction-picture integration steps.",
+      "required": true,
+      "range": { "min": 1 }
+    },
+    "reference_term_indices": {
+      "type": "list[int]",
+      "description": "Optional non-empty, unique indices of Hamiltonian terms forming H0. Defaults to all diagonal I/Z Pauli terms, or the first dense term.",
+      "required": false
+    }
+  },
+  "execution": {
+    "implemented": true,
+    "method_name": "interaction_picture",
+    "entrypoint": "openqevo.get(\"interaction_picture\").run(terms, t, **parameters)",
+    "input_representation": ["pauli_hamiltonian_v1", "matrix_terms"],
+    "input_schema": "openqevo-pauli-hamiltonian/v1",
+    "result_schema": "openqevo-evolution-result/v1",
+    "required_arguments": ["terms", "t", "steps"],
+    "backend_requirements": [
+      "classical Python runtime",
+      "NumPy/SciPy-compatible dense matrix operations"
+    ],
+    "returns": "EvolutionResult containing a dense unitary and the selected reference/perturbation split."
+  },
+  "complexity": {
+    "gate_count": "Not applicable: this dense reference does not synthesize a circuit",
+    "circuit_depth": "Not applicable",
+    "error_scaling": "The midpoint interaction-picture discretization has second-order global convergence in the time-step size for a fixed, sufficiently regular split."
+  },
+  "example_path": "examples/advanced_evolution.py",
+  "references": [
+    {
+      "title": "Interaction-picture Hamiltonian simulation context",
+      "url": "../interaction_picture/wiki/index.md"
+    }
+  ]
+}
