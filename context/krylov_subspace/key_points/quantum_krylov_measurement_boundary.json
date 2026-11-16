@@ -1,0 +1,29 @@
+{
+  "id": "quantum-krylov-measurement-boundary",
+  "concept": "Quantum Krylov requires prepared states and projected-matrix information",
+  "summary": "Quantum Krylov diagonalization can use nonorthogonal real-time-evolved reference states and overlap/Hamiltonian matrix information.",
+  "applies_to": [
+    "Quantum subspace diagonalization research",
+    "Electronic-structure eigenvalue problems"
+  ],
+  "limitations": [
+    "This is an eigenproblem workflow rather than the registered dense propagation method.",
+    "State preparation and projected-matrix estimation are not implemented by openqevo.get(\"krylov\")."
+  ],
+  "implications": [
+    "Do not infer quantum measurement costs or hardware advantages from dense reference execution."
+  ],
+  "related_methods": [
+    "krylov"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/stair_2019_evidence_note.md",
+      "note": "Abstract: nonorthogonal evolved basis, overlap and Hamiltonian matrices, reference selection."
+    }
+  ],
+  "review": {
+    "status": "unreviewed",
+    "note": "Agent source-sufficiency curation, 2026-11-16; scientific approval pending."
+  }
+}

@@ -4,7 +4,11 @@
   "title": "OpenQEvo Wiki Manifest",
   "description": "Persistent wiki maintenance contract for OpenQEvo context collections.",
   "type": "object",
-  "required": ["version", "maintenance_rules", "collections"],
+  "required": [
+    "version",
+    "maintenance_rules",
+    "collections"
+  ],
   "properties": {
     "version": {
       "type": "integer",
@@ -12,22 +16,92 @@
     },
     "maintenance_rules": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "minItems": 1
     },
     "collections": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "raw_data", "key_points", "wiki", "selection_rules"],
+        "required": [
+          "id",
+          "status",
+          "raw_data",
+          "source_inventory"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "raw_data": { "type": "string" },
-          "key_points": { "type": "string" },
-          "wiki": { "type": "string" },
-          "selection_rules": { "type": "string" },
-          "description": { "type": "string" }
-        }
+          "id": {
+            "type": "string"
+          },
+          "raw_data": {
+            "type": "string"
+          },
+          "key_points": {
+            "type": "string"
+          },
+          "wiki": {
+            "type": "string"
+          },
+          "selection_rules": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "maintained",
+              "legacy_alias"
+            ]
+          },
+          "source_inventory": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "canonical_collection": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "maintained"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "key_points",
+                "wiki",
+                "selection_rules"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "legacy_alias"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "canonical_collection",
+                "summary"
+              ]
+            }
+          }
+        ]
       }
     }
   }

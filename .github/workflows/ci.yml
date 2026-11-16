@@ -1,8 +1,9 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, dev]
   pull_request:
     branches: [main]
 
@@ -50,6 +51,21 @@ jobs:
           pytest -v --tb=short tests/test_conformance.py
           ${{ matrix.tests }}
 
+  qrack-cpu-runtime:
+    runs-on: ubuntu-latest
+    env:
+      OPENQEVO_TEST_QRACK_RUNTIME: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # The PyQrack wheel links to this loader even when is_gpu=False.
+      # A GPU driver or an OpenCL device implementation is not required.
+      - run: sudo apt-get update && sudo apt-get install -y ocl-icd-libopencl1
+      - run: pip install -e ".[dev,qrack]"
+      - run: pytest -v --tb=short tests/test_qrack_cpu_runtime.py
+
   publication-artifact:
     runs-on: ubuntu-latest
     steps:
@@ -61,6 +77,21 @@ jobs:
       - run: >-
           python -m openqevo.study --verify-bundle
           experiments/publication_study/results-2026-09-01
+
+  installed-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install build
+      # Build the wheel from the sdist to check the source manifest as well.
+      - run: python -m build
+      - run: python -m pip install dist/*.whl
+      - name: Check installed context, evidence, and quick start outside checkout
+        working-directory: ${{ runner.temp }}
+        run: python "$GITHUB_WORKSPACE/packaging/check_installed.py"
 
   docs:
     runs-on: ubuntu-latest

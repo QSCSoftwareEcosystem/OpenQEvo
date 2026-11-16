@@ -54,6 +54,9 @@ Issues = "https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.cmdclass]
+build_py = "build_support.BuildPy"
+
 [tool.ruff]
 line-length = 88
 target-version = "py310"

@@ -1,12 +1,15 @@
 {
-  "version": 1,
+  "version": 2,
   "maintenance_rules": [
     "Do not add wiki claims without key-point evidence.",
     "Do not add key points without raw-data evidence.",
     "Prefer updating existing key points over duplicating concepts.",
     "When evidence conflicts, preserve both claims and mark the conflict.",
     "Selection rules should cite key-point IDs rather than raw papers directly.",
-    "Generated wiki prose is not primary evidence; raw_data and key_points are the evidence chain."
+    "Generated wiki prose is not primary evidence; raw_data and key_points are the evidence chain.",
+    "Discover collections and their optional layers from this manifest; legacy_alias entries delegate claims to canonical_collection.",
+    "Source inventories classify conversions, aliases, scratch material, and discovery indexes; an index entry is not an acquired paper.",
+    "Short evidence notes explicitly state which primary-source surface was inspected; they are not full-text acquisitions."
   ],
   "collections": [
     {
@@ -15,7 +18,9 @@
       "raw_data": "trotterization/raw_data",
       "key_points": "trotterization/key_points",
       "wiki": "trotterization/wiki",
-      "selection_rules": "selection/rules.json"
+      "selection_rules": "selection/rules.json",
+      "status": "maintained",
+      "source_inventory": "trotterization/source_inventory.md"
     },
     {
       "id": "randomized_methods",
@@ -23,15 +28,19 @@
       "raw_data": "randomized_methods/raw_data",
       "key_points": "randomized_methods/key_points",
       "wiki": "randomized_methods/wiki",
-      "selection_rules": "selection/rules.json"
+      "selection_rules": "selection/rules.json",
+      "status": "maintained",
+      "source_inventory": "randomized_methods/source_inventory.md"
     },
     {
       "id": "interaction_picture",
-      "description": "Interaction-picture and QIT-style quantum evolution context.",
+      "description": "Split-Hamiltonian interaction-picture quantum algorithm context and dense reference boundaries; QIT-style is an ambiguous legacy label.",
       "raw_data": "interaction_picture/raw_data",
       "key_points": "interaction_picture/key_points",
       "wiki": "interaction_picture/wiki",
-      "selection_rules": "selection/rules.json"
+      "selection_rules": "selection/rules.json",
+      "status": "maintained",
+      "source_inventory": "interaction_picture/source_inventory.md"
     },
     {
       "id": "annealing",
@@ -39,7 +48,39 @@
       "raw_data": "annealing/raw_data",
       "key_points": "annealing/key_points",
       "wiki": "annealing/wiki",
+      "selection_rules": "selection/rules.json",
+      "status": "maintained",
+      "source_inventory": "annealing/source_inventory.md"
+    },
+    {
+      "id": "software",
+      "status": "maintained",
+      "description": "Official and source-derived software evidence, not a quantum evolution algorithm family.",
+      "raw_data": "software/raw_data",
+      "source_inventory": "software/source_inventory.md",
+      "key_points": "software/key_points",
+      "wiki": "software/wiki",
       "selection_rules": "selection/rules.json"
+    },
+    {
+      "id": "krylov_subspace",
+      "status": "maintained",
+      "description": "Classical exponential-action references and quantum Krylov subspace algorithms, with explicit implementation boundaries.",
+      "raw_data": "krylov_subspace/raw_data",
+      "source_inventory": "krylov_subspace/source_inventory.md",
+      "key_points": "krylov_subspace/key_points",
+      "wiki": "krylov_subspace/wiki",
+      "selection_rules": "selection/rules.json",
+      "summary": "krylov_subspace/krylov_subspace.md"
+    },
+    {
+      "id": "qdrift",
+      "status": "legacy_alias",
+      "canonical_collection": "randomized_methods",
+      "description": "Preserved legacy qDRIFT conversions and discovery surveys; maintained claims live in randomized_methods.",
+      "raw_data": "qdrift/raw_data",
+      "source_inventory": "qdrift/source_inventory.md",
+      "summary": "qdrift/qdrift.md"
     }
   ]
 }

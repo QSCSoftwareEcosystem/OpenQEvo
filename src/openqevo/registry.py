@@ -16,7 +16,15 @@ from openqevo.base import EvolutionMethod
 
 _METHODS: dict[str, type[EvolutionMethod]] = {}
 
-CONTEXT_DIR = Path(__file__).resolve().parent.parent.parent / "context"
+_PACKAGE_DIR = Path(__file__).resolve().parent
+_SOURCE_ROOT = _PACKAGE_DIR.parent.parent
+# Prefer the live knowledge base for src-layout checkouts and editable installs.
+# Installed wheels carry their runtime records and evidence under the package.
+CONTEXT_DIR = (
+    _SOURCE_ROOT / "context"
+    if _PACKAGE_DIR.parent.name == "src" and (_SOURCE_ROOT / "pyproject.toml").is_file()
+    else _PACKAGE_DIR / "_context"
+)
 METHOD_CONTEXT_DIR = CONTEXT_DIR / "methods"
 METHOD_SCHEMA_PATH = CONTEXT_DIR / "schema" / "method.schema.json"
 

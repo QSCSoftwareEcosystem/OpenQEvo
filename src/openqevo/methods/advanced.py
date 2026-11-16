@@ -107,7 +107,18 @@ class InteractionPictureEvolution(EvolutionMethod):
         t: float,
         **params: Any,
     ) -> NDArray[np.complexfloating]:
-        """Propagate ``H = H0 + V`` in the interaction picture of ``H0``."""
+        """Propagate ``H = H0 + V`` in the interaction picture of ``H0``.
+
+        With ``dominant_terms``, those terms supply ``H0`` and ``terms``
+        supplies ``V``. Otherwise both components are selected from ``terms``.
+        The residual is exponentiated as a sum; no product-formula order is
+        configurable.
+        """
+        if "order" in params:
+            raise ValueError(
+                "'order' is unsupported for the midpoint interaction-picture "
+                "reference; the residual Hamiltonian is exponentiated as a sum."
+            )
         steps = _step_count(params)
         reference, perturbation, _, _ = _interaction_partition(terms, params)
         time = _finite_time(t)
@@ -141,22 +152,42 @@ class InteractionPictureEvolution(EvolutionMethod):
         )
         labels = term_labels(terms)
         output = self.evolve(terms, t, **configured)
+        supplied_reference_terms = configured.get("dominant_terms") is not None
+        reference_labels = (
+            []
+            if supplied_reference_terms
+            else [labels[index] for index in reference_indices]
+        )
+        parameters = {
+            "steps": steps,
+            "reference_term_indices": list(reference_indices),
+            "reference_term_labels": reference_labels,
+            "reference_split": (
+                "dominant_terms" if supplied_reference_terms else "input_terms"
+            ),
+            "perturbation_term_indices": list(perturbation_indices),
+        }
+        warnings = [
+            "This is a dense midpoint interaction-picture reference; "
+            "it does not provide a hardware circuit or asymptotic resource "
+            "estimate."
+        ]
+        if supplied_reference_terms:
+            parameters["dominant_terms"] = hamiltonian_provenance(
+                configured["dominant_terms"]
+            )
+            parameters["evolution_hamiltonian"] = "H0 + V"
+            warnings.append(
+                "The output evolves H0 + V: input Hamiltonian provenance "
+                "describes V, and parameters.dominant_terms records H0 provenance."
+            )
         return _dense_reference_result(
             method=self,
             terms=terms,
             t=t,
             output=output,
-            parameters={
-                "steps": steps,
-                "reference_term_indices": list(reference_indices),
-                "reference_term_labels": [labels[index] for index in reference_indices],
-                "perturbation_term_indices": list(perturbation_indices),
-            },
-            warnings=(
-                "This is a dense midpoint interaction-picture reference; "
-                "it does not provide a hardware circuit or asymptotic resource "
-                "estimate.",
-            ),
+            parameters=parameters,
+            warnings=tuple(warnings),
         )
 
 
@@ -337,6 +368,25 @@ def _interaction_partition(
 ) -> tuple[
     NDArray[np.complex128], NDArray[np.complex128], tuple[int, ...], tuple[int, ...]
 ]:
+    dominant_terms = params.get("dominant_terms")
+    if dominant_terms is not None:
+        if "reference_term_indices" in params:
+            raise ValueError(
+                "'dominant_terms' and 'reference_term_indices' are mutually exclusive."
+            )
+        reference_terms = dense_terms(dominant_terms)
+        perturbation_terms = dense_terms(terms)
+        if reference_terms[0].shape != perturbation_terms[0].shape:
+            raise ValueError("'dominant_terms' must have the same dimension as terms.")
+        reference = np.sum(np.stack(reference_terms), axis=0)
+        perturbation = np.sum(np.stack(perturbation_terms), axis=0)
+        return (
+            reference,
+            perturbation,
+            (),
+            tuple(range(len(perturbation_terms))),
+        )
+
     matrix_terms = dense_terms(terms)
     indices = _reference_indices(terms, params, len(matrix_terms))
     reference = np.sum(np.stack([matrix_terms[index] for index in indices]), axis=0)

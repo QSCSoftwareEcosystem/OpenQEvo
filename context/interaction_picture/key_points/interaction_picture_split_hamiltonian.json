@@ -10,16 +10,17 @@
     "time-dependent Hamiltonian simulation"
   ],
   "limitations": [
-    "Requires a meaningful split of the Hamiltonian into dominant and interaction components.",
-    "Requires an implementation contract beyond the current simple terms/t interface.",
-    "Uses time-dependent simulation machinery, so implementation complexity is higher than direct product formulas."
+    "Requires a meaningful split of the Hamiltonian into a reference component and a residual interaction.",
+    "Quantum algorithmic complexity advantages require explicit reference-evolution and residual-simulation subroutines with their own cost assumptions.",
+    "A dense classical interaction-picture integrator does not by itself establish the quantum circuit or oracle complexity described in the sources."
   ],
   "implications": [
-    "Do not implement interaction-picture evolution until OpenQEvo defines a split-Hamiltonian input contract.",
-    "Consider this family when direct Trotterization is too expensive because of a large but cheaply evolvable dominant component.",
-    "Treat interaction-picture recommendations as non-executable until method metadata and software registration exist."
+    "Identify the reference component and residual interaction explicitly before interpreting an interaction-picture result.",
+    "Consider this family when direct Trotterization is expensive because of a large but cheaply evolvable reference component.",
+    "Check current method metadata for supported input splits and outputs; distinguish a numerical reference from a quantum circuit implementation and from scientific approval."
   ],
   "related_methods": [
+    "interaction_picture",
     "trotter_s1",
     "trotter_s2",
     "qdrift"

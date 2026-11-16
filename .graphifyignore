@@ -1,0 +1,4 @@
+# Exclude generated graphs and backups from the source corpus.
+# Graphify's default memory/ scan bypasses ignore rules; see
+# graphify-out/MAINTENANCE.md for the archived query-memory history.
+/graphify-out/

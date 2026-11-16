@@ -1,0 +1,28 @@
+{
+  "id": "quantum-subspace-conditioning",
+  "concept": "Noisy quantum subspace eigenproblems need conditional stability analysis",
+  "summary": "Projected generalized eigenproblems can be ill-conditioned; truncation-based stability results require assumptions.",
+  "applies_to": [
+    "Quantum Krylov and other nonorthogonal subspace diagonalization research"
+  ],
+  "limitations": [
+    "No universal truncation threshold or shot budget follows from the abstract.",
+    "These eigenproblem stability results are not an error guarantee for OpenQEvo dense propagation."
+  ],
+  "implications": [
+    "Assess overlap conditioning and measurement uncertainty before recommending a quantum diagonalization workflow."
+  ],
+  "related_methods": [
+    "krylov"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/epperly_2023_evidence_note.md",
+      "note": "Abstract: noisy generalized eigenproblem, standard truncation, conditional accuracy."
+    }
+  ],
+  "review": {
+    "status": "unreviewed",
+    "note": "Agent source-sufficiency curation, 2026-11-16; scientific approval pending."
+  }
+}

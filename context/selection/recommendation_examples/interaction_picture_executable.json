@@ -5,13 +5,27 @@
   "executable": true,
   "confidence": "medium",
   "parameters": {
-    "steps": 64
+    "steps": 64,
+    "reference_term_indices": [1]
   },
+  "terms": {
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "id": "recommendation-interaction-picture-demo",
+    "qubits": 1,
+    "qubit_order": [0],
+    "terms": [
+      {"coefficient": 1.0, "pauli_word": "X", "qubit_order": [0]},
+      {"coefficient": 1.0, "pauli_word": "Z", "qubit_order": [0]}
+    ],
+    "lambda": 2.0,
+    "source": "recommendation-example"
+  },
+  "t": 0.5,
   "required_inputs": [],
   "execution": {
     "implemented": true,
     "method_name": "interaction_picture",
-    "entrypoint": "openqevo.get(\"interaction_picture\").evolve(terms, t, **parameters)",
+    "entrypoint": "openqevo.execute_recommendation(recommendation)",
     "input_representation": ["pauli_hamiltonian_v1", "matrix_terms"],
     "required_arguments": ["terms", "t", "steps"]
   },

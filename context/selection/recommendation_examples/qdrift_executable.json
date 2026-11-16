@@ -8,6 +8,21 @@
     "samples": 100,
     "seed": 7
   },
+  "terms": {
+    "schema_version": "openqevo-pauli-hamiltonian/v1",
+    "id": "recommendation-qdrift-demo",
+    "qubits": 2,
+    "qubit_order": [0, 1],
+    "terms": [
+      {"coefficient": 0.5, "pauli_word": "XI", "qubit_order": [0, 1]},
+      {"coefficient": -0.25, "pauli_word": "IZ", "qubit_order": [0, 1]},
+      {"coefficient": 0.75, "pauli_word": "XX", "qubit_order": [0, 1]},
+      {"coefficient": 0.125, "pauli_word": "ZZ", "qubit_order": [0, 1]}
+    ],
+    "lambda": 1.625,
+    "source": "recommendation-example"
+  },
+  "t": 0.5,
   "required_inputs": [],
   "execution": {
     "implemented": true,

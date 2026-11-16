@@ -190,7 +190,11 @@
         "confidence": "low",
         "parameters": {
           "base_method": "select separately from evolution-method rules",
-          "scale_factors": [1.0, 2.0, 3.0],
+          "scale_factors": [
+            1.0,
+            2.0,
+            3.0
+          ],
           "factory": "linear"
         }
       },
@@ -203,6 +207,89 @@
       ],
       "key_points": [
         "noisy-hardware-error-mitigation"
+      ]
+    },
+    {
+      "id": "small-static-reference-use-krylov",
+      "when": [
+        "Hamiltonian is static and Hermitian",
+        "A full dense small-system reference is tractable",
+        "Goal is approximation comparison rather than quantum subspace diagonalization"
+      ],
+      "recommendation": {
+        "method": "krylov",
+        "confidence": "low",
+        "parameters": {
+          "krylov_dim": "sweep subspace dimension up to the Hilbert-space dimension",
+          "tolerance": "choose a positive Lanczos-breakdown tolerance; not an output error guarantee"
+        }
+      },
+      "avoid": [
+        "Claiming quantum state preparation, measurements, circuits, sparse scaling, or hardware advantage",
+        "Assuming an assembled approximate propagator is exactly unitary"
+      ],
+      "rationale": [
+        "The registered method is a dense classical reference; compare against exact and inspect approximation and unitarity errors."
+      ],
+      "key_points": [
+        "classical-krylov-projection",
+        "quantum-krylov-measurement-boundary"
+      ]
+    },
+    {
+      "id": "small-linear-path-use-annealing-reference",
+      "when": [
+        "Goal is closed-system evolution along a linear driver-to-target Hamiltonian path",
+        "Dense small-system propagation is tractable",
+        "A linear schedule and the selected initial driver model are suitable"
+      ],
+      "recommendation": {
+        "method": "annealing",
+        "confidence": "low",
+        "parameters": {
+          "steps": "sweep positive step counts for midpoint convergence",
+          "schedule": "linear",
+          "initial_hamiltonian": "supply a compatible driver or explicitly accept the default transverse-field driver"
+        }
+      },
+      "avoid": [
+        "Treating finite-time propagation as proof of adiabaticity or a ground-state guarantee",
+        "Claiming analog hardware, open-system dynamics, spectral-gap estimates, or optimization performance"
+      ],
+      "rationale": [
+        "The API propagates a linear Hamiltonian path; adiabatic state following also requires an appropriate initial state, total time, and gap/schedule assessment."
+      ],
+      "key_points": [
+        "adiabatic-schedule-gap-constraints",
+        "quantum-annealing-scope"
+      ]
+    },
+    {
+      "id": "small-power-path-use-adiabatic-reference",
+      "when": [
+        "Goal is dense closed-system evolution along a linear or positive-power Hamiltonian interpolation",
+        "Explicit initial and final Hermitian matrix terms with matching dimensions are available",
+        "Full dense propagation is tractable"
+      ],
+      "recommendation": {
+        "method": "adiabatic_evolution",
+        "confidence": "low",
+        "parameters": {
+          "initial_terms": "supply initial dense Hermitian matrices matching the final terms",
+          "steps": "sweep positive step counts",
+          "schedule": "choose linear or a supported power schedule with finite positive exponent"
+        }
+      },
+      "avoid": [
+        "Passing a canonical Pauli object to this dense-matrix-only API",
+        "Interpreting propagation as a gap calculation, adiabatic guarantee, or hardware annealing workflow"
+      ],
+      "rationale": [
+        "The separate dense adiabatic_evolution API accepts initial_terms and linear/power schedules; it does not choose a runtime or initialize a ground state."
+      ],
+      "key_points": [
+        "adiabatic-schedule-gap-constraints",
+        "quantum-annealing-scope"
       ]
     }
   ]

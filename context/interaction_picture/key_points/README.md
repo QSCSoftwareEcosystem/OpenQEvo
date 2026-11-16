@@ -1,5 +1,9 @@
 # Interaction-Picture Key Points
 
-Structured key-point JSON files for interaction-picture and QIT-style evolution methods belong here.
+Structured concepts here describe split-Hamiltonian quantum simulation and cite
+local raw sources. `interaction-picture-split-hamiltonian` distinguishes the
+scientific strategy from numerical reference implementations.
 
-Key points should cite files in `../raw_data/` as evidence.
+OpenQEvo currently has an experimental dense `interaction_picture` method;
+see the [wiki](../wiki/index.md) for supported splits and output limits.
+Availability is separate from quantum circuit support and scientific approval.

@@ -10,15 +10,17 @@
   ],
   "limitations": [
     "The minimum gap is often difficult to estimate in general.",
-    "Schedule-based evolution requires an input contract different from the current terms/t execution bridge.",
-    "Annealing or adiabatic primitives should not be treated as implemented OpenQEvo methods until schedule and Hamiltonian-path APIs are defined."
+    "Numerical schedule-discretization error and physical failure to remain in a desired instantaneous eigenstate are different error sources.",
+    "A dense time-ordered propagator alone does not certify successful adiabatic state preparation or supply a hardware implementation."
   ],
   "implications": [
-    "Require initial Hamiltonian, final Hamiltonian, schedule, and total evolution time before making executable annealing recommendations.",
-    "Keep annealing as a planned family until OpenQEvo defines schedule-based execution metadata.",
-    "Use exact or small-system simulation to inspect gaps when possible."
+    "Specify the initial and final Hamiltonians, schedule, total evolution time, and initial state when evaluating adiabatic state preparation.",
+    "Check each executable method contract: an explicit initial Hamiltonian may be required or a documented reference driver may be supplied by default.",
+    "Use small-system calculations to inspect gaps where practical, and assess discretization convergence separately from ground-state preparation success."
   ],
   "related_methods": [
+    "annealing",
+    "adiabatic_evolution",
     "exact"
   ],
   "evidence": [

@@ -1,0 +1,77 @@
+{
+  "method_name": "adiabatic_evolution",
+  "description": "Dense reference adiabatic/annealing evolution for a Hamiltonian path H(s) = (1 - s) H0 + s H1. Discretizes the schedule and returns a dense unitary.",
+  "source": "algorithms-thrust",
+  "applicable_hamiltonians": [
+    "Small dense-matrix systems with an initial Hamiltonian and final/problem Hamiltonian",
+    "Schedule-based evolution benchmarks",
+    "Adiabatic or annealing primitives where the goal is time evolution, not full optimization workflow orchestration"
+  ],
+  "limitations": [
+    "Current implementation is a dense classical reference primitive, not a full quantum annealing workflow",
+    "Requires dense Hermitian matrix terms with matching dimensions",
+    "Supports linear and simple power schedules only",
+    "Does not estimate spectral gaps or choose schedules automatically",
+    "Accuracy depends on schedule smoothness, step count, Hamiltonian path, spectral gap, and total evolution time"
+  ],
+  "parameters": {
+    "initial_terms": {
+      "type": "list[ndarray]",
+      "description": "Initial Hamiltonian terms H0 at schedule value s = 0.",
+      "required": true
+    },
+    "steps": {
+      "type": "int",
+      "description": "Number of midpoint schedule-discretization segments.",
+      "required": true,
+      "range": { "min": 1 }
+    },
+    "schedule": {
+      "type": "string|object",
+      "description": "Schedule specification. Defaults to linear; also supports {\"type\": \"power\", \"power\": p}.",
+      "required": false,
+      "default": { "type": "linear" }
+    }
+  },
+  "execution": {
+    "implemented": true,
+    "method_name": "adiabatic_evolution",
+    "entrypoint": "openqevo.get(\"adiabatic_evolution\").run(terms, t, **parameters)",
+    "input_representation": [
+      "matrix_terms"
+    ],
+    "result_schema": "openqevo-evolution-result/v1",
+    "required_arguments": [
+      "terms",
+      "t",
+      "initial_terms",
+      "steps"
+    ],
+    "backend_requirements": [
+      "classical Python runtime",
+      "NumPy/SciPy-compatible dense matrix operations"
+    ],
+    "returns": "EvolutionResult containing a dense unitary approximating time-ordered evolution along a scheduled Hamiltonian path. The evolve entrypoint returns the dense unitary directly."
+  },
+  "complexity": {
+    "gate_count": "Reference dense implementation; eventual circuit cost depends on schedule and Hamiltonian path decomposition",
+    "circuit_depth": "Reference dense implementation; no circuit depth is emitted in v0.1",
+    "error_scaling": "Schedule-discretization error depends on step count, Hamiltonian-path commutators, gap behavior, and total evolution time"
+  },
+  "references": [
+    {
+      "title": "Quantum Computation by Adiabatic Evolution",
+      "authors": "E. Farhi, J. Goldstone, S. Gutmann, and M. Sipser",
+      "year": 2000,
+      "doi": "10.48550/arXiv.quant-ph/0001106",
+      "url": "../annealing/raw_data/openqevo-annealing-farhi-2000-quant-ph-0001106.md"
+    },
+    {
+      "title": "Adiabatic quantum computation",
+      "authors": "T. Albash and D. A. Lidar",
+      "year": 2016,
+      "doi": "10.48550/arXiv.1611.04471",
+      "url": "../annealing/raw_data/openqevo-annealing-albash-lidar-2016-1611.04471.md"
+    }
+  ]
+}

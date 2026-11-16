@@ -115,6 +115,7 @@ Legend: green = done, orange = in progress, red = blocked/waiting, gray = future
 
 ## Execution plan
 
+(delivery-ownership)=
 ### Delivery ownership
 
 The project owner owns implementation, context curation, schema decisions,
@@ -142,9 +143,8 @@ the MPV scope and its validation evidence are complete.
 - The frozen publication-study inputs and result bundle are locally readable.
   Ruff checks, formatting checks, and the complete test suite pass (123 passed,
   2 skipped); the study verifier passes with 903 records, seven workloads, and
-  zero retained failures. The [first manuscript review draft](../paper/openqevo_equal_budget_benchmarks.md)
-  cites the bundle's observed results and limitations without asserting
-  scientific approval.
+  zero retained failures. The bundle is reproducibility and validation evidence
+  for the MPV; publication drafting is outside the MVP scope.
 
 ### Completed on 2026-09-10
 
@@ -164,18 +164,18 @@ the MPV scope and its validation evidence are complete.
   record the OpenQEvo versus external-orchestrator boundary. The project owner
   will keep executable context examples aligned with that decision.
 
-### Priority 1 — Review the completed MPV and manuscript draft
+### Priority 1 — Review the completed MPV
 
 1. **Complete (2026-09-14):** hydrate `context/selection/rules.json` and
    revise its stale interaction-picture executability rationale.
 2. **Complete (2026-09-14):** validate the experimental dense Krylov,
    interaction-picture, and annealing references with the complete readable
    local test suite.
-3. **Complete (2026-09-14):** finalize the first publication review draft from
-   the frozen study and record its manuscript status in the repository.
-4. **Owner review remaining:** confirm authorship, affiliations, venue,
-   acknowledgments, scientific/statistical review, and any revisions needed
-   before preprint or submission.
+3. **Separate manuscript work:** drafting is maintained in a dedicated
+   manuscript repository. Authorship, affiliations, venue, acknowledgments,
+   and scientific/statistical review remain publication decisions.
+4. **Owner review remaining:** resolve the release formalities listed below
+   before a public release.
 
 AS may implement the MCP/RAG layer after its schema and ownership decisions
 are recorded; it is not a prerequisite for the MPV milestone.

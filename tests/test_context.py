@@ -19,23 +19,21 @@ WIKI_MANIFEST_SCHEMA_PATH = CONTEXT_DIR / "schema" / "wiki_manifest.schema.json"
 RECOMMENDATION_SCHEMA_PATH = CONTEXT_DIR / "schema" / "recommendation.schema.json"
 RECOMMENDATION_EXAMPLES_DIR = CONTEXT_DIR / "selection" / "recommendation_examples"
 SOFTWARE_SOURCE_INVENTORY_PATH = CONTEXT_DIR / "software" / "source_inventory.md"
-KEY_POINT_DIRS = (
-    CONTEXT_DIR / "trotterization" / "key_points",
-    CONTEXT_DIR / "randomized_methods" / "key_points",
-    CONTEXT_DIR / "interaction_picture" / "key_points",
-    CONTEXT_DIR / "annealing" / "key_points",
-    CONTEXT_DIR / "software" / "key_points",
-)
-WIKI_DIRS = (
-    CONTEXT_DIR / "trotterization" / "wiki",
-    CONTEXT_DIR / "randomized_methods" / "wiki",
-    CONTEXT_DIR / "interaction_picture" / "wiki",
-    CONTEXT_DIR / "annealing" / "wiki",
-)
+WIKI_MANIFEST_PATH = CONTEXT_DIR / "wiki_manifest.json"
+
+
+def _collections():
+    return json.loads(WIKI_MANIFEST_PATH.read_text())["collections"]
+
+
+def _collection_paths(field):
+    for collection in _collections():
+        if field in collection:
+            yield CONTEXT_DIR / collection[field]
 
 
 def _key_point_paths():
-    for key_point_dir in KEY_POINT_DIRS:
+    for key_point_dir in _collection_paths("key_points"):
         yield from key_point_dir.glob("*.json")
 
 
@@ -115,7 +113,16 @@ class TestContextLoading:
                     )
                     continue
                 assert execution["entrypoint"].startswith("openqevo.get(")
-                assert execution["input_schema"] == ("openqevo-pauli-hamiltonian/v1")
+                representations = execution["input_representation"]
+                if "pauli_hamiltonian_v1" in representations:
+                    assert execution["input_schema"] == (
+                        "openqevo-pauli-hamiltonian/v1"
+                    )
+                else:
+                    assert "matrix_terms" in representations
+                    assert execution.get("input_schema") != (
+                        "openqevo-pauli-hamiltonian/v1"
+                    )
                 assert execution["result_schema"] == ("openqevo-evolution-result/v1")
             else:
                 assert method_name not in registered_methods
@@ -182,12 +189,76 @@ class TestContextLoading:
         jsonschema.validate(instance=manifest, schema=schema)
 
         for collection in manifest["collections"]:
-            for field in ("raw_data", "key_points", "wiki", "selection_rules"):
+            for field in (
+                "raw_data",
+                "source_inventory",
+                "summary",
+                "key_points",
+                "wiki",
+                "selection_rules",
+            ):
+                if field not in collection:
+                    continue
                 target = CONTEXT_DIR / collection[field]
                 assert target.exists(), (
                     f"Manifest collection {collection['id']} has missing "
                     f"{field}: {collection[field]}"
                 )
+
+    def test_collection_registry_has_unique_ids_and_resolved_aliases(self):
+        """A legacy collection must route to one real maintained collection."""
+        collections = _collections()
+        ids = [collection["id"] for collection in collections]
+        assert len(ids) == len(set(ids)), "Duplicate collection IDs"
+        raw_directories = {
+            path.resolve() for path in CONTEXT_DIR.glob("*/raw_data") if path.is_dir()
+        }
+        declared_raw = {
+            (CONTEXT_DIR / collection["raw_data"]).resolve()
+            for collection in collections
+        }
+        assert declared_raw == raw_directories, "Collection discovery is incomplete"
+        by_id = {collection["id"]: collection for collection in collections}
+        for collection in collections:
+            if collection["status"] == "legacy_alias":
+                canonical = by_id[collection["canonical_collection"]]
+                assert canonical["status"] == "maintained"
+                assert canonical["id"] != collection["id"]
+
+    def test_source_inventories_cover_raw_markdown_and_links_resolve(self):
+        """Every raw source, including legacy/scratch, must have an inventory row."""
+        for collection in _collections():
+            inventory = CONTEXT_DIR / collection["source_inventory"]
+            links = re.findall(r"\]\(([^)]+)\)", inventory.read_text())
+            local_links = [link for link in links if not re.match(r"\w+:", link)]
+            targets = set()
+            for link in local_links:
+                target = (inventory.parent / link.split("#", 1)[0]).resolve()
+                assert target.exists(), f"{inventory} has broken source link {link}"
+                targets.add(target)
+            raw_dir = CONTEXT_DIR / collection["raw_data"]
+            raw_sources = {
+                path.resolve()
+                for path in raw_dir.rglob("*.md")
+                if path.name != "README.md"
+            }
+            assert raw_sources, f"Empty raw collection: {collection['id']}"
+            missing = raw_sources - targets
+            assert not missing, f"Uninventoried raw sources in {inventory}: {missing}"
+
+    def test_key_point_and_rule_ids_are_unique(self):
+        """Parallel source conversions must not duplicate promoted concept IDs."""
+        concepts = [json.loads(path.read_text())["id"] for path in _key_point_paths()]
+        assert len(concepts) == len(set(concepts)), "Duplicate key-point IDs"
+        rules = json.loads((CONTEXT_DIR / "selection/rules.json").read_text())["rules"]
+        rule_ids = [rule["id"] for rule in rules]
+        assert len(rule_ids) == len(set(rule_ids)), "Duplicate selection-rule IDs"
+        for rule in rules:
+            assert rule.get("key_points"), f"Rule {rule['id']} lacks concept evidence"
+            method = rule["recommendation"]["method"]
+            assert (METHOD_CONTEXT_DIR / f"{method}.json").exists(), (
+                f"Rule {rule['id']} recommends a method without metadata: {method}"
+            )
 
     def test_recommendation_schema_validates_executable_payload(self):
         """LLM recommendations should validate against the output schema."""
@@ -265,7 +336,7 @@ class TestContextLoading:
         """Wiki pages should cite known key-point IDs when making claims."""
         key_point_ids = _key_point_ids()
 
-        for wiki_dir in WIKI_DIRS:
+        for wiki_dir in _collection_paths("wiki"):
             wiki_pages = sorted(wiki_dir.glob("*.md"))
             assert wiki_pages, f"Expected at least one wiki page in {wiki_dir}"
 

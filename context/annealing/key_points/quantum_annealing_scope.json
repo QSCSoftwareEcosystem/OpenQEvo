@@ -9,16 +9,18 @@
     "annealing schedule studies"
   ],
   "limitations": [
-    "Annealing targets optimization or ground-state preparation rather than generic unitary time evolution.",
-    "Hardware and schedule constraints matter strongly.",
-    "OpenQEvo needs a project-scope decision before implementing annealing as a native method."
+    "Quantum annealing commonly targets optimization or ground-state preparation; computing a propagator is only one ingredient of that workflow.",
+    "Hardware controls, schedule constraints, and environmental effects affect what an annealing implementation represents.",
+    "A closed-system dense reference is insufficient to model an analog device or establish a quantum optimization advantage."
   ],
   "implications": [
-    "Do not force annealing into the current terms/t execution helper.",
-    "Represent annealing recommendations as planned or non-executable until a schedule API exists.",
-    "Separate annealing primitives from full optimization workflow ownership."
+    "Represent the driver, target, and interpolation schedule explicitly through the selected method contract.",
+    "Check supported output and backend capabilities before constructing executable recommendations; distinguish reference simulation from analog hardware execution.",
+    "Separate evolution primitives from full optimization workflows, state preparation, measurement, and readout ownership."
   ],
   "related_methods": [
+    "annealing",
+    "adiabatic_evolution",
     "exact"
   ],
   "evidence": [

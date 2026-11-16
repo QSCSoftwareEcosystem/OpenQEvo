@@ -86,3 +86,43 @@ Schemas live in:
 - `schema/wiki_manifest.schema.json`
 
 Method JSON files are loaded by the OpenQEvo registry from `methods/`.
+
+## Collection discovery and evidence identity
+
+[`wiki_manifest.json`](wiki_manifest.json) is the single collection registry.
+Consumers discover available `raw_data`, `source_inventory`, `key_points`,
+`wiki`, `summary`, and `selection_rules` paths from each entry rather than
+hardcoding family names. `status: maintained` has the full structured chain;
+`status: legacy_alias` delegates maintained claims to `canonical_collection`
+and may omit key-point/wiki layers. The legacy `qdrift` directory routes to
+`randomized_methods`; software contracts and `krylov_subspace` are registered
+collections too. A collection is not necessarily an executable algorithm.
+
+Each inventory labels local source identities, preferred conversion aliases,
+known version differences, and unverified provenance. Multiple conversions
+are preserved and must not be treated as independent scientific support.
+`qdrift/raw_data` citation surveys are discovery indexes, not acquired papers.
+Trotter `raw_data/tmp` is conversion scratch. New Krylov raw files are short
+original primary-source evidence notes, explicitly naming the inspected
+abstract/metadata surface; full-text acquisition is not claimed. Missing
+acquisition dates, exact source versions, or expert review stay unknown.
+
+The scope distinguishes classical dense references (`exact`, `krylov`, dense
+interaction-picture/annealing propagation) from quantum circuits or quantum
+subspace algorithms. Quantum Krylov basis preparation and projected-matrix
+measurement are research context rather than registered `krylov` behavior.
+LCU/qubitization, QSP, general time-dependent/open-system simulation, and
+quantum imaginary-time algorithms lack equivalent curated evidence chains and
+must not receive unsupported executable recommendations. The legacy term
+"QIT-style" has no unique algorithm definition here: clarify whether the user
+means imaginary time, interaction picture, or another task before selecting.
+
+## Source knowledge base and installed subset
+
+This source directory is the complete maintained knowledge base plus labeled
+legacy/discovery material. The packaging build selects runtime metadata and
+its local evidence dependencies into `openqevo/_context`; that selection does
+not replace the source corpus or imply a right to redistribute every third-party
+conversion. Existing license/release decisions cover redistribution review.
+A passing JSON/path check proves structural consistency, not scientific
+correctness, citation entailment, expert review, or ranking calibration.

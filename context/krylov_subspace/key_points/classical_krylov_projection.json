@@ -1,0 +1,31 @@
+{
+  "id": "classical-krylov-projection",
+  "concept": "Classical exponential-action projection differs from quantum Krylov diagonalization",
+  "summary": "Classical Krylov approximation replaces a matrix exponential action by a smaller projected exponential.",
+  "applies_to": [
+    "Classical Hermitian time-evolution references",
+    "Small-system numerical comparison"
+  ],
+  "limitations": [
+    "Convergence depends on the operator, time, starting vector, subspace, and numerical precision; no gap-only bound is claimed.",
+    "OpenQEvo constructs a dense propagator from independent basis-state actions; it does not expose sparse or hardware execution."
+  ],
+  "implications": [
+    "For the dense krylov reference, sweep krylov_dim and compare against exact evolution where feasible.",
+    "Check both approximation error and unitarity of the assembled propagator."
+  ],
+  "related_methods": [
+    "krylov",
+    "exact"
+  ],
+  "evidence": [
+    {
+      "source": "../raw_data/saad_1992_evidence_note.md",
+      "note": "Abstract: classical projected matrix-exponential action and error-estimation scope; OpenQEvo API limits are engineering context."
+    }
+  ],
+  "review": {
+    "status": "unreviewed",
+    "note": "Agent source-sufficiency curation, 2026-11-16; scientific approval pending."
+  }
+}

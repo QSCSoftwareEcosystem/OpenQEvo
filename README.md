@@ -51,9 +51,9 @@ reader-controlled Live/Still tracing.*
 | **Ecosystem area** | Applications |
 | **Primary users** | Quantum-algorithm researchers, framework integrators, and QSC software teams |
 | **Maturity** | Prototype (`Development Status :: 2 - Pre-Alpha`) |
-| **Current milestone** | Review the completed MPV evidence, resolve release formalities, and prepare the first submission-ready manuscript revision. |
+| **Current milestone** | Review the completed MPV evidence and resolve release formalities. |
 | **Lead / contact** | Project owner via the [OpenQEvo issue tracker](https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues) |
-| **Last reviewed** | 2026-09-14 |
+| **Last reviewed** | 2026-11-16 |
 
 ## Why this matters
 
@@ -75,8 +75,10 @@ validated here.
   framework adapters implement the same `EvolutionMethod` contract.
 - **Makes methods discoverable.** A registry supports `get()`,
   `list_methods()`, and `list_methods_detail()`.
-- **Carries scientific context.** JSON records capture applicability,
-  parameters, limitations, complexity, references, and example paths.
+- **Maintains a specialized knowledge base.** Scientific sources, extracted
+  key points, and wiki syntheses describe quantum state-evolution strategies.
+  Method records and selection guidance connect that knowledge to executable
+  references while recording applicability, limitations, and provenance.
 - **Checks convergence and consistency.** Tests compare approximation methods
   against exact small-system evolution and validate method metadata.
 - **Provides scalable logical outputs.** Canonical Pauli inputs can return
@@ -113,7 +115,7 @@ python examples/trotter_convergence.py \
 
 ## Project status
 
-Status below reflects the repository on 2026-09-11.
+Status below reflects the development checkout on 2026-11-16.
 
 | Capability | Status | Evidence / boundary |
 | --- | --- | --- |
@@ -126,10 +128,11 @@ Status below reflects the repository on 2026-09-11.
 | Krylov evolution | Experimental | Dense Lanczos-Krylov reference propagation with explicit subspace dimension and approximation warnings |
 | Interaction-picture evolution | Experimental | Dense midpoint integration with a documented reference/perturbation split; no circuit or asymptotic resource model |
 | Linear annealing evolution | Experimental | Dense midpoint evolution from a transverse-field or caller-supplied driver to a target Hamiltonian |
+| Explicit-path adiabatic evolution | Experimental | Dense final and initial matrix terms with linear or positive-power schedules; distinct from the `annealing` API |
 | Shared conformance | Implemented | Native, Qiskit, and PennyLane conventions are exercised on sign, coefficient, qubit-order, time, and term-order controls |
 | Qiskit adapter | Implemented | Explicit product-formula synthesis, circuit output, compiled logical costs, and dependency-conditional tests |
 | PennyLane adapter | Implemented | Explicit sign/order mapping, circuit output, compiled reference costs, and dependency-conditional tests |
-| Qrack adapter | Experimental | Optional implementation with 7 fake-runtime integration tests; GPU/OpenCL validation remains pending |
+| Qrack adapter | Experimental | Fake-runtime tests and explicit real PyQrack CPU controls; GPU/OpenCL validation remains pending |
 | Structured context and recommendations | Available | Schema-validated method metadata, selection rules, and executable recommendation payloads |
 | PyPI distribution | Planned | Source install works; no public package is claimed |
 | Spack packaging | Staged | A development Spack repository is included; immutable release versions and upstream Spack submission remain pending |
@@ -177,7 +180,8 @@ print("unitary shape:", approx.unitary.shape)
 ```
 
 The registry always lists the native/reference methods (`exact`, `trotter_s1`,
-`trotter_s2`, and `qdrift`). Optional adapter names appear when their
+`trotter_s2`, `qdrift`, `krylov`, `interaction_picture`, `annealing`, and
+`adiabatic_evolution`). Optional adapter names appear when their
 dependencies are installed. Existing callers can continue passing dense matrix
 terms to `evolve(...)`; see the [scientific contracts](docs/contracts.md) for
 the canonical and structured APIs.
@@ -194,8 +198,10 @@ the canonical and structured APIs.
 - **Shared conformance:** analytic cases normalize the target sign, Pauli
   rotation angle, logical/dense qubit order, coefficient handling, time, and
   serialized term order across native, Qiskit, and PennyLane implementations.
-- **Qrack adapter:** 7 fake-runtime tests exercise decomposition and adapter
-  behavior without requiring a host Qrack installation.
+- **Qrack adapter:** fake-runtime tests exercise decomposition without a host
+  Qrack installation. Separate opt-in tests run real PyQrack CPU simulations
+  in isolated subprocesses to check both product orders, signs, basis changes,
+  qubit ordering, identity phases, and unitarity.
 - **Continuous integration:** linting and the default test suite run on Python
   3.10, 3.11, and 3.12.
 - **Reproducible example:** `examples/trotter_convergence.py` generates the
@@ -207,9 +213,8 @@ the canonical and structured APIs.
 - **Expanded study:** `experiments/publication_study/` freezes controlled
   Pauli, spin-model, and fixed mapped H₂ workloads; equal logical budgets; 30
   qDRIFT seeds; uncertainty rules; failure retention; compiled costs; and a
-  write-once artifact manifest. Its integrity verifier passes. The
-  [first review draft](paper/openqevo_equal_budget_benchmarks.md) reports its
-  results and limitations; scientific approval remains pending.
+  write-once artifact manifest. Its integrity verifier passes; scientific
+  approval remains pending.
 
 Run the locally available suite with:
 
@@ -219,9 +224,10 @@ ruff check .
 ruff format --check .
 ```
 
-The current CI environment installs the core development dependencies; optional
-adapter tests skip when their framework is absent. A release gate is to exercise
-supported adapters explicitly in CI.
+The base CI suite installs core development dependencies. Dedicated jobs install
+Qiskit and PennyLane for conformance checks and PyQrack for explicit CPU-runtime
+checks. Optional tests can skip in the base suite; review the dedicated job
+results for the candidate revision.
 
 ## Current limitations
 
@@ -231,8 +237,9 @@ supported adapters explicitly in CI.
   hardware routing and device-specific optimization remain backend work.
 - qDRIFT's expected-channel bound does not guarantee the error of an individual
   trajectory; the frozen study reports trajectory variation separately.
-- Qrack support is experimental; the included tests use a fake runtime, and
-  GPU/OpenCL validation depends on the host environment.
+- Qrack support is experimental; fake-runtime checks and actual CPU-runtime
+  controls cover adapter behavior. GPU/OpenCL validation remains dependent on
+  the host environment.
 - Krylov, interaction-picture, and annealing are experimental dense references;
   they do not yet provide scalable solvers, hardware circuits, or a stable API
   compatibility promise. Automated method selection remains roadmap work. The
@@ -255,9 +262,10 @@ supported adapters explicitly in CI.
 
 - [Architecture](docs/architecture.md) — method, registry, adapter, and context design
 - [Scientific contracts](docs/contracts.md) — canonical Hamiltonians and structured results
+- [Evolution knowledge base](context/README.md) — sources, key points, strategy families, and selection guidance
+- [Release checklist](docs/release-checklist.md) — validation evidence and approval gates
 - [Cross-project workflow](docs/cross-project.md) — collaboration model
 - [Spack repository](spack/README.md) — development-environment installation
-- [First manuscript review draft](paper/openqevo_equal_budget_benchmarks.md) — frozen-study results and limitations
 - [Contributing](CONTRIBUTING.md) — development setup and review process
 
 ## Repository layout
@@ -265,9 +273,8 @@ supported adapters explicitly in CI.
 ```text
 .
 ├── src/openqevo/   # Scientific contracts, registry, methods, and adapters
-├── context/        # Input/result schemas and method metadata
+├── context/        # Quantum-evolution knowledge base, schemas, and method metadata
 ├── examples/       # Reproducible demonstrations
-├── paper/          # First manuscript review draft and publication routing
 ├── spack/          # Local Spack repository for the development package
 ├── tests/          # Core, context, and optional-adapter validation
 └── docs/           # Architecture, contracts, and cross-project workflow
