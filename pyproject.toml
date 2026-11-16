@@ -55,7 +55,7 @@ Issues = "https://github.com/QSCSoftwareEcosystem/OpenQEvo/issues"
 where = ["src"]
 
 [tool.setuptools.cmdclass]
-build_py = "build_support.BuildPy"
+build_py = "_openqevo_build_support.BuildPy"
 
 [tool.ruff]
 line-length = 88

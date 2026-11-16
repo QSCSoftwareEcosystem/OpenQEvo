@@ -86,7 +86,7 @@ class BuildPy(build_py):
 
     def run(self):
         super().run()
-        root = Path(__file__).resolve().parent / "context"
+        root = Path(__file__).resolve().parent.parent / "context"
         destination = Path(self.build_lib) / "openqevo" / "_context"
         # A previous build may have selected files no longer referenced today.
         if destination.exists():

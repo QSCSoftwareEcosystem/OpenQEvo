@@ -1,4 +1,4 @@
-include build_support.py
+include src/_openqevo_build_support.py
 include packaging/check_installed.py
 recursive-include context *.json *.md *.csv
 prune context/trotterization/raw_data/tmp
