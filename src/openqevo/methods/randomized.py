@@ -29,7 +29,13 @@ from openqevo.result import (
 
 @register("qdrift")
 class QDriftEvolution(EvolutionMethod):
-    """qDRIFT-style randomized product formula."""
+    """qDRIFT-style randomized product formula.
+
+    For dense inputs, custom ``term_weights`` control relative sampling rates.
+    Every nonzero matrix term must retain a positive sampling probability after
+    normalization. Zero matrix terms may have zero weight, provided at least
+    one weight is positive.
+    """
 
     description = "Randomized Hamiltonian evolution via qDRIFT sampling"
     source = "algorithms-thrust"
@@ -228,6 +234,7 @@ def _term_weights(
     matrix_terms: tuple[NDArray[np.complex128], ...],
     weights: Any,
 ) -> NDArray[np.float64]:
+    """Validate weights without allowing sampling to change the target sum."""
     if isinstance(hamiltonian, PauliHamiltonian):
         canonical = np.array(
             [abs(term.coefficient) for term in hamiltonian.terms], dtype=float
@@ -254,8 +261,21 @@ def _term_weights(
         raise ValueError("'term_weights' must be finite.")
     if np.any(values < 0):
         raise ValueError("'term_weights' must be non-negative.")
-    if np.sum(values) <= 0:
+    with np.errstate(over="ignore"):
+        total = np.sum(values)
+    if not np.isfinite(total):
+        raise ValueError("The sum of 'term_weights' must be finite.")
+    if total <= 0:
         raise ValueError("At least one qDRIFT term weight must be positive.")
+
+    # Check actual normalized support, including underflow. A small nonzero
+    # matrix is still part of the target Hamiltonian, so do not use allclose.
+    for index in np.flatnonzero(values / total == 0):
+        if np.any(matrix_terms[index] != 0):
+            raise ValueError(
+                "Every nonzero Hamiltonian term must have a positive sampling "
+                "probability; check 'term_weights'."
+            )
 
     return values
 
